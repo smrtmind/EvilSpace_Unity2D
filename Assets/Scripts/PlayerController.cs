@@ -22,7 +22,7 @@ namespace Scripts
         {
             if (rotation != 0)
             {
-                _rigidbody.angularVelocity = rotation * -_rotationSpeed;
+                _rigidbody.angularVelocity = -rotation * _rotationSpeed;
             }
 
             if (burst > 0)
