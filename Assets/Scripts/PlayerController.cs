@@ -7,7 +7,12 @@ namespace Scripts
         [SerializeField] private float _rotationSpeed = 150;
         [SerializeField] private float _burstSpeed = 1;
 
-        public float rotation { get; set; }
+        private Animator _animator;
+
+        private readonly int LeftTurnKey = Animator.StringToHash("left-turn");
+        private readonly int RightTurnKey = Animator.StringToHash("right-turn");
+
+        //public float rotation { get; set; }
         public float burst { get; set; }
         public bool shoot { get; set; }
 
@@ -15,14 +20,38 @@ namespace Scripts
 
         private void Start()
         {
-            _rigidbody = GetComponent<Rigidbody2D>();   
+            _rigidbody = GetComponent<Rigidbody2D>(); 
+            _animator = GetComponent<Animator>();
         }
 
         private void FixedUpdate()
         {
-            if (rotation != 0)
+            if (Input.GetKey(KeyCode.RightArrow))
             {
-                _rigidbody.angularVelocity = -rotation * _rotationSpeed;
+                _rigidbody.angularVelocity = -1 * _rotationSpeed;
+                _animator.SetBool(RightTurnKey, true);
+            }
+            else if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                _rigidbody.angularVelocity = 1 * _rotationSpeed;
+                _animator.SetBool(LeftTurnKey, true);
+            }
+
+            //if (rotation > 0)
+            //{
+            //    _rigidbody.angularVelocity = rotation * _rotationSpeed;
+            //    _animator.SetBool(RightTurnKey, true);
+            //}
+            //else if (rotation < 0)
+            //{
+            //    _rigidbody.angularVelocity = -rotation * _rotationSpeed;
+            //    _animator.SetBool(LeftTurnKey, true);
+            //}
+
+            else
+            {
+                _animator.SetBool(LeftTurnKey, false);
+                _animator.SetBool(RightTurnKey, false);
             }
 
             if (burst > 0)
