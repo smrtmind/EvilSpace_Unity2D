@@ -8,8 +8,11 @@ namespace Scripts
         [SerializeField] private float _burstSpeed = 1;
         [SerializeField] private GameObject _leftStarterFlame;
         [SerializeField] private GameObject _rightStarterFlame;
+        [SerializeField] private Cooldown _cooldownAttack;
 
         private Animator _animator;
+        private SpawnListComponent _particles;
+        private bool _canAttack;
 
         private readonly int LeftStarterKey = Animator.StringToHash("left-turn");
         private readonly int RightStarterKey = Animator.StringToHash("right-turn");
@@ -24,6 +27,7 @@ namespace Scripts
         {
             _rigidbody = GetComponent<Rigidbody2D>(); 
             _animator = GetComponent<Animator>();
+            _particles = GetComponent<SpawnListComponent>();
         }
 
         private void FixedUpdate()
@@ -31,6 +35,7 @@ namespace Scripts
             var isLeftPressed = Input.GetKey(KeyCode.LeftArrow);
             var isRightPressed = Input.GetKey(KeyCode.RightArrow);
             var isMovingForward = burst > 0;
+            var isShooting = Input.GetKey(KeyCode.Space);
 
             if (isLeftPressed)
             {
@@ -52,12 +57,27 @@ namespace Scripts
                 ActivateObject(disableAll: true);
             }
 
+            if (isShooting && _cooldownAttack.IsReady)
+            {
+                _particles.Spawn("laser");
+                ResetCooldownAttack();
+            }
+
             if (isMovingForward)
             {
                 Vector2 burstDelta = transform.up * _burstSpeed;
                 _rigidbody.velocity += burstDelta;
 
                 ActivateObject(disableAll: false);
+            }
+        }
+
+        private void ResetCooldownAttack()
+        {
+            if (_cooldownAttack.IsReady)
+            {
+                _canAttack = true;
+                _cooldownAttack.Reset();
             }
         }
 
