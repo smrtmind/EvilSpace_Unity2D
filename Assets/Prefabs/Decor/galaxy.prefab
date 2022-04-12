@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6536683247293782968}
   - component: {fileID: 156361713736517386}
-  - component: {fileID: 2184605861029290909}
+  - component: {fileID: 676107220}
+  - component: {fileID: 676107218}
   m_Layer: 0
   m_Name: galaxy
   m_TagString: Untagged
@@ -83,7 +84,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2184605861029290909
+--- !u!50 &676107220
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8319475723831784330}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &676107218
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,54 +114,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8319475723831784330}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c7a614fffbf02141946a8622e3c1bf4, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a1fe677284d4ad4cbdb2b6d968dc9cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _frameRate: 10
-  _clips:
-  - _name: idle
-    _sprites:
-    - {fileID: 21300000, guid: 9242790ab2be5804ebc7e1170a592ab7, type: 3}
-    - {fileID: 21300000, guid: 9d20754db895dce45b106754c003d055, type: 3}
-    - {fileID: 21300000, guid: 9870f198fe0017940ba61d83998f72e4, type: 3}
-    - {fileID: 21300000, guid: 3291be59223c09f4b9c4a9a8778516c7, type: 3}
-    - {fileID: 21300000, guid: 125c015a38f3c6b4884395705d77fe67, type: 3}
-    - {fileID: 21300000, guid: 09151f0f7fab34f49b1f4bda028226ed, type: 3}
-    - {fileID: 21300000, guid: 8b2906f5a004b80429c94922ac6e34f0, type: 3}
-    - {fileID: 21300000, guid: 6e78e11e3ea7b93419ee0cabcb5dba34, type: 3}
-    - {fileID: 21300000, guid: c0a099ab67666b2409361045592c3dc5, type: 3}
-    - {fileID: 21300000, guid: 6c4e1dcd6cb9d554083bb6cd3e88cdd4, type: 3}
-    - {fileID: 21300000, guid: 74a9a3c05ef6f7844a9b727f0cab85c5, type: 3}
-    - {fileID: 21300000, guid: be6e263aae350c04383bc27fd979b975, type: 3}
-    - {fileID: 21300000, guid: 47c3feff96be9da44beb78baf2940b01, type: 3}
-    - {fileID: 21300000, guid: b6177c4babdb49a4e84f90493d985236, type: 3}
-    - {fileID: 21300000, guid: e9099b4d4a05e1c4da3e1b340dc25903, type: 3}
-    - {fileID: 21300000, guid: 4e4c1fb692d5ea6458c601fc1d5deca4, type: 3}
-    - {fileID: 21300000, guid: 0ee65100b13eb9646a7ec19ef366a09d, type: 3}
-    - {fileID: 21300000, guid: fb4915d49f7d1284c972e95c62f7ee7a, type: 3}
-    - {fileID: 21300000, guid: 568e0d130738dd24bab718b3fd7c3ea2, type: 3}
-    - {fileID: 21300000, guid: 48f7f8c22ba0b6548a6cc40d0ccfccee, type: 3}
-    - {fileID: 21300000, guid: 3c0e1c18a3051084bb74d20fa72db57a, type: 3}
-    - {fileID: 21300000, guid: 083aa7230b68a034491e9828bf0bab6a, type: 3}
-    - {fileID: 21300000, guid: 5dfa480142e01ea4592e89bab9ae7b84, type: 3}
-    - {fileID: 21300000, guid: 1c9b93e1b78e72e4cbd2a84904b9f20d, type: 3}
-    - {fileID: 21300000, guid: bf71fd5c94ec9014d95421cea6484c6b, type: 3}
-    - {fileID: 21300000, guid: 4632987bb9a7f2343a618ab292ea696c, type: 3}
-    - {fileID: 21300000, guid: 4824a73da7b2b6c438a72ef90d794ad4, type: 3}
-    - {fileID: 21300000, guid: 4ae3b8c519b6d86419143623718dbec1, type: 3}
-    - {fileID: 21300000, guid: e30371dd7ee57cc4395f32e5ddc3f00e, type: 3}
-    - {fileID: 21300000, guid: 71616d1041ab47f45a102ead77ff22df, type: 3}
-    - {fileID: 21300000, guid: d32074add6d8c274e82ab92fe4d8e7cb, type: 3}
-    - {fileID: 21300000, guid: 40ff44d682b60994592b52798c25d31b, type: 3}
-    - {fileID: 21300000, guid: 9b93138786b349445a74ccbad1b0ed50, type: 3}
-    - {fileID: 21300000, guid: d15da725b6dc1dd4584a621034c7a7d6, type: 3}
-    - {fileID: 21300000, guid: 1614b250fabbe94499e8b786ee43abae, type: 3}
-    - {fileID: 21300000, guid: d17f1d5dc45bcec4e8dfce6de8a26bd3, type: 3}
-    _loop: 1
-    _allowNextClip: 0
-    _onComplete:
-      m_PersistentCalls:
-        m_Calls: []
+  rotationSpeed: -10
 --- !u!1001 &351632484
 PrefabInstance:
   m_ObjectHideFlags: 0

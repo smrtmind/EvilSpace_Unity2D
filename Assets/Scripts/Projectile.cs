@@ -2,14 +2,23 @@
 
 namespace Scripts
 {
-    public class Projectile : BaseProjectile
+    public class Projectile : MonoBehaviour
     {
-        protected override void Start()
-        {
-            base.Start();
+        [SerializeField] private float _speed = 5f;
 
-            var force = new Vector2(Direction * _speed, 0);
-            Rigidbody.AddForce(force, ForceMode2D.Impulse);
+        private Rigidbody2D _body;
+
+        private void Awake()
+        {
+            _body = GetComponent<Rigidbody2D>();
+            
+            //destroy laser after 5 sec
+            Destroy(gameObject, 5f);
+        }
+
+        public void Launch(Vector2 velocity, Vector2 direction)
+        {
+            _body.velocity = velocity + direction * _speed;
         }
     }
 }

@@ -8,11 +8,16 @@ namespace Scripts
         [SerializeField] private float _burstSpeed = 1;
         [SerializeField] private GameObject _leftStarterFlame;
         [SerializeField] private GameObject _rightStarterFlame;
-        [SerializeField] private Cooldown _cooldownAttack;
+        
+        [Space] 
+        [Header("Weapon")]
+        [SerializeField] private Projectile _laserWeapon;
+        [SerializeField] private Cooldown _laserCooldown;
+        [SerializeField] private Transform _laserSpawnPosition;
 
-        private Animator _animator;
-        private SpawnListComponent _particles;
-        private bool _canAttack;
+        [Space]
+        [Header("Sounds")]
+        [SerializeField] private AudioClip _shipHit;
 
         private readonly int LeftStarterKey = Animator.StringToHash("left-turn");
         private readonly int RightStarterKey = Animator.StringToHash("right-turn");
@@ -21,13 +26,25 @@ namespace Scripts
         public float burst { get; set; }
         public bool shoot { get; set; }
 
-        private Rigidbody2D _rigidbody;
+        private Animator _animator;
+        private Rigidbody2D _body;
+        private AudioSource _audio;
 
         private void Start()
         {
-            _rigidbody = GetComponent<Rigidbody2D>(); 
+            _body = GetComponent<Rigidbody2D>(); 
             _animator = GetComponent<Animator>();
-            _particles = GetComponent<SpawnListComponent>();
+            _audio = FindObjectOfType<AudioSource>();
+        }
+
+        private void Update()
+        {
+            if (shoot && _laserCooldown.IsReady)
+            {
+                var projectile = Instantiate(_laserWeapon, _laserSpawnPosition.position, transform.rotation);
+                projectile.Launch(_body.velocity, transform.up);
+                _laserCooldown.Reset();
+            }
         }
 
         private void FixedUpdate()
@@ -35,18 +52,17 @@ namespace Scripts
             var isLeftPressed = Input.GetKey(KeyCode.LeftArrow);
             var isRightPressed = Input.GetKey(KeyCode.RightArrow);
             var isMovingForward = burst > 0;
-            var isShooting = Input.GetKey(KeyCode.Space);
 
             if (isLeftPressed)
             {
-                _rigidbody.angularVelocity = 1 * _rotationSpeed;
+                _body.angularVelocity = 1 * _rotationSpeed;
 
                 PlayAnimation(LeftStarterKey);
                 ActivateObject(_rightStarterFlame);
             }
             else if (isRightPressed)
             {
-                _rigidbody.angularVelocity = -1 * _rotationSpeed;
+                _body.angularVelocity = -1 * _rotationSpeed;
 
                 PlayAnimation(RightStarterKey);
                 ActivateObject(_leftStarterFlame);
@@ -57,27 +73,12 @@ namespace Scripts
                 ActivateObject(disableAll: true);
             }
 
-            if (isShooting && _cooldownAttack.IsReady)
-            {
-                _particles.Spawn("laser");
-                ResetCooldownAttack();
-            }
-
             if (isMovingForward)
             {
                 Vector2 burstDelta = transform.up * _burstSpeed;
-                _rigidbody.velocity += burstDelta;
+                _body.velocity += burstDelta;
 
                 ActivateObject(disableAll: false);
-            }
-        }
-
-        private void ResetCooldownAttack()
-        {
-            if (_cooldownAttack.IsReady)
-            {
-                _canAttack = true;
-                _cooldownAttack.Reset();
             }
         }
 
@@ -104,6 +105,13 @@ namespace Scripts
                 _leftStarterFlame.SetActive(state);
                 _rightStarterFlame.SetActive(state);
             }
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            var asteroid = other.gameObject.GetComponent<Asteroid>();
+
+            _audio.PlayOneShot(_shipHit);
         }
     }
 }
