@@ -11,9 +11,19 @@ namespace Scripts
         
         [Space] 
         [Header("Weapon")]
-        [SerializeField] private Projectile _laserWeapon;
-        [SerializeField] private Cooldown _laserCooldown;
-        [SerializeField] private Transform _laserSpawnPosition;
+        [SerializeField] private Projectile _machineGun;
+        [SerializeField] private Cooldown _machineGunCooldown;
+        [SerializeField] private Transform _machineGunSpawnPosition;
+
+        [Space]
+        [SerializeField] private Projectile _twinLaser;
+        [SerializeField] private Cooldown _twinLaserCooldown;
+        [SerializeField] private Transform _twinLaserSpawnPosition;
+
+        //[Space]
+        //[SerializeField] private Projectile _machineGun;
+        //[SerializeField] private Cooldown _machineGunCooldown;
+        //[SerializeField] private Transform _machineGunSpawnPosition;
 
         [Space]
         [Header("Sounds")]
@@ -22,9 +32,9 @@ namespace Scripts
         private readonly int LeftStarterKey = Animator.StringToHash("left-turn");
         private readonly int RightStarterKey = Animator.StringToHash("right-turn");
 
-        public float rotation { get; set; }
         public float burst { get; set; }
-        public bool shoot { get; set; }
+        public bool firstWeapon { get; set; }
+        public bool secondWeapon { get; set; }
 
         private Animator _animator;
         private Rigidbody2D _body;
@@ -39,11 +49,17 @@ namespace Scripts
 
         private void Update()
         {
-            if (shoot && _laserCooldown.IsReady)
+            if (firstWeapon && _machineGunCooldown.IsReady && !secondWeapon)
             {
-                var projectile = Instantiate(_laserWeapon, _laserSpawnPosition.position, transform.rotation);
+                var projectile = Instantiate(_machineGun, _machineGunSpawnPosition.position, transform.rotation);
                 projectile.Launch(_body.velocity, transform.up);
-                _laserCooldown.Reset();
+                _machineGunCooldown.Reset();
+            }
+            if (secondWeapon && _twinLaserCooldown.IsReady && !firstWeapon)
+            {
+                var projectile = Instantiate(_twinLaser, _twinLaserSpawnPosition.position, transform.rotation);
+                projectile.Launch(_body.velocity, transform.up);
+                _twinLaserCooldown.Reset();
             }
         }
 

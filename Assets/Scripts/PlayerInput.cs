@@ -9,7 +9,8 @@ namespace Scripts
         private void Update()
         {
             _player.burst = Input.GetAxis("Vertical");
-            _player.shoot = Input.GetButton("Fire1");
+            _player.firstWeapon = Input.GetButton("Fire1");
+            _player.secondWeapon = Input.GetButton("Fire2");
         }
     }
 }

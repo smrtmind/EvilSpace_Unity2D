@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5c502cee44448e8468062bfed597329f
+guid: f02cbd5c358d692468a34176e2f27efa
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -11,6 +11,15 @@ TextureImporter:
   - first:
       213: 2918496645665874351
     second: spaceShip_2
+  - first:
+      213: -1036292908392871810
+    second: spaceShip_3
+  - first:
+      213: 7036729497644544534
+    second: spaceShip_4
+  - first:
+      213: 6144786688264275432
+    second: spaceShip_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -100,7 +109,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 40
         width: 40
         height: 40
       alignment: 0
@@ -121,7 +130,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 40
-        y: 0
+        y: 40
         width: 40
         height: 40
       alignment: 0
@@ -142,7 +151,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 80
-        y: 0
+        y: 40
         width: 40
         height: 40
       alignment: 0
@@ -154,6 +163,69 @@ TextureImporter:
       bones: []
       spriteID: fa165138c35908820800000000000000
       internalID: 2918496645665874351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spaceShip_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e788cff17195e91f0800000000000000
+      internalID: -1036292908392871810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spaceShip_4
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 612bd97223c77a160800000000000000
+      internalID: 7036729497644544534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spaceShip_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e58a8ebfeaa64550800000000000000
+      internalID: 6144786688264275432
       vertices: []
       indices: 
       edges: []

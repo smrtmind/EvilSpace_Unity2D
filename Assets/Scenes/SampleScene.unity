@@ -1892,7 +1892,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -3038,7 +3038,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _asteroids:
   - {fileID: 141782021, guid: e5c4032338d22684980cc25580080215, type: 3}
-  _initialAsteroids: 3
+  - {fileID: 141782021, guid: f0a50f8607f47a54a80d99182669befb, type: 3}
+  - {fileID: 141782021, guid: 008b8f4e917043c40a7aca61e5156de3, type: 3}
+  _initialAsteroids: 5
   _spawnCooldown:
     _value: 5
 --- !u!1001 &832490013

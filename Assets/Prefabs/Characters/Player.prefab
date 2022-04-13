@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &34140863
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 34140864}
+  m_Layer: 8
+  m_Name: MachineGunPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &34140864
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34140863}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.166, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3384156270070165762}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &112501870
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 112501871}
   m_Layer: 8
-  m_Name: SpawnShootPosition
+  m_Name: TwinLaserSpawnPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +58,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3384156270070165762}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3384156270070165760
 GameObject:
@@ -69,6 +99,7 @@ Transform:
   m_Children:
   - {fileID: 6299262585111114483}
   - {fileID: 8665481577713509528}
+  - {fileID: 34140864}
   - {fileID: 112501871}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -112,13 +143,13 @@ SpriteRenderer:
   m_SortingLayerID: -1894459725
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4161801928723195801, guid: 5c502cee44448e8468062bfed597329f,
+  m_Sprite: {fileID: 4161801928723195801, guid: f02cbd5c358d692468a34176e2f27efa,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 8, y: 6}
+  m_Size: {x: 0.4, y: 0.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -142,7 +173,7 @@ PolygonCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.4, y: 0.4}
-    newSize: {x: 8, y: 6}
+    newSize: {x: 0.4, y: 0.4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -209,11 +240,16 @@ MonoBehaviour:
   _burstSpeed: 1.2
   _leftStarterFlame: {fileID: 1752742773260819953}
   _rightStarterFlame: {fileID: 3997083360192285594}
-  _laserWeapon: {fileID: 475721933866399020, guid: 33420252330e01f4fbe563aea75c3618,
+  _machineGun: {fileID: 475721933866399020, guid: c452583892f964948998169502f98a1c,
     type: 3}
-  _laserCooldown:
-    _value: 0.5
-  _laserSpawnPosition: {fileID: 112501871}
+  _machineGunCooldown:
+    _value: 0.08
+  _machineGunSpawnPosition: {fileID: 34140864}
+  _twinLaser: {fileID: 475721933866399020, guid: 33420252330e01f4fbe563aea75c3618,
+    type: 3}
+  _twinLaserCooldown:
+    _value: 0.3
+  _twinLaserSpawnPosition: {fileID: 112501871}
   _shipHit: {fileID: 8300000, guid: eaf4ddf2c0971aa488f470a037e08adf, type: 3}
 --- !u!114 &1956753065
 MonoBehaviour:
