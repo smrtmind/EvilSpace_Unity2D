@@ -31,6 +31,9 @@ namespace Scripts
 
         private readonly int LeftStarterKey = Animator.StringToHash("left-turn");
         private readonly int RightStarterKey = Animator.StringToHash("right-turn");
+        private readonly int HitKey = Animator.StringToHash("is-hit");
+        private readonly int HitLeftKey = Animator.StringToHash("is-hitLeft");
+        private readonly int HitRightKey = Animator.StringToHash("is-hitRight");
 
         public float burst { get; set; }
         public bool firstWeapon { get; set; }
@@ -39,6 +42,9 @@ namespace Scripts
         private Animator _animator;
         private Rigidbody2D _body;
         private AudioSource _audio;
+        private bool isLeftPressed;
+        private bool isRightPressed;
+        private bool isMovingForward;
 
         private void Start()
         {
@@ -65,9 +71,9 @@ namespace Scripts
 
         private void FixedUpdate()
         {
-            var isLeftPressed = Input.GetKey(KeyCode.LeftArrow);
-            var isRightPressed = Input.GetKey(KeyCode.RightArrow);
-            var isMovingForward = burst > 0;
+            isLeftPressed = Input.GetKey(KeyCode.LeftArrow);
+            isRightPressed = Input.GetKey(KeyCode.RightArrow);
+            isMovingForward = burst > 0;
 
             if (isLeftPressed)
             {
@@ -126,8 +132,20 @@ namespace Scripts
         private void OnCollisionEnter2D(Collision2D other)
         {
             var asteroid = other.gameObject.GetComponent<Asteroid>();
-
             _audio.PlayOneShot(_shipHit);
+
+            if (isLeftPressed)
+            {
+                _animator.SetTrigger(HitLeftKey);
+                if (isMovingForward) return;   
+            }               
+            if (isRightPressed)
+            {
+                _animator.SetTrigger(HitRightKey);
+                if (isMovingForward) return;
+            }
+            else
+                _animator.SetTrigger(HitKey);
         }
     }
 }
