@@ -8,8 +8,12 @@ namespace Scripts
         [SerializeField] private float _burstSpeed = 1;
         [SerializeField] private GameObject _leftStarterFlame;
         [SerializeField] private GameObject _rightStarterFlame;
-        
-        [Space] 
+        [SerializeField] private GameObject _leftWingDamage;
+        [SerializeField] private GameObject _rightWingDamage;
+        [SerializeField] private GameObject _bodyDamage;
+        [SerializeField] private float _damageVelocity;
+
+        [Space]
         [Header("Weapon")]
         [SerializeField] private Projectile _machineGun;
         [SerializeField] private Cooldown _machineGunCooldown;
@@ -39,16 +43,18 @@ namespace Scripts
         public bool firstWeapon { get; set; }
         public bool secondWeapon { get; set; }
 
+        private HealthComponent _health;
         private Animator _animator;
         private Rigidbody2D _body;
         private AudioSource _audio;
-        private bool isLeftPressed;
-        private bool isRightPressed;
-        private bool isMovingForward;
+        private bool _isLeftPressed;
+        private bool _isRightPressed;
+        private bool _isMovingForward;
 
         private void Start()
         {
-            _body = GetComponent<Rigidbody2D>(); 
+            _health = GetComponent<HealthComponent>();
+            _body = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
             _audio = FindObjectOfType<AudioSource>();
         }
@@ -71,18 +77,18 @@ namespace Scripts
 
         private void FixedUpdate()
         {
-            isLeftPressed = Input.GetKey(KeyCode.LeftArrow);
-            isRightPressed = Input.GetKey(KeyCode.RightArrow);
-            isMovingForward = burst > 0;
+            _isLeftPressed = Input.GetKey(KeyCode.LeftArrow);
+            _isRightPressed = Input.GetKey(KeyCode.RightArrow);
+            _isMovingForward = burst > 0;
 
-            if (isLeftPressed)
+            if (_isLeftPressed)
             {
                 _body.angularVelocity = 1 * _rotationSpeed;
 
                 PlayAnimation(LeftStarterKey);
                 ActivateObject(_rightStarterFlame);
             }
-            else if (isRightPressed)
+            else if (_isRightPressed)
             {
                 _body.angularVelocity = -1 * _rotationSpeed;
 
@@ -95,7 +101,7 @@ namespace Scripts
                 ActivateObject(disableAll: true);
             }
 
-            if (isMovingForward)
+            if (_isMovingForward)
             {
                 Vector2 burstDelta = transform.up * _burstSpeed;
                 _body.velocity += burstDelta;
@@ -131,18 +137,26 @@ namespace Scripts
 
         private void OnCollisionEnter2D(Collision2D other)
         {
+            if (_health.Health == 3)
+                _leftWingDamage.SetActive(true);
+            if (_health.Health == 2)
+                _rightWingDamage.SetActive(true);
+            if (_health.Health == 1)
+                _bodyDamage.SetActive(true);
+
             var asteroid = other.gameObject.GetComponent<Asteroid>();
+            _body.velocity = new Vector2(_body.velocity.x, _damageVelocity);
             _audio.PlayOneShot(_shipHit);
 
-            if (isLeftPressed)
+            if (_isLeftPressed)
             {
                 _animator.SetTrigger(HitLeftKey);
-                if (isMovingForward) return;   
-            }               
-            if (isRightPressed)
+                if (_isMovingForward) return;
+            }
+            if (_isRightPressed)
             {
                 _animator.SetTrigger(HitRightKey);
-                if (isMovingForward) return;
+                if (_isMovingForward) return;
             }
             else
                 _animator.SetTrigger(HitKey);

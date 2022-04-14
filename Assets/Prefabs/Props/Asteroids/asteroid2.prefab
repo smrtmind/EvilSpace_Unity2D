@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 9025660838172528241}
   - component: {fileID: 1777514240251734643}
   - component: {fileID: 141782021}
+  - component: {fileID: 1269104711266798467}
+  - component: {fileID: 9196561733622927601}
   m_Layer: 9
   m_Name: asteroid2
   m_TagString: Enemy
@@ -307,6 +309,46 @@ MonoBehaviour:
   _maxSpeed: 10
   _minRotation: 20
   _maxRotation: 50
+--- !u!114 &1269104711266798467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6926828201911177819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7faff80a483b7a44b89a0bba87bad81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthDelta: -1
+--- !u!114 &9196561733622927601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6926828201911177819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d59e807b7644ee4a8c62e1b874aaabb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tag: Player
+  _action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1269104711266798467}
+        m_MethodName: Apply
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8246663880091176796
 GameObject:
   m_ObjectHideFlags: 0
