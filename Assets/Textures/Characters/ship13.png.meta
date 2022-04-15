@@ -1,25 +1,13 @@
 fileFormatVersion: 2
-guid: f02cbd5c358d692468a34176e2f27efa
+guid: f4ab79390f64e6a4c90958560206011a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1514045995431232242
-    second: spaceShip_0
+      213: 1435203590781922286
+    second: ship13_0
   - first:
-      213: 4161801928723195801
-    second: spaceShip_1
-  - first:
-      213: 2918496645665874351
-    second: spaceShip_2
-  - first:
-      213: -1036292908392871810
-    second: spaceShip_3
-  - first:
-      213: 7036729497644544534
-    second: spaceShip_4
-  - first:
-      213: 6144786688264275432
-    second: spaceShip_5
+      213: 2604190735383730699
+    second: ship13_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -105,76 +93,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spaceShip_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 40
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e0df7bc50370dfae0800000000000000
-      internalID: -1514045995431232242
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spaceShip_1
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 40
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 997e413ddc0b1c930800000000000000
-      internalID: 4161801928723195801
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spaceShip_2
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 40
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fa165138c35908820800000000000000
-      internalID: 2918496645665874351
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spaceShip_3
+      name: ship13_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 40
-        height: 40
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +107,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e788cff17195e91f0800000000000000
-      internalID: -1036292908392871810
+      spriteID: eebebe0df0edae310800000000000000
+      internalID: 1435203590781922286
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spaceShip_4
+      name: ship13_1
       rect:
         serializedVersion: 2
-        x: 40
+        x: 160
         y: 0
-        width: 40
-        height: 40
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,29 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 612bd97223c77a160800000000000000
-      internalID: 7036729497644544534
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spaceShip_5
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8e58a8ebfeaa64550800000000000000
-      internalID: 6144786688264275432
+      spriteID: b0a19ed1da1f32420800000000000000
+      internalID: 2604190735383730699
       vertices: []
       indices: 
       edges: []

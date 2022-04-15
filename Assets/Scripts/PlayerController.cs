@@ -6,8 +6,8 @@ namespace Scripts
     {
         [SerializeField] private float _rotationSpeed = 150;
         [SerializeField] private float _burstSpeed = 1;
-        [SerializeField] private GameObject _leftStarterFlame;
-        [SerializeField] private GameObject _rightStarterFlame;
+        [SerializeField] private GameObject _idleStarterFlameFirst;
+        [SerializeField] private GameObject _idleStarterFlameSecond;
         [SerializeField] private GameObject _leftWingDamage;
         [SerializeField] private GameObject _rightWingDamage;
         [SerializeField] private GameObject _bodyDamage;
@@ -86,14 +86,14 @@ namespace Scripts
                 _body.angularVelocity = 1 * _rotationSpeed;
 
                 PlayAnimation(LeftStarterKey);
-                ActivateObject(_rightStarterFlame);
+                ActivateObject(_idleStarterFlameSecond);
             }
             else if (_isRightPressed)
             {
                 _body.angularVelocity = -1 * _rotationSpeed;
 
                 PlayAnimation(RightStarterKey);
-                ActivateObject(_leftStarterFlame);
+                ActivateObject(_idleStarterFlameFirst);
             }
             else
             {
@@ -130,8 +130,8 @@ namespace Scripts
 
             void SetGeneralState(bool state)
             {
-                _leftStarterFlame.SetActive(state);
-                _rightStarterFlame.SetActive(state);
+                _idleStarterFlameFirst.SetActive(state);
+                _idleStarterFlameSecond.SetActive(state);
             }
         }
 

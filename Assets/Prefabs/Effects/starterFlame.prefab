@@ -70,9 +70,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1894459725
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7f21c4d3d31cf6f4288cb3ffd784a5f5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 950165289a5c8a047a7cca0caf5ace67, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,10 +99,10 @@ MonoBehaviour:
   _clips:
   - _name: boost
     _sprites:
-    - {fileID: 21300000, guid: 7f21c4d3d31cf6f4288cb3ffd784a5f5, type: 3}
-    - {fileID: 21300000, guid: cc30c0bca758f3845a71fc6abb340fcf, type: 3}
-    - {fileID: 21300000, guid: d9e1bbc70a1b5eb48936909da022ce7f, type: 3}
-    - {fileID: 21300000, guid: 0293334396f61eb499181360352cc2d4, type: 3}
+    - {fileID: 21300000, guid: 950165289a5c8a047a7cca0caf5ace67, type: 3}
+    - {fileID: 21300000, guid: c1d3f35a9cb2c7740a7cff73e454ad84, type: 3}
+    - {fileID: 21300000, guid: 1ad05b043b5386c49b9e2a9d02e0f270, type: 3}
+    - {fileID: 21300000, guid: 055e0f545d88d4041ba51eb6eea98e6d, type: 3}
     _loop: 1
     _allowNextClip: 0
     _onComplete:
