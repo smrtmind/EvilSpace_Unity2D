@@ -35,7 +35,7 @@ Transform:
   m_GameObject: {fileID: 6926828201911177819}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -46.75498, y: -5.236919, z: 0}
-  m_LocalScale: {x: 8.2878, y: 8.2878, z: 8.2878}
+  m_LocalScale: {x: 9, y: 9, z: 1}
   m_Children:
   - {fileID: 1767186768488628014}
   m_Father: {fileID: 0}
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14bae68aeaf10f14a90f186e6240f8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 3
+  _health: 5
   _onDamage:
     m_PersistentCalls:
       m_Calls:
@@ -304,7 +304,7 @@ MonoBehaviour:
   _maxSpeed: 10
   _minRotation: 20
   _maxRotation: 50
-  _scorePerKill: 10
+  _scorePerKill: 30
 --- !u!114 &1269104711266798467
 MonoBehaviour:
   m_ObjectHideFlags: 0
