@@ -8,18 +8,16 @@ namespace Scripts
         [SerializeField] private float _maxSpeed = 5f;
         [SerializeField] private float _minRotation = 5f;
         [SerializeField] private float _maxRotation = 25;
+        [SerializeField] private int _scorePerKill;
 
         private Rigidbody2D _body;
+        private GameSession _gameSession;
 
         private void Awake()
         {
             _body = GetComponent<Rigidbody2D>();
+            _gameSession = FindObjectOfType<GameSession>();
         }
-
-        //private void OnCollisionEnter2D(Collision2D other)
-        //{
-        //    Destroy(gameObject);
-        //}
 
         public void Launch()
         {
@@ -28,6 +26,11 @@ namespace Scripts
 
             var randomRotation = Random.Range(_minRotation, _maxRotation);
             _body.AddTorque(randomRotation);
+        }
+
+        private void OnDestroy()
+        {
+            _gameSession.AddScore(_scorePerKill);
         }
     }
 }

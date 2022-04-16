@@ -6,18 +6,19 @@ namespace Scripts
     {
         [SerializeField] private int _health;
         [SerializeField] private int _score;
+        [SerializeField] private HealthComponent _targetHp;
 
         public int Health => _health;
         public int Score => _score;
 
-        public void AddScore(int score)
+        private void Update()
         {
-            _score += score;
+            _health = _targetHp.Health;
         }
 
-        public void ModifyHealth(int healthDelta)
+        public void AddScore(int value)
         {
-            _health += healthDelta;
+            _score += value;
         }
     }
 }

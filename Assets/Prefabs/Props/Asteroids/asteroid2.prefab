@@ -288,11 +288,6 @@ MonoBehaviour:
           m_StringArgument: destroy
           m_BoolArgument: 0
         m_CallState: 2
-  _onChange:
-    m_PersistentCalls:
-      m_Calls: []
-  _hitCooldown:
-    _value: 0
 --- !u!114 &141782021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,6 +304,7 @@ MonoBehaviour:
   _maxSpeed: 10
   _minRotation: 20
   _maxRotation: 50
+  _scorePerKill: 10
 --- !u!114 &1269104711266798467
 MonoBehaviour:
   m_ObjectHideFlags: 0

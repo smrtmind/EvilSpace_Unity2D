@@ -33,6 +33,7 @@ namespace Scripts
         [Header("Sounds")]
         [SerializeField] private AudioClip _shipHit;
 
+        private readonly int DangerHpKey = Animator.StringToHash("dangerHp");
         private readonly int LeftStarterKey = Animator.StringToHash("left-turn");
         private readonly int RightStarterKey = Animator.StringToHash("right-turn");
         private readonly int HitKey = Animator.StringToHash("is-hit");
@@ -142,7 +143,11 @@ namespace Scripts
             if (_health.Health == 2)
                 _rightWingDamage.SetActive(true);
             if (_health.Health == 1)
+            {
                 _bodyDamage.SetActive(true);
+                _animator.SetBool(DangerHpKey, true);
+            }
+                
 
             var asteroid = other.gameObject.GetComponent<Asteroid>();
             _body.velocity = new Vector2(_body.velocity.x, _damageVelocity);
