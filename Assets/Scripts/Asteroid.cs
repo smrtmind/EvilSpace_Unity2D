@@ -30,7 +30,18 @@ namespace Scripts
 
         private void OnDestroy()
         {
-            _gameSession.AddScore(_scorePerKill);
+            _gameSession.ModifyScore(_scorePerKill);
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            var player = other.gameObject.GetComponent<PlayerController>();
+            if (player)
+            {
+                _gameSession.ModifyScore(-100);
+                if (_gameSession.Score < 0)
+                    _gameSession.ResetScore();
+            }
         }
     }
 }

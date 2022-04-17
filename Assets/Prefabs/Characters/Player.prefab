@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 5501329838893720762}
   - component: {fileID: 2554629338841113124}
   - component: {fileID: 1349747058}
+  - component: {fileID: 870214922}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -298,17 +299,13 @@ MonoBehaviour:
   _rightWingDamage: {fileID: 8325390602316806784}
   _bodyDamage: {fileID: 2733327710686529427}
   _damageVelocity: 15
-  _machineGun: {fileID: 475721933866399020, guid: c452583892f964948998169502f98a1c,
+  _hitParticles: {fileID: 8485752599289224870, guid: df52a325fd4c3df48abb025170d123b9,
     type: 3}
-  _machineGunCooldown:
-    _value: 0.08
-  _machineGunSpawnPosition: {fileID: 34140864}
-  _twinLaser: {fileID: 475721933866399020, guid: 33420252330e01f4fbe563aea75c3618,
-    type: 3}
-  _twinLaserCooldown:
-    _value: 0.3
-  _twinLaserSpawnPosition: {fileID: 112501871}
-  _shipHit: {fileID: 8300000, guid: eaf4ddf2c0971aa488f470a037e08adf, type: 3}
+  _timerToContinue: {fileID: 0}
+  _timerToGameOver: {fileID: 0}
+  _player: {fileID: 3384156270070165760}
+  _mainTheme: {fileID: 0}
+  _shipHit: {fileID: 8300000, guid: e71004015f27ebf479e136d2b19b465e, type: 3}
 --- !u!114 &1956753065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,33 +370,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: SetTimer
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2554629338841113124}
-        m_MethodName: DestroyObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _onChange:
-    m_PersistentCalls:
-      m_Calls: []
-  _hitCooldown:
-    _value: 0
 --- !u!114 &2554629338841113124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,6 +410,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &870214922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3384156270070165760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b02130b3dac401049b3af221b011694c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gun: {fileID: 475721933866399020, guid: c452583892f964948998169502f98a1c, type: 3}
+  _gunAmmo: 200
+  _gunShootingtDelay:
+    _value: 0.08
+  _gunReloadingDelay:
+    _value: 0.5
+  _gunSpawnPosition: {fileID: 34140864}
+  _gunHudValue: {fileID: 0}
+  _laser: {fileID: 475721933866399020, guid: 33420252330e01f4fbe563aea75c3618, type: 3}
+  _laserAmmo: 50
+  _laserShootingDelay:
+    _value: 0.3
+  _laserReloadingDelay:
+    _value: 1
+  _laserSpawnPosition: {fileID: 112501871}
+  _laserHudValue: {fileID: 0}
 --- !u!1001 &650693989830369803
 PrefabInstance:
   m_ObjectHideFlags: 0

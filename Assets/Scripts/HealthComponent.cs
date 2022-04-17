@@ -12,6 +12,18 @@ namespace Scripts
 
         public int Health => _health;
 
+        private int _maxHealth;
+
+        private void Awake()
+        {
+            _maxHealth = _health;
+        }
+
+        public void ResetHealth()
+        {
+            _health = _maxHealth;
+        }
+
         public void ModifyHealth(int healthDelta)
         {
             if (_health <= 0) return;

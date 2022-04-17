@@ -12,22 +12,11 @@ namespace Scripts
         [SerializeField] private GameObject _rightWingDamage;
         [SerializeField] private GameObject _bodyDamage;
         [SerializeField] private float _damageVelocity;
-
-        [Space]
-        [Header("Weapon")]
-        [SerializeField] private Projectile _machineGun;
-        [SerializeField] private Cooldown _machineGunCooldown;
-        [SerializeField] private Transform _machineGunSpawnPosition;
-
-        [Space]
-        [SerializeField] private Projectile _twinLaser;
-        [SerializeField] private Cooldown _twinLaserCooldown;
-        [SerializeField] private Transform _twinLaserSpawnPosition;
-
-        //[Space]
-        //[SerializeField] private Projectile _machineGun;
-        //[SerializeField] private Cooldown _machineGunCooldown;
-        //[SerializeField] private Transform _machineGunSpawnPosition;
+        [SerializeField] private GameObject _hitParticles;
+        [SerializeField] private TimerComponent _timerToContinue;
+        [SerializeField] private TimerComponent _timerToGameOver;
+        [SerializeField] private GameObject _player;
+        [SerializeField] private AudioSource _mainTheme;
 
         [Space]
         [Header("Sounds")]
@@ -51,29 +40,15 @@ namespace Scripts
         private bool _isLeftPressed;
         private bool _isRightPressed;
         private bool _isMovingForward;
+        private CameraShaker _cameraShaker;
 
         private void Start()
         {
+            _cameraShaker = FindObjectOfType<CameraShaker>();
             _health = GetComponent<HealthComponent>();
             _body = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
             _audio = FindObjectOfType<AudioSource>();
-        }
-
-        private void Update()
-        {
-            if (firstWeapon && _machineGunCooldown.IsReady && !secondWeapon)
-            {
-                var projectile = Instantiate(_machineGun, _machineGunSpawnPosition.position, transform.rotation);
-                projectile.Launch(_body.velocity, transform.up);
-                _machineGunCooldown.Reset();
-            }
-            if (secondWeapon && _twinLaserCooldown.IsReady && !firstWeapon)
-            {
-                var projectile = Instantiate(_twinLaser, _twinLaserSpawnPosition.position, transform.rotation);
-                projectile.Launch(_body.velocity, transform.up);
-                _twinLaserCooldown.Reset();
-            }
         }
 
         private void FixedUpdate()
@@ -138,6 +113,11 @@ namespace Scripts
 
         private void OnCollisionEnter2D(Collision2D other)
         {
+            var session = FindObjectOfType<GameSession>();
+
+            Instantiate(_hitParticles, other.GetContact(0).point, Quaternion.identity);
+            _cameraShaker.ShakeCamera();
+
             if (_health.Health == 3)
                 _leftWingDamage.SetActive(true);
             if (_health.Health == 2)
@@ -147,7 +127,21 @@ namespace Scripts
                 _bodyDamage.SetActive(true);
                 _animator.SetBool(DangerHpKey, true);
             }
-                
+            if (_health.Health <= 0 && session.Tries > 0)
+            {               
+                _leftWingDamage.SetActive(false);
+                _rightWingDamage.SetActive(false);
+                _bodyDamage.SetActive(false);
+                _player.SetActive(false);
+
+                _timerToContinue.SetTimer(0);
+            }
+            if (_health.Health <= 0 && session.Tries == 0)
+            {
+                _player.SetActive(false);
+                _mainTheme.Stop();
+                _timerToGameOver.SetTimer(0);
+            }
 
             var asteroid = other.gameObject.GetComponent<Asteroid>();
             _body.velocity = new Vector2(_body.velocity.x, _damageVelocity);

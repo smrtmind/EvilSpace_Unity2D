@@ -19,7 +19,7 @@ namespace Scripts
         private void FixedUpdate()
         {
             _healthBar.value = _gameSession.Health;
-            _scoreText.text = _gameSession.Score.ToString();
+            _scoreText.text = $"Score: {_gameSession.Score}";
             _triesText.text = $"x {_gameSession.Tries}";
         }
     }

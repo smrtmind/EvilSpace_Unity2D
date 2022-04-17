@@ -8,14 +8,22 @@ namespace Scripts
         [SerializeField] private int _health;
         [SerializeField] private int _score;
         [SerializeField] private HealthComponent _targetHp;
+        [SerializeField] private AudioClip _oneUp;
 
         public int Tries => _tries;
         public int Health => _health;
         public int Score => _score;
 
-        public void AddScore(int score)
+        private int stepToAddLife = 100;
+
+        public void ModifyScore(int score)
         {
             _score += score;
+        }
+
+        public void ResetScore()
+        {
+            _score = 0;
         }
 
         public void ModifyTries(int tries)
@@ -26,6 +34,13 @@ namespace Scripts
         private void Update()
         {
             _health = _targetHp.Health;
+
+            if (_score >= stepToAddLife)
+            {
+                FindObjectOfType<AudioSource>().PlayOneShot(_oneUp);
+                ModifyTries(1);
+                stepToAddLife *= 2;
+            }
         }
     }
 }
