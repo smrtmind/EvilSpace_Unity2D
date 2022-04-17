@@ -20,13 +20,22 @@ namespace Scripts
         [SerializeField] private Transform _laserSpawnPosition;
         [SerializeField] private Text _laserHudValue;
 
+        [Space]
+        [SerializeField] private Cooldown _reloadingSpeed;
+        [SerializeField] private int _bombReloadingDelay;
+        [SerializeField] private SpawnComponent _bombEffect;
+        [SerializeField] private Text _bombHudStatus;
+
         private PlayerController _player;
         private Rigidbody2D _body;
         private int _maxGunAmmo;
         private int _maxLaserAmmo;
+        private int _defaultBombTimer;
+        private bool _bombIsReady;
 
         private void Awake()
         {
+            _defaultBombTimer = _bombReloadingDelay;
             _maxGunAmmo = _gunAmmo;
             _maxLaserAmmo = _laserAmmo;
         }
@@ -74,6 +83,40 @@ namespace Scripts
                 _laserShootingDelay.Reset();              
             }
 
+            //using mega bomb
+            if (_player.thirdWeapon && _bombIsReady)
+            {
+                var cameraShaker = FindObjectOfType<CameraShaker>();
+
+                _bombEffect.Spawn();
+
+                cameraShaker.SetDuration(1.2f);
+                cameraShaker.SetMaxDelta(0.6f);
+                cameraShaker.ShakeCamera();
+
+                var asteroids = FindObjectsOfType<Asteroid>();
+                foreach (var asteroid in asteroids)
+                {
+                    Destroy(asteroid.gameObject);
+                }
+
+                _bombIsReady = false;
+                _bombReloadingDelay = _defaultBombTimer;
+            }
+            if (!_bombIsReady)
+            {
+                if (_reloadingSpeed.IsReady)
+                {
+                    _bombReloadingDelay--;
+                    _reloadingSpeed.Reset();
+
+                    if (_bombReloadingDelay == 0)
+                    {
+                        _bombIsReady = true;
+                    }  
+                }
+            }
+
             if (!_player.firstWeapon && !_player.secondWeapon)
             {
                 if (_laserReloadingDelay.IsReady)
@@ -100,6 +143,17 @@ namespace Scripts
         {
             _gunHudValue.text = $"{_gunAmmo} x";
             _laserHudValue.text = $"{_laserAmmo} x";
+
+            if (!_bombIsReady)
+            {
+                _bombHudStatus.color = Color.white;
+                _bombHudStatus.text = $"{_bombReloadingDelay}";
+            }
+            else
+            {
+                _bombHudStatus.color = Color.green;
+                _bombHudStatus.text = $"ready";
+            }
         }
     }
 }

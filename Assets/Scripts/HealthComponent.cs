@@ -13,15 +13,34 @@ namespace Scripts
         public int Health => _health;
 
         private int _maxHealth;
+        private HudController _hud;
+        private Animator _animator;
+        private PlayerController _player;
 
         private void Awake()
         {
             _maxHealth = _health;
+            _hud = FindObjectOfType<HudController>();
+        }
+
+        private void Start()
+        {
+            _animator = GetComponent<Animator>();
+            _player = GetComponent<PlayerController>();
         }
 
         public void ResetHealth()
         {
             _health = _maxHealth;
+        }
+
+        public void RiseMaxHealth()
+        {
+            _player.RemoveVisualDamage();
+
+            _maxHealth++;
+            _hud._healthBar.maxValue++;
+            ResetHealth();
         }
 
         public void ModifyHealth(int healthDelta)

@@ -11,6 +11,7 @@ namespace Scripts
             _player.burst = Input.GetAxis("Vertical");
             _player.firstWeapon = Input.GetButton("Fire1");
             _player.secondWeapon = Input.GetButton("Fire2");
+            _player.thirdWeapon = Input.GetButton("Fire3");
         }
     }
 }

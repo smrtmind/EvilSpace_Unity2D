@@ -14,7 +14,7 @@ namespace Scripts
         public int Health => _health;
         public int Score => _score;
 
-        private int stepToAddLife = 100;
+        private int stepToAddLife = 1000;
 
         public void ModifyScore(int score)
         {
@@ -39,6 +39,7 @@ namespace Scripts
             {
                 FindObjectOfType<AudioSource>().PlayOneShot(_oneUp);
                 ModifyTries(1);
+                _targetHp.RiseMaxHealth();
                 stepToAddLife *= 2;
             }
         }

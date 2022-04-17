@@ -6,7 +6,7 @@ namespace Scripts
     public class HudController : MonoBehaviour
     {
         [SerializeField] private Text _triesText;
-        [SerializeField] private Slider _healthBar;
+        [SerializeField] public Slider _healthBar;
         [SerializeField] private Text _scoreText;
 
         private GameSession _gameSession;

@@ -22,7 +22,7 @@ namespace Scripts
         [Header("Sounds")]
         [SerializeField] private AudioClip _shipHit;
 
-        private readonly int DangerHpKey = Animator.StringToHash("dangerHp");
+        private readonly int LowHpKey = Animator.StringToHash("lowHp");
         private readonly int LeftStarterKey = Animator.StringToHash("left-turn");
         private readonly int RightStarterKey = Animator.StringToHash("right-turn");
         private readonly int HitKey = Animator.StringToHash("is-hit");
@@ -32,6 +32,7 @@ namespace Scripts
         public float burst { get; set; }
         public bool firstWeapon { get; set; }
         public bool secondWeapon { get; set; }
+        public bool thirdWeapon { get; set; }
 
         private HealthComponent _health;
         private Animator _animator;
@@ -125,14 +126,16 @@ namespace Scripts
             if (_health.Health == 1)
             {
                 _bodyDamage.SetActive(true);
-                _animator.SetBool(DangerHpKey, true);
+                _animator.SetBool(LowHpKey, true);
             }
             if (_health.Health <= 0 && session.Tries > 0)
-            {               
-                _leftWingDamage.SetActive(false);
-                _rightWingDamage.SetActive(false);
-                _bodyDamage.SetActive(false);
-                _player.SetActive(false);
+            {
+                EnableDisableObjects(false, _leftWingDamage, _rightWingDamage, _bodyDamage, _player);
+
+                //_leftWingDamage.SetActive(false);
+                //_rightWingDamage.SetActive(false);
+                //_bodyDamage.SetActive(false);
+                //_player.SetActive(false);
 
                 _timerToContinue.SetTimer(0);
             }
@@ -159,6 +162,20 @@ namespace Scripts
             }
             else
                 _animator.SetTrigger(HitKey);
+        }
+
+        private void EnableDisableObjects(bool state, params GameObject[] gos)
+        {
+            foreach (var go in gos)
+            {
+                go.SetActive(state);
+            }
+        }
+
+        public void RemoveVisualDamage()
+        {
+            _animator.SetBool(LowHpKey, false);
+            EnableDisableObjects(false, _leftWingDamage, _rightWingDamage, _bodyDamage);
         }
     }
 }

@@ -38,6 +38,8 @@ namespace Scripts
             var player = other.gameObject.GetComponent<PlayerController>();
             if (player)
             {
+                FindObjectOfType<CameraShaker>().RestoreValues();
+
                 _gameSession.ModifyScore(-100);
                 if (_gameSession.Score < 0)
                     _gameSession.ResetScore();
