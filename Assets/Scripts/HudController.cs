@@ -8,6 +8,7 @@ namespace Scripts
         [SerializeField] private Text _triesText;
         [SerializeField] public Slider _healthBar;
         [SerializeField] private Text _scoreText;
+        [SerializeField] private Text _healthAmount;
 
         private GameSession _gameSession;
 
@@ -21,6 +22,7 @@ namespace Scripts
             _healthBar.value = _gameSession.Health;
             _scoreText.text = $"Score: {_gameSession.Score}";
             _triesText.text = $"x {_gameSession.Tries}";
+            _healthAmount.text = $"{_healthBar.value}";
         }
     }
 }

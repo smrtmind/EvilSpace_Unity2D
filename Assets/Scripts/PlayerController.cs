@@ -4,8 +4,8 @@ namespace Scripts
 {
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField] private float _rotationSpeed = 150;
-        [SerializeField] private float _burstSpeed = 1;
+        [SerializeField] private float _rotationSpeed = 150f;
+        [SerializeField] private float _burstSpeed = 1f;
         [SerializeField] private GameObject _idleStarterFlameFirst;
         [SerializeField] private GameObject _idleStarterFlameSecond;
         [SerializeField] private GameObject _leftWingDamage;
@@ -15,7 +15,6 @@ namespace Scripts
         [SerializeField] private GameObject _hitParticles;
         [SerializeField] private TimerComponent _timerToContinue;
         [SerializeField] private TimerComponent _timerToGameOver;
-        [SerializeField] private GameObject _player;
         [SerializeField] private AudioSource _mainTheme;
 
         [Space]
@@ -113,20 +112,22 @@ namespace Scripts
             if (_health.Health == 1)
             {
                 SetObjectStatus(true, _bodyDamage);
-                _animator.SetBool(LowHpKey, true);
+                SetAnimationStatus(true, LowHpKey);
             }
 
-            if (_health.Health <= 0 && session.Tries > 0)
+            if (_health.Health <= 0)
             {
-                SetObjectStatus(false, _leftWingDamage, _rightWingDamage, _bodyDamage, _player);
-                _timerToContinue.SetTimer(0);
-            }
-
-            if (_health.Health <= 0 && session.Tries == 0)
-            {
-                SetObjectStatus(false, _player);
-                _mainTheme.Stop();
-                _timerToGameOver.SetTimer(0);
+                if (session.Tries > 0)
+                {
+                    SetObjectStatus(false, _leftWingDamage, _rightWingDamage, _bodyDamage, gameObject);
+                    _timerToContinue.SetTimer(0);
+                }
+                else
+                {
+                    SetObjectStatus(false, gameObject);
+                    _mainTheme.Stop();
+                    _timerToGameOver.SetTimer(0);
+                }
             }
 
             var asteroid = other.gameObject.GetComponent<Asteroid>();

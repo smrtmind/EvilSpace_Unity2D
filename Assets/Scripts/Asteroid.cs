@@ -9,6 +9,7 @@ namespace Scripts
         [SerializeField] private float _minRotation = 5f;
         [SerializeField] private float _maxRotation = 25;
         [SerializeField] private int _scorePerKill;
+        [SerializeField] public SpawnComponent _viaBombExplosion;
 
         private Rigidbody2D _body;
         private GameSession _gameSession;

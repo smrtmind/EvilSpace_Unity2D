@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace Scripts
 {
@@ -14,7 +15,7 @@ namespace Scripts
         public int Health => _health;
         public int Score => _score;
 
-        private int stepToAddLife = 1000;
+        private int stepToAddLife = 100;
 
         public void ModifyScore(int score)
         {

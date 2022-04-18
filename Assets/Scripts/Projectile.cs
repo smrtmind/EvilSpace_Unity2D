@@ -12,8 +12,8 @@ namespace Scripts
         {
             _body = GetComponent<Rigidbody2D>();
             
-            //destroy laser after 5 sec
-            Destroy(gameObject, 5f);
+            //destroy laser after 2 sec
+            Destroy(gameObject, 2f);
         }
 
         public void Launch(Vector2 velocity, Vector2 direction)

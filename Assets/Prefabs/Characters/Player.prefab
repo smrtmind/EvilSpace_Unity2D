@@ -338,7 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32f3e97ae30de0249ba2c7a8ad3d45e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 150
+  _rotationSpeed: 180
   _burstSpeed: 1.2
   _idleStarterFlameFirst: {fileID: 1752742773260819953}
   _idleStarterFlameSecond: {fileID: 3997083360192285594}
@@ -350,7 +350,6 @@ MonoBehaviour:
     type: 3}
   _timerToContinue: {fileID: 0}
   _timerToGameOver: {fileID: 0}
-  _player: {fileID: 3384156270070165760}
   _mainTheme: {fileID: 0}
   _shipHit: {fileID: 8300000, guid: e71004015f27ebf479e136d2b19b465e, type: 3}
 --- !u!114 &1956753065

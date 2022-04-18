@@ -97,6 +97,7 @@ namespace Scripts
                 var asteroids = FindObjectsOfType<Asteroid>();
                 foreach (var asteroid in asteroids)
                 {
+                    asteroid._viaBombExplosion.Spawn();
                     Destroy(asteroid.gameObject);
                 }
 
