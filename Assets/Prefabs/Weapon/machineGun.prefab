@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 7981707784934544515}
   - component: {fileID: 5655042163995265754}
   - component: {fileID: 475721933866399020}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: machineGun
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -175,10 +175,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 232f8e543d85a6c4e86358d14771f883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tag: Enemy
+  _tag: 
   _layer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1536
   _action:
     m_PersistentCalls:
       m_Calls:

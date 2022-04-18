@@ -7,7 +7,7 @@ namespace Scripts
     {
         [SerializeField] private Projectile _gun;
         [SerializeField] private int _gunAmmo;
-        [SerializeField] private Cooldown _gunShootingtDelay;
+        [SerializeField] private Cooldown _gunShootingDelay;
         [SerializeField] private Cooldown _gunReloadingDelay;
         [SerializeField] private Transform _gunSpawnPosition;
         [SerializeField] private Text _gunHudValue;
@@ -27,7 +27,7 @@ namespace Scripts
         [SerializeField] private Text _bombHudStatus;
 
         private PlayerController _player;
-        private Rigidbody2D _body;
+        private Rigidbody2D _bullet;
         private int _maxGunAmmo;
         private int _maxLaserAmmo;
         private int _defaultBombTimer;
@@ -43,12 +43,12 @@ namespace Scripts
         private void Start()
         {
             _player = GetComponent<PlayerController>();
-            _body = GetComponent<Rigidbody2D>();
+            _bullet = GetComponent<Rigidbody2D>();
         }
 
         private void Update()
         {
-            if (_player.firstWeapon && _gunShootingtDelay.IsReady && !_player.secondWeapon && _gunAmmo > 0)
+            if (_player.firstWeapon && _gunShootingDelay.IsReady && !_player.secondWeapon && _gunAmmo > 0)
             {
                 if (_laserReloadingDelay.IsReady)
                 {
@@ -60,9 +60,9 @@ namespace Scripts
                 }
 
                 var projectile = Instantiate(_gun, _gunSpawnPosition.position, transform.rotation);
-                projectile.Launch(_body.velocity, transform.up);
+                projectile.Launch(_bullet.velocity, transform.up);
                 _gunAmmo--;
-                _gunShootingtDelay.Reset();
+                _gunShootingDelay.Reset();
                 
             }
 
@@ -78,7 +78,7 @@ namespace Scripts
                 }
 
                 var projectile = Instantiate(_laser, _laserSpawnPosition.position, transform.rotation);
-                projectile.Launch(_body.velocity, transform.up);
+                projectile.Launch(_bullet.velocity, transform.up);
                 _laserAmmo -= 2;
                 _laserShootingDelay.Reset();              
             }
@@ -95,10 +95,21 @@ namespace Scripts
                 cameraShaker.ShakeCamera();
 
                 var asteroids = FindObjectsOfType<Asteroid>();
+                var ships = FindObjectsOfType<EnemyAI>();
+                var projectiles = FindObjectsOfType<Projectile>();
                 foreach (var asteroid in asteroids)
                 {
                     asteroid._viaBombExplosion.Spawn();
                     Destroy(asteroid.gameObject);
+                }
+                foreach (var ship in ships)
+                {
+                    ship._viaBombExplosion.Spawn();
+                    Destroy(ship.gameObject);
+                }
+                foreach (var projectile in projectiles)
+                {
+                    Destroy(projectile.gameObject);
                 }
 
                 _bombIsReady = false;

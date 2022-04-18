@@ -95,9 +95,21 @@ namespace Scripts
         private void OnCollisionEnter2D(Collision2D other)
         {
             var session = FindObjectOfType<GameSession>();
+            _audio.PlayOneShot(_shipHit);
 
             Instantiate(_hitParticles, other.GetContact(0).point, Quaternion.identity);
             _cameraShaker.ShakeCamera();
+
+            var projectile = FindObjectOfType<Projectile>();
+            if (projectile)
+            {
+                FindObjectOfType<CameraShaker>().RestoreValues();
+            }
+
+            if (!projectile)
+            {
+                _body.velocity = new Vector2(_body.velocity.x, _damageVelocity);
+            }
 
             if (_health.Health == 3)
             {
@@ -129,10 +141,6 @@ namespace Scripts
                     _timerToGameOver.SetTimer(0);
                 }
             }
-
-            var asteroid = other.gameObject.GetComponent<Asteroid>();
-            _body.velocity = new Vector2(_body.velocity.x, _damageVelocity);
-            _audio.PlayOneShot(_shipHit);
 
             if (_isLeftPressed)
             {

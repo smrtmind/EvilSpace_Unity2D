@@ -2355,7 +2355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &730930004
 Transform:
   m_ObjectHideFlags: 0
@@ -2379,14 +2379,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 730930003}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca0acfe6530e14547bb0c4c839afbe15, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b8294c205f2bd640bf60281b6db3fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _asteroids:
-  - {fileID: 141782021, guid: e5c4032338d22684980cc25580080215, type: 3}
-  - {fileID: 141782021, guid: f0a50f8607f47a54a80d99182669befb, type: 3}
-  - {fileID: 141782021, guid: 008b8f4e917043c40a7aca61e5156de3, type: 3}
-  _initialAsteroids: 5
+  _enemies:
+  - {fileID: 1207392628590953613, guid: 1b34317b3cbb632438a302810a84a5c1, type: 3}
+  - {fileID: 1207392628590953613, guid: 029d6eae32a1b69479da4919fea0e7df, type: 3}
+  - {fileID: 1207392628590953613, guid: 35f608d7858b1c24f88f9415892f7179, type: 3}
+  - {fileID: 1207392628590953613, guid: 495fb9034b52911469569540895d1736, type: 3}
+  - {fileID: 1207392628590953613, guid: 73aeb157cc4f0984496e1135bb777752, type: 3}
+  - {fileID: 1207392628590953613, guid: 383798c565964cc43882f86efa9c3236, type: 3}
+  - {fileID: 1207392628590953613, guid: 2a01c6fcd3e6b7f4daad141c1dcb7fd1, type: 3}
+  - {fileID: 1207392628590953613, guid: 5ed3ba2b493ef4a44b9d598bb7879f37, type: 3}
+  - {fileID: 1207392628590953613, guid: 3d926a059fb52224b82a4cf9b1f35d4f, type: 3}
+  - {fileID: 1207392628590953613, guid: 509892d84918db14786ebb3d03b865b5, type: 3}
+  - {fileID: 1207392628590953613, guid: e03fce5e122fbf746abb4c0a70af635a, type: 3}
+  - {fileID: 1207392628590953613, guid: 167172147b8d5da40abcefee392969b6, type: 3}
+  - {fileID: 1207392628590953613, guid: e74e6a3b07d777d4c9d397c3b0899f27, type: 3}
+  - {fileID: 1207392628590953613, guid: 254053b9caf1fb24e95867e42bb175af, type: 3}
+  - {fileID: 1207392628590953613, guid: 2ec51e9dee0be0042941635de599b00c, type: 3}
+  - {fileID: 1207392628590953613, guid: b560a335e612b674190c553b1e3b2df3, type: 3}
+  - {fileID: 1207392628590953613, guid: 6630beead55562142b4cedaeb9482d34, type: 3}
+  _initialEnemies: 0
   _spawnCooldown:
     _value: 5
 --- !u!4 &733551370 stripped
@@ -2774,9 +2788,9 @@ MonoBehaviour:
   - {fileID: 141782021, guid: e5c4032338d22684980cc25580080215, type: 3}
   - {fileID: 141782021, guid: f0a50f8607f47a54a80d99182669befb, type: 3}
   - {fileID: 141782021, guid: 008b8f4e917043c40a7aca61e5156de3, type: 3}
-  _initialAsteroids: 10
+  _initialAsteroids: 0
   _spawnCooldown:
-    _value: 3
+    _value: 10
 --- !u!1001 &834026509
 PrefabInstance:
   m_ObjectHideFlags: 0

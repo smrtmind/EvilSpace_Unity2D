@@ -151,6 +151,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 464338450936308994}
     m_Modifications:
+    - target: {fileID: 223953600127979693, guid: 350abb2569527d241a6bac32e0055da1,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 97af589987f77eb49ad9a706d45a5042,
+        type: 3}
+    - target: {fileID: 223953600127979693, guid: 350abb2569527d241a6bac32e0055da1,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211841053088475271, guid: 350abb2569527d241a6bac32e0055da1,
+        type: 3}
+      propertyPath: _clips.Array.data[0]._sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 97af589987f77eb49ad9a706d45a5042,
+        type: 3}
+    - target: {fileID: 1211841053088475271, guid: 350abb2569527d241a6bac32e0055da1,
+        type: 3}
+      propertyPath: _clips.Array.data[0]._sprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: e0dfe88f153ec2141b9ca6951e00d05e,
+        type: 3}
+    - target: {fileID: 1211841053088475271, guid: 350abb2569527d241a6bac32e0055da1,
+        type: 3}
+      propertyPath: _clips.Array.data[0]._sprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 803d6bead6049484e86bbb5150ce65eb,
+        type: 3}
     - target: {fileID: 4834782816005031343, guid: 350abb2569527d241a6bac32e0055da1,
         type: 3}
       propertyPath: m_Name
