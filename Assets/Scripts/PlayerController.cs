@@ -23,8 +23,8 @@ namespace Scripts
         [SerializeField] private AudioClip _shipHit;
 
         private readonly int LowHpKey = Animator.StringToHash("lowHp");
-        private readonly int LeftStarterKey = Animator.StringToHash("left-turn");
-        private readonly int RightStarterKey = Animator.StringToHash("right-turn");
+        private readonly int LeftTurnKey = Animator.StringToHash("left-turn");
+        private readonly int RightTurnKey = Animator.StringToHash("right-turn");
         private readonly int HitKey = Animator.StringToHash("is-hit");
         private readonly int HitLeftKey = Animator.StringToHash("is-hitLeft");
         private readonly int HitRightKey = Animator.StringToHash("is-hitRight");
@@ -62,20 +62,26 @@ namespace Scripts
             {
                 _body.angularVelocity = 1 * _rotationSpeed;
 
-                PlayAnimation(LeftStarterKey);
-                ActivateObject(_idleStarterFlameSecond);
+                SetAnimationStatus(true, LeftTurnKey);
+                SetAnimationStatus(false, RightTurnKey);
+
+                SetObjectStatus(false, _idleStarterFlameFirst);
+                SetObjectStatus(true, _idleStarterFlameSecond);
             }
             else if (_isRightPressed)
             {
                 _body.angularVelocity = -1 * _rotationSpeed;
 
-                PlayAnimation(RightStarterKey);
-                ActivateObject(_idleStarterFlameFirst);
+                SetAnimationStatus(false, LeftTurnKey);
+                SetAnimationStatus(true, RightTurnKey);
+
+                SetObjectStatus(true, _idleStarterFlameFirst);
+                SetObjectStatus(false, _idleStarterFlameSecond);
             }
             else
             {
-                PlayAnimation(disableAll: true);
-                ActivateObject(disableAll: true);
+                SetAnimationStatus(false, LeftTurnKey, RightTurnKey);
+                SetObjectStatus(false, _idleStarterFlameFirst, _idleStarterFlameSecond);
             }
 
             if (_isMovingForward)
@@ -83,32 +89,7 @@ namespace Scripts
                 Vector2 burstDelta = transform.up * _burstSpeed;
                 _body.velocity += burstDelta;
 
-                ActivateObject(disableAll: false);
-            }
-        }
-
-        private void PlayAnimation(int animation = default, bool disableAll = false)
-        {
-            _animator.SetBool(LeftStarterKey, false);
-            _animator.SetBool(RightStarterKey, false);
-
-            if (!disableAll)
-                _animator.SetBool(animation, true);
-        }
-
-        private void ActivateObject(GameObject go = null, bool disableAll = false)
-        {
-            SetGeneralState(false);
-
-            if (go != null)
-                go.SetActive(true);
-            else
-                SetGeneralState(disableAll ? false : true);
-
-            void SetGeneralState(bool state)
-            {
-                _idleStarterFlameFirst.SetActive(state);
-                _idleStarterFlameSecond.SetActive(state);
+                SetObjectStatus(true, _idleStarterFlameFirst, _idleStarterFlameSecond);
             }
         }
 
@@ -120,28 +101,30 @@ namespace Scripts
             _cameraShaker.ShakeCamera();
 
             if (_health.Health == 3)
-                _leftWingDamage.SetActive(true);
+            {
+                SetObjectStatus(true, _leftWingDamage);
+            }
+                
             if (_health.Health == 2)
-                _rightWingDamage.SetActive(true);
+            {
+                SetObjectStatus(true, _rightWingDamage);
+            }
+                
             if (_health.Health == 1)
             {
-                _bodyDamage.SetActive(true);
+                SetObjectStatus(true, _bodyDamage);
                 _animator.SetBool(LowHpKey, true);
             }
+
             if (_health.Health <= 0 && session.Tries > 0)
             {
-                EnableDisableObjects(false, _leftWingDamage, _rightWingDamage, _bodyDamage, _player);
-
-                //_leftWingDamage.SetActive(false);
-                //_rightWingDamage.SetActive(false);
-                //_bodyDamage.SetActive(false);
-                //_player.SetActive(false);
-
+                SetObjectStatus(false, _leftWingDamage, _rightWingDamage, _bodyDamage, _player);
                 _timerToContinue.SetTimer(0);
             }
+
             if (_health.Health <= 0 && session.Tries == 0)
             {
-                _player.SetActive(false);
+                SetObjectStatus(false, _player);
                 _mainTheme.Stop();
                 _timerToGameOver.SetTimer(0);
             }
@@ -164,7 +147,7 @@ namespace Scripts
                 _animator.SetTrigger(HitKey);
         }
 
-        private void EnableDisableObjects(bool state, params GameObject[] gos)
+        private void SetObjectStatus(bool state, params GameObject[] gos)
         {
             foreach (var go in gos)
             {
@@ -172,10 +155,18 @@ namespace Scripts
             }
         }
 
+        private void SetAnimationStatus(bool state, params int[] animations)
+        {
+            foreach (var animation in animations)
+            {
+                _animator.SetBool(animation, state);
+            }
+        }
+
         public void RemoveVisualDamage()
         {
             _animator.SetBool(LowHpKey, false);
-            EnableDisableObjects(false, _leftWingDamage, _rightWingDamage, _bodyDamage);
+            SetObjectStatus(false, _leftWingDamage, _rightWingDamage, _bodyDamage);
         }
     }
 }

@@ -487,7 +487,7 @@ MonoBehaviour:
   _laserHudValue: {fileID: 0}
   _reloadingSpeed:
     _value: 1
-  _bombReloadingDelay: 100
+  _bombReloadingDelay: 10
   _bombEffect: {fileID: 1556972870}
   _bombHudStatus: {fileID: 0}
 --- !u!1001 &650693989830369803
