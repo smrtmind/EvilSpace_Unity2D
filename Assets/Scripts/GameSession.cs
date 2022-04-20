@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 namespace Scripts
 {
@@ -7,42 +6,55 @@ namespace Scripts
     {
         [SerializeField] private int _tries;
         [SerializeField] private int _health;
-        [SerializeField] private int _score;
         [SerializeField] private HealthComponent _targetHp;
         [SerializeField] private AudioClip _oneUp;
+        [SerializeField] private SpawnComponent _levelUp;
 
         public int Tries => _tries;
         public int Health => _health;
         public int Score => _score;
 
-        private int stepToAddLife = 100;
+        private int _nextLvl = 100;
+        private int _xp;
+        private int _score;
+        private int _playerLvl = 1;
 
-        public void ModifyScore(int score)
+        public int NextLvl => _nextLvl;
+        public int XP => _xp;
+        public int PlayerLVL => _playerLvl;
+
+        public void ModifyXp(int xp)
         {
-            _score += score;
+            _score += xp;
+            _xp += xp;
         }
 
-        public void ResetScore()
-        {
-            _score = 0;
-        }
-
-        public void ModifyTries(int tries)
-        {
-            _tries += tries;
-        }
+        public void ModifyTries(int tries) => _tries += tries;
 
         private void Update()
         {
             _health = _targetHp.Health;
 
-            if (_score >= stepToAddLife)
+            if (_xp == _nextLvl)
             {
-                FindObjectOfType<AudioSource>().PlayOneShot(_oneUp);
-                ModifyTries(1);
-                _targetHp.RiseMaxHealth();
-                stepToAddLife *= 2;
+                LevelUp(0);
             }
+            else if (_xp > _nextLvl)
+            {
+                LevelUp(_xp - _nextLvl);
+            }
+        }
+
+        private void LevelUp(int currentXp)
+        {
+            FindObjectOfType<AudioSource>().PlayOneShot(_oneUp);
+            _xp = currentXp;
+            ModifyTries(1);
+            _targetHp.RiseMaxHealth();
+            _nextLvl *= 2;
+            _playerLvl++;
+
+            _levelUp.Spawn();
         }
     }
 }

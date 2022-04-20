@@ -9,7 +9,7 @@ namespace Scripts
         [SerializeField] private Cooldown _shootingDelay;
         [SerializeField] private Projectile _weapon;
         [SerializeField] private Transform _weaponSpawnPosition;
-        [SerializeField] private int _scorePerKill;
+        [SerializeField] private int _xpPerKill;
         [SerializeField] public SpawnComponent _viaBombExplosion;
 
         private Transform _player;
@@ -38,7 +38,7 @@ namespace Scripts
             if (player != null)
             {
                 _player = player.transform;
-            }   
+            }
             else
             {
                 return;
@@ -49,18 +49,11 @@ namespace Scripts
 
             Quaternion desiredRotation = Quaternion.Euler(0, 0, zAngle);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, _rotationSpeed * Time.deltaTime);
-
-            if (_shootingDelay.IsReady)
-            {
-                var projectile = Instantiate(_weapon, _weaponSpawnPosition.position, transform.rotation);
-                projectile.Launch(_bullet.velocity, transform.up);
-                _shootingDelay.Reset();
-            }
         }
 
         private void OnDestroy()
         {
-            _gameSession.ModifyScore(_scorePerKill);
+            _gameSession.ModifyXp(_xpPerKill);
         }
 
         private void OnCollisionEnter2D(Collision2D other)
@@ -69,11 +62,24 @@ namespace Scripts
             if (player)
             {
                 FindObjectOfType<CameraShaker>().RestoreValues();
-
-                _gameSession.ModifyScore(-100);
-                if (_gameSession.Score < 0)
-                    _gameSession.ResetScore();
             }
+        }
+
+        public void Shoot()
+        {
+            if (_shootingDelay.IsReady)
+            {
+                var projectile = Instantiate(_weapon, _weaponSpawnPosition.position, transform.rotation);
+                projectile.Launch(_bullet.velocity, transform.up);
+                _shootingDelay.Reset();
+            }
+        }
+
+        private void OnTriggerStay2D(Collider2D other)
+        {
+            var player = other.gameObject.GetComponent<PlayerController>();
+            if (player)
+                Shoot();
         }
     }
 }

@@ -39,7 +39,7 @@ namespace Scripts
             _player.RemoveVisualDamage();
 
             _maxHealth++;
-            _hud._healthBar.maxValue++;
+            _hud._HpBar.maxValue++;
             ResetHealth();
         }
 

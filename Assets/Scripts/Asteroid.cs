@@ -8,7 +8,7 @@ namespace Scripts
         [SerializeField] private float _maxSpeed = 5f;
         [SerializeField] private float _minRotation = 5f;
         [SerializeField] private float _maxRotation = 25;
-        [SerializeField] private int _scorePerKill;
+        [SerializeField] private int _xpPerKill;
         [SerializeField] public SpawnComponent _viaBombExplosion;
 
         private Rigidbody2D _body;
@@ -31,7 +31,7 @@ namespace Scripts
 
         private void OnDestroy()
         {
-            _gameSession.ModifyScore(_scorePerKill);
+            _gameSession.ModifyXp(_xpPerKill);
         }
 
         private void OnCollisionEnter2D(Collision2D other)
@@ -40,10 +40,6 @@ namespace Scripts
             if (player)
             {
                 FindObjectOfType<CameraShaker>().RestoreValues();
-
-                _gameSession.ModifyScore(-100);
-                if (_gameSession.Score < 0)
-                    _gameSession.ResetScore();
             }
         }
     }

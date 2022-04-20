@@ -305,6 +305,7 @@ MonoBehaviour:
   _minRotation: 20
   _maxRotation: 50
   _scorePerKill: 30
+  _xpPerKill: 30
   _viaBombExplosion: {fileID: 2436461235105000476}
 --- !u!114 &1269104711266798467
 MonoBehaviour:

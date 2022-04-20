@@ -24,6 +24,7 @@ namespace Scripts
         [SerializeField] private Cooldown _reloadingSpeed;
         [SerializeField] private int _bombReloadingDelay;
         [SerializeField] private SpawnComponent _bombEffect;
+        [SerializeField] private SpawnComponent _electroEffect;
         [SerializeField] private Text _bombHudStatus;
 
         private PlayerController _player;
@@ -88,6 +89,7 @@ namespace Scripts
             {
                 var cameraShaker = FindObjectOfType<CameraShaker>();
 
+                _electroEffect.Spawn();
                 _bombEffect.Spawn();
 
                 cameraShaker.SetDuration(1.2f);
