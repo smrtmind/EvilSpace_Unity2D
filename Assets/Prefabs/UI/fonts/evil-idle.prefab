@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8075584686468610792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8075584686468610804}
+  - component: {fileID: 8075584686468610805}
+  - component: {fileID: 8075584686468610806}
+  - component: {fileID: 8075584686468610807}
+  m_Layer: 0
+  m_Name: evil-idle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &8075584686468610804
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8075584686468610792}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -15.7466755, y: -1.5577483, z: 0}
+  m_LocalScale: {x: 0.9090909, y: 0.9090909, z: 0.9090909}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &8075584686468610805
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8075584686468610792}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -2059966085
+  m_SortingLayer: 4
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: 0642ef957f408cc458a5baf7f90a8871, type: 3}
+  m_Color: {r: 0.6226415, g: 0.14978638, b: 0.14978638, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 11, y: 4}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &8075584686468610806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8075584686468610792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7a614fffbf02141946a8622e3c1bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frameRate: 40
+  _clips:
+  - _name: 
+    _sprites:
+    - {fileID: 21300000, guid: 0642ef957f408cc458a5baf7f90a8871, type: 3}
+    - {fileID: 21300000, guid: 42eb0cf4a1732894bb126003240d903f, type: 3}
+    - {fileID: 21300000, guid: 8ab5b56a107288145a0c09ebe94b5df6, type: 3}
+    - {fileID: 21300000, guid: b4d73305312729f45916c35f6d4ea223, type: 3}
+    - {fileID: 21300000, guid: 140e3e7b0d20850479072334706924ea, type: 3}
+    - {fileID: 21300000, guid: fdbf4c17f34e80b4c9d4f29de38a5fc1, type: 3}
+    - {fileID: 21300000, guid: 00c5a62522ff0ae4aadacd2dd9b5b631, type: 3}
+    - {fileID: 21300000, guid: 560c34fca86b33546971783b7e44aad7, type: 3}
+    - {fileID: 21300000, guid: 340ff6d3c31f2b142ad83b07d2b1f61c, type: 3}
+    - {fileID: 21300000, guid: 61196390509947b44a5180fd8755f9c1, type: 3}
+    - {fileID: 21300000, guid: c31783b8cc09d5f448c704f8374436d6, type: 3}
+    - {fileID: 21300000, guid: 8a08b81ca66f8924b8bec8473516ecfc, type: 3}
+    - {fileID: 21300000, guid: aae66cff15de3464388375a8e2e9440e, type: 3}
+    - {fileID: 21300000, guid: ad4f150e0fb978c4ba1b3b8d8aaa373c, type: 3}
+    - {fileID: 21300000, guid: 4a9082811fb0cb94a9358a98095ad478, type: 3}
+    _loop: 1
+    _allowNextClip: 0
+    _onComplete:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8075584686468610807}
+          m_MethodName: DestroyObject
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &8075584686468610807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8075584686468610792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1a9b9dcd6ea5ea45b1537ed109bd2be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToDestroy: {fileID: 8075584686468610792}

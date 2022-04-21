@@ -245,7 +245,7 @@ Transform:
   - {fileID: 984287697}
   - {fileID: 1659929460}
   - {fileID: 820566342}
-  - {fileID: 730930004}
+  - {fileID: 1901716469}
   - {fileID: 215903719}
   - {fileID: 698451360}
   - {fileID: 1717620556}
@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 215903719}
   - component: {fileID: 215903720}
   m_Layer: 0
-  m_Name: StrongEnemiesSpawner
+  m_Name: LargeShipsSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -306,18 +306,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 215903718}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b8294c205f2bd640bf60281b6db3fc7, type: 3}
+  m_Script: {fileID: 11500000, guid: 41f9a4fa143f1774fab174fe79deba6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _enemies:
-  - {fileID: 1207392628590953613, guid: e03fce5e122fbf746abb4c0a70af635a, type: 3}
-  - {fileID: 1207392628590953613, guid: 167172147b8d5da40abcefee392969b6, type: 3}
-  - {fileID: 1207392628590953613, guid: 254053b9caf1fb24e95867e42bb175af, type: 3}
-  - {fileID: 1207392628590953613, guid: b560a335e612b674190c553b1e3b2df3, type: 3}
-  - {fileID: 1207392628590953613, guid: 6630beead55562142b4cedaeb9482d34, type: 3}
-  _initialEnemies: 0
+  - {fileID: 8229194066570239158, guid: e03fce5e122fbf746abb4c0a70af635a, type: 3}
+  - {fileID: 8229194066570239158, guid: 167172147b8d5da40abcefee392969b6, type: 3}
+  - {fileID: 8229194066570239158, guid: 254053b9caf1fb24e95867e42bb175af, type: 3}
+  - {fileID: 8229194066570239158, guid: b560a335e612b674190c553b1e3b2df3, type: 3}
+  - {fileID: 8229194066570239158, guid: 6630beead55562142b4cedaeb9482d34, type: 3}
+  _enemiesOnStart: 1
   _spawnCooldown:
-    _value: 5
+    _value: 15
 --- !u!1 &241768737
 GameObject:
   m_ObjectHideFlags: 0
@@ -1464,65 +1464,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 749536631274458951}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &730930003
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 730930004}
-  - component: {fileID: 730930005}
-  m_Layer: 0
-  m_Name: EnemiesSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &730930004
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 730930003}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 85553673}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &730930005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 730930003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b8294c205f2bd640bf60281b6db3fc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemies:
-  - {fileID: 1207392628590953613, guid: 1b34317b3cbb632438a302810a84a5c1, type: 3}
-  - {fileID: 1207392628590953613, guid: 029d6eae32a1b69479da4919fea0e7df, type: 3}
-  - {fileID: 1207392628590953613, guid: 35f608d7858b1c24f88f9415892f7179, type: 3}
-  - {fileID: 1207392628590953613, guid: 495fb9034b52911469569540895d1736, type: 3}
-  - {fileID: 1207392628590953613, guid: 73aeb157cc4f0984496e1135bb777752, type: 3}
-  - {fileID: 1207392628590953613, guid: 383798c565964cc43882f86efa9c3236, type: 3}
-  - {fileID: 1207392628590953613, guid: 2a01c6fcd3e6b7f4daad141c1dcb7fd1, type: 3}
-  - {fileID: 1207392628590953613, guid: 5ed3ba2b493ef4a44b9d598bb7879f37, type: 3}
-  - {fileID: 1207392628590953613, guid: 3d926a059fb52224b82a4cf9b1f35d4f, type: 3}
-  - {fileID: 1207392628590953613, guid: 509892d84918db14786ebb3d03b865b5, type: 3}
-  - {fileID: 1207392628590953613, guid: e74e6a3b07d777d4c9d397c3b0899f27, type: 3}
-  - {fileID: 1207392628590953613, guid: 2ec51e9dee0be0042941635de599b00c, type: 3}
-  _initialEnemies: 0
-  _spawnCooldown:
-    _value: 5
 --- !u!4 &733551370 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8803807425614955259, guid: 55ee7d36c05536843b68da1e3aeea4b5,
@@ -1731,12 +1672,12 @@ GameObject:
   - component: {fileID: 820566342}
   - component: {fileID: 820566343}
   m_Layer: 0
-  m_Name: AsteroidSpawner
+  m_Name: AsteroidsSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &820566342
 Transform:
   m_ObjectHideFlags: 0
@@ -1760,14 +1701,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 820566341}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca0acfe6530e14547bb0c4c839afbe15, type: 3}
+  m_Script: {fileID: 11500000, guid: 41f9a4fa143f1774fab174fe79deba6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _asteroids:
-  - {fileID: 141782021, guid: e5c4032338d22684980cc25580080215, type: 3}
-  - {fileID: 141782021, guid: f0a50f8607f47a54a80d99182669befb, type: 3}
-  - {fileID: 141782021, guid: 008b8f4e917043c40a7aca61e5156de3, type: 3}
-  _initialAsteroids: 2
+  _enemies:
+  - {fileID: 6926828201911177819, guid: e5c4032338d22684980cc25580080215, type: 3}
+  - {fileID: 6926828201911177819, guid: f0a50f8607f47a54a80d99182669befb, type: 3}
+  - {fileID: 6926828201911177819, guid: 008b8f4e917043c40a7aca61e5156de3, type: 3}
+  _enemiesOnStart: 3
   _spawnCooldown:
     _value: 5
 --- !u!1001 &834026509
@@ -3372,6 +3313,65 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1031081114}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1901716468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1901716469}
+  - component: {fileID: 1901716470}
+  m_Layer: 0
+  m_Name: ShipsSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1901716469
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901716468}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 85553673}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1901716470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901716468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f9a4fa143f1774fab174fe79deba6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemies:
+  - {fileID: 8229194066570239158, guid: 1b34317b3cbb632438a302810a84a5c1, type: 3}
+  - {fileID: 8229194066570239158, guid: 029d6eae32a1b69479da4919fea0e7df, type: 3}
+  - {fileID: 8229194066570239158, guid: 35f608d7858b1c24f88f9415892f7179, type: 3}
+  - {fileID: 8229194066570239158, guid: 495fb9034b52911469569540895d1736, type: 3}
+  - {fileID: 8229194066570239158, guid: 73aeb157cc4f0984496e1135bb777752, type: 3}
+  - {fileID: 8229194066570239158, guid: 383798c565964cc43882f86efa9c3236, type: 3}
+  - {fileID: 8229194066570239158, guid: 2a01c6fcd3e6b7f4daad141c1dcb7fd1, type: 3}
+  - {fileID: 8229194066570239158, guid: 5ed3ba2b493ef4a44b9d598bb7879f37, type: 3}
+  - {fileID: 8229194066570239158, guid: 3d926a059fb52224b82a4cf9b1f35d4f, type: 3}
+  - {fileID: 8229194066570239158, guid: 509892d84918db14786ebb3d03b865b5, type: 3}
+  - {fileID: 8229194066570239158, guid: e74e6a3b07d777d4c9d397c3b0899f27, type: 3}
+  - {fileID: 8229194066570239158, guid: 2ec51e9dee0be0042941635de599b00c, type: 3}
+  _enemiesOnStart: 2
+  _spawnCooldown:
+    _value: 10
 --- !u!4 &1924290554 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 464338450936308994, guid: 1116d437b4d373040b0ef99a9e3c6fef,
@@ -3757,6 +3757,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 749536631613661824, guid: d141b9f72fe22a04390eb57f186d2dab,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -220.58838
+      objectReference: {fileID: 0}
     - target: {fileID: 749536631689647450, guid: d141b9f72fe22a04390eb57f186d2dab,
         type: 3}
       propertyPath: m_Pivot.x
@@ -3867,10 +3872,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 749536631689647451, guid: d141b9f72fe22a04390eb57f186d2dab,
+    - target: {fileID: 749536631828937529, guid: d141b9f72fe22a04390eb57f186d2dab,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 749536632034454875, guid: d141b9f72fe22a04390eb57f186d2dab,
         type: 3}

@@ -182,6 +182,7 @@ GameObject:
   - component: {fileID: 1855397895818364425}
   - component: {fileID: 2578468292788464685}
   - component: {fileID: 8836664524562014425}
+  - component: {fileID: -7602931024853049450}
   m_Layer: 9
   m_Name: ship11
   m_TagString: Enemy
@@ -333,7 +334,6 @@ MonoBehaviour:
     _value: 1.5
   _weapon: {fileID: 475721933866399020, guid: 060a6bdfa5dbd3147919a7707de49778, type: 3}
   _weaponSpawnPosition: {fileID: 7209977439784247874}
-  _scorePerKill: 100
   _xpPerKill: 100
   _viaBombExplosion: {fileID: 3481807572543194065}
 --- !u!114 &1540678679572510921
@@ -503,6 +503,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 8229194066570239158}
+--- !u!114 &-7602931024853049450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8229194066570239158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18882bc27a457164897c6248fb5fec55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &776487206536458918
 PrefabInstance:
   m_ObjectHideFlags: 0

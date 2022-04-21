@@ -4,8 +4,8 @@ namespace Scripts
 {
     public class EnemySpawner : MonoBehaviour
     {
-        [SerializeField] private EnemyAI[] _enemies;
-        [SerializeField] private int _initialEnemies;
+        [SerializeField] private GameObject[] _enemies;
+        [SerializeField] private int _enemiesOnStart;
         [SerializeField] private Cooldown _spawnCooldown;
 
         private Bounds _screenBounds;
@@ -13,7 +13,9 @@ namespace Scripts
         private void Start()
         {
             _screenBounds = FindObjectOfType<ScreenBounds>().borderOfBounds;
-            SpawnEnemies(_initialEnemies);
+            SpawnEnemies(_enemiesOnStart);
+
+            _spawnCooldown.Reset();
         }
 
         private void Update()
@@ -41,7 +43,13 @@ namespace Scripts
 
             var randomSpawnPosition = new Vector3(xPosition, yPosition);
 
-            Instantiate(enemyPrefab, randomSpawnPosition, Quaternion.identity, transform);
+            var asteroid = enemyPrefab.GetComponent<Asteroid>();
+            if (asteroid)
+            {
+                Instantiate(asteroid, randomSpawnPosition, Quaternion.identity, transform).Launch();
+            }
+            else
+                Instantiate(enemyPrefab, randomSpawnPosition, Quaternion.identity, transform);
         }
     }
 }
