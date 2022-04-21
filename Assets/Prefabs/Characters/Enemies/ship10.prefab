@@ -56,7 +56,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 10}
+  m_Size: {x: 2, y: 10}
   m_EdgeRadius: 0
 --- !u!114 &4992641998254119807
 MonoBehaviour:
@@ -199,7 +199,7 @@ Transform:
   m_GameObject: {fileID: 8229194066570239158}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -45.073433, y: -3.6663435, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 2.6, y: 2.6, z: 1}
   m_Children:
   - {fileID: 6180382066919760923}
   - {fileID: 288999562690306337}
@@ -331,13 +331,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationSpeed: 100
-  _speed: 7
+  _speed: 5
   _shootingDelay:
     _value: 1.5
   _weapon: {fileID: 475721933866399020, guid: f0913ac9e83dea040ad31b0a9ff508cc, type: 3}
   _weaponSpawnPosition: {fileID: 7209977439784247874}
-  _xpPerKill: 100
-  _viaBombExplosion: {fileID: 3481807572543194065}
 --- !u!114 &1540678679572510921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,7 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14bae68aeaf10f14a90f186e6240f8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 10
+  _health: 12
   _onDamage:
     m_PersistentCalls:
       m_Calls:
@@ -477,6 +475,17 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1207392628590953613}
+          m_MethodName: AddXp
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 150
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0

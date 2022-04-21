@@ -12,7 +12,7 @@ namespace Scripts
             var mainCamera = FindObjectOfType<Camera>();
 
             var screenMin = mainCamera.ViewportToWorldPoint(Vector3.zero);
-            var screenMax = mainCamera.ViewportToWorldPoint(Vector3.one);
+            var screenMax = mainCamera.ViewportToWorldPoint(new Vector3(1.1f, 1.1f, 1.1f));
             
             var center = mainCamera.transform.position;
             Bounds = InitializeBounds(center, screenMin, screenMax);

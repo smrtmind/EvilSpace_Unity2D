@@ -150,6 +150,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 141782021}
+          m_MethodName: AddXp
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 10
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 7226413975653246018}
           m_MethodName: DestroyObject
           m_Mode: 1
@@ -304,9 +315,6 @@ MonoBehaviour:
   _maxSpeed: 10
   _minRotation: 20
   _maxRotation: 50
-  _scorePerKill: 10
-  _xpPerKill: 10
-  _viaBombExplosion: {fileID: 2436461235105000476}
 --- !u!114 &-1807843030473964553
 MonoBehaviour:
   m_ObjectHideFlags: 0

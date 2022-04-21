@@ -246,6 +246,7 @@ Transform:
   - {fileID: 1659929460}
   - {fileID: 820566342}
   - {fileID: 1901716469}
+  - {fileID: 250352630}
   - {fileID: 215903719}
   - {fileID: 698451360}
   - {fileID: 1717620556}
@@ -295,7 +296,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 85553673}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &215903720
 MonoBehaviour:
@@ -315,9 +316,9 @@ MonoBehaviour:
   - {fileID: 8229194066570239158, guid: 254053b9caf1fb24e95867e42bb175af, type: 3}
   - {fileID: 8229194066570239158, guid: b560a335e612b674190c553b1e3b2df3, type: 3}
   - {fileID: 8229194066570239158, guid: 6630beead55562142b4cedaeb9482d34, type: 3}
-  _enemiesOnStart: 1
+  _enemiesOnStart: 0
   _spawnCooldown:
-    _value: 15
+    _value: 20
 --- !u!1 &241768737
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,6 +350,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &250352629
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 250352630}
+  - component: {fileID: 250352631}
+  m_Layer: 0
+  m_Name: MediumShipsSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &250352630
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250352629}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 85553673}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &250352631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250352629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f9a4fa143f1774fab174fe79deba6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemies:
+  - {fileID: 8229194066570239158, guid: 1b34317b3cbb632438a302810a84a5c1, type: 3}
+  - {fileID: 8229194066570239158, guid: 35f608d7858b1c24f88f9415892f7179, type: 3}
+  - {fileID: 8229194066570239158, guid: 5ed3ba2b493ef4a44b9d598bb7879f37, type: 3}
+  - {fileID: 8229194066570239158, guid: 3d926a059fb52224b82a4cf9b1f35d4f, type: 3}
+  _enemiesOnStart: 0
+  _spawnCooldown:
+    _value: 15
 --- !u!4 &271427074 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8803807425614955259, guid: 7d421ab64c2745e4fae56ee569b14e02,
@@ -683,7 +735,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 85553673}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &414482102
 MonoBehaviour:
@@ -1428,7 +1480,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 85553673}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &698451361
 MonoBehaviour:
@@ -1708,7 +1760,7 @@ MonoBehaviour:
   - {fileID: 6926828201911177819, guid: e5c4032338d22684980cc25580080215, type: 3}
   - {fileID: 6926828201911177819, guid: f0a50f8607f47a54a80d99182669befb, type: 3}
   - {fileID: 6926828201911177819, guid: 008b8f4e917043c40a7aca61e5156de3, type: 3}
-  _enemiesOnStart: 3
+  _enemiesOnStart: 4
   _spawnCooldown:
     _value: 5
 --- !u!1001 &834026509
@@ -2052,7 +2104,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 85553673}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &964056122
 PrefabInstance:
@@ -3034,7 +3086,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 85553673}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1717620557
 MonoBehaviour:
@@ -3324,7 +3376,7 @@ GameObject:
   - component: {fileID: 1901716469}
   - component: {fileID: 1901716470}
   m_Layer: 0
-  m_Name: ShipsSpawner
+  m_Name: SmallShipsSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3357,19 +3409,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemies:
-  - {fileID: 8229194066570239158, guid: 1b34317b3cbb632438a302810a84a5c1, type: 3}
   - {fileID: 8229194066570239158, guid: 029d6eae32a1b69479da4919fea0e7df, type: 3}
-  - {fileID: 8229194066570239158, guid: 35f608d7858b1c24f88f9415892f7179, type: 3}
   - {fileID: 8229194066570239158, guid: 495fb9034b52911469569540895d1736, type: 3}
   - {fileID: 8229194066570239158, guid: 73aeb157cc4f0984496e1135bb777752, type: 3}
   - {fileID: 8229194066570239158, guid: 383798c565964cc43882f86efa9c3236, type: 3}
   - {fileID: 8229194066570239158, guid: 2a01c6fcd3e6b7f4daad141c1dcb7fd1, type: 3}
-  - {fileID: 8229194066570239158, guid: 5ed3ba2b493ef4a44b9d598bb7879f37, type: 3}
-  - {fileID: 8229194066570239158, guid: 3d926a059fb52224b82a4cf9b1f35d4f, type: 3}
   - {fileID: 8229194066570239158, guid: 509892d84918db14786ebb3d03b865b5, type: 3}
   - {fileID: 8229194066570239158, guid: e74e6a3b07d777d4c9d397c3b0899f27, type: 3}
   - {fileID: 8229194066570239158, guid: 2ec51e9dee0be0042941635de599b00c, type: 3}
-  _enemiesOnStart: 2
+  _enemiesOnStart: 3
   _spawnCooldown:
     _value: 10
 --- !u!4 &1924290554 stripped

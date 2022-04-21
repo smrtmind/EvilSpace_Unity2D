@@ -97,18 +97,18 @@ namespace Scripts
                 cameraShaker.ShakeCamera();
 
                 var asteroids = FindObjectsOfType<Asteroid>();
-                var ships = FindObjectsOfType<EnemyAI>();
-                var projectiles = FindObjectsOfType<Projectile>();
                 foreach (var asteroid in asteroids)
                 {
-                    asteroid._viaBombExplosion.Spawn();
-                    Destroy(asteroid.gameObject);
+                    asteroid.GetComponent<HealthComponent>().ModifyHealth(-100);
                 }
+
+                var ships = FindObjectsOfType<EnemyAI>();
                 foreach (var ship in ships)
                 {
-                    ship._viaBombExplosion.Spawn();
-                    Destroy(ship.gameObject);
+                    ship.GetComponent<HealthComponent>().ModifyHealth(-100);
                 }
+
+                var projectiles = FindObjectsOfType<Projectile>();
                 foreach (var projectile in projectiles)
                 {
                     Destroy(projectile.gameObject);

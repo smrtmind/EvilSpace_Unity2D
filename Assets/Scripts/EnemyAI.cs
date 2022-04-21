@@ -9,8 +9,6 @@ namespace Scripts
         [SerializeField] private Cooldown _shootingDelay;
         [SerializeField] private Projectile _weapon;
         [SerializeField] private Transform _weaponSpawnPosition;
-        [SerializeField] private int _xpPerKill;
-        [SerializeField] public SpawnComponent _viaBombExplosion;
 
         private Transform _player;
         private Rigidbody2D _bullet;
@@ -51,9 +49,9 @@ namespace Scripts
             transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, _rotationSpeed * Time.deltaTime);
         }
 
-        private void OnDestroy()
+        public void AddXp(int xp)
         {
-            _gameSession.ModifyXp(_xpPerKill);
+            _gameSession.ModifyXp(xp);
         }
 
         private void OnCollisionEnter2D(Collision2D other)

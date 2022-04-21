@@ -561,8 +561,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 8bf209c74511f544698858052f50773e, type: 3}
-    m_FontSize: 50
+    m_Font: {fileID: 12800000, guid: b7e657450002f66488e251c48adfc3c0, type: 3}
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -674,8 +674,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 8bf209c74511f544698858052f50773e, type: 3}
-    m_FontSize: 50
+    m_Font: {fileID: 12800000, guid: b7e657450002f66488e251c48adfc3c0, type: 3}
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -867,6 +867,8 @@ MonoBehaviour:
   - {fileID: 8229194066570239158, guid: 73aeb157cc4f0984496e1135bb777752, type: 3}
   - {fileID: 8229194066570239158, guid: 383798c565964cc43882f86efa9c3236, type: 3}
   - {fileID: 8229194066570239158, guid: 2a01c6fcd3e6b7f4daad141c1dcb7fd1, type: 3}
+  - {fileID: 8229194066570239158, guid: 5ed3ba2b493ef4a44b9d598bb7879f37, type: 3}
+  - {fileID: 8229194066570239158, guid: 3d926a059fb52224b82a4cf9b1f35d4f, type: 3}
   - {fileID: 8229194066570239158, guid: 509892d84918db14786ebb3d03b865b5, type: 3}
   - {fileID: 8229194066570239158, guid: e74e6a3b07d777d4c9d397c3b0899f27, type: 3}
   - {fileID: 8229194066570239158, guid: 2ec51e9dee0be0042941635de599b00c, type: 3}
@@ -1333,8 +1335,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 8bf209c74511f544698858052f50773e, type: 3}
-    m_FontSize: 50
+    m_Font: {fileID: 12800000, guid: b7e657450002f66488e251c48adfc3c0, type: 3}
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -1422,7 +1424,8 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 0d01016b22f688047b87bad8d93348b7,
+      type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 8652020a3a2e2bf4caa671fbe86a74a7, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -1743,10 +1746,11 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 0578efa0ae3d440428d7a8eb65407c39,
+      type: 3}
     m_PressedSprite: {fileID: 21300000, guid: a9651b46088268740a89a60a868f60bd, type: 3}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 21300000, guid: 7d4699392d95af648b3d8ac80bc6d5c8, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1941,10 +1945,11 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 9953ea436f282414d9af81d0121f8e36,
+      type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 4eb5bdd9db365f54fa30674a2aa74d03, type: 3}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 21300000, guid: f527ea7c6ca9ca047aff317f8612a0d5, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -2388,8 +2393,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 8bf209c74511f544698858052f50773e, type: 3}
-    m_FontSize: 50
+    m_Font: {fileID: 12800000, guid: b7e657450002f66488e251c48adfc3c0, type: 3}
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
