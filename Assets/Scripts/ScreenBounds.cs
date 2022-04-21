@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Scripts
 {
@@ -12,7 +13,18 @@ namespace Scripts
             var mainCamera = FindObjectOfType<Camera>();
 
             var screenMin = mainCamera.ViewportToWorldPoint(Vector3.zero);
-            var screenMax = mainCamera.ViewportToWorldPoint(new Vector3(1.1f, 1.1f, 1.1f));
+            Vector3 screenMax; 
+
+            var scene = SceneManager.GetActiveScene().name;
+            if (scene == "MainMenu")
+            {
+                screenMax = mainCamera.ViewportToWorldPoint(new Vector3(1.5f, 1.5f, 1.5f));
+            }
+            else
+            {
+                screenMax = mainCamera.ViewportToWorldPoint(new Vector3(1.1f, 1.1f, 1.1f));
+            }
+            
             
             var center = mainCamera.transform.position;
             Bounds = InitializeBounds(center, screenMin, screenMax);

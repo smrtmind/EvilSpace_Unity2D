@@ -99,13 +99,15 @@ namespace Scripts
                 var asteroids = FindObjectsOfType<Asteroid>();
                 foreach (var asteroid in asteroids)
                 {
-                    asteroid.GetComponent<HealthComponent>().ModifyHealth(-100);
+                    var asteroidHp = asteroid.GetComponent<HealthComponent>();
+                    asteroidHp.ModifyHealth(-asteroidHp.Health);
                 }
 
                 var ships = FindObjectsOfType<EnemyAI>();
                 foreach (var ship in ships)
                 {
-                    ship.GetComponent<HealthComponent>().ModifyHealth(-100);
+                    var shipHp = ship.GetComponent<HealthComponent>();
+                    shipHp.ModifyHealth(-shipHp.Health);
                 }
 
                 var projectiles = FindObjectsOfType<Projectile>();
@@ -166,7 +168,7 @@ namespace Scripts
             else
             {
                 _bombHudStatus.color = Color.green;
-                _bombHudStatus.text = $"ready";
+                _bombHudStatus.text = $"READY";
             }
         }
     }

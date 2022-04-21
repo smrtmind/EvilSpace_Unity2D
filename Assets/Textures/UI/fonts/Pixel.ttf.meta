@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8bf209c74511f544698858052f50773e
+guid: e6bbe81ed5c4bcc48aa9a71e61e0c614
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Spaceboy
+  fontName: Pixel
   fontNames:
-  - Spaceboy
+  - Pixel
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 3

@@ -11,7 +11,7 @@ namespace Scripts
         private void OnEnable()
         {
             var session = FindObjectOfType<GameSession>();
-            _scoreText.text = $"Final score: {session.Score} / LVL {session.PlayerLVL}";
+            _scoreText.text = $"FINAL SCORE: {session.Score} / LVL {session.PlayerLVL}";
 
             _gameOverSound.Play();
 

@@ -29,7 +29,12 @@ namespace Scripts
             _xp += xp;
         }
 
-        public void ModifyTries(int tries) => _tries += tries;
+        public void ModifyTries(int tries)
+        {
+            _tries += tries;
+            if (_tries < 0)
+                _tries = 0;
+        }
 
         private void Update()
         {

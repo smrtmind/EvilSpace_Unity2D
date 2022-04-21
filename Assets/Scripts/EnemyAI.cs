@@ -13,6 +13,7 @@ namespace Scripts
         private Transform _player;
         private Rigidbody2D _bullet;
         private GameSession _gameSession;
+        private float zAngle;
 
         private void Awake()
         {
@@ -22,9 +23,25 @@ namespace Scripts
         private void Start()
         {
             _bullet = GetComponent<Rigidbody2D>();
+
+            GetVectorDirection();
+            LookOnPlayerImmediate();
         }
 
         private void Update()
+        {
+            GetVectorDirection();
+
+            Quaternion desiredRotation = Quaternion.Euler(0, 0, zAngle);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, _rotationSpeed * Time.deltaTime);
+        }
+
+        private void LookOnPlayerImmediate()
+        {
+            transform.rotation = Quaternion.Euler(0, 0, zAngle);
+        }
+
+        private void GetVectorDirection()
         {
             Vector3 playerPosition = transform.position;
             Vector3 velocity = new Vector3(0, _speed * Time.deltaTime, 0);
@@ -43,10 +60,7 @@ namespace Scripts
             }
 
             Vector3 direction = _player.position - transform.position;
-            float zAngle = Mathf.Atan2(direction.normalized.y, direction.normalized.x) * Mathf.Rad2Deg - 90;
-
-            Quaternion desiredRotation = Quaternion.Euler(0, 0, zAngle);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, _rotationSpeed * Time.deltaTime);
+            zAngle = Mathf.Atan2(direction.normalized.y, direction.normalized.x) * Mathf.Rad2Deg - 90;
         }
 
         public void AddXp(int xp)

@@ -133,6 +133,9 @@ namespace Scripts
                 {
                     SetObjectStatus(false, _leftWingDamage, _rightWingDamage, _bodyDamage, gameObject);
                     _timerToContinue.SetTimer(0);
+
+                    transform.position = Vector3.zero;
+                    transform.rotation = Quaternion.identity;
                 }
                 else
                 {

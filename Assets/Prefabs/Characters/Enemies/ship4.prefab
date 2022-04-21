@@ -158,7 +158,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2059966085
   m_SortingLayer: 4
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 5016595900215389144, guid: bdf7737b58a098148b2729f3dab0d7f5,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14bae68aeaf10f14a90f186e6240f8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 12
+  _health: 18
   _onDamage:
     m_PersistentCalls:
       m_Calls:
@@ -610,6 +610,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504880718805529795, guid: 583bba63eb4142f4ca90cf13e8849960,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 583bba63eb4142f4ca90cf13e8849960, type: 3}
