@@ -21,12 +21,12 @@ namespace Scripts
         [Header("Sounds")]
         [SerializeField] private AudioClip _shipHit;
 
-        private readonly int LowHpKey = Animator.StringToHash("lowHp");
-        private readonly int LeftTurnKey = Animator.StringToHash("left-turn");
-        private readonly int RightTurnKey = Animator.StringToHash("right-turn");
-        private readonly int HitKey = Animator.StringToHash("is-hit");
-        private readonly int HitLeftKey = Animator.StringToHash("is-hitLeft");
-        private readonly int HitRightKey = Animator.StringToHash("is-hitRight");
+        private static readonly int LowHpKey = Animator.StringToHash("lowHp");
+        private static readonly int LeftTurnKey = Animator.StringToHash("left-turn");
+        private static readonly int RightTurnKey = Animator.StringToHash("right-turn");
+        private static readonly int HitKey = Animator.StringToHash("is-hit");
+        private static readonly int HitLeftKey = Animator.StringToHash("is-hitLeft");
+        private static readonly int HitRightKey = Animator.StringToHash("is-hitRight");
 
         public float burst { get; set; }
         public bool firstWeapon { get; set; }

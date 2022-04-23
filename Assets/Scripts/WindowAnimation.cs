@@ -4,15 +4,26 @@ namespace Scripts
 {
     public class WindowAnimation : MonoBehaviour
     {
+        [SerializeField] private GameObject _loading;
+        [SerializeField] private AudioSource _ambient;
+
         private Animator _animator;
+        private static readonly int RedButton = Animator.StringToHash("redButtonPressed");
         private static readonly int Show = Animator.StringToHash("show");
         private static readonly int LaunchGame = Animator.StringToHash("start");
-        private static readonly int Escape = Animator.StringToHash("exit");
 
         protected virtual void Start()
         {
             _animator = GetComponent<Animator>();
+        }
 
+        public void RedButtonPressed()
+        {
+            _animator.SetTrigger(RedButton);
+        }
+
+        public void ShowOptions()
+        {
             _animator.SetTrigger(Show);
         }
 
@@ -21,9 +32,10 @@ namespace Scripts
             _animator.SetTrigger(LaunchGame);
         }
 
-        public void Exit()
+        public void LoadingScreen()
         {
-            _animator.SetTrigger(Escape);
+            _loading.SetActive(true);
+            _ambient.Stop();
         }
 
         public virtual void OnCloseAnimationComplete()
