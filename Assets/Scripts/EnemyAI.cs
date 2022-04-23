@@ -13,7 +13,8 @@ namespace Scripts
         private Transform _player;
         private Rigidbody2D _bullet;
         private GameSession _gameSession;
-        private float zAngle;
+        private float _zAngle;
+        private bool _isStopped;
 
         private void Awake()
         {
@@ -30,15 +31,24 @@ namespace Scripts
 
         private void Update()
         {
-            GetVectorDirection();
+            if (_isStopped)
+            {
+                transform.position = transform.position;
+            } 
+            else
+            {
+                GetVectorDirection();
+            }
 
-            Quaternion desiredRotation = Quaternion.Euler(0, 0, zAngle);
+            //calculating rotation
+            Quaternion desiredRotation = Quaternion.Euler(0, 0, _zAngle);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, _rotationSpeed * Time.deltaTime);
+
         }
 
         private void LookOnPlayerImmediate()
         {
-            transform.rotation = Quaternion.Euler(0, 0, zAngle);
+            transform.rotation = Quaternion.Euler(0, 0, _zAngle);
         }
 
         private void GetVectorDirection()
@@ -60,7 +70,7 @@ namespace Scripts
             }
 
             Vector3 direction = _player.position - transform.position;
-            zAngle = Mathf.Atan2(direction.normalized.y, direction.normalized.x) * Mathf.Rad2Deg - 90;
+            _zAngle = Mathf.Atan2(direction.normalized.y, direction.normalized.x) * Mathf.Rad2Deg - 90;
         }
 
         public void AddXp(int xp)
@@ -93,5 +103,14 @@ namespace Scripts
             if (player)
                 Shoot();
         }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            var player = other.gameObject.GetComponent<PlayerController>();
+            if(player)
+                _isStopped = false;
+        }
+
+        public void StopMoving() => _isStopped = true;
     }
 }
