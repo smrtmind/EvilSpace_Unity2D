@@ -281,7 +281,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &215903719
 Transform:
   m_ObjectHideFlags: 0
@@ -314,9 +314,9 @@ MonoBehaviour:
   - {fileID: 8229194066570239158, guid: 254053b9caf1fb24e95867e42bb175af, type: 3}
   - {fileID: 8229194066570239158, guid: b560a335e612b674190c553b1e3b2df3, type: 3}
   - {fileID: 8229194066570239158, guid: 6630beead55562142b4cedaeb9482d34, type: 3}
-  _enemiesOnStart: 2
+  _enemiesOnStart: 1
   _spawnCooldown:
-    _value: 20
+    _value: 24
 --- !u!1 &241768737
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +364,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &250352630
 Transform:
   m_ObjectHideFlags: 0
@@ -396,9 +396,9 @@ MonoBehaviour:
   - {fileID: 8229194066570239158, guid: 35f608d7858b1c24f88f9415892f7179, type: 3}
   - {fileID: 8229194066570239158, guid: 5ed3ba2b493ef4a44b9d598bb7879f37, type: 3}
   - {fileID: 8229194066570239158, guid: 3d926a059fb52224b82a4cf9b1f35d4f, type: 3}
-  _enemiesOnStart: 3
+  _enemiesOnStart: 1
   _spawnCooldown:
-    _value: 15
+    _value: 16
 --- !u!4 &271427074 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8803807425614955259, guid: 7d421ab64c2745e4fae56ee569b14e02,
@@ -1846,7 +1846,7 @@ MonoBehaviour:
   - {fileID: 6926828201911177819, guid: e5c4032338d22684980cc25580080215, type: 3}
   - {fileID: 6926828201911177819, guid: f0a50f8607f47a54a80d99182669befb, type: 3}
   - {fileID: 6926828201911177819, guid: 008b8f4e917043c40a7aca61e5156de3, type: 3}
-  _enemiesOnStart: 5
+  _enemiesOnStart: 15
   _spawnCooldown:
     _value: 5
 --- !u!1001 &834026509
@@ -2037,7 +2037,7 @@ SpriteRenderer:
   m_SortingLayerID: -933757519
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 154601c0327288c4d9d991d532d16bd8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dc67a363797ef2842b3ae55f7f9fee61, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3211,6 +3211,10 @@ MonoBehaviour:
   _targetHp: {fileID: 1458417480}
   _oneUp: {fileID: 8300000, guid: 4e946b911b7419b469c07622506cf788, type: 3}
   _levelUp: {fileID: 1849235497}
+  _enemySpawners:
+  - {fileID: 1901716468}
+  - {fileID: 250352629}
+  - {fileID: 215903718}
 --- !u!1001 &1767315936
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3487,7 +3491,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1901716469
 Transform:
   m_ObjectHideFlags: 0
@@ -3523,9 +3527,9 @@ MonoBehaviour:
   - {fileID: 8229194066570239158, guid: 509892d84918db14786ebb3d03b865b5, type: 3}
   - {fileID: 8229194066570239158, guid: e74e6a3b07d777d4c9d397c3b0899f27, type: 3}
   - {fileID: 8229194066570239158, guid: 2ec51e9dee0be0042941635de599b00c, type: 3}
-  _enemiesOnStart: 1
+  _enemiesOnStart: 2
   _spawnCooldown:
-    _value: 10
+    _value: 8
 --- !u!4 &1924290554 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 464338450936308994, guid: 1116d437b4d373040b0ef99a9e3c6fef,

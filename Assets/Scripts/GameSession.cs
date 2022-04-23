@@ -10,18 +10,20 @@ namespace Scripts
         [SerializeField] private AudioClip _oneUp;
         [SerializeField] private SpawnComponent _levelUp;
 
+        [Space]
+        [SerializeField] private GameObject[] _enemySpawners;
+
+        private int _score;
+        private int _xp;
+        private int _playerLvl = 1;
+        private int _nextLvl = 500;
+
         public int Tries => _tries;
         public int Health => _health;
         public int Score => _score;
-
-        private int _nextLvl = 100;
-        private int _xp;
-        private int _score;
-        private int _playerLvl = 1;
-
-        public int NextLvl => _nextLvl;
         public int XP => _xp;
         public int PlayerLVL => _playerLvl;
+        public int NextLvl => _nextLvl;   
 
         public void ModifyXp(int xp)
         {
@@ -53,13 +55,58 @@ namespace Scripts
         private void LevelUp(int currentXp)
         {
             FindObjectOfType<AudioSource>().PlayOneShot(_oneUp);
-            _xp = currentXp;
-            ModifyTries(1);
-            _targetHp.RiseMaxHealth();
-            _nextLvl *= 2;
-            _playerLvl++;
-
             _levelUp.Spawn();
+
+            if (_playerLvl % 2 == 0)
+            {
+                var _isPowerUp = true;
+                if (_isPowerUp)
+                {
+                    FindObjectOfType<WeaponController>().PowerUp();
+                    _isPowerUp = false;
+                }
+            }
+
+            _playerLvl++;
+            _xp = currentXp;
+            _tries++;
+            _targetHp.RiseMaxHealth();
+            _nextLvl *= (int)1.5f;
+
+            PowerUpEnemies();
+        }
+
+        private void PowerUpEnemies()
+        {
+            switch (_playerLvl)
+            {
+                //small enemies
+                case 2:
+                    _enemySpawners[0].SetActive(true);
+                    break;
+                
+                //medium enemies
+                case 7:
+                    _enemySpawners[1].SetActive(true);
+                    break;
+
+                //large enemies
+                case 12:
+                    _enemySpawners[2].SetActive(true);
+                    break;
+            }
+
+            foreach (var spawner in _enemySpawners)
+            {
+                if (spawner.activeSelf)
+                {
+                    var enemyCooldown = spawner.GetComponent<EnemySpawner>().SpawnCooldown;
+                    enemyCooldown.Value -= 1.0f;
+
+                    if (enemyCooldown.Value <= 5.0f)
+                        enemyCooldown.Value = 5.0f;
+                }
+            }
         }
     }
 }

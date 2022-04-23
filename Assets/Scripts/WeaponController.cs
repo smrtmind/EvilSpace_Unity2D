@@ -34,6 +34,10 @@ namespace Scripts
         private int _defaultBombTimer;
         private bool _bombIsReady;
 
+        private float _maxGunFireDensity = 0.05f;
+        private float _maxLaserFireDensity = 0.1f;
+        private float _minBombReloadingTime = 30f;
+
         private void Awake()
         {
             _defaultBombTimer = _bombReloadingDelay;
@@ -64,7 +68,7 @@ namespace Scripts
                 projectile.Launch(_bullet.velocity, transform.up);
                 _gunAmmo--;
                 _gunShootingDelay.Reset();
-                
+
             }
 
             if (_player.secondWeapon && _laserShootingDelay.IsReady && !_player.firstWeapon && _laserAmmo > 0)
@@ -81,7 +85,7 @@ namespace Scripts
                 var projectile = Instantiate(_laser, _laserSpawnPosition.position, transform.rotation);
                 projectile.Launch(_bullet.velocity, transform.up);
                 _laserAmmo -= 2;
-                _laserShootingDelay.Reset();              
+                _laserShootingDelay.Reset();
             }
 
             //using mega bomb
@@ -129,7 +133,7 @@ namespace Scripts
                     if (_bombReloadingDelay == 0)
                     {
                         _bombIsReady = true;
-                    }  
+                    }
                 }
             }
 
@@ -170,6 +174,29 @@ namespace Scripts
                 _bombHudStatus.color = Color.green;
                 _bombHudStatus.text = $"READY";
             }
+        }
+
+        public void PowerUp()
+        {
+            //gun improvements
+            _gunAmmo += 20;
+            _gunShootingDelay.Value -= 0.01f;
+
+            if (_gunShootingDelay.Value <= _maxGunFireDensity)
+                _gunShootingDelay.Value = _maxGunFireDensity;
+
+            //laser improvements
+            _laserAmmo += 10;
+            _laserShootingDelay.Value -= 0.05f;
+
+            if (_laserShootingDelay.Value <= _maxLaserFireDensity)
+                _laserShootingDelay.Value = _maxLaserFireDensity;
+
+            //bomb improvements
+            _bombReloadingDelay -= (int)10f;
+
+            if (_bombReloadingDelay <= _minBombReloadingTime)
+                _bombReloadingDelay = (int)_minBombReloadingTime;
         }
     }
 }

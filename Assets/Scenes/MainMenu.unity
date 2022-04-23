@@ -688,7 +688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timers:
-  - Delay: 1.5
+  - Delay: 1.7
     OnTimesUp:
       m_PersistentCalls:
         m_Calls:

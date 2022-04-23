@@ -8,6 +8,8 @@ namespace Scripts
         [SerializeField] private int _enemiesOnStart;
         [SerializeField] private Cooldown _spawnCooldown;
 
+        public Cooldown SpawnCooldown => _spawnCooldown;
+
         private Bounds _screenBounds;
 
         private void Start()
