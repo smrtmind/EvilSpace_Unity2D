@@ -336,7 +336,7 @@ SpriteRenderer:
   m_SortingLayerID: -1894459725
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7634257862849334973, guid: f4315abd3bf43414687b1a643fe038af,
+  m_Sprite: {fileID: 4095314964041314385, guid: edafef7fe233cb84581748a02e935197,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -573,7 +573,7 @@ MonoBehaviour:
   _gunSpawnPosition: {fileID: 34140864}
   _gunHudValue: {fileID: 0}
   _laser: {fileID: 475721933866399020, guid: 33420252330e01f4fbe563aea75c3618, type: 3}
-  _laserAmmo: 20
+  _laserAmmo: 30
   _laserShootingDelay:
     _value: 1
   _laserReloadingDelay:

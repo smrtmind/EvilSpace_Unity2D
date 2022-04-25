@@ -38,7 +38,7 @@ namespace Scripts
         private float _maxGunFireDensity = 0.05f;
 
         private int _defaultLaserAmmo;
-        private const int _maxLaserAmmo = 200;
+        private const int _maxLaserAmmo = 300;
         private float _maxLaserFireDensity = 0.1f;
 
         private int _defaultBombTimer;
@@ -204,7 +204,7 @@ namespace Scripts
 
             //laser improvements
             if (_defaultLaserAmmo != _maxLaserAmmo)
-                _defaultLaserAmmo += 20;
+                _defaultLaserAmmo += 30;
 
             _laserShootingDelay.Value -= 0.1f;
 

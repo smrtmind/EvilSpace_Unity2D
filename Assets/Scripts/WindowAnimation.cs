@@ -6,7 +6,6 @@ namespace Scripts
     {
         [SerializeField] private GameObject _loading;
         [SerializeField] private AudioSource _ambient;
-        [SerializeField] private GameObject _versionText;
 
         private Animator _animator;
         private static readonly int RedButton = Animator.StringToHash("redButtonPressed");
@@ -37,7 +36,6 @@ namespace Scripts
         {
             _loading.SetActive(true);
             _ambient.Stop();
-            _versionText.SetActive(false);
         }
 
         public virtual void OnCloseAnimationComplete()

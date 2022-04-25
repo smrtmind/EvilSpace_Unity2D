@@ -80,10 +80,15 @@ namespace Scripts
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            var player = other.gameObject.GetComponent<PlayerController>();
-            if (player)
+            var isPlayer = other.gameObject.tag == "Player";
+            if (isPlayer)
             {
                 FindObjectOfType<CameraShaker>().RestoreValues();
+
+                var force = transform.position - other.transform.position;
+                force.Normalize();
+
+                FindObjectOfType<PlayerController>().GetComponent<Rigidbody2D>().AddForce(-force * 500);
             }
         }
 
@@ -99,15 +104,15 @@ namespace Scripts
 
         private void OnTriggerStay2D(Collider2D other)
         {
-            var player = other.gameObject.GetComponent<PlayerController>();
-            if (player)
+            var isPlayer = other.gameObject.tag == "Player";
+            if (isPlayer)
                 Shoot();
         }
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            var player = other.gameObject.GetComponent<PlayerController>();
-            if(player)
+            var isPlayer = other.gameObject.tag == "Player";
+            if (isPlayer)
                 _isStopped = false;
         }
 

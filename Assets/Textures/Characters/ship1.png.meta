@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: f4315abd3bf43414687b1a643fe038af
+guid: edafef7fe233cb84581748a02e935197
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4615970038333957888
-    second: ship1blue_redDMG_0
+      213: 5307185714078801750
+    second: ship1_0
   - first:
-      213: 7634257862849334973
-    second: ship1blue_redDMG_1
+      213: 4095314964041314385
+    second: ship1_1
   - first:
-      213: -7670680879126004978
-    second: ship1blue_redDMG_2
+      213: -1091988553708452406
+    second: ship1_2
   - first:
-      213: 6507711420590384597
-    second: ship1blue_redDMG_3
+      213: -7386198890260238599
+    second: ship1_3
   - first:
-      213: -95613771021159723
-    second: ship1blue_redDMG_4
+      213: -6573507377825457844
+    second: ship1_4
   - first:
-      213: 6405720555124750602
-    second: ship1blue_redDMG_5
+      213: -889572615256689124
+    second: ship1_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ship1blue_redDMG_0
+      name: ship1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 007edbc1b483f0040800000000000000
-      internalID: 4615970038333957888
+      spriteID: 65fd1bcc949e6a940800000000000000
+      internalID: 5307185714078801750
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ship1blue_redDMG_1
+      name: ship1_1
       rect:
         serializedVersion: 2
         x: 130
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dbe0ed6041552f960800000000000000
-      internalID: 7634257862849334973
+      spriteID: 150360b034b75d830800000000000000
+      internalID: 4095314964041314385
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ship1blue_redDMG_2
+      name: ship1_2
       rect:
         serializedVersion: 2
         x: 260
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0b3056a1644c8590800000000000000
-      internalID: -7670680879126004978
+      spriteID: ac54a6d223a78d0f0800000000000000
+      internalID: -1091988553708452406
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ship1blue_redDMG_3
+      name: ship1_3
       rect:
         serializedVersion: 2
         x: 0
@@ -182,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d5ea05ce09005a50800000000000000
-      internalID: 6507711420590384597
+      spriteID: 9fe67a93e33fe7990800000000000000
+      internalID: -7386198890260238599
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ship1blue_redDMG_4
+      name: ship1_4
       rect:
         serializedVersion: 2
         x: 130
@@ -203,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d2f5a628cf4caef0800000000000000
-      internalID: -95613771021159723
+      spriteID: c49dd482ed536c4a0800000000000000
+      internalID: -6573507377825457844
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ship1blue_redDMG_5
+      name: ship1_5
       rect:
         serializedVersion: 2
         x: 260
@@ -224,8 +224,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a09f0aae7e0b5e850800000000000000
-      internalID: 6405720555124750602
+      spriteID: c16b5b96b6a97a3f0800000000000000
+      internalID: -889572615256689124
       vertices: []
       indices: 
       edges: []

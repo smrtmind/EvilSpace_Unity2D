@@ -109,7 +109,11 @@ namespace Scripts
 
             if (!projectile)
             {
-                _body.velocity = new Vector2(_body.velocity.x, _damageVelocity);
+                //_body.velocity = new Vector2(_body.velocity.x, _damageVelocity);
+
+                //var magnitude = 1000;
+                //var force = -transform.position - other.transform.position;
+                //_body.AddForce(force.normalized * magnitude);
             }
 
             if (_health.Health == 3)

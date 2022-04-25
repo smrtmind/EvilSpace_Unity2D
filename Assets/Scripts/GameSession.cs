@@ -94,8 +94,8 @@ namespace Scripts
                     var enemyCooldown = spawner.GetComponent<EnemySpawner>().SpawnCooldown;
                     enemyCooldown.Value -= 1.0f;
 
-                    if (enemyCooldown.Value <= 3.0f)
-                        enemyCooldown.Value = 3.0f;
+                    if (enemyCooldown.Value <= 5.0f)
+                        enemyCooldown.Value = 5.0f;
                 }
             }
         }
