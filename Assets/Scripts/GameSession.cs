@@ -8,7 +8,6 @@ namespace Scripts
         [SerializeField] private int _health;
         [SerializeField] private HealthComponent _targetHp;
         [SerializeField] private AudioClip _oneUp;
-        [SerializeField] private SpawnComponent _levelUp;
 
         [Space]
         [SerializeField] private GameObject[] _enemySpawners;
@@ -55,7 +54,6 @@ namespace Scripts
         private void LevelUp(int currentXp)
         {
             FindObjectOfType<AudioSource>().PlayOneShot(_oneUp);
-            _levelUp.Spawn();
 
             FindObjectOfType<WeaponController>().PowerUp();             
 

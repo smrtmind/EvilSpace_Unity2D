@@ -16,6 +16,7 @@ namespace Scripts
         [SerializeField] private TimerComponent _timerToContinue;
         [SerializeField] private TimerComponent _timerToGameOver;
         [SerializeField] private AudioSource _mainTheme;
+        [SerializeField] public SpawnComponent _levelUpEffect;
 
         [Space]
         [Header("Sounds")]

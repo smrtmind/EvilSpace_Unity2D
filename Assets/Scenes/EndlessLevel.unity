@@ -314,7 +314,7 @@ MonoBehaviour:
   - {fileID: 8229194066570239158, guid: 254053b9caf1fb24e95867e42bb175af, type: 3}
   - {fileID: 8229194066570239158, guid: b560a335e612b674190c553b1e3b2df3, type: 3}
   - {fileID: 8229194066570239158, guid: 6630beead55562142b4cedaeb9482d34, type: 3}
-  _enemiesOnStart: 1
+  _enemiesOnStart: 3
   _spawnCooldown:
     _value: 21
 --- !u!1 &241768737
@@ -396,7 +396,7 @@ MonoBehaviour:
   - {fileID: 8229194066570239158, guid: 35f608d7858b1c24f88f9415892f7179, type: 3}
   - {fileID: 8229194066570239158, guid: 5ed3ba2b493ef4a44b9d598bb7879f37, type: 3}
   - {fileID: 8229194066570239158, guid: 3d926a059fb52224b82a4cf9b1f35d4f, type: 3}
-  _enemiesOnStart: 1
+  _enemiesOnStart: 3
   _spawnCooldown:
     _value: 16
 --- !u!4 &271427074 stripped
@@ -3210,7 +3210,6 @@ MonoBehaviour:
   _health: 5
   _targetHp: {fileID: 1458417480}
   _oneUp: {fileID: 8300000, guid: 4e946b911b7419b469c07622506cf788, type: 3}
-  _levelUp: {fileID: 1849235497}
   _enemySpawners:
   - {fileID: 1901716468}
   - {fileID: 250352629}
@@ -3457,18 +3456,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 415879513eb223d43b0f8a3a4ce313eb, type: 3}
---- !u!114 &1849235497 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1849235497, guid: 831a4684c68ba2849b3967481766a041,
-    type: 3}
-  m_PrefabInstance: {fileID: 3384156269728427724}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a523f1eaf8b31c4aa334dcbdb8b15b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1860020116 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8803807425614955259, guid: 7d421ab64c2745e4fae56ee569b14e02,
@@ -3527,7 +3514,7 @@ MonoBehaviour:
   - {fileID: 8229194066570239158, guid: 509892d84918db14786ebb3d03b865b5, type: 3}
   - {fileID: 8229194066570239158, guid: e74e6a3b07d777d4c9d397c3b0899f27, type: 3}
   - {fileID: 8229194066570239158, guid: 2ec51e9dee0be0042941635de599b00c, type: 3}
-  _enemiesOnStart: 2
+  _enemiesOnStart: 3
   _spawnCooldown:
     _value: 11
 --- !u!4 &1924290554 stripped

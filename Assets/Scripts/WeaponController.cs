@@ -27,28 +27,35 @@ namespace Scripts
         [SerializeField] private SpawnComponent _electroEffect;
         [SerializeField] private Text _bombHudStatus;
 
-        private PlayerController _player;
-        private Rigidbody2D _bullet;
-        private int _maxGunAmmo;
-        private int _maxLaserAmmo;
-        private int _defaultBombTimer;
-        private bool _bombIsReady;
+        [Space]
+        [SerializeField] private GameObject _shield;
 
+        private PlayerController _player;
+        private Rigidbody2D _bullet;            
+
+        private int _defaultGunAmmo;
+        private const int _maxGunAmmo = 400;
         private float _maxGunFireDensity = 0.05f;
+
+        private int _defaultLaserAmmo;
+        private const int _maxLaserAmmo = 200;
         private float _maxLaserFireDensity = 0.1f;
-        private float _minBombReloadingTime = 30f;
+
+        private int _defaultBombTimer;
+        private float _minBombTimer = 30f;
+        private bool _bombIsReady;
 
         private void Awake()
         {
-            _maxGunAmmo = _gunAmmo;
-            _maxLaserAmmo = _laserAmmo;
+            _defaultGunAmmo = _gunAmmo;
+            _defaultLaserAmmo = _laserAmmo;
             _defaultBombTimer = _bombReloadingDelay;
         }
 
         private void Start()
         {
-            _gunAmmo = _maxGunAmmo;
-            _laserAmmo = _maxLaserAmmo;
+            _gunAmmo = _defaultGunAmmo;
+            _laserAmmo = _defaultLaserAmmo;
             _bombReloadingDelay = _defaultBombTimer;
 
             _player = GetComponent<PlayerController>();
@@ -61,7 +68,7 @@ namespace Scripts
             {
                 if (_laserReloadingDelay.IsReady)
                 {
-                    if (_laserAmmo != _maxLaserAmmo)
+                    if (_laserAmmo != _defaultLaserAmmo)
                     {
                         _laserAmmo += 2;
                         _laserReloadingDelay.Reset();
@@ -79,7 +86,7 @@ namespace Scripts
             {
                 if (_gunReloadingDelay.IsReady)
                 {
-                    if (_gunAmmo != _maxGunAmmo)
+                    if (_gunAmmo != _defaultGunAmmo)
                     {
                         _gunAmmo++;
                         _gunReloadingDelay.Reset();
@@ -145,7 +152,7 @@ namespace Scripts
             {
                 if (_laserReloadingDelay.IsReady)
                 {
-                    if (_laserAmmo != _maxLaserAmmo)
+                    if (_laserAmmo != _defaultLaserAmmo)
                     {
                         _laserAmmo += 2;
                         _laserReloadingDelay.Reset();
@@ -154,7 +161,7 @@ namespace Scripts
 
                 if (_gunReloadingDelay.IsReady)
                 {
-                    if (_gunAmmo != _maxGunAmmo)
+                    if (_gunAmmo != _defaultGunAmmo)
                     {
                         _gunAmmo++;
                         _gunReloadingDelay.Reset();
@@ -182,15 +189,23 @@ namespace Scripts
 
         public void PowerUp()
         {
+            _shield.SetActive(true);
+            _shield.GetComponent<TimerComponent>().SetTimer(0);
+            _player._levelUpEffect.Spawn();
+
             //gun improvements
-            _maxGunAmmo += 20;
+            if (_defaultGunAmmo != _maxGunAmmo)
+                _defaultGunAmmo += 40;
+
             _gunShootingDelay.Value -= 0.01f;
 
             if (_gunShootingDelay.Value <= _maxGunFireDensity)
                 _gunShootingDelay.Value = _maxGunFireDensity;
 
             //laser improvements
-            _maxLaserAmmo += 20;
+            if (_defaultLaserAmmo != _maxLaserAmmo)
+                _defaultLaserAmmo += 20;
+
             _laserShootingDelay.Value -= 0.1f;
 
             if (_laserShootingDelay.Value <= _maxLaserFireDensity)
@@ -199,8 +214,8 @@ namespace Scripts
             //bomb improvements
             _defaultBombTimer -= (int)10f;
 
-            if (_defaultBombTimer <= _minBombReloadingTime)
-                _defaultBombTimer = (int)_minBombReloadingTime;
+            if (_defaultBombTimer <= _minBombTimer)
+                _defaultBombTimer = (int)_minBombTimer;
         }
     }
 }
