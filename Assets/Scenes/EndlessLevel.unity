@@ -316,7 +316,7 @@ MonoBehaviour:
   - {fileID: 8229194066570239158, guid: 6630beead55562142b4cedaeb9482d34, type: 3}
   _enemiesOnStart: 1
   _spawnCooldown:
-    _value: 24
+    _value: 21
 --- !u!1 &241768737
 GameObject:
   m_ObjectHideFlags: 0
@@ -3529,7 +3529,7 @@ MonoBehaviour:
   - {fileID: 8229194066570239158, guid: 2ec51e9dee0be0042941635de599b00c, type: 3}
   _enemiesOnStart: 2
   _spawnCooldown:
-    _value: 8
+    _value: 11
 --- !u!4 &1924290554 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 464338450936308994, guid: 1116d437b4d373040b0ef99a9e3c6fef,

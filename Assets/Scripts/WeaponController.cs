@@ -40,13 +40,17 @@ namespace Scripts
 
         private void Awake()
         {
-            _defaultBombTimer = _bombReloadingDelay;
             _maxGunAmmo = _gunAmmo;
             _maxLaserAmmo = _laserAmmo;
+            _defaultBombTimer = _bombReloadingDelay;
         }
 
         private void Start()
         {
+            _gunAmmo = _maxGunAmmo;
+            _laserAmmo = _maxLaserAmmo;
+            _bombReloadingDelay = _defaultBombTimer;
+
             _player = GetComponent<PlayerController>();
             _bullet = GetComponent<Rigidbody2D>();
         }
@@ -179,24 +183,24 @@ namespace Scripts
         public void PowerUp()
         {
             //gun improvements
-            _gunAmmo += 20;
+            _maxGunAmmo += 20;
             _gunShootingDelay.Value -= 0.01f;
 
             if (_gunShootingDelay.Value <= _maxGunFireDensity)
                 _gunShootingDelay.Value = _maxGunFireDensity;
 
             //laser improvements
-            _laserAmmo += 10;
-            _laserShootingDelay.Value -= 0.05f;
+            _maxLaserAmmo += 20;
+            _laserShootingDelay.Value -= 0.1f;
 
             if (_laserShootingDelay.Value <= _maxLaserFireDensity)
                 _laserShootingDelay.Value = _maxLaserFireDensity;
 
             //bomb improvements
-            _bombReloadingDelay -= (int)10f;
+            _defaultBombTimer -= (int)10f;
 
-            if (_bombReloadingDelay <= _minBombReloadingTime)
-                _bombReloadingDelay = (int)_minBombReloadingTime;
+            if (_defaultBombTimer <= _minBombReloadingTime)
+                _defaultBombTimer = (int)_minBombReloadingTime;
         }
     }
 }

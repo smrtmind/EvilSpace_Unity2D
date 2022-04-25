@@ -563,7 +563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gun: {fileID: 475721933866399020, guid: c452583892f964948998169502f98a1c, type: 3}
-  _gunAmmo: 50
+  _gunAmmo: 100
   _gunShootingDelay:
     _value: 0.15
   _gunReloadingDelay:
@@ -571,16 +571,16 @@ MonoBehaviour:
   _gunSpawnPosition: {fileID: 34140864}
   _gunHudValue: {fileID: 0}
   _laser: {fileID: 475721933866399020, guid: 33420252330e01f4fbe563aea75c3618, type: 3}
-  _laserAmmo: 20
+  _laserAmmo: 30
   _laserShootingDelay:
     _value: 1
   _laserReloadingDelay:
-    _value: 2
+    _value: 0.5
   _laserSpawnPosition: {fileID: 112501871}
   _laserHudValue: {fileID: 0}
   _reloadingSpeed:
     _value: 1
-  _bombReloadingDelay: 200
+  _bombReloadingDelay: 150
   _bombEffect: {fileID: 1556972870}
   _electroEffect: {fileID: 884646618}
   _bombHudStatus: {fileID: 0}

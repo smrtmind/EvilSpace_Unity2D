@@ -57,21 +57,14 @@ namespace Scripts
             FindObjectOfType<AudioSource>().PlayOneShot(_oneUp);
             _levelUp.Spawn();
 
-            if (_playerLvl % 2 == 0)
-            {
-                var _isPowerUp = true;
-                if (_isPowerUp)
-                {
-                    FindObjectOfType<WeaponController>().PowerUp();
-                    _isPowerUp = false;
-                }
-            }
+            FindObjectOfType<WeaponController>().PowerUp();             
 
             _playerLvl++;
             _xp = currentXp;
             _tries++;
             _targetHp.RiseMaxHealth();
-            _nextLvl *= (int)1.5f;
+
+            _nextLvl = (((_nextLvl / 100) * 20) + _nextLvl);
 
             PowerUpEnemies();
         }
@@ -84,14 +77,14 @@ namespace Scripts
                 case 2:
                     _enemySpawners[0].SetActive(true);
                     break;
-                
+
                 //medium enemies
-                case 7:
+                case 4:
                     _enemySpawners[1].SetActive(true);
                     break;
 
                 //large enemies
-                case 12:
+                case 6:
                     _enemySpawners[2].SetActive(true);
                     break;
             }
@@ -103,8 +96,8 @@ namespace Scripts
                     var enemyCooldown = spawner.GetComponent<EnemySpawner>().SpawnCooldown;
                     enemyCooldown.Value -= 1.0f;
 
-                    if (enemyCooldown.Value <= 5.0f)
-                        enemyCooldown.Value = 5.0f;
+                    if (enemyCooldown.Value <= 3.0f)
+                        enemyCooldown.Value = 3.0f;
                 }
             }
         }
