@@ -34,7 +34,7 @@ namespace Scripts
         private Rigidbody2D _bullet;            
 
         private int _defaultGunAmmo;
-        private const int _maxGunAmmo = 400;
+        private const int _maxGunAmmo = 600;
         private float _maxGunFireDensity = 0.05f;
 
         private int _defaultLaserAmmo;
@@ -70,14 +70,14 @@ namespace Scripts
                 {
                     if (_laserAmmo != _defaultLaserAmmo)
                     {
-                        _laserAmmo += 2;
+                        _laserAmmo++;
                         _laserReloadingDelay.Reset();
                     }
                 }
 
                 var projectile = Instantiate(_gun, _gunSpawnPosition.position, transform.rotation);
                 projectile.Launch(_bullet.velocity, transform.up);
-                _gunAmmo--;
+                _gunAmmo -= 2;
                 _gunShootingDelay.Reset();
 
             }
@@ -88,14 +88,14 @@ namespace Scripts
                 {
                     if (_gunAmmo != _defaultGunAmmo)
                     {
-                        _gunAmmo++;
+                        _gunAmmo += 2;
                         _gunReloadingDelay.Reset();
                     }
                 }
 
                 var projectile = Instantiate(_laser, _laserSpawnPosition.position, transform.rotation);
                 projectile.Launch(_bullet.velocity, transform.up);
-                _laserAmmo -= 2;
+                _laserAmmo--;
                 _laserShootingDelay.Reset();
             }
 
@@ -154,7 +154,7 @@ namespace Scripts
                 {
                     if (_laserAmmo != _defaultLaserAmmo)
                     {
-                        _laserAmmo += 2;
+                        _laserAmmo++;
                         _laserReloadingDelay.Reset();
                     }
                 }
@@ -163,7 +163,7 @@ namespace Scripts
                 {
                     if (_gunAmmo != _defaultGunAmmo)
                     {
-                        _gunAmmo++;
+                        _gunAmmo += 2;
                         _gunReloadingDelay.Reset();
                     }
                 }
@@ -195,7 +195,7 @@ namespace Scripts
 
             //gun improvements
             if (_defaultGunAmmo != _maxGunAmmo)
-                _defaultGunAmmo += 40;
+                _defaultGunAmmo += 60;
 
             _gunShootingDelay.Value -= 0.01f;
 
@@ -216,6 +216,8 @@ namespace Scripts
 
             if (_defaultBombTimer <= _minBombTimer)
                 _defaultBombTimer = (int)_minBombTimer;
+
+            FindObjectOfType<GameSession>()._isLevelUp = false;
         }
     }
 }

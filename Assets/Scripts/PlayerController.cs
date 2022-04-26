@@ -107,15 +107,6 @@ namespace Scripts
                 FindObjectOfType<CameraShaker>().RestoreValues();
             }
 
-            if (!projectile)
-            {
-                //_body.velocity = new Vector2(_body.velocity.x, _damageVelocity);
-
-                //var magnitude = 1000;
-                //var force = -transform.position - other.transform.position;
-                //_body.AddForce(force.normalized * magnitude);
-            }
-
             if (_health.Health == 3)
             {
                 SetObjectStatus(true, _leftWingDamage);
@@ -132,7 +123,7 @@ namespace Scripts
                 SetAnimationStatus(true, LowHpKey);
             }
 
-            if (_health.Health <= 0)
+            if (_health.Health <= 0 && !FindObjectOfType<GameSession>()._isLevelUp)
             {
                 if (session.Tries > 0)
                 {

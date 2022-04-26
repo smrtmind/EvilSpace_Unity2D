@@ -3214,6 +3214,7 @@ MonoBehaviour:
   - {fileID: 1901716468}
   - {fileID: 250352629}
   - {fileID: 215903718}
+  _isLevelUp: 0
 --- !u!1001 &1767315936
 PrefabInstance:
   m_ObjectHideFlags: 0

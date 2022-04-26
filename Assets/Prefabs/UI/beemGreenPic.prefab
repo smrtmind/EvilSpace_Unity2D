@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 223953600127979693}
   - component: {fileID: 1211841053088475271}
   m_Layer: 0
-  m_Name: twinLaserPic
+  m_Name: beemGreenPic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 4834782816005031343}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.87883, y: -102.20393, z: 0}
-  m_LocalScale: {x: 9, y: 15, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -71,12 +71,13 @@ SpriteRenderer:
   m_SortingLayerID: -933757519
   m_SortingLayer: 1
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: b8894512b21966941a0517eede31f7e3, type: 3}
+  m_Sprite: {fileID: 8638179765159464754, guid: 48177bb58af29964b869719f11369ba3,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.24, y: 0.17}
+  m_Size: {x: 0.16, y: 0.54}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -98,9 +99,9 @@ MonoBehaviour:
   _clips:
   - _name: idle
     _sprites:
-    - {fileID: 21300000, guid: b8894512b21966941a0517eede31f7e3, type: 3}
-    - {fileID: 21300000, guid: fc1d6885d8187eb4790514eca72a4b02, type: 3}
-    - {fileID: 21300000, guid: 2d698711b02da134d86246372d686995, type: 3}
+    - {fileID: 8638179765159464754, guid: 48177bb58af29964b869719f11369ba3, type: 3}
+    - {fileID: -8751963200127747679, guid: 48177bb58af29964b869719f11369ba3, type: 3}
+    - {fileID: 1242003652515155774, guid: 48177bb58af29964b869719f11369ba3, type: 3}
     _loop: 1
     _allowNextClip: 0
     _onComplete:

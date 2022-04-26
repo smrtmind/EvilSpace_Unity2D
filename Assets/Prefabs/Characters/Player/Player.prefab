@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 34140863}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.615, z: 0}
+  m_LocalPosition: {x: 0, y: 0.209, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3384156270070165762}
@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 112501871}
   m_Layer: 8
-  m_Name: TwinLaserSpawnPosition
+  m_Name: LaserSpawnPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112501870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.331, z: 0}
+  m_LocalPosition: {x: 0, y: 0.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3384156270070165762}
@@ -565,19 +565,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gun: {fileID: 475721933866399020, guid: c452583892f964948998169502f98a1c, type: 3}
-  _gunAmmo: 40
+  _gunAmmo: 60
   _gunShootingDelay:
     _value: 0.15
   _gunReloadingDelay:
     _value: 0.2
   _gunSpawnPosition: {fileID: 34140864}
   _gunHudValue: {fileID: 0}
-  _laser: {fileID: 475721933866399020, guid: 33420252330e01f4fbe563aea75c3618, type: 3}
+  _laser: {fileID: 475721933866399020, guid: 2594899881cfea04d8d6b954cfa0e7a7, type: 3}
   _laserAmmo: 30
   _laserShootingDelay:
     _value: 1
   _laserReloadingDelay:
-    _value: 0.5
+    _value: 0.4
   _laserSpawnPosition: {fileID: 112501871}
   _laserHudValue: {fileID: 0}
   _reloadingSpeed:
@@ -1013,6 +1013,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3384156270070165762}
     m_Modifications:
+    - target: {fileID: 1083047496798185978, guid: 86f4458858e4fa2488db6ca10fc2be45,
+        type: 3}
+      propertyPath: _timers.Array.data[0].Delay
+      value: 100000
+      objectReference: {fileID: 0}
     - target: {fileID: 3839826120160438654, guid: 86f4458858e4fa2488db6ca10fc2be45,
         type: 3}
       propertyPath: m_Name

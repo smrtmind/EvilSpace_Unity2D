@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4059535899912441121}
   - component: {fileID: 7487610472582434760}
   - component: {fileID: 5254166440082854835}
-  - component: {fileID: 383093542609127188}
+  - component: {fileID: 4042043050675100050}
   - component: {fileID: 5031865173122266621}
   - component: {fileID: 4479025450026890554}
   - component: {fileID: 7981707784934544515}
@@ -34,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 6764601004572402636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -46.453857, y: -7.2591543, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.11, y: 0.11}
+  m_Size: {x: 0.55, y: 0.1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -101,13 +101,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7a614fffbf02141946a8622e3c1bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _frameRate: 10
+  _frameRate: 30
   _clips:
   - _name: 
     _sprites:
     - {fileID: 21300000, guid: f5f9e95d594509d41940036e19a30815, type: 3}
     - {fileID: 21300000, guid: f4248826fc3a55b4aa9f0c5570e43b73, type: 3}
     - {fileID: 21300000, guid: 166e5e8c3c2a7ec409a958b4ae8d144a, type: 3}
+    - {fileID: 21300000, guid: 462382870bcf4da4eb001bf39c455520, type: 3}
     _loop: 1
     _allowNextClip: 0
     _onComplete:
@@ -126,8 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 6764601004572402636}
---- !u!58 &383093542609127188
-CircleCollider2D:
+--- !u!70 &4042043050675100050
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -139,9 +140,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.055
+  m_Offset: {x: 0.000075507174, y: -9.001156e-12}
+  m_Size: {x: 0.55090684, y: 0.100002185}
+  m_Direction: 1
 --- !u!50 &5031865173122266621
 Rigidbody2D:
   serializedVersion: 4

@@ -16,6 +16,7 @@ namespace Scripts
         private int _xp;
         private int _playerLvl = 1;
         private int _nextLvl = 500;
+        public bool _isLevelUp;
 
         public int Tries => _tries;
         public int Health => _health;
@@ -53,6 +54,8 @@ namespace Scripts
 
         private void LevelUp(int currentXp)
         {
+            _isLevelUp = true;
+
             FindObjectOfType<AudioSource>().PlayOneShot(_oneUp);
 
             FindObjectOfType<WeaponController>().PowerUp();             

@@ -47,7 +47,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 4
 --- !u!114 &4057522102236656736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -615,6 +615,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: starterFlameOrange
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503534339651332497, guid: 583bba63eb4142f4ca90cf13e8849960,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8162285218936129171, guid: 583bba63eb4142f4ca90cf13e8849960,
         type: 3}

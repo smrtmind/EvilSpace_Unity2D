@@ -12,14 +12,14 @@ GameObject:
   - component: {fileID: 4059535899912441121}
   - component: {fileID: 7487610472582434760}
   - component: {fileID: 5254166440082854835}
-  - component: {fileID: 8418739601779119901}
+  - component: {fileID: 2039925710981863102}
   - component: {fileID: 5031865173122266621}
   - component: {fileID: 4479025450026890554}
   - component: {fileID: 7981707784934544515}
   - component: {fileID: 5655042163995265754}
   - component: {fileID: 475721933866399020}
   m_Layer: 11
-  m_Name: twinLaserGreen
+  m_Name: greenBeem
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 6764601004572402636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 16, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -78,12 +78,13 @@ SpriteRenderer:
   m_SortingLayerID: -2059966085
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 97af589987f77eb49ad9a706d45a5042, type: 3}
+  m_Sprite: {fileID: 8638179765159464754, guid: 48177bb58af29964b869719f11369ba3,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.24, y: 0.17}
+  m_Size: {x: 0.24, y: 0.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -101,13 +102,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7a614fffbf02141946a8622e3c1bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _frameRate: 10
+  _frameRate: 20
   _clips:
   - _name: 
     _sprites:
-    - {fileID: 21300000, guid: 97af589987f77eb49ad9a706d45a5042, type: 3}
-    - {fileID: 21300000, guid: e0dfe88f153ec2141b9ca6951e00d05e, type: 3}
-    - {fileID: 21300000, guid: 803d6bead6049484e86bbb5150ce65eb, type: 3}
+    - {fileID: 8638179765159464754, guid: 48177bb58af29964b869719f11369ba3, type: 3}
+    - {fileID: -8751963200127747679, guid: 48177bb58af29964b869719f11369ba3, type: 3}
+    - {fileID: 1242003652515155774, guid: 48177bb58af29964b869719f11369ba3, type: 3}
     _loop: 1
     _allowNextClip: 0
     _onComplete:
@@ -126,8 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 6764601004572402636}
---- !u!61 &8418739601779119901
-BoxCollider2D:
+--- !u!70 &2039925710981863102
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -139,19 +140,9 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0005292818, y: 0.00045318902}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.24, y: 0.17}
-    newSize: {x: 0.24, y: 0.17}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.21750368, y: 0.12860213}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0, y: 0.06496045}
+  m_Size: {x: 0.18, y: 0.41007912}
+  m_Direction: 0
 --- !u!50 &5031865173122266621
 Rigidbody2D:
   serializedVersion: 4

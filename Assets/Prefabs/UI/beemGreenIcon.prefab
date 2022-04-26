@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2978084601092954992}
   - component: {fileID: 866021000691525684}
   m_Layer: 0
-  m_Name: twinLaserIcon
+  m_Name: beemGreenIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_LocalPosition: {x: -48.23183, y: -7.237644, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children:
-  - {fileID: 9066656017678620407}
+  - {fileID: 5139644371863081114}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -144,46 +144,17 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls: []
---- !u!1001 &19478142266272225
+--- !u!1001 &4234975241202446220
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 464338450936308994}
     m_Modifications:
-    - target: {fileID: 223953600127979693, guid: 350abb2569527d241a6bac32e0055da1,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 97af589987f77eb49ad9a706d45a5042,
-        type: 3}
-    - target: {fileID: 223953600127979693, guid: 350abb2569527d241a6bac32e0055da1,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211841053088475271, guid: 350abb2569527d241a6bac32e0055da1,
-        type: 3}
-      propertyPath: _clips.Array.data[0]._sprites.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: 97af589987f77eb49ad9a706d45a5042,
-        type: 3}
-    - target: {fileID: 1211841053088475271, guid: 350abb2569527d241a6bac32e0055da1,
-        type: 3}
-      propertyPath: _clips.Array.data[0]._sprites.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: e0dfe88f153ec2141b9ca6951e00d05e,
-        type: 3}
-    - target: {fileID: 1211841053088475271, guid: 350abb2569527d241a6bac32e0055da1,
-        type: 3}
-      propertyPath: _clips.Array.data[0]._sprites.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: 803d6bead6049484e86bbb5150ce65eb,
-        type: 3}
     - target: {fileID: 4834782816005031343, guid: 350abb2569527d241a6bac32e0055da1,
         type: 3}
       propertyPath: m_Name
-      value: twinLaserPic
+      value: beemGreenPic
       objectReference: {fileID: 0}
     - target: {fileID: 9049430225134173974, guid: 350abb2569527d241a6bac32e0055da1,
         type: 3}
@@ -193,12 +164,12 @@ PrefabInstance:
     - target: {fileID: 9049430225134173974, guid: 350abb2569527d241a6bac32e0055da1,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.7
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9049430225134173974, guid: 350abb2569527d241a6bac32e0055da1,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.3
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 9049430225134173974, guid: 350abb2569527d241a6bac32e0055da1,
         type: 3}
@@ -208,7 +179,7 @@ PrefabInstance:
     - target: {fileID: 9049430225134173974, guid: 350abb2569527d241a6bac32e0055da1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.0061
       objectReference: {fileID: 0}
     - target: {fileID: 9049430225134173974, guid: 350abb2569527d241a6bac32e0055da1,
         type: 3}
@@ -223,17 +194,17 @@ PrefabInstance:
     - target: {fileID: 9049430225134173974, guid: 350abb2569527d241a6bac32e0055da1,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9049430225134173974, guid: 350abb2569527d241a6bac32e0055da1,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9049430225134173974, guid: 350abb2569527d241a6bac32e0055da1,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9049430225134173974, guid: 350abb2569527d241a6bac32e0055da1,
         type: 3}
@@ -252,9 +223,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 350abb2569527d241a6bac32e0055da1, type: 3}
---- !u!4 &9066656017678620407 stripped
+--- !u!4 &5139644371863081114 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9049430225134173974, guid: 350abb2569527d241a6bac32e0055da1,
     type: 3}
-  m_PrefabInstance: {fileID: 19478142266272225}
+  m_PrefabInstance: {fileID: 4234975241202446220}
   m_PrefabAsset: {fileID: 0}
