@@ -34,11 +34,11 @@ namespace Scripts
         private Rigidbody2D _bullet;            
 
         private int _defaultGunAmmo;
-        private const int _maxGunAmmo = 600;
+        private const int _maxGunAmmo = 1000;
         private float _maxGunFireDensity = 0.05f;
 
         private int _defaultLaserAmmo;
-        private const int _maxLaserAmmo = 300;
+        private const int _maxLaserAmmo = 500;
         private float _maxLaserFireDensity = 0.1f;
 
         private int _defaultBombTimer;
@@ -195,7 +195,7 @@ namespace Scripts
 
             //gun improvements
             if (_defaultGunAmmo != _maxGunAmmo)
-                _defaultGunAmmo += 60;
+                _defaultGunAmmo += 100;
 
             _gunShootingDelay.Value -= 0.01f;
 
@@ -204,7 +204,7 @@ namespace Scripts
 
             //laser improvements
             if (_defaultLaserAmmo != _maxLaserAmmo)
-                _defaultLaserAmmo += 30;
+                _defaultLaserAmmo += 50;
 
             _laserShootingDelay.Value -= 0.1f;
 

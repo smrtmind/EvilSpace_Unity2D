@@ -3898,12 +3898,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 725670429}
     m_Modifications:
-    - target: {fileID: 4167479579995453705, guid: a0dd0942cc29478469860fb9e17aaf10,
+    - target: {fileID: 855006025653290436, guid: a0dd0942cc29478469860fb9e17aaf10,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 698451359}
-    - target: {fileID: 4167479580965077604, guid: a0dd0942cc29478469860fb9e17aaf10,
+    - target: {fileID: 2947034880344169870, guid: a0dd0942cc29478469860fb9e17aaf10,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4017,6 +4017,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameOverOverlay
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167479581895146541, guid: a0dd0942cc29478469860fb9e17aaf10,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0dd0942cc29478469860fb9e17aaf10, type: 3}
@@ -4249,6 +4254,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4171139155968296835, guid: d1a8b06f1428944469432a2aec78fa03,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 195.56982
       objectReference: {fileID: 0}
     - target: {fileID: 4171139155999250278, guid: d1a8b06f1428944469432a2aec78fa03,
         type: 3}
