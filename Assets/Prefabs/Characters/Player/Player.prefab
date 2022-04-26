@@ -569,7 +569,7 @@ MonoBehaviour:
   _gunShootingDelay:
     _value: 0.15
   _gunReloadingDelay:
-    _value: 0.2
+    _value: 0.1
   _gunSpawnPosition: {fileID: 34140864}
   _gunHudValue: {fileID: 0}
   _laser: {fileID: 475721933866399020, guid: 2594899881cfea04d8d6b954cfa0e7a7, type: 3}
@@ -577,7 +577,7 @@ MonoBehaviour:
   _laserShootingDelay:
     _value: 1
   _laserReloadingDelay:
-    _value: 0.4
+    _value: 0.5
   _laserSpawnPosition: {fileID: 112501871}
   _laserHudValue: {fileID: 0}
   _reloadingSpeed:
@@ -1016,7 +1016,7 @@ PrefabInstance:
     - target: {fileID: 1083047496798185978, guid: 86f4458858e4fa2488db6ca10fc2be45,
         type: 3}
       propertyPath: _timers.Array.data[0].Delay
-      value: 100000
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3839826120160438654, guid: 86f4458858e4fa2488db6ca10fc2be45,
         type: 3}

@@ -412,7 +412,7 @@ MonoBehaviour:
   _speed: 8
   _shootingDelay:
     _value: 1.2
-  _weapon: {fileID: 475721933866399020, guid: 2e0cea6a936769c4ab768ce8b36ac22b, type: 3}
+  _weapon: {fileID: 475721933866399020, guid: cd73707168059314bbce734dd7cdb349, type: 3}
   _weaponSpawnPosition: {fileID: 7209977439784247874}
 --- !u!114 &1540678679572510921
 MonoBehaviour:

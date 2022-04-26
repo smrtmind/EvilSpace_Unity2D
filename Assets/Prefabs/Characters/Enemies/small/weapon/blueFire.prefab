@@ -12,15 +12,15 @@ GameObject:
   - component: {fileID: 4059535899912441121}
   - component: {fileID: 7487610472582434760}
   - component: {fileID: 5254166440082854835}
-  - component: {fileID: 7289457076789932230}
+  - component: {fileID: 3401177098406890254}
   - component: {fileID: 5031865173122266621}
   - component: {fileID: 7981707784934544515}
   - component: {fileID: 5655042163995265754}
   - component: {fileID: 475721933866399020}
   - component: {fileID: 644304053469380508}
-  - component: {fileID: 2989084011284494903}
+  - component: {fileID: 28971752223315942}
   m_Layer: 12
-  m_Name: blasterBeemPurple
+  m_Name: blueFire
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,7 +35,7 @@ Transform:
   m_GameObject: {fileID: 6764601004572402636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 19, y: 19, z: 1}
+  m_LocalScale: {x: 7, y: 7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -79,8 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: -2059966085
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3277708975045481862, guid: 48177bb58af29964b869719f11369ba3,
-    type: 3}
+  m_Sprite: {fileID: 560212821675220006, guid: 48177bb58af29964b869719f11369ba3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,14 +102,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7a614fffbf02141946a8622e3c1bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _frameRate: 30
+  _frameRate: 10
   _clips:
   - _name: 
     _sprites:
-    - {fileID: 3277708975045481862, guid: 48177bb58af29964b869719f11369ba3, type: 3}
-    - {fileID: -7835483159544859847, guid: 48177bb58af29964b869719f11369ba3, type: 3}
-    - {fileID: 1835083701697434034, guid: 48177bb58af29964b869719f11369ba3, type: 3}
-    - {fileID: 7854687083773361694, guid: 48177bb58af29964b869719f11369ba3, type: 3}
+    - {fileID: 560212821675220006, guid: 48177bb58af29964b869719f11369ba3, type: 3}
+    - {fileID: 9046557559592914890, guid: 48177bb58af29964b869719f11369ba3, type: 3}
+    - {fileID: -9166928188520275821, guid: 48177bb58af29964b869719f11369ba3, type: 3}
     _loop: 1
     _allowNextClip: 0
     _onComplete:
@@ -129,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 6764601004572402636}
---- !u!70 &7289457076789932230
+--- !u!70 &3401177098406890254
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,8 +140,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0009965738, y: 0.01405573}
-  m_Size: {x: 0.14044566, y: 0.21786198}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.14, y: 0.23}
   m_Direction: 0
 --- !u!50 &5031865173122266621
 Rigidbody2D:
@@ -176,9 +174,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: acc5eb181be3a5d40a1ce616957cdf36, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f616c26161f444b45a6099f6a5b22fff, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.7
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -274,7 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7faff80a483b7a44b89a0bba87bad81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthDelta: -3
+  _healthDelta: -1
 --- !u!114 &475721933866399020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea0181f3a976974e92ebd8634138912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 40
+  _speed: 20
 --- !u!114 &644304053469380508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,7 +324,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2989084011284494903
+--- !u!114 &28971752223315942
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
