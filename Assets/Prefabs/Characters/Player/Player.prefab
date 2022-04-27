@@ -565,7 +565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gun: {fileID: 475721933866399020, guid: c452583892f964948998169502f98a1c, type: 3}
-  _gunAmmo: 100
+  _gunAmmo: 90
   _gunShootingDelay:
     _value: 0.15
   _gunReloadingDelay:
@@ -573,7 +573,7 @@ MonoBehaviour:
   _gunSpawnPosition: {fileID: 34140864}
   _gunHudValue: {fileID: 0}
   _laser: {fileID: 475721933866399020, guid: 2594899881cfea04d8d6b954cfa0e7a7, type: 3}
-  _laserAmmo: 50
+  _laserAmmo: 45
   _laserShootingDelay:
     _value: 1
   _laserReloadingDelay:

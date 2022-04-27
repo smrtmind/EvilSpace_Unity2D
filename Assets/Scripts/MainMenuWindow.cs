@@ -12,8 +12,8 @@ namespace Scripts
 
         public void OnExit()
         {
-            //Application.Quit();
-            UnityEditor.EditorApplication.isPlaying = false;
+            Application.Quit();
+            //UnityEditor.EditorApplication.isPlaying = false;
         }
     }
 }

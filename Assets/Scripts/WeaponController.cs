@@ -34,11 +34,11 @@ namespace Scripts
         private Rigidbody2D _bullet;            
 
         private int _defaultGunAmmo;
-        private const int _maxGunAmmo = 1000;
+        private const int _maxGunAmmo = 900;
         private float _maxGunFireDensity = 0.05f;
 
         private int _defaultLaserAmmo;
-        private const int _maxLaserAmmo = 500;
+        private const int _maxLaserAmmo = 450;
         private float _maxLaserFireDensity = 0.1f;
 
         private int _defaultBombTimer;
@@ -172,8 +172,8 @@ namespace Scripts
 
         private void FixedUpdate()
         {
-            _gunHudValue.text = $"{_gunAmmo} x";
-            _laserHudValue.text = $"{_laserAmmo} x";
+            _gunHudValue.text = $"{_gunAmmo}";
+            _laserHudValue.text = $"{_laserAmmo}";
 
             if (!_bombIsReady)
             {
@@ -183,7 +183,7 @@ namespace Scripts
             else
             {
                 _bombHudStatus.color = Color.green;
-                _bombHudStatus.text = $"READY";
+                _bombHudStatus.text = $"OK";
             }
         }
 
@@ -195,7 +195,7 @@ namespace Scripts
 
             //gun improvements
             if (_defaultGunAmmo != _maxGunAmmo)
-                _defaultGunAmmo += 100;
+                _defaultGunAmmo += 90;
 
             _gunShootingDelay.Value -= 0.01f;
 
@@ -204,7 +204,7 @@ namespace Scripts
 
             //laser improvements
             if (_defaultLaserAmmo != _maxLaserAmmo)
-                _defaultLaserAmmo += 50;
+                _defaultLaserAmmo += 45;
 
             _laserShootingDelay.Value -= 0.1f;
 
