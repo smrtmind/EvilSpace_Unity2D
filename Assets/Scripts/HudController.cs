@@ -26,7 +26,7 @@ namespace Scripts
 
             _HpBar.value = _gameSession.Health;
             _scoreText.text = $"SCORE: {_gameSession.Score}";
-            _triesText.text = $"x {_gameSession.Tries}";
+            _triesText.text = $"{_gameSession.Tries}";
             _healthAmount.text = $"{_HpBar.value}";
             _lvlText.text = $"LVL {_gameSession.PlayerLVL}";
         }
