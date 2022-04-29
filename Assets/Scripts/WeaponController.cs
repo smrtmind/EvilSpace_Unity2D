@@ -47,6 +47,11 @@ namespace Scripts
         private int _minBombTimer = 30;
         private bool _bombIsReady;
 
+        private Projectile currentWeapon;
+        private Cooldown shootingDelay;
+        private Cooldown reloadingDelay;
+        private Transform bulletSpawnPosition;
+
         private void Awake()
         {
             _defaultGunAmmo = _gunAmmo;
@@ -66,39 +71,43 @@ namespace Scripts
 
         private void Update()
         {
-            if (_player.firstWeapon && _gunShootingDelay.IsReady && !_player.secondWeapon && _gunAmmo > 0)
+            if (_player.firstWeapon)
             {
-                if (_laserReloadingDelay.IsReady)
+                if (!_player.secondWeapon)
                 {
-                    if (_laserAmmo != _defaultLaserAmmo)
-                    {
-                        _laserAmmo++;
-                        _laserReloadingDelay.Reset();
-                    }
+                    SetWeaponActive(2);
+                    Reload(ref _laserAmmo, ref _defaultLaserAmmo, 1);
                 }
 
-                var projectile = Instantiate(_gun, _gunSpawnPosition.position, transform.rotation);
-                projectile.Launch(_bullet.velocity, transform.up);
-                _gunAmmo -= 2;
-                _gunShootingDelay.Reset();
-
+                if (_gunShootingDelay.IsReady && _gunAmmo > 0)
+                {
+                    SetWeaponActive(1);
+                    Shoot(ref _gunAmmo, 2);
+                }
             }
 
-            if (_player.secondWeapon && _laserShootingDelay.IsReady && !_player.firstWeapon && _laserAmmo > 0)
+            if (_player.secondWeapon)
             {
-                if (_gunReloadingDelay.IsReady)
+                if (!_player.firstWeapon)
                 {
-                    if (_gunAmmo != _defaultGunAmmo)
-                    {
-                        _gunAmmo += 2;
-                        _gunReloadingDelay.Reset();
-                    }
+                    SetWeaponActive(1);
+                    Reload(ref _gunAmmo, ref _defaultGunAmmo, 2);
                 }
 
-                var projectile = Instantiate(_laser, _laserSpawnPosition.position, transform.rotation);
-                projectile.Launch(_bullet.velocity, transform.up);
-                _laserAmmo--;
-                _laserShootingDelay.Reset();
+                if (_laserShootingDelay.IsReady && _laserAmmo > 0)
+                {
+                    SetWeaponActive(2);
+                    Shoot(ref _laserAmmo, 1);
+                }
+            }
+
+            if (!_player.firstWeapon && !_player.secondWeapon)
+            {
+                SetWeaponActive(1);
+                Reload(ref _gunAmmo, ref _defaultGunAmmo, 2);
+
+                SetWeaponActive(2);
+                Reload(ref _laserAmmo, ref _defaultLaserAmmo, 1);
             }
 
             //using mega bomb
@@ -147,27 +156,6 @@ namespace Scripts
                     {
                         _bombReloaded.Play();
                         _bombIsReady = true;
-                    }
-                }
-            }
-
-            if (!_player.firstWeapon && !_player.secondWeapon)
-            {
-                if (_laserReloadingDelay.IsReady)
-                {
-                    if (_laserAmmo != _defaultLaserAmmo)
-                    {
-                        _laserAmmo++;
-                        _laserReloadingDelay.Reset();
-                    }
-                }
-
-                if (_gunReloadingDelay.IsReady)
-                {
-                    if (_gunAmmo != _defaultGunAmmo)
-                    {
-                        _gunAmmo += 2;
-                        _gunReloadingDelay.Reset();
                     }
                 }
             }
@@ -227,6 +215,48 @@ namespace Scripts
         {
             _electroShield.SetActive(true);
             _electroShield.GetComponent<TimerComponent>().SetTimer(0);
+        }
+
+        private void SetWeaponActive(int weapon)
+        {
+            switch (weapon)
+            {
+                case 1:
+                    currentWeapon = _gun;
+                    shootingDelay = _gunShootingDelay;
+                    reloadingDelay = _gunReloadingDelay;
+                    bulletSpawnPosition = _gunSpawnPosition;
+
+                    break;
+
+                case 2:
+                    currentWeapon = _laser;
+                    shootingDelay = _laserShootingDelay;
+                    reloadingDelay = _laserReloadingDelay;
+                    bulletSpawnPosition = _laserSpawnPosition;
+
+                    break;
+            }
+        }
+
+        private void Shoot(ref int ammo, int ammoPerShoot)
+        {
+            var projectile = Instantiate(currentWeapon, bulletSpawnPosition.position, transform.rotation);
+            projectile.Launch(_bullet.velocity, transform.up);
+            ammo -= ammoPerShoot;
+            shootingDelay.Reset();
+        }
+
+        private void Reload(ref int ammo, ref int defaultAmmo, int ammoToAdd)
+        {
+            if (reloadingDelay.IsReady)
+            {
+                if (ammo != defaultAmmo)
+                {
+                    ammo += ammoToAdd;
+                    reloadingDelay.Reset();
+                }
+            }
         }
     }
 }

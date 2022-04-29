@@ -442,7 +442,6 @@ MonoBehaviour:
   _leftWingDamage: {fileID: 8325390602300255659}
   _rightWingDamage: {fileID: 8325390602316806784}
   _bodyDamage: {fileID: 2733327710686529427}
-  _damageVelocity: 15
   _hitParticles: {fileID: 8485752599289224870, guid: df52a325fd4c3df48abb025170d123b9,
     type: 3}
   _timerToContinue: {fileID: 0}
@@ -579,7 +578,7 @@ MonoBehaviour:
   _laserShootingDelay:
     _value: 1
   _laserReloadingDelay:
-    _value: 0.5
+    _value: 0.1
   _laserSpawnPosition: {fileID: 112501871}
   _laserHudValue: {fileID: 0}
   _reloadingSpeed:

@@ -11,7 +11,6 @@ namespace Scripts
         [SerializeField] private GameObject _leftWingDamage;
         [SerializeField] private GameObject _rightWingDamage;
         [SerializeField] private GameObject _bodyDamage;
-        [SerializeField] private float _damageVelocity;
         [SerializeField] private GameObject _hitParticles;
         [SerializeField] private TimerComponent _timerToContinue;
         [SerializeField] private TimerComponent _timerToGameOver;
@@ -30,6 +29,8 @@ namespace Scripts
         private static readonly int HitRightKey = Animator.StringToHash("is-hitRight");
 
         public float burst { get; set; }
+        public bool _leftTurn { get; set; }
+        public bool _rightTurn { get; set; }
         public bool firstWeapon { get; set; }
         public bool secondWeapon { get; set; }
         public bool thirdWeapon { get; set; }
@@ -38,8 +39,6 @@ namespace Scripts
         private Animator _animator;
         private Rigidbody2D _body;
         private AudioSource _audio;
-        private bool _isLeftPressed;
-        private bool _isRightPressed;
         private bool _isMovingForward;
         private CameraShaker _cameraShaker;
         private bool _isDead;
@@ -57,11 +56,9 @@ namespace Scripts
 
         private void FixedUpdate()
         {
-            _isLeftPressed = Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A);
-            _isRightPressed = Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D);
             _isMovingForward = burst > 0;
 
-            if (_isLeftPressed)
+            if (_leftTurn)
             {
                 _body.angularVelocity = 1 * _rotationSpeed;
 
@@ -71,7 +68,7 @@ namespace Scripts
                 SetObjectStatus(false, _idleStarterFlameFirst);
                 SetObjectStatus(true, _idleStarterFlameSecond);
             }
-            else if (_isRightPressed)
+            else if (_rightTurn)
             {
                 _body.angularVelocity = -1 * _rotationSpeed;
 
@@ -146,12 +143,12 @@ namespace Scripts
                 }
             }
 
-            if (_isLeftPressed)
+            if (_leftTurn)
             {
                 _animator.SetTrigger(HitLeftKey);
                 if (_isMovingForward) return;
             }
-            if (_isRightPressed)
+            if (_rightTurn)
             {
                 _animator.SetTrigger(HitRightKey);
                 if (_isMovingForward) return;

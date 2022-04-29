@@ -10,6 +10,7 @@ namespace Scripts
         [SerializeField] private Text _scoreText;
         [SerializeField] private Text _lvlText;
         [SerializeField] private Text _healthAmount;
+        [SerializeField] private Text _levelProgress;
 
         private GameSession _gameSession;
 
@@ -22,6 +23,8 @@ namespace Scripts
         {
             _XpBar.value = _gameSession.XP;
             _XpBar.maxValue = _gameSession.NextLvl;
+
+            _levelProgress.text = $"{_XpBar.value} / {_XpBar.maxValue}";
 
             _scoreText.text = $"SCORE: {_gameSession.Score}";
             _triesText.text = $"{_gameSession.Tries}";
