@@ -13,14 +13,12 @@ namespace Scripts
         public int Health => _health;
 
         private int _maxHealth;
-        private HudController _hud;
         private Animator _animator;
         private PlayerController _player;
 
         private void Awake()
         {
             _maxHealth = _health;
-            _hud = FindObjectOfType<HudController>();
         }
 
         private void Start()
@@ -39,7 +37,6 @@ namespace Scripts
             _player.RemoveVisualDamage();
 
             _maxHealth++;
-            _hud._HpBar.maxValue++;
             ResetHealth();
         }
 

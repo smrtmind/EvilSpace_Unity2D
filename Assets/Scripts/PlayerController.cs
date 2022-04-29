@@ -20,7 +20,7 @@ namespace Scripts
 
         [Space]
         [Header("Sounds")]
-        [SerializeField] private AudioClip _shipHit;
+        [SerializeField] private AudioClip _playerHit;
 
         private static readonly int LowHpKey = Animator.StringToHash("lowHp");
         private static readonly int LeftTurnKey = Animator.StringToHash("left-turn");
@@ -42,6 +42,9 @@ namespace Scripts
         private bool _isRightPressed;
         private bool _isMovingForward;
         private CameraShaker _cameraShaker;
+        private bool _isDead;
+
+        public bool IsDead => _isDead;
 
         private void Start()
         {
@@ -54,8 +57,8 @@ namespace Scripts
 
         private void FixedUpdate()
         {
-            _isLeftPressed = Input.GetKey(KeyCode.LeftArrow);
-            _isRightPressed = Input.GetKey(KeyCode.RightArrow);
+            _isLeftPressed = Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A);
+            _isRightPressed = Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D);
             _isMovingForward = burst > 0;
 
             if (_isLeftPressed)
@@ -96,7 +99,7 @@ namespace Scripts
         private void OnCollisionEnter2D(Collision2D other)
         {
             var session = FindObjectOfType<GameSession>();
-            _audio.PlayOneShot(_shipHit);
+            _audio.PlayOneShot(_playerHit);
 
             Instantiate(_hitParticles, other.GetContact(0).point, Quaternion.identity);
             _cameraShaker.ShakeCamera();
@@ -123,8 +126,10 @@ namespace Scripts
                 SetAnimationStatus(true, LowHpKey);
             }
 
-            if (_health.Health <= 0 && !FindObjectOfType<GameSession>()._isLevelUp)
+            if (_health.Health <= 0)
             {
+                _isDead = true;
+
                 if (session.Tries > 0)
                 {
                     SetObjectStatus(false, _leftWingDamage, _rightWingDamage, _bodyDamage, gameObject);
@@ -175,6 +180,11 @@ namespace Scripts
         {
             _animator.SetBool(LowHpKey, false);
             SetObjectStatus(false, _leftWingDamage, _rightWingDamage, _bodyDamage);
+        }
+
+        public void RevivePlayer()
+        {
+            _isDead = false;
         }
     }
 }

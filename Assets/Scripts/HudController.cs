@@ -6,7 +6,6 @@ namespace Scripts
     public class HudController : MonoBehaviour
     {
         [SerializeField] private Text _triesText;
-        [SerializeField] public Slider _HpBar;
         [SerializeField] public Slider _XpBar;
         [SerializeField] private Text _scoreText;
         [SerializeField] private Text _lvlText;
@@ -24,10 +23,14 @@ namespace Scripts
             _XpBar.value = _gameSession.XP;
             _XpBar.maxValue = _gameSession.NextLvl;
 
-            _HpBar.value = _gameSession.Health;
             _scoreText.text = $"SCORE: {_gameSession.Score}";
             _triesText.text = $"{_gameSession.Tries}";
-            _healthAmount.text = $"{_HpBar.value}";
+
+            if (_gameSession.Health < 0)
+                _healthAmount.text = "0";
+            else
+                _healthAmount.text = $"{_gameSession.Health}";
+
             _lvlText.text = $"LVL {_gameSession.PlayerLVL}";
         }
     }

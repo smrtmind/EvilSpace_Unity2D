@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3029277041380114054}
   - component: {fileID: 5241730403397731470}
   - component: {fileID: 6172569519162657403}
-  - component: {fileID: 593913509115306336}
+  - component: {fileID: 2977676206385190950}
   m_Layer: 0
   m_Name: playerExplosion
   m_TagString: Untagged
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 190716498238451836}
---- !u!82 &593913509115306336
+--- !u!82 &2977676206385190950
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

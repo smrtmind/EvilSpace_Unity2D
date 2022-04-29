@@ -29,6 +29,8 @@ namespace Scripts
 
         [Space]
         [SerializeField] private GameObject _shield;
+        [SerializeField] private GameObject _electroShield;
+        [SerializeField] private AudioSource _bombReloaded;
 
         private PlayerController _player;
         private Rigidbody2D _bullet;            
@@ -42,7 +44,7 @@ namespace Scripts
         private float _maxLaserFireDensity = 0.1f;
 
         private int _defaultBombTimer;
-        private float _minBombTimer = 30f;
+        private int _minBombTimer = 30;
         private bool _bombIsReady;
 
         private void Awake()
@@ -143,6 +145,7 @@ namespace Scripts
 
                     if (_bombReloadingDelay == 0)
                     {
+                        _bombReloaded.Play();
                         _bombIsReady = true;
                     }
                 }
@@ -212,12 +215,18 @@ namespace Scripts
                 _laserShootingDelay.Value = _maxLaserFireDensity;
 
             //bomb improvements
-            _defaultBombTimer -= (int)10f;
+            _defaultBombTimer -= 5;
 
             if (_defaultBombTimer <= _minBombTimer)
-                _defaultBombTimer = (int)_minBombTimer;
+                _defaultBombTimer = _minBombTimer;
 
             FindObjectOfType<GameSession>()._isLevelUp = false;
+        }
+
+        public void ActivateElectroShield()
+        {
+            _electroShield.SetActive(true);
+            _electroShield.GetComponent<TimerComponent>().SetTimer(0);
         }
     }
 }

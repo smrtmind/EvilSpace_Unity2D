@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 977080404297929158}
-  _prefab: {fileID: 190716498238451836, guid: 68aba67a4feae4d488b6623de6b37080, type: 3}
+  _prefab: {fileID: 190716498238451836, guid: 09b0210a3fdff5547af5b60876ffe32f, type: 3}
   _invertXScale: 0
 --- !u!1 &8229194066570239158
 GameObject:

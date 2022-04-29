@@ -7,7 +7,6 @@ namespace Scripts
         [SerializeField] private int _tries;
         [SerializeField] private int _health;
         [SerializeField] private HealthComponent _targetHp;
-        [SerializeField] private AudioClip _oneUp;
 
         [Space]
         [SerializeField] private GameObject[] _enemySpawners;
@@ -23,7 +22,7 @@ namespace Scripts
         public int Score => _score;
         public int XP => _xp;
         public int PlayerLVL => _playerLvl;
-        public int NextLvl => _nextLvl;   
+        public int NextLvl => _nextLvl;
 
         public void ModifyXp(int xp)
         {
@@ -42,11 +41,11 @@ namespace Scripts
         {
             _health = _targetHp.Health;
 
-            if (_xp == _nextLvl)
+            if (_xp == _nextLvl && !FindObjectOfType<PlayerController>().IsDead)
             {
                 LevelUp(0);
             }
-            else if (_xp > _nextLvl)
+            else if (_xp > _nextLvl && !FindObjectOfType<PlayerController>().IsDead)
             {
                 LevelUp(_xp - _nextLvl);
             }
@@ -56,9 +55,7 @@ namespace Scripts
         {
             _isLevelUp = true;
 
-            FindObjectOfType<AudioSource>().PlayOneShot(_oneUp);
-
-            FindObjectOfType<WeaponController>().PowerUp();             
+            FindObjectOfType<WeaponController>().PowerUp();
 
             _playerLvl++;
             _xp = currentXp;
