@@ -1046,6 +1046,9 @@ MonoBehaviour:
   _lvlText: {fileID: 4171139155417941779}
   _healthAmount: {fileID: 4171139154510635215}
   _levelProgress: {fileID: 7134365013740436812}
+  _gunValue: {fileID: 4171139155285219096}
+  _blasterValue: {fileID: 4171139154521123316}
+  _bombStatus: {fileID: 4171139155356571178}
 --- !u!114 &4171139155412685778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1350,7 +1353,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -3.5}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 350, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3891687488001301234
 CanvasRenderer:

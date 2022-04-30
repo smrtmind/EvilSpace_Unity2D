@@ -15,10 +15,12 @@ namespace Scripts
         private GameSession _gameSession;
         private float _zAngle;
         private bool _isStopped;
+        private CameraShaker _cameraShaker;
 
         private void Awake()
         {
             _gameSession = FindObjectOfType<GameSession>();
+            _cameraShaker = FindObjectOfType<CameraShaker>();
         }
 
         private void Start()
@@ -83,7 +85,7 @@ namespace Scripts
             var isPlayer = other.gameObject.tag == "Player";
             if (isPlayer)
             {
-                FindObjectOfType<CameraShaker>().RestoreValues();
+                _cameraShaker.RestoreValues();
 
                 var force = transform.position - other.transform.position;
                 force.Normalize();

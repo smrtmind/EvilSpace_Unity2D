@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 112501871}
   m_Layer: 8
-  m_Name: LaserSpawnPosition
+  m_Name: BlasterSpawnPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -572,24 +572,22 @@ MonoBehaviour:
   _gunReloadingDelay:
     _value: 0.1
   _gunSpawnPosition: {fileID: 34140864}
-  _gunHudValue: {fileID: 0}
-  _laser: {fileID: 475721933866399020, guid: 2594899881cfea04d8d6b954cfa0e7a7, type: 3}
-  _laserAmmo: 45
-  _laserShootingDelay:
+  _blaster: {fileID: 475721933866399020, guid: 2594899881cfea04d8d6b954cfa0e7a7, type: 3}
+  _blasterAmmo: 45
+  _blasterShootingDelay:
     _value: 1
-  _laserReloadingDelay:
-    _value: 0.1
-  _laserSpawnPosition: {fileID: 112501871}
-  _laserHudValue: {fileID: 0}
+  _blasterReloadingDelay:
+    _value: 0.3
+  _blasterSpawnPosition: {fileID: 112501871}
   _reloadingSpeed:
     _value: 1
   _bombReloadingDelay: 100
   _bombEffect: {fileID: 1556972870}
   _electroEffect: {fileID: 884646618}
-  _bombHudStatus: {fileID: 0}
   _shield: {fileID: 8462156562117412205}
   _electroShield: {fileID: 2660348259839491949}
   _bombReloaded: {fileID: 870214923}
+  _bombIsReady: 0
 --- !u!82 &870214923
 AudioSource:
   m_ObjectHideFlags: 0

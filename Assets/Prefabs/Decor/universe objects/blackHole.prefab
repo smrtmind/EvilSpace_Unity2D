@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1002696394573669738}
   - component: {fileID: 1002696394573669739}
   - component: {fileID: 1002696394573669736}
+  - component: {fileID: -3125570241482816906}
   m_Layer: 0
   m_Name: blackHole
   m_TagString: Untagged
@@ -90,7 +91,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1002696394573669737}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c7a614fffbf02141946a8622e3c1bf4, type: 3}
   m_Name: 
@@ -154,3 +155,15 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls: []
+--- !u!114 &-3125570241482816906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002696394573669737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac5fc6e91b6d1964aa2540f96b460ee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

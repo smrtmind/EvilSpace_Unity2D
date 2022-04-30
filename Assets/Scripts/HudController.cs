@@ -12,11 +12,19 @@ namespace Scripts
         [SerializeField] private Text _healthAmount;
         [SerializeField] private Text _levelProgress;
 
-        private GameSession _gameSession;
+        [Space]
+        [Header("WeaponStatus")]
+        [SerializeField] private Text _gunValue;
+        [SerializeField] private Text _blasterValue;
+        [SerializeField] private Text _bombStatus;
 
-        private void Start()
+        private GameSession _gameSession;
+        private WeaponController _weaponController;
+
+        private void Awake()
         {
             _gameSession = FindObjectOfType<GameSession>();
+            _weaponController = FindObjectOfType<WeaponController>();
         }
 
         private void Update()
@@ -35,6 +43,21 @@ namespace Scripts
                 _healthAmount.text = $"{_gameSession.Health}";
 
             _lvlText.text = $"LVL {_gameSession.PlayerLVL}";
+
+            //weapon
+            _gunValue.text = $"{_weaponController.GunAmmo}";
+            _blasterValue.text = $"{_weaponController.BlasterAmmo}";
+
+            if (!_weaponController._bombIsReady)
+            {
+                _bombStatus.color = Color.white;
+                _bombStatus.text = $"{_weaponController.BombReloadingDelay}";
+            }
+            else
+            {
+                _bombStatus.color = Color.green;
+                _bombStatus.text = $"OK";
+            }
         }
     }
 }

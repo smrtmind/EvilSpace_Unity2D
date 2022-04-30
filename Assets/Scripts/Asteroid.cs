@@ -11,11 +11,13 @@ namespace Scripts
 
         private Rigidbody2D _body;
         private GameSession _gameSession;
+        private CameraShaker _cameraShaker;
 
         private void Awake()
         {
             _body = GetComponent<Rigidbody2D>();
             _gameSession = FindObjectOfType<GameSession>();
+            _cameraShaker = FindObjectOfType<CameraShaker>();
         }
 
         public void Launch()
@@ -37,7 +39,7 @@ namespace Scripts
             var isPlayer = other.gameObject.tag == "Player";
             if (isPlayer)
             {
-                FindObjectOfType<CameraShaker>().RestoreValues();
+                _cameraShaker.RestoreValues();
 
                 var force = transform.position - other.transform.position;
                 force.Normalize();

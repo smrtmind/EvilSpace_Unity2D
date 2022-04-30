@@ -321,7 +321,6 @@ MonoBehaviour:
     _value: 1.8
   _weapon: {fileID: 475721933866399020, guid: 0031d4347730bf84ab7852836f04fc78, type: 3}
   _weaponSpawnPosition: {fileID: 7209977439784247874}
-  _enemyDie: {fileID: 8300000, guid: 2784cc00f41185e4fbd9568cf19bcfec, type: 3}
 --- !u!114 &1540678679572510921
 MonoBehaviour:
   m_ObjectHideFlags: 0

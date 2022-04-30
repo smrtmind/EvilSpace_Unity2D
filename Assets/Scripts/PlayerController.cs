@@ -29,8 +29,8 @@ namespace Scripts
         private static readonly int HitRightKey = Animator.StringToHash("is-hitRight");
 
         public float burst { get; set; }
-        public bool _leftTurn { get; set; }
-        public bool _rightTurn { get; set; }
+        public bool leftTurn { get; set; }
+        public bool rightTurn { get; set; }
         public bool firstWeapon { get; set; }
         public bool secondWeapon { get; set; }
         public bool thirdWeapon { get; set; }
@@ -58,7 +58,7 @@ namespace Scripts
         {
             _isMovingForward = burst > 0;
 
-            if (_leftTurn)
+            if (leftTurn)
             {
                 _body.angularVelocity = 1 * _rotationSpeed;
 
@@ -68,7 +68,7 @@ namespace Scripts
                 SetObjectStatus(false, _idleStarterFlameFirst);
                 SetObjectStatus(true, _idleStarterFlameSecond);
             }
-            else if (_rightTurn)
+            else if (rightTurn)
             {
                 _body.angularVelocity = -1 * _rotationSpeed;
 
@@ -143,12 +143,12 @@ namespace Scripts
                 }
             }
 
-            if (_leftTurn)
+            if (leftTurn)
             {
                 _animator.SetTrigger(HitLeftKey);
                 if (_isMovingForward) return;
             }
-            if (_rightTurn)
+            if (rightTurn)
             {
                 _animator.SetTrigger(HitRightKey);
                 if (_isMovingForward) return;
