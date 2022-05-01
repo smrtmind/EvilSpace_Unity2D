@@ -22,7 +22,7 @@ namespace Scripts
             }
             else
             {
-                screenMax = mainCamera.ViewportToWorldPoint(new Vector3(1.1f, 1.1f, 1.1f));
+                screenMax = mainCamera.ViewportToWorldPoint(new Vector3(1.03f, 1.03f, 1.03f));
             }
             
             
