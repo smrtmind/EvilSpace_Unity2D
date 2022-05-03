@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7faff80a483b7a44b89a0bba87bad81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthDelta: -3
+  _healthDelta: -4
 --- !u!114 &475721933866399020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,7 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea0181f3a976974e92ebd8634138912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 40
+  _speed: 30
 --- !u!114 &644304053469380508
 MonoBehaviour:
   m_ObjectHideFlags: 0

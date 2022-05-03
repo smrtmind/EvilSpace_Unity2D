@@ -1,37 +1,39 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Scripts
 {
     public class EnemyAI : MonoBehaviour
     {
-        [SerializeField] private float _rotationSpeed = 100f;
-        [SerializeField] private float _speed = 5f;
-        [SerializeField] private Cooldown _shootingDelay;
-        [SerializeField] private Projectile _weapon;
-        [SerializeField] private Transform _weaponSpawnPosition;
+        [SerializeField] protected float _rotationSpeed = 100f;
+        [SerializeField] protected float _speed = 5f;
+        [SerializeField] protected Cooldown _shootingDelay;
+        [SerializeField] protected Projectile _weapon;
+        [SerializeField] protected Transform _weaponSpawnPosition;
+        [SerializeField] private Weapon[] _weapons;
 
-        private Transform _player;
-        private Rigidbody2D _bullet;
-        private GameSession _gameSession;
-        private float _zAngle;
-        private bool _isStopped;
-        private CameraShaker _cameraShaker;
+        protected Transform _player;
+        protected Rigidbody2D _playerBody;
+        protected GameSession _gameSession;
+        protected float _zAngle;
+        protected bool _isStopped;
+        protected CameraShaker _cameraShaker;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             _gameSession = FindObjectOfType<GameSession>();
             _cameraShaker = FindObjectOfType<CameraShaker>();
         }
 
-        private void Start()
+        protected virtual void Start()
         {
-            _bullet = GetComponent<Rigidbody2D>();
+            _playerBody = GetComponent<Rigidbody2D>();
 
             GetVectorDirection();
             LookOnPlayerImmediate();
         }
 
-        private void Update()
+        protected virtual void Update()
         {
             if (_isStopped)
             {
@@ -45,15 +47,17 @@ namespace Scripts
             //calculating rotation
             Quaternion desiredRotation = Quaternion.Euler(0, 0, _zAngle);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, _rotationSpeed * Time.deltaTime);
-
         }
 
-        private void LookOnPlayerImmediate()
+        protected virtual void LookOnPlayerImmediate()
         {
+            var isBoss = GetComponent<BossAI>();
+            if (isBoss) return;
+
             transform.rotation = Quaternion.Euler(0, 0, _zAngle);
         }
 
-        private void GetVectorDirection()
+        protected virtual void GetVectorDirection()
         {
             Vector3 playerPosition = transform.position;
             Vector3 velocity = new Vector3(0, _speed * Time.deltaTime, 0);
@@ -75,12 +79,12 @@ namespace Scripts
             _zAngle = Mathf.Atan2(direction.normalized.y, direction.normalized.x) * Mathf.Rad2Deg - 90;
         }
 
-        public void AddXp(int xp)
+        protected virtual void AddXp(int xp)
         {
             _gameSession.ModifyXp(xp);
         }
 
-        private void OnCollisionEnter2D(Collision2D other)
+        protected virtual void OnCollisionEnter2D(Collision2D other)
         {
             var isPlayer = other.gameObject.tag == "Player";
             if (isPlayer)
@@ -94,30 +98,40 @@ namespace Scripts
             }
         }
 
-        public void Shoot()
+        protected virtual void Shoot()
         {
             if (_shootingDelay.IsReady)
             {
                 var projectile = Instantiate(_weapon, _weaponSpawnPosition.position, transform.rotation);
-                projectile.Launch(_bullet.velocity, transform.up);
+                projectile.Launch(_playerBody.velocity, transform.up);
                 _shootingDelay.Reset();
             }
         }
 
-        private void OnTriggerStay2D(Collider2D other)
+        protected virtual void OnTriggerStay2D(Collider2D other)
         {
             var isPlayer = other.gameObject.tag == "Player";
             if (isPlayer)
                 Shoot();
         }
 
-        private void OnTriggerExit2D(Collider2D other)
+        protected virtual void OnTriggerExit2D(Collider2D other)
         {
             var isPlayer = other.gameObject.tag == "Player";
             if (isPlayer)
                 _isStopped = false;
         }
 
-        public void StopMoving() => _isStopped = true;
+        protected virtual void StopMoving() => _isStopped = true;
+    }
+
+    [Serializable]
+    public class Weapon
+    {
+        [SerializeField] private string _name;
+        //[SerializeField] private Sprite[] _charasteristics;
+
+        public string Name => _name;
+        //public Sprite[] Sprites => _sprites;
     }
 }

@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 644304053469380508}
   - component: {fileID: 4060514375868061933}
   m_Layer: 12
-  m_Name: twinLaserRed
+  m_Name: blueOval
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea0181f3a976974e92ebd8634138912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 20
+  _speed: 15
 --- !u!114 &644304053469380508
 MonoBehaviour:
   m_ObjectHideFlags: 0

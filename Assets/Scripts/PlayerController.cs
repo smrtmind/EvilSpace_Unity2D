@@ -37,11 +37,12 @@ namespace Scripts
 
         private HealthComponent _health;
         private Animator _animator;
-        private Rigidbody2D _body;
+        private Rigidbody2D _playerBody;
         private AudioSource _audio;
         private bool _isMovingForward;
         private CameraShaker _cameraShaker;
         private bool _isDead;
+        private Collider2D _playerCollider;
 
         public bool IsDead => _isDead;
 
@@ -49,9 +50,10 @@ namespace Scripts
         {
             _cameraShaker = FindObjectOfType<CameraShaker>();
             _health = GetComponent<HealthComponent>();
-            _body = GetComponent<Rigidbody2D>();
+            _playerBody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
             _audio = FindObjectOfType<AudioSource>();
+            _playerCollider = GetComponent<Collider2D>();
         }
 
         private void FixedUpdate()
@@ -60,7 +62,7 @@ namespace Scripts
 
             if (leftTurn)
             {
-                _body.angularVelocity = 1 * _rotationSpeed;
+                _playerBody.angularVelocity = 1 * _rotationSpeed;
 
                 SetAnimationStatus(true, LeftTurnKey);
                 SetAnimationStatus(false, RightTurnKey);
@@ -70,7 +72,7 @@ namespace Scripts
             }
             else if (rightTurn)
             {
-                _body.angularVelocity = -1 * _rotationSpeed;
+                _playerBody.angularVelocity = -1 * _rotationSpeed;
 
                 SetAnimationStatus(false, LeftTurnKey);
                 SetAnimationStatus(true, RightTurnKey);
@@ -87,7 +89,7 @@ namespace Scripts
             if (_isMovingForward)
             {
                 Vector2 burstDelta = transform.up * _burstSpeed;
-                _body.velocity += burstDelta;
+                _playerBody.velocity += burstDelta;
 
                 SetObjectStatus(true, _idleStarterFlameFirst, _idleStarterFlameSecond);
             }
@@ -130,6 +132,7 @@ namespace Scripts
                 if (session.Tries > 0)
                 {
                     SetObjectStatus(false, _leftWingDamage, _rightWingDamage, _bodyDamage, gameObject);
+                    _playerCollider.enabled = false;
                     _timerToContinue.SetTimer(0);
 
                     transform.position = Vector3.zero;

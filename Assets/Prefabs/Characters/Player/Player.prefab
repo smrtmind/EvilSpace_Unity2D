@@ -570,14 +570,14 @@ MonoBehaviour:
   _gunShootingDelay:
     _value: 0.15
   _gunReloadingDelay:
-    _value: 0.1
+    _value: 0.05
   _gunSpawnPosition: {fileID: 34140864}
   _blaster: {fileID: 475721933866399020, guid: 2594899881cfea04d8d6b954cfa0e7a7, type: 3}
   _blasterAmmo: 45
   _blasterShootingDelay:
     _value: 1
   _blasterReloadingDelay:
-    _value: 0.3
+    _value: 0.1
   _blasterSpawnPosition: {fileID: 112501871}
   _reloadingSpeed:
     _value: 1
@@ -1234,6 +1234,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Radius
       value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7943499109208830846, guid: 8a51230058413bd42879237db8753931,
+        type: 3}
+      propertyPath: _timers.Array.data[0].OnTimesUp.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7943499109208830846, guid: 8a51230058413bd42879237db8753931,
+        type: 3}
+      propertyPath: _timers.Array.data[0].OnTimesUp.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7943499109208830846, guid: 8a51230058413bd42879237db8753931,
+        type: 3}
+      propertyPath: _timers.Array.data[0].OnTimesUp.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 168060600512897595}
+    - target: {fileID: 7943499109208830846, guid: 8a51230058413bd42879237db8753931,
+        type: 3}
+      propertyPath: _timers.Array.data[0].OnTimesUp.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7943499109208830846, guid: 8a51230058413bd42879237db8753931,
+        type: 3}
+      propertyPath: _timers.Array.data[0].OnTimesUp.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: set_enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 7943499109208830846, guid: 8a51230058413bd42879237db8753931,
+        type: 3}
+      propertyPath: _timers.Array.data[0].OnTimesUp.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7943499109208830846, guid: 8a51230058413bd42879237db8753931,
+        type: 3}
+      propertyPath: _timers.Array.data[0].OnTimesUp.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a51230058413bd42879237db8753931, type: 3}

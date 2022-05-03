@@ -31,6 +31,7 @@ namespace Scripts
         public int GunAmmo => _gunAmmo;
         public int BlasterAmmo => _blasterAmmo;
         public int BombReloadingDelay => _bombReloadingDelay;
+        public GameObject Shield => _shield;
 
         private PlayerController _player;
         private Rigidbody2D _bullet;
@@ -41,7 +42,7 @@ namespace Scripts
         private float _maxGunFireDensity = 0.05f;
 
         private int _defaultBlasterAmmo;
-        private const int _maxLaserAmmo = 450;
+        private const int _maxLaserAmmo = 600;
         private float _maxLaserFireDensity = 0.1f;
 
         private int _defaultBombTimer;
@@ -126,30 +127,26 @@ namespace Scripts
 
         public void PowerUp()
         {
-            _shield.SetActive(true);
-            _shield.GetComponent<TimerComponent>().SetTimer(0);
-            _player._levelUpEffect.Spawn();
-
             //gun improvements
             if (_defaultGunAmmo != _maxGunAmmo)
-                _defaultGunAmmo += 90;
+                _defaultGunAmmo += 30;
 
-            _gunShootingDelay.Value -= 0.01f;
+            _gunShootingDelay.Value -= 0.005f;
 
             if (_gunShootingDelay.Value <= _maxGunFireDensity)
                 _gunShootingDelay.Value = _maxGunFireDensity;
 
             //laser improvements
             if (_defaultBlasterAmmo != _maxLaserAmmo)
-                _defaultBlasterAmmo += 45;
+                _defaultBlasterAmmo += 20;
 
-            _blasterShootingDelay.Value -= 0.1f;
+            _blasterShootingDelay.Value -= 0.05f;
 
             if (_blasterShootingDelay.Value <= _maxLaserFireDensity)
                 _blasterShootingDelay.Value = _maxLaserFireDensity;
 
             //bomb improvements
-            _defaultBombTimer -= 5;
+            _defaultBombTimer -= 2;
 
             if (_defaultBombTimer <= _minBombTimer)
                 _defaultBombTimer = _minBombTimer;
@@ -218,14 +215,16 @@ namespace Scripts
             foreach (var asteroid in asteroids)
             {
                 var asteroidHp = asteroid.GetComponent<HealthComponent>();
-                asteroidHp.ModifyHealth(-asteroidHp.Health);
+                if (asteroidHp)
+                    asteroidHp.ModifyHealth(-asteroidHp.Health);
             }
 
             var ships = FindObjectsOfType<EnemyAI>();
             foreach (var ship in ships)
             {
                 var shipHp = ship.GetComponent<HealthComponent>();
-                shipHp.ModifyHealth(-shipHp.Health);
+                //shipHp.ModifyHealth(-shipHp.Health);
+                shipHp.ModifyHealth(-50);
             }
 
             var projectiles = FindObjectsOfType<Projectile>();

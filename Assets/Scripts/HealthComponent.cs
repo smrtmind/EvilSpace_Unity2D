@@ -11,9 +11,9 @@ namespace Scripts
         [SerializeField] public UnityEvent _onDie;
 
         public int Health => _health;
+        public int MaxHealth => _maxHealth;
 
         private int _maxHealth;
-        private Animator _animator;
         private PlayerController _player;
 
         private void Awake()
@@ -23,7 +23,6 @@ namespace Scripts
 
         private void Start()
         {
-            _animator = GetComponent<Animator>();
             _player = GetComponent<PlayerController>();
         }
 

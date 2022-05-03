@@ -318,7 +318,7 @@ MonoBehaviour:
   _rotationSpeed: 80
   _speed: 2
   _shootingDelay:
-    _value: 1.8
+    _value: 3
   _weapon: {fileID: 475721933866399020, guid: 0031d4347730bf84ab7852836f04fc78, type: 3}
   _weaponSpawnPosition: {fileID: 7209977439784247874}
 --- !u!114 &1540678679572510921
@@ -537,7 +537,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9135416269573794926}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.46875, z: 0}
+  m_LocalPosition: {x: 0, y: 3.66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6424632476360959752}
@@ -556,7 +556,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 7.65}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -567,7 +567,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 15}
+  m_Size: {x: 1, y: 6}
   m_EdgeRadius: 0
 --- !u!114 &9057228599274537441
 MonoBehaviour:

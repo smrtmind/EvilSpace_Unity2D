@@ -11,11 +11,18 @@ namespace Scripts
         [Space]
         [SerializeField] private GameObject[] _enemySpawners;
 
+        [Space]
+        [Header("Boss")]
+        [SerializeField] private SpawnComponent _bossSpawner;
+
+        private static readonly int BossKey = Animator.StringToHash("bossTime");
+
         private int _score;
         private int _xp;
         private int _playerLvl = 1;
         private int _nextLvl = 500;
         public bool _isLevelUp;
+        private Animator _bossAnimator;
 
         public int Tries => _tries;
         public int Health => _health;
@@ -23,6 +30,11 @@ namespace Scripts
         public int XP => _xp;
         public int PlayerLVL => _playerLvl;
         public int NextLvl => _nextLvl;
+
+        private void Awake()
+        {
+            _bossAnimator = GetComponent<Animator>();
+        }
 
         public void ModifyXp(int xp)
         {
@@ -43,7 +55,7 @@ namespace Scripts
 
             if (_xp == _nextLvl && !FindObjectOfType<PlayerController>().IsDead)
             {
-                LevelUp(0);
+                LevelUp();
             }
             else if (_xp > _nextLvl && !FindObjectOfType<PlayerController>().IsDead)
             {
@@ -51,16 +63,24 @@ namespace Scripts
             }
         }
 
-        private void LevelUp(int currentXp)
+        private void LevelUp(int currentXp = 0)
         {
-            _isLevelUp = true;
+            FindObjectOfType<WeaponController>().Shield.SetActive(true);
+            FindObjectOfType<WeaponController>().Shield.GetComponent<TimerComponent>().SetTimer(0);
+            FindObjectOfType<PlayerController>()._levelUpEffect.Spawn();
 
-            FindObjectOfType<WeaponController>().PowerUp();
+            _isLevelUp = true;
 
             _playerLvl++;
             _xp = currentXp;
-            _tries++;
-            _targetHp.RiseMaxHealth();
+
+            if (_playerLvl % 2 == 0)
+            {              
+                _bossAnimator.SetTrigger(BossKey);
+            }
+
+            if (_targetHp.MaxHealth < 20)
+                _targetHp.RiseMaxHealth();
 
             _nextLvl = (((_nextLvl / 100) * 20) + _nextLvl);
 
@@ -91,13 +111,23 @@ namespace Scripts
             {
                 if (spawner.activeSelf)
                 {
-                    var enemyCooldown = spawner.GetComponent<EnemySpawner>().SpawnCooldown;
+                    var enemyCooldown = spawner.GetComponent<ObjectsSpawner>().SpawnCooldown;
                     enemyCooldown.Value -= 1.0f;
 
                     if (enemyCooldown.Value <= 4.0f)
                         enemyCooldown.Value = 4.0f;
                 }
             }
+        }
+
+        public void PlayArrivalSFX()
+        {
+            GetComponent<AudioSource>().Play();
+        }
+
+        public void SpawnBoss()
+        {
+            _bossSpawner.Spawn();
         }
     }
 }
