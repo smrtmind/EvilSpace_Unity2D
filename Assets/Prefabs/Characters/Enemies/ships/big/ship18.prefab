@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9161197920041600470}
-  - component: {fileID: 7153584605605859461}
-  - component: {fileID: 4644350701129121718}
+  - component: {fileID: 8759918770985319829}
+  - component: {fileID: 7819146916239310461}
   m_Layer: 0
   m_Name: minDistanceToPlayer
   m_TagString: Untagged
@@ -26,14 +26,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 844053071817810523}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0, y: 2.72, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6424632476360959752}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &7153584605605859461
-CircleCollider2D:
+--- !u!61 &8759918770985319829
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -46,9 +46,19 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 10
---- !u!114 &4644350701129121718
+  m_Size: {x: 1, y: 4}
+  m_EdgeRadius: 0
+--- !u!114 &7819146916239310461
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,7 +67,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 844053071817810523}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 232f8e543d85a6c4e86358d14771f883, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d89077c1e374fe44a5dca68605b53d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: Player
@@ -315,12 +325,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8540c2b4270bb47a822b40f56d2e4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isBoss: 0
+  _canMove: 1
   _rotationSpeed: 80
   _speed: 2
-  _shootingDelay:
-    _value: 3
-  _weapon: {fileID: 475721933866399020, guid: d1d4c6d86ef472b4b88c6aca9a3887b2, type: 3}
-  _weaponSpawnPosition: {fileID: 7209977439784247874}
+  _canShoot: 1
+  _weapons:
+  - _name: main weapon
+    _weapon: {fileID: 475721933866399020, guid: d1d4c6d86ef472b4b88c6aca9a3887b2,
+      type: 3}
+    _shootingDelay:
+      _value: 3
+    _weaponShootingPoint: {fileID: 7209977439784247874}
+    _spawnWeaponPoint: {fileID: 0}
 --- !u!114 &1540678679572510921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,7 +538,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1753113027139797802}
   - component: {fileID: 8335628505340707435}
-  - component: {fileID: 1360777822016498461}
+  - component: {fileID: 3937769480145290938}
   m_Layer: 0
   m_Name: vision
   m_TagString: Untagged
@@ -569,7 +586,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 7}
   m_EdgeRadius: 0
---- !u!114 &1360777822016498461
+--- !u!114 &3937769480145290938
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -578,7 +595,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8309204488382739580}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 232f8e543d85a6c4e86358d14771f883, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d89077c1e374fe44a5dca68605b53d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: Player

@@ -5,66 +5,62 @@ namespace Scripts
 {
     public class EnemyAI : MonoBehaviour
     {
-        [SerializeField] protected float _rotationSpeed = 100f;
-        [SerializeField] protected float _speed = 5f;
-        [SerializeField] protected Cooldown _shootingDelay;
-        [SerializeField] protected Projectile _weapon;
-        [SerializeField] protected Transform _weaponSpawnPosition;
-        [SerializeField] private Weapon[] _weapons;
+        [Header("Movement charasteristics")]
+        [SerializeField] private bool _isBoss;
+        [SerializeField] private bool _canMove;
+        [SerializeField] private float _rotationSpeed = 100f;
+        [SerializeField] private float _speed = 5f;
 
-        protected Transform _player;
-        protected Rigidbody2D _playerBody;
-        protected GameSession _gameSession;
-        protected float _zAngle;
-        protected bool _isStopped;
-        protected CameraShaker _cameraShaker;
+        [Space]
+        [SerializeField] private bool _canShoot;
+        [SerializeField] private Weapons[] _weapons;
 
-        protected virtual void Awake()
+        private Transform _player;
+        private Rigidbody2D _playerBody;
+        private GameSession _gameSession;
+        private float _zAngle;
+        private bool _isStopped;
+        private CameraShaker _cameraShaker;
+
+        private void Awake()
         {
             _gameSession = FindObjectOfType<GameSession>();
             _cameraShaker = FindObjectOfType<CameraShaker>();
         }
 
-        protected virtual void Start()
+        private void Start()
         {
             _playerBody = GetComponent<Rigidbody2D>();
 
-            GetVectorDirection();
-            LookOnPlayerImmediate();
+            GetPlayerDirection();
+
+            if (!_isBoss)
+            {
+                LookOnPlayerImmediate();
+            }
         }
 
-        protected virtual void Update()
+        private void Update()
         {
-            if (_isStopped)
+            if (_canMove && !_isStopped)
             {
-                transform.position = transform.position;
-            } 
-            else
-            {
-                GetVectorDirection();
+                Move();
             }
+
+            GetPlayerDirection();
 
             //calculating rotation
             Quaternion desiredRotation = Quaternion.Euler(0, 0, _zAngle);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, _rotationSpeed * Time.deltaTime);
         }
 
-        protected virtual void LookOnPlayerImmediate()
+        private void LookOnPlayerImmediate()
         {
-            var isBoss = GetComponent<BossAI>();
-            if (isBoss) return;
-
             transform.rotation = Quaternion.Euler(0, 0, _zAngle);
         }
 
-        protected virtual void GetVectorDirection()
+        private void GetPlayerDirection()
         {
-            Vector3 playerPosition = transform.position;
-            Vector3 velocity = new Vector3(0, _speed * Time.deltaTime, 0);
-
-            playerPosition += transform.rotation * velocity;
-            transform.position = playerPosition;
-
             var player = FindObjectOfType<PlayerController>();
             if (player != null)
             {
@@ -79,12 +75,12 @@ namespace Scripts
             _zAngle = Mathf.Atan2(direction.normalized.y, direction.normalized.x) * Mathf.Rad2Deg - 90;
         }
 
-        protected virtual void AddXp(int xp)
+        public void AddXp(int xp)
         {
             _gameSession.ModifyXp(xp);
         }
 
-        protected virtual void OnCollisionEnter2D(Collision2D other)
+        private void OnCollisionEnter2D(Collision2D other)
         {
             var isPlayer = other.gameObject.tag == "Player";
             if (isPlayer)
@@ -98,40 +94,62 @@ namespace Scripts
             }
         }
 
-        protected virtual void Shoot()
+        public void Shoot()
         {
-            if (_shootingDelay.IsReady)
+            if (_canShoot)
             {
-                var projectile = Instantiate(_weapon, _weaponSpawnPosition.position, transform.rotation);
-                projectile.Launch(_playerBody.velocity, transform.up);
-                _shootingDelay.Reset();
+                for (int i = 0; i < _weapons.Length; i++)
+                {
+                    if (_weapons[i].ShootingDelay.IsReady && !_weapons[i].SpawnWeaponPoint)
+                    {
+                        var projectile = Instantiate(_weapons[i].Weapon, _weapons[i].WeaponShootingPoint.position, transform.rotation);
+                        projectile.Launch(_playerBody.velocity, transform.up);
+                        _weapons[i].ShootingDelay.Reset();
+                    }
+                    else
+                    {
+                        if (_weapons[i].ShootingDelay.IsReady)
+                        {
+                            _weapons[i].SpawnWeaponPoint.Spawn();
+                            _weapons[i].ShootingDelay.Reset();
+                        }
+                    }
+                }
             }
         }
 
-        protected virtual void OnTriggerStay2D(Collider2D other)
+        private void Move()
         {
-            var isPlayer = other.gameObject.tag == "Player";
-            if (isPlayer)
-                Shoot();
+            Vector3 position = transform.position;
+            Vector3 velocity = new Vector3(0, _speed * Time.deltaTime, 0);
+
+            position += transform.rotation * velocity;
+            transform.position = position;
         }
 
-        protected virtual void OnTriggerExit2D(Collider2D other)
+        public void StopMoving() => _isStopped = true;
+
+        private void OnTriggerExit2D(Collider2D other)
         {
             var isPlayer = other.gameObject.tag == "Player";
             if (isPlayer)
                 _isStopped = false;
         }
-
-        protected virtual void StopMoving() => _isStopped = true;
     }
 
     [Serializable]
-    public class Weapon
+    public class Weapons
     {
         [SerializeField] private string _name;
-        //[SerializeField] private Sprite[] _charasteristics;
+        [SerializeField] private Projectile _weapon;
+        [SerializeField] private Cooldown _shootingDelay;
+        [SerializeField] private Transform _weaponShootingPoint;
+        [SerializeField] private SpawnComponent _spawnWeaponPoint;
 
         public string Name => _name;
-        //public Sprite[] Sprites => _sprites;
+        public Projectile Weapon => _weapon;
+        public Cooldown ShootingDelay => _shootingDelay;
+        public Transform WeaponShootingPoint => _weaponShootingPoint;
+        public SpawnComponent SpawnWeaponPoint => _spawnWeaponPoint;
     }
 }

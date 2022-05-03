@@ -74,7 +74,7 @@ namespace Scripts
             _playerLvl++;
             _xp = currentXp;
 
-            if (_playerLvl % 2 == 0)
+            if (_playerLvl % 8 == 0)
             {              
                 _bossAnimator.SetTrigger(BossKey);
             }
