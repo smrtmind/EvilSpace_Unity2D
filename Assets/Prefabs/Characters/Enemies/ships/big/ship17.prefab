@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311254186296485222}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.29, z: 0}
+  m_LocalPosition: {x: 0, y: 5.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6424632476360959752}
@@ -56,7 +56,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 7}
+  m_Size: {x: 1, y: 9}
   m_EdgeRadius: 0
 --- !u!114 &364097247740109110
 MonoBehaviour:
@@ -176,6 +176,52 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &3134064450883484812
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7940694309159969601}
+  - component: {fileID: 8996187301463006106}
+  m_Layer: 9
+  m_Name: rocketShootingPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7940694309159969601
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3134064450883484812}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.311, y: 0.095, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6424632476360959752}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8996187301463006106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3134064450883484812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a523f1eaf8b31c4aa334dcbdb8b15b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 7940694309159969601}
+  _prefab: {fileID: 8229194066570239158, guid: e3e1c0f0fcf5efb499e90187ba00c627, type: 3}
+  _invertXScale: 0
 --- !u!1 &6495048876971288214
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,7 +281,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 6424632476360959752}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3481807572543194065
 MonoBehaviour:
@@ -292,6 +338,7 @@ Transform:
   - {fileID: 8671786009638150307}
   - {fileID: 7175729085751371892}
   - {fileID: 7209977439784247874}
+  - {fileID: 7940694309159969601}
   - {fileID: 977080404297929158}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -418,7 +465,7 @@ MonoBehaviour:
   _isBoss: 0
   _canMove: 1
   _rotationSpeed: 80
-  _speed: 2
+  _speed: 4
   _canShoot: 1
   _weapons:
   - _name: main weapon
@@ -428,6 +475,12 @@ MonoBehaviour:
       _value: 3
     _weaponShootingPoint: {fileID: 7209977439784247874}
     _spawnWeaponPoint: {fileID: 0}
+  - _name: rockets
+    _weapon: {fileID: 0}
+    _shootingDelay:
+      _value: 6
+    _weaponShootingPoint: {fileID: 0}
+    _spawnWeaponPoint: {fileID: 8996187301463006106}
 --- !u!114 &1540678679572510921
 MonoBehaviour:
   m_ObjectHideFlags: 0

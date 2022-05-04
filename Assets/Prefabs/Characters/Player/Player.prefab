@@ -448,6 +448,7 @@ MonoBehaviour:
   _timerToGameOver: {fileID: 0}
   _mainTheme: {fileID: 0}
   _levelUpEffect: {fileID: 1576031856618695178}
+  _safeZone: {fileID: 0}
   _playerHit: {fileID: 8300000, guid: e71004015f27ebf479e136d2b19b465e, type: 3}
 --- !u!114 &1956753065
 MonoBehaviour:
@@ -573,7 +574,7 @@ MonoBehaviour:
     _value: 0.05
   _gunSpawnPosition: {fileID: 34140864}
   _blaster: {fileID: 475721933866399020, guid: 2594899881cfea04d8d6b954cfa0e7a7, type: 3}
-  _blasterAmmo: 45
+  _blasterAmmo: 60
   _blasterShootingDelay:
     _value: 1
   _blasterReloadingDelay:
@@ -1238,7 +1239,7 @@ PrefabInstance:
     - target: {fileID: 7943499109208830846, guid: 8a51230058413bd42879237db8753931,
         type: 3}
       propertyPath: _timers.Array.data[0].OnTimesUp.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7943499109208830846, guid: 8a51230058413bd42879237db8753931,
         type: 3}

@@ -333,7 +333,7 @@ MonoBehaviour:
   _isBoss: 0
   _canMove: 1
   _rotationSpeed: 130
-  _speed: 7
+  _speed: 8
   _canShoot: 1
   _weapons:
   - _name: main weapon

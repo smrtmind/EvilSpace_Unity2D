@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4164430357207319269}
   m_Layer: 12
   m_Name: fireBall2
-  m_TagString: Enemy
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea0181f3a976974e92ebd8634138912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 30
+  _speed: 35
 --- !u!114 &644304053469380508
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -20,8 +20,8 @@ GameObject:
   - component: {fileID: 644304053469380508}
   - component: {fileID: 5361616653271369593}
   m_Layer: 12
-  m_Name: singleLaserYellow
-  m_TagString: Enemy
+  m_Name: pinkStar
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

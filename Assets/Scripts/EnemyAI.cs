@@ -15,6 +15,8 @@ namespace Scripts
         [SerializeField] private bool _canShoot;
         [SerializeField] private Weapons[] _weapons;
 
+        public bool IsBoss => _isBoss;
+
         private Transform _player;
         private Rigidbody2D _playerBody;
         private GameSession _gameSession;
@@ -100,15 +102,15 @@ namespace Scripts
             {
                 for (int i = 0; i < _weapons.Length; i++)
                 {
-                    if (_weapons[i].ShootingDelay.IsReady && !_weapons[i].SpawnWeaponPoint)
+                    if (_weapons[i].ShootingDelay.IsReady)
                     {
-                        var projectile = Instantiate(_weapons[i].Weapon, _weapons[i].WeaponShootingPoint.position, transform.rotation);
-                        projectile.Launch(_playerBody.velocity, transform.up);
-                        _weapons[i].ShootingDelay.Reset();
-                    }
-                    else
-                    {
-                        if (_weapons[i].ShootingDelay.IsReady)
+                        if (!_weapons[i].SpawnWeaponPoint)
+                        {
+                            var projectile = Instantiate(_weapons[i].Weapon, _weapons[i].WeaponShootingPoint.position, transform.rotation);
+                            projectile.Launch(_playerBody.velocity, transform.up);
+                            _weapons[i].ShootingDelay.Reset();
+                        }
+                        else
                         {
                             _weapons[i].SpawnWeaponPoint.Spawn();
                             _weapons[i].ShootingDelay.Reset();
@@ -134,6 +136,11 @@ namespace Scripts
             var isPlayer = other.gameObject.tag == "Player";
             if (isPlayer)
                 _isStopped = false;
+        }
+
+        public void OnBossDie()
+        {
+            _gameSession.GetComponent<TimerComponent>().SetTimer(0);
         }
     }
 

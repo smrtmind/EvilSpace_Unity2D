@@ -20,8 +20,8 @@ GameObject:
   - component: {fileID: 644304053469380508}
   - component: {fileID: 1026716217999397176}
   m_Layer: 12
-  m_Name: singleLaserBlue
-  m_TagString: Enemy
+  m_Name: greenStar
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -19,10 +19,9 @@ GameObject:
   - component: {fileID: 475721933866399020}
   - component: {fileID: 644304053469380508}
   - component: {fileID: 2035719049881062060}
-  - component: {fileID: -5429719031718778693}
   m_Layer: 12
   m_Name: blasterBeemRed
-  m_TagString: Enemy
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -343,7 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea0181f3a976974e92ebd8634138912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 30
+  _speed: 35
 --- !u!114 &644304053469380508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415,15 +414,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &-5429719031718778693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6764601004572402636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18882bc27a457164897c6248fb5fec55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

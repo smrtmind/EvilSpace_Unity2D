@@ -91,7 +91,7 @@ Transform:
   m_GameObject: {fileID: 6119988910328633245}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.4, y: 0.237, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 503034251348243920}
   m_RootOrder: 4
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 7296892768127523566}
-  _prefab: {fileID: 8229194066570239158, guid: 866c01b981a7f974eb0b32bb722b94e3, type: 3}
+  _prefab: {fileID: 8229194066570239158, guid: 26a29add6766c634080ff5131db2bdaa, type: 3}
   _invertXScale: 0
 --- !u!1 &6495048876971288214
 GameObject:
@@ -391,7 +391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isBoss: 1
   _canMove: 0
-  _rotationSpeed: 50
+  _rotationSpeed: 180
   _speed: 0
   _canShoot: 1
   _weapons:
@@ -419,9 +419,15 @@ MonoBehaviour:
   - _name: left rocket
     _weapon: {fileID: 0}
     _shootingDelay:
-      _value: 0.5
+      _value: 8
     _weaponShootingPoint: {fileID: 0}
     _spawnWeaponPoint: {fileID: 429270340028774861}
+  - _name: right rocket
+    _weapon: {fileID: 0}
+    _shootingDelay:
+      _value: 8
+    _weaponShootingPoint: {fileID: 0}
+    _spawnWeaponPoint: {fileID: 4620300560418895424}
 --- !u!114 &1540678679572510921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,7 +480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14bae68aeaf10f14a90f186e6240f8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 200
+  _health: 400
   _onDamage:
     m_PersistentCalls:
       m_Calls:
@@ -571,7 +577,18 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 500
+            m_IntArgument: 1000
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1591537164283956906}
+          m_MethodName: OnBossDie
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -638,7 +655,7 @@ Transform:
   m_GameObject: {fileID: 8316859245245990100}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.4, y: 0.237, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 503034251348243920}
   m_RootOrder: 3
@@ -656,7 +673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 1245550942452693396}
-  _prefab: {fileID: 8229194066570239158, guid: 866c01b981a7f974eb0b32bb722b94e3, type: 3}
+  _prefab: {fileID: 8229194066570239158, guid: 26a29add6766c634080ff5131db2bdaa, type: 3}
   _invertXScale: 0
 --- !u!1 &9135416269573794926
 GameObject:

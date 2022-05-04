@@ -131,7 +131,7 @@ namespace Scripts
             if (_defaultGunAmmo != _maxGunAmmo)
                 _defaultGunAmmo += 30;
 
-            _gunShootingDelay.Value -= 0.005f;
+            _gunShootingDelay.Value -= 0.002f;
 
             if (_gunShootingDelay.Value <= _maxGunFireDensity)
                 _gunShootingDelay.Value = _maxGunFireDensity;
@@ -140,7 +140,7 @@ namespace Scripts
             if (_defaultBlasterAmmo != _maxLaserAmmo)
                 _defaultBlasterAmmo += 20;
 
-            _blasterShootingDelay.Value -= 0.05f;
+            _blasterShootingDelay.Value -= 0.02f;
 
             if (_blasterShootingDelay.Value <= _maxLaserFireDensity)
                 _blasterShootingDelay.Value = _maxLaserFireDensity;
@@ -202,7 +202,7 @@ namespace Scripts
             }
         }
 
-        private void UseBomb()
+        public void UseBomb()
         {
             _electroEffect.Spawn();
             _bombEffect.Spawn();

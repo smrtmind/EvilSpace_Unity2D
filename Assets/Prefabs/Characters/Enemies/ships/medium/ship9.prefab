@@ -420,7 +420,7 @@ MonoBehaviour:
   _isBoss: 0
   _canMove: 1
   _rotationSpeed: 100
-  _speed: 4
+  _speed: 6
   _canShoot: 1
   _weapons:
   - _name: main weapon

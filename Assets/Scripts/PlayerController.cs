@@ -16,6 +16,7 @@ namespace Scripts
         [SerializeField] private TimerComponent _timerToGameOver;
         [SerializeField] private AudioSource _mainTheme;
         [SerializeField] public SpawnComponent _levelUpEffect;
+        [SerializeField] private GameObject _safeZone;
 
         [Space]
         [Header("Sounds")]
@@ -38,7 +39,6 @@ namespace Scripts
         private HealthComponent _health;
         private Animator _animator;
         private Rigidbody2D _playerBody;
-        private AudioSource _audio;
         private bool _isMovingForward;
         private CameraShaker _cameraShaker;
         private bool _isDead;
@@ -52,7 +52,6 @@ namespace Scripts
             _health = GetComponent<HealthComponent>();
             _playerBody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
-            _audio = FindObjectOfType<AudioSource>();
             _playerCollider = GetComponent<Collider2D>();
         }
 
@@ -98,7 +97,6 @@ namespace Scripts
         private void OnCollisionEnter2D(Collision2D other)
         {
             var session = FindObjectOfType<GameSession>();
-            _audio.PlayOneShot(_playerHit);
 
             Instantiate(_hitParticles, other.GetContact(0).point, Quaternion.identity);
             _cameraShaker.ShakeCamera();
@@ -132,7 +130,8 @@ namespace Scripts
                 if (session.Tries > 0)
                 {
                     SetObjectStatus(false, _leftWingDamage, _rightWingDamage, _bodyDamage, gameObject);
-                    _playerCollider.enabled = false;
+                    _safeZone.GetComponent<Collider2D>().enabled = true;
+                    _safeZone.GetComponent<TimerComponent>().SetTimer(0);
                     _timerToContinue.SetTimer(0);
 
                     transform.position = Vector3.zero;

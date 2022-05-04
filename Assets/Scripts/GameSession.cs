@@ -15,7 +15,7 @@ namespace Scripts
         [Header("Boss")]
         [SerializeField] private SpawnComponent _bossSpawner;
 
-        private static readonly int BossKey = Animator.StringToHash("bossTime");
+        private static readonly int BossAttentionKey = Animator.StringToHash("bossAttention");
 
         private int _score;
         private int _xp;
@@ -23,6 +23,7 @@ namespace Scripts
         private int _nextLvl = 500;
         public bool _isLevelUp;
         private Animator _bossAnimator;
+        private PlayerController _player;
 
         public int Tries => _tries;
         public int Health => _health;
@@ -34,6 +35,7 @@ namespace Scripts
         private void Awake()
         {
             _bossAnimator = GetComponent<Animator>();
+            _player = FindObjectOfType<PlayerController>();
         }
 
         public void ModifyXp(int xp)
@@ -53,11 +55,13 @@ namespace Scripts
         {
             _health = _targetHp.Health;
 
-            if (_xp == _nextLvl && !FindObjectOfType<PlayerController>().IsDead)
+            if (_player.IsDead) return;
+
+            if (_xp == _nextLvl)
             {
                 LevelUp();
             }
-            else if (_xp > _nextLvl && !FindObjectOfType<PlayerController>().IsDead)
+            else if (_xp > _nextLvl)
             {
                 LevelUp(_xp - _nextLvl);
             }
@@ -74,9 +78,11 @@ namespace Scripts
             _playerLvl++;
             _xp = currentXp;
 
-            if (_playerLvl % 8 == 0)
+            if (_playerLvl % 10 == 0)
             {              
-                _bossAnimator.SetTrigger(BossKey);
+                SetEnemySpawnersState(false);
+                KillAllEnemies();
+                _bossAnimator.SetTrigger(BossAttentionKey);
             }
 
             if (_targetHp.MaxHealth < 20)
@@ -102,7 +108,7 @@ namespace Scripts
                     break;
 
                 //large enemies
-                case 6:
+                case 7:
                     _enemySpawners[2].SetActive(true);
                     break;
             }
@@ -128,6 +134,39 @@ namespace Scripts
         public void SpawnBoss()
         {
             _bossSpawner.Spawn();
+        }
+
+        private void SetEnemySpawnersState(bool state)
+        {
+            foreach (var enemy in _enemySpawners)
+            {
+                enemy.SetActive(state);
+            }
+        }
+
+        private void KillAllEnemies()
+        {
+            var asteroids = FindObjectsOfType<Asteroid>();
+            foreach (var asteroid in asteroids)
+            {
+                var asteroidHp = asteroid.GetComponent<HealthComponent>();
+                if (asteroidHp)
+                    asteroidHp.ModifyHealth(-asteroidHp.Health);
+            }
+
+            var ships = FindObjectsOfType<EnemyAI>();
+            foreach (var ship in ships)
+            {
+                var shipHp = ship.GetComponent<HealthComponent>();
+                //shipHp.ModifyHealth(-shipHp.Health);
+                shipHp.ModifyHealth(-50);
+            }
+
+            var projectiles = FindObjectsOfType<Projectile>();
+            foreach (var projectile in projectiles)
+            {
+                Destroy(projectile.gameObject);
+            }
         }
     }
 }
