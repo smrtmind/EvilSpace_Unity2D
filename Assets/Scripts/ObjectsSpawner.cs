@@ -7,7 +7,9 @@ namespace Scripts
         [SerializeField] private GameObject[] _enemies;
         [SerializeField] private int _enemiesOnStart;
         [SerializeField] private Cooldown _spawnCooldown;
+        [SerializeField] private bool _startSpawn;
 
+        public bool StartSpawn => _startSpawn;
         public Cooldown SpawnCooldown => _spawnCooldown;
 
         private Bounds _screenBounds;
@@ -15,17 +17,23 @@ namespace Scripts
         private void Start()
         {
             _screenBounds = FindObjectOfType<ScreenBounds>().borderOfBounds;
-            SpawnEnemies(_enemiesOnStart);
 
-            _spawnCooldown.Reset();
+            if (_startSpawn)
+            {
+                SpawnEnemies(_enemiesOnStart);
+                _spawnCooldown.Reset();
+            } 
         }
 
         private void Update()
         {
-            if (_spawnCooldown.IsReady)
+            if (_startSpawn)
             {
-                SpawnNewEnemy();
-                _spawnCooldown.Reset();
+                if (_spawnCooldown.IsReady)
+                {
+                    SpawnNewEnemy();
+                    _spawnCooldown.Reset();
+                }
             }
         }
 
@@ -52,6 +60,11 @@ namespace Scripts
             }
             else
                 Instantiate(enemyPrefab, randomSpawnPosition, Quaternion.identity, transform);
+        }
+
+        public void SetState(bool state)
+        {
+            _startSpawn = state;
         }
     }
 }

@@ -17,6 +17,7 @@ namespace Scripts
         [SerializeField] private AudioSource _mainTheme;
         [SerializeField] public SpawnComponent _levelUpEffect;
         [SerializeField] private GameObject _safeZone;
+        [SerializeField] private GameObject _safeZoneEffect;
 
         [Space]
         [Header("Sounds")]
@@ -131,6 +132,7 @@ namespace Scripts
                 {
                     SetObjectStatus(false, _leftWingDamage, _rightWingDamage, _bodyDamage, gameObject);
                     _safeZone.GetComponent<Collider2D>().enabled = true;
+                    _safeZoneEffect.SetActive(true);
                     _safeZone.GetComponent<TimerComponent>().SetTimer(0);
                     _timerToContinue.SetTimer(0);
 

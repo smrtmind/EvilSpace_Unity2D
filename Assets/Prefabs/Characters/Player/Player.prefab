@@ -449,6 +449,7 @@ MonoBehaviour:
   _mainTheme: {fileID: 0}
   _levelUpEffect: {fileID: 1576031856618695178}
   _safeZone: {fileID: 0}
+  _safeZoneEffect: {fileID: 0}
   _playerHit: {fileID: 8300000, guid: e71004015f27ebf479e136d2b19b465e, type: 3}
 --- !u!114 &1956753065
 MonoBehaviour:

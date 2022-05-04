@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 5655042163995265754}
   - component: {fileID: 475721933866399020}
   m_Layer: 11
-  m_Name: greenBeem
+  m_Name: blaster
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,7 +179,7 @@ MonoBehaviour:
   _tag: 
   _layer:
     serializedVersion: 2
-    m_Bits: 1536
+    m_Bits: 5632
   _action:
     m_PersistentCalls:
       m_Calls:

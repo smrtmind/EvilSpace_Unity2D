@@ -9,7 +9,7 @@ namespace Scripts
         [SerializeField] private HealthComponent _targetHp;
 
         [Space]
-        [SerializeField] private GameObject[] _enemySpawners;
+        [SerializeField] private ObjectsSpawner[] _enemySpawners;
 
         [Space]
         [Header("Boss")]
@@ -99,23 +99,23 @@ namespace Scripts
             {
                 //small enemies
                 case 2:
-                    _enemySpawners[0].SetActive(true);
+                    _enemySpawners[0].SetState(true);
                     break;
 
                 //medium enemies
                 case 4:
-                    _enemySpawners[1].SetActive(true);
+                    _enemySpawners[1].SetState(true);
                     break;
 
                 //large enemies
                 case 7:
-                    _enemySpawners[2].SetActive(true);
+                    _enemySpawners[2].SetState(true);
                     break;
             }
 
             foreach (var spawner in _enemySpawners)
             {
-                if (spawner.activeSelf)
+                if (spawner.StartSpawn)
                 {
                     var enemyCooldown = spawner.GetComponent<ObjectsSpawner>().SpawnCooldown;
                     enemyCooldown.Value -= 1.0f;
@@ -140,7 +140,7 @@ namespace Scripts
         {
             foreach (var enemy in _enemySpawners)
             {
-                enemy.SetActive(state);
+                enemy.GetComponent<ObjectsSpawner>().SetState(state);
             }
         }
 

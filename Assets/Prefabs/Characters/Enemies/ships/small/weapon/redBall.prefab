@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 475721933866399020}
   - component: {fileID: 644304053469380508}
   - component: {fileID: 1329866749504397549}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: redBall
   m_TagString: Projectile
   m_Icon: {fileID: 0}
