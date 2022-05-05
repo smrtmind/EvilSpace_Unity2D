@@ -17,6 +17,16 @@ namespace Scripts
 
         public void AddOneLife() => _gameSession.ModifyTries(1);
 
-        public void PowerUp() => _weaponController.PowerUp();
+        public void PowerUp()
+        {
+            var player = FindObjectOfType<PlayerController>();
+            if (player)
+            {
+                if (!player.IsDead)
+                {
+                    _weaponController.PowerUp();
+                }
+            }
+        }
     }
 }

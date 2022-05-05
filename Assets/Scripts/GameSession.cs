@@ -81,7 +81,7 @@ namespace Scripts
             if (_playerLvl % 10 == 0)
             {              
                 SetEnemySpawnersState(false);
-                KillAllEnemies();
+                FindObjectOfType<WeaponController>().KillAllEnemies();
                 _bossAnimator.SetTrigger(BossAttentionKey);
             }
 
@@ -141,31 +141,6 @@ namespace Scripts
             foreach (var enemy in _enemySpawners)
             {
                 enemy.GetComponent<ObjectsSpawner>().SetState(state);
-            }
-        }
-
-        private void KillAllEnemies()
-        {
-            var asteroids = FindObjectsOfType<Asteroid>();
-            foreach (var asteroid in asteroids)
-            {
-                var asteroidHp = asteroid.GetComponent<HealthComponent>();
-                if (asteroidHp)
-                    asteroidHp.ModifyHealth(-asteroidHp.Health);
-            }
-
-            var ships = FindObjectsOfType<EnemyAI>();
-            foreach (var ship in ships)
-            {
-                var shipHp = ship.GetComponent<HealthComponent>();
-                //shipHp.ModifyHealth(-shipHp.Health);
-                shipHp.ModifyHealth(-50);
-            }
-
-            var projectiles = FindObjectsOfType<Projectile>();
-            foreach (var projectile in projectiles)
-            {
-                Destroy(projectile.gameObject);
             }
         }
     }

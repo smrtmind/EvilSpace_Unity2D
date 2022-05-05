@@ -567,20 +567,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02130b3dac401049b3af221b011694c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gun: {fileID: 475721933866399020, guid: c452583892f964948998169502f98a1c, type: 3}
-  _gunAmmo: 90
-  _gunShootingDelay:
-    _value: 0.15
-  _gunReloadingDelay:
-    _value: 0.05
-  _gunSpawnPosition: {fileID: 34140864}
-  _blaster: {fileID: 475721933866399020, guid: 2594899881cfea04d8d6b954cfa0e7a7, type: 3}
-  _blasterAmmo: 60
-  _blasterShootingDelay:
-    _value: 1
-  _blasterReloadingDelay:
-    _value: 0.1
-  _blasterSpawnPosition: {fileID: 112501871}
+  _weaponSettings:
+  - _name: Machine Gun
+    _weapon: {fileID: 475721933866399020, guid: c452583892f964948998169502f98a1c,
+      type: 3}
+    _weaponShootingPoint: {fileID: 34140864}
+    _ammo: 90
+    _maxAmmo: 900
+    _reloadingDelay:
+      _value: 0.05
+    _ammoToReload: 2
+    _ammoPerShoot: -2
+    _ammoToAddOnPowerUp: 30
+    _shootingDelay:
+      _value: 0.15
+    _shootingDelayOnPowerUp: -0.005
+    _shootingDelayMin: 0.05
+  - _name: Blaster
+    _weapon: {fileID: 475721933866399020, guid: 2594899881cfea04d8d6b954cfa0e7a7,
+      type: 3}
+    _weaponShootingPoint: {fileID: 112501871}
+    _ammo: 60
+    _maxAmmo: 600
+    _reloadingDelay:
+      _value: 0.1
+    _ammoToReload: 1
+    _ammoPerShoot: -1
+    _ammoToAddOnPowerUp: 20
+    _shootingDelay:
+      _value: 1
+    _shootingDelayOnPowerUp: -0.05
+    _shootingDelayMin: 0.1
   _reloadingSpeed:
     _value: 1
   _bombReloadingDelay: 100

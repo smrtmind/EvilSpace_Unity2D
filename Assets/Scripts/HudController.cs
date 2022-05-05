@@ -45,8 +45,8 @@ namespace Scripts
             _lvlText.text = $"LVL {_gameSession.PlayerLVL}";
 
             //weapon
-            _gunValue.text = $"{_weaponController.GunAmmo}";
-            _blasterValue.text = $"{_weaponController.BlasterAmmo}";
+            _gunValue.text = $"{_weaponController.WeaponSettings[0].Ammo}";
+            _blasterValue.text = $"{_weaponController.WeaponSettings[1].Ammo}";
 
             if (!_weaponController._bombIsReady)
             {

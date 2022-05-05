@@ -84,15 +84,18 @@ namespace Scripts
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            var isPlayer = other.gameObject.tag == "Player";
-            if (isPlayer)
+            var player = FindObjectOfType<PlayerController>();
+            if (player)
             {
-                _cameraShaker.RestoreValues();
+                if (!player.IsDead)
+                {
+                    _cameraShaker.RestoreValues();
 
-                var force = transform.position - other.transform.position;
-                force.Normalize();
+                    var force = transform.position - other.transform.position;
+                    force.Normalize();
 
-                FindObjectOfType<PlayerController>().GetComponent<Rigidbody2D>().AddForce(-force * 500);
+                    player.GetComponent<Rigidbody2D>().AddForce(-force * 500);
+                }
             }
         }
 

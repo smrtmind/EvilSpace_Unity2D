@@ -1,21 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Scripts
 {
     public class WeaponController : MonoBehaviour
     {
-        [SerializeField] private Projectile _gun;
-        [SerializeField] private int _gunAmmo;
-        [SerializeField] private Cooldown _gunShootingDelay;
-        [SerializeField] private Cooldown _gunReloadingDelay;
-        [SerializeField] private Transform _gunSpawnPosition;
+        [SerializeField] private WeaponSettings[] _weaponSettings;
 
-        [Space]
-        [SerializeField] private Projectile _blaster;
-        [SerializeField] private int _blasterAmmo;
-        [SerializeField] private Cooldown _blasterShootingDelay;
-        [SerializeField] private Cooldown _blasterReloadingDelay;
-        [SerializeField] private Transform _blasterSpawnPosition;
+        public WeaponSettings[] WeaponSettings => _weaponSettings;
 
         [Space]
         [SerializeField] private Cooldown _reloadingSpeed;
@@ -28,36 +20,32 @@ namespace Scripts
         [SerializeField] private GameObject _electroShield;
         [SerializeField] private AudioSource _bombReloaded;
 
-        public int GunAmmo => _gunAmmo;
-        public int BlasterAmmo => _blasterAmmo;
         public int BombReloadingDelay => _bombReloadingDelay;
         public GameObject Shield => _shield;
 
-        private PlayerController _player;
-        private Rigidbody2D _bullet;
+        private PlayerController _playerInput;
+        private Rigidbody2D _playerBody;
         private CameraShaker _cameraShaker;
-
-        private int _defaultGunAmmo;
-        private const int _maxGunAmmo = 900;
-        private float _maxGunFireDensity = 0.05f;
-
-        private int _defaultBlasterAmmo;
-        private const int _maxLaserAmmo = 600;
-        private float _maxLaserFireDensity = 0.1f;
 
         private int _defaultBombTimer;
         private int _minBombTimer = 30;
         public bool _bombIsReady;
 
-        private Projectile _currentWeapon;
+        private Projectile _weapon;
         private Cooldown _shootingDelay;
         private Cooldown _reloadingDelay;
-        private Transform _bulletSpawnPosition;
+        private Transform _weaponShootingPoint;
+        private int _ammoToReload;
+        private int _ammoPerShoot;
+        private int _currentWeaponType;
 
         private void Awake()
         {
-            _defaultGunAmmo = _gunAmmo;
-            _defaultBlasterAmmo = _blasterAmmo;
+            foreach (var weapon in _weaponSettings)
+            {
+                weapon.DefaultAmmo = weapon.Ammo;
+            }
+
             _defaultBombTimer = _bombReloadingDelay;
 
             _cameraShaker = FindObjectOfType<CameraShaker>();
@@ -65,56 +53,59 @@ namespace Scripts
 
         private void Start()
         {
-            _gunAmmo = _defaultGunAmmo;
-            _blasterAmmo = _defaultBlasterAmmo;
+            foreach (var weapon in _weaponSettings)
+            {
+                weapon.Ammo = weapon.DefaultAmmo;
+            }
+
             _bombReloadingDelay = _defaultBombTimer;
 
-            _player = GetComponent<PlayerController>();
-            _bullet = GetComponent<Rigidbody2D>();
+            _playerInput = GetComponent<PlayerController>();
+            _playerBody = GetComponent<Rigidbody2D>();
         }
 
         private void Update()
         {
-            if (_player.firstWeapon)
+            if (_playerInput.firstWeapon)
             {
-                if (!_player.secondWeapon)
+                if (!_playerInput.secondWeapon)
                 {
-                    SetWeaponActive(2);
-                    Reload(ref _blasterAmmo, ref _defaultBlasterAmmo, 1);
+                    _currentWeaponType = SetWeaponActive(1);
+                    Reload();
                 }
 
-                if (_gunShootingDelay.IsReady && _gunAmmo > 0)
+                _currentWeaponType = SetWeaponActive(0);
+                if (_shootingDelay.IsReady && _weaponSettings[0].Ammo > 0)
                 {
-                    SetWeaponActive(1);
-                    Shoot(ref _gunAmmo, 2);
+                    Shoot();
                 }
             }
 
-            if (_player.secondWeapon)
+            if (_playerInput.secondWeapon)
             {
-                if (!_player.firstWeapon)
+                if (!_playerInput.firstWeapon)
                 {
-                    SetWeaponActive(1);
-                    Reload(ref _gunAmmo, ref _defaultGunAmmo, 2);
+                    _currentWeaponType = SetWeaponActive(0);
+                    Reload();
                 }
 
-                if (_blasterShootingDelay.IsReady && _blasterAmmo > 0)
+                _currentWeaponType = SetWeaponActive(1);
+                if (_shootingDelay.IsReady && _weaponSettings[1].Ammo > 0)
                 {
-                    SetWeaponActive(2);
-                    Shoot(ref _blasterAmmo, 1);
+                    Shoot();
                 }
             }
 
-            if (!_player.firstWeapon && !_player.secondWeapon)
+            if (!_playerInput.firstWeapon && !_playerInput.secondWeapon)
             {
-                SetWeaponActive(1);
-                Reload(ref _gunAmmo, ref _defaultGunAmmo, 2);
-
-                SetWeaponActive(2);
-                Reload(ref _blasterAmmo, ref _defaultBlasterAmmo, 1);
+                for (int i = 0; i < _weaponSettings.Length; i++)
+                {
+                    _currentWeaponType = SetWeaponActive(i);
+                    Reload();
+                }
             }
 
-            if (_player.thirdWeapon && _bombIsReady)
+            if (_playerInput.thirdWeapon && _bombIsReady)
             {
                 UseBomb();
             }
@@ -127,25 +118,21 @@ namespace Scripts
 
         public void PowerUp()
         {
-            //gun improvements
-            if (_defaultGunAmmo != _maxGunAmmo)
-                _defaultGunAmmo += 30;
+            foreach (var weapon in _weaponSettings)
+            {
+                weapon.DefaultAmmo += weapon.AmmoToAddOnPowerUp;
+                if (weapon.DefaultAmmo >= weapon.MaxAmmo)
+                {
+                    weapon.DefaultAmmo = weapon.MaxAmmo;
+                }
+                    
+                weapon.ShootingDelay.Value += weapon.ShootingDelayOnPowerUp;
+                if (weapon.ShootingDelay.Value <= weapon.ShootingDelayMin)
+                {
+                    weapon.ShootingDelay.Value = weapon.ShootingDelayMin;
+                }                    
+            }
 
-            _gunShootingDelay.Value -= 0.005f;
-
-            if (_gunShootingDelay.Value <= _maxGunFireDensity)
-                _gunShootingDelay.Value = _maxGunFireDensity;
-
-            //laser improvements
-            if (_defaultBlasterAmmo != _maxLaserAmmo)
-                _defaultBlasterAmmo += 20;
-
-            _blasterShootingDelay.Value -= 0.05f;
-
-            if (_blasterShootingDelay.Value <= _maxLaserFireDensity)
-                _blasterShootingDelay.Value = _maxLaserFireDensity;
-
-            //bomb improvements
             _defaultBombTimer -= 2;
 
             if (_defaultBombTimer <= _minBombTimer)
@@ -160,43 +147,34 @@ namespace Scripts
             _electroShield.GetComponent<TimerComponent>().SetTimer(0);
         }
 
-        private void SetWeaponActive(int weapon)
+        private int SetWeaponActive(int type)
         {
-            switch (weapon)
-            {
-                case 1:
-                    _currentWeapon = _gun;
-                    _shootingDelay = _gunShootingDelay;
-                    _reloadingDelay = _gunReloadingDelay;
-                    _bulletSpawnPosition = _gunSpawnPosition;
+            _ammoPerShoot = _weaponSettings[type].AmmoPerShoot;
+            _ammoToReload = _weaponSettings[type].AmmoToReload;
+            _weapon = _weaponSettings[type].Weapon;
+            _shootingDelay = _weaponSettings[type].ShootingDelay;
+            _reloadingDelay = _weaponSettings[type].ReloadingDelay;
+            _weaponShootingPoint = _weaponSettings[type].WeaponShootingPoint;
 
-                    break;
-
-                case 2:
-                    _currentWeapon = _blaster;
-                    _shootingDelay = _blasterShootingDelay;
-                    _reloadingDelay = _blasterReloadingDelay;
-                    _bulletSpawnPosition = _blasterSpawnPosition;
-
-                    break;
-            }
+            return type;
         }
 
-        private void Shoot(ref int ammo, int ammoPerShoot)
+        private void Shoot()
         {
-            var projectile = Instantiate(_currentWeapon, _bulletSpawnPosition.position, transform.rotation);
-            projectile.Launch(_bullet.velocity, transform.up);
-            ammo -= ammoPerShoot;
+            var projectile = Instantiate(_weapon, _weaponShootingPoint.position, transform.rotation);
+            projectile.Launch(_playerBody.velocity, transform.up);
+
+            _weaponSettings[_currentWeaponType].Ammo += _ammoPerShoot;
             _shootingDelay.Reset();
         }
 
-        private void Reload(ref int ammo, ref int defaultAmmo, int ammoToAdd)
+        private void Reload()
         {
             if (_reloadingDelay.IsReady)
             {
-                if (ammo != defaultAmmo)
+                if (_weaponSettings[_currentWeaponType].Ammo != _weaponSettings[_currentWeaponType].DefaultAmmo)
                 {
-                    ammo += ammoToAdd;
+                    _weaponSettings[_currentWeaponType].Ammo += _ammoToReload;
                     _reloadingDelay.Reset();
                 }
             }
@@ -211,6 +189,29 @@ namespace Scripts
             _cameraShaker.SetMaxDelta(0.6f);
             _cameraShaker.ShakeCamera();
 
+            KillAllEnemies();
+
+            _bombIsReady = false;
+            _bombReloadingDelay = _defaultBombTimer;
+        }
+
+        private void ReloadBomb()
+        {
+            if (_reloadingSpeed.IsReady)
+            {
+                _bombReloadingDelay--;
+                _reloadingSpeed.Reset();
+
+                if (_bombReloadingDelay == 0)
+                {
+                    _bombReloaded.Play();
+                    _bombIsReady = true;
+                }
+            }
+        }
+
+        public void KillAllEnemies()
+        {
             var asteroids = FindObjectsOfType<Asteroid>();
             foreach (var asteroid in asteroids)
             {
@@ -232,24 +233,47 @@ namespace Scripts
             {
                 Destroy(projectile.gameObject);
             }
-
-            _bombIsReady = false;
-            _bombReloadingDelay = _defaultBombTimer;
         }
+    }
 
-        private void ReloadBomb()
+    [Serializable]
+    public class WeaponSettings
+    {
+        [SerializeField] private string _name;
+        [SerializeField] private Projectile _weapon;
+        [SerializeField] private Transform _weaponShootingPoint;
+
+        [Space]
+        [SerializeField] private int _ammo;
+        [SerializeField] private int _maxAmmo;
+        [SerializeField] private Cooldown _reloadingDelay;
+        [SerializeField] private int _ammoToReload;
+        [SerializeField] private int _ammoPerShoot;
+        [SerializeField] private int _ammoToAddOnPowerUp;
+
+        [Space]
+        [SerializeField] private Cooldown _shootingDelay;
+        [SerializeField] private float _shootingDelayOnPowerUp;
+        [SerializeField] private float _shootingDelayMin;
+
+        public string Name => _name;
+        public Projectile Weapon => _weapon;
+        public Transform WeaponShootingPoint => _weaponShootingPoint;
+
+        public int Ammo
         {
-            if (_reloadingSpeed.IsReady)
-            {
-                _bombReloadingDelay--;
-                _reloadingSpeed.Reset();
-
-                if (_bombReloadingDelay == 0)
-                {
-                    _bombReloaded.Play();
-                    _bombIsReady = true;
-                }
-            }
+            get => _ammo;
+            set => _ammo = value;
         }
+
+        public int MaxAmmo => _maxAmmo;
+        public int DefaultAmmo { get; set; }
+        public Cooldown ReloadingDelay => _reloadingDelay;
+        public int AmmoToReload => _ammoToReload;
+        public int AmmoPerShoot => _ammoPerShoot;
+        public int AmmoToAddOnPowerUp => _ammoToAddOnPowerUp;
+        public Cooldown ShootingDelay => _shootingDelay;
+        public float ShootingDelayOnPowerUp => _shootingDelayOnPowerUp;
+        public float ShootingDelayMin => _shootingDelayMin;
     }
 }
