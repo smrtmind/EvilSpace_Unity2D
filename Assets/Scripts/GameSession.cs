@@ -108,7 +108,7 @@ namespace Scripts
                     break;
 
                 //large enemies
-                case 7:
+                case 8:
                     _enemySpawners[2].SetState(true);
                     break;
             }

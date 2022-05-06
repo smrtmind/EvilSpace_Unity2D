@@ -10,26 +10,30 @@ namespace Scripts
         public WeaponSettings[] WeaponSettings => _weaponSettings;
 
         [Space]
+        [Header("Mega bomb")]
+        [SerializeField] private int _bombTimer;
+        [SerializeField] private int _bombTimerMin;
+        [SerializeField] private int _decreaseBombTimerOnPowerUp;
         [SerializeField] private Cooldown _reloadingSpeed;
-        [SerializeField] private int _bombReloadingDelay;
-        [SerializeField] private SpawnComponent _bombEffect;
-        [SerializeField] private SpawnComponent _electroEffect;
 
         [Space]
+        [Header("Effects")]
+        [SerializeField] private SpawnComponent _bombEffect;
+        [SerializeField] private SpawnComponent _electroEffect;
         [SerializeField] private GameObject _shield;
         [SerializeField] private GameObject _electroShield;
         [SerializeField] private AudioSource _bombReloaded;
 
-        public int BombReloadingDelay => _bombReloadingDelay;
+        private int _bombTimerDefault;
+        private bool _bombIsReady;
+
+        public bool BombIsReady => _bombIsReady;
+        public int BombTimer => _bombTimer;
         public GameObject Shield => _shield;
 
         private PlayerController _playerInput;
         private Rigidbody2D _playerBody;
         private CameraShaker _cameraShaker;
-
-        private int _defaultBombTimer;
-        private int _minBombTimer = 30;
-        public bool _bombIsReady;
 
         private Projectile _weapon;
         private Cooldown _shootingDelay;
@@ -46,7 +50,7 @@ namespace Scripts
                 weapon.DefaultAmmo = weapon.Ammo;
             }
 
-            _defaultBombTimer = _bombReloadingDelay;
+            _bombTimerDefault = _bombTimer;
 
             _cameraShaker = FindObjectOfType<CameraShaker>();
         }
@@ -58,7 +62,7 @@ namespace Scripts
                 weapon.Ammo = weapon.DefaultAmmo;
             }
 
-            _bombReloadingDelay = _defaultBombTimer;
+            _bombTimer = _bombTimerDefault;
 
             _playerInput = GetComponent<PlayerController>();
             _playerBody = GetComponent<Rigidbody2D>();
@@ -133,10 +137,11 @@ namespace Scripts
                 }                    
             }
 
-            _defaultBombTimer -= 2;
-
-            if (_defaultBombTimer <= _minBombTimer)
-                _defaultBombTimer = _minBombTimer;
+            _bombTimerDefault += _decreaseBombTimerOnPowerUp;
+            if (_bombTimerDefault <= _bombTimerMin)
+            {
+                _bombTimerDefault = _bombTimerMin;
+            }  
 
             FindObjectOfType<GameSession>()._isLevelUp = false;
         }
@@ -192,17 +197,17 @@ namespace Scripts
             KillAllEnemies();
 
             _bombIsReady = false;
-            _bombReloadingDelay = _defaultBombTimer;
+            _bombTimer = _bombTimerDefault;
         }
 
         private void ReloadBomb()
         {
             if (_reloadingSpeed.IsReady)
             {
-                _bombReloadingDelay--;
+                _bombTimer--;
                 _reloadingSpeed.Reset();
 
-                if (_bombReloadingDelay == 0)
+                if (_bombTimer == 0)
                 {
                     _bombReloaded.Play();
                     _bombIsReady = true;

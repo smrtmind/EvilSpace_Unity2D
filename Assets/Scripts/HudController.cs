@@ -48,10 +48,10 @@ namespace Scripts
             _gunValue.text = $"{_weaponController.WeaponSettings[0].Ammo}";
             _blasterValue.text = $"{_weaponController.WeaponSettings[1].Ammo}";
 
-            if (!_weaponController._bombIsReady)
+            if (!_weaponController.BombIsReady)
             {
                 _bombStatus.color = Color.white;
-                _bombStatus.text = $"{_weaponController.BombReloadingDelay}";
+                _bombStatus.text = $"{_weaponController.BombTimer}";
             }
             else
             {

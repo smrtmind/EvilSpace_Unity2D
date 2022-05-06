@@ -422,7 +422,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ad27038d84708429deace85ffa6770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 8884521579569802424}
 --- !u!114 &8884521579569802424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -450,7 +449,6 @@ MonoBehaviour:
   _levelUpEffect: {fileID: 1576031856618695178}
   _safeZone: {fileID: 0}
   _safeZoneEffect: {fileID: 0}
-  _playerHit: {fileID: 8300000, guid: e71004015f27ebf479e136d2b19b465e, type: 3}
 --- !u!114 &1956753065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,7 +492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14bae68aeaf10f14a90f186e6240f8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 5
+  _health: 100000
   _onDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -581,7 +579,7 @@ MonoBehaviour:
     _ammoToAddOnPowerUp: 30
     _shootingDelay:
       _value: 0.15
-    _shootingDelayOnPowerUp: -0.005
+    _shootingDelayOnPowerUp: -0.01
     _shootingDelayMin: 0.05
   - _name: Blaster
     _weapon: {fileID: 475721933866399020, guid: 2594899881cfea04d8d6b954cfa0e7a7,
@@ -596,17 +594,18 @@ MonoBehaviour:
     _ammoToAddOnPowerUp: 20
     _shootingDelay:
       _value: 1
-    _shootingDelayOnPowerUp: -0.05
+    _shootingDelayOnPowerUp: -0.1
     _shootingDelayMin: 0.1
+  _bombTimer: 100
+  _bombTimerMin: 30
+  _decreaseBombTimerOnPowerUp: -2
   _reloadingSpeed:
     _value: 1
-  _bombReloadingDelay: 100
   _bombEffect: {fileID: 1556972870}
   _electroEffect: {fileID: 884646618}
   _shield: {fileID: 8462156562117412205}
   _electroShield: {fileID: 2660348259839491949}
   _bombReloaded: {fileID: 870214923}
-  _bombIsReady: 0
 --- !u!82 &870214923
 AudioSource:
   m_ObjectHideFlags: 0

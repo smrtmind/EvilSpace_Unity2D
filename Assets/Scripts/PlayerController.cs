@@ -19,10 +19,6 @@ namespace Scripts
         [SerializeField] private GameObject _safeZone;
         [SerializeField] private GameObject _safeZoneEffect;
 
-        [Space]
-        [Header("Sounds")]
-        [SerializeField] private AudioClip _playerHit;
-
         private static readonly int LowHpKey = Animator.StringToHash("lowHp");
         private static readonly int LeftTurnKey = Animator.StringToHash("left-turn");
         private static readonly int RightTurnKey = Animator.StringToHash("right-turn");
@@ -30,7 +26,10 @@ namespace Scripts
         private static readonly int HitLeftKey = Animator.StringToHash("is-hitLeft");
         private static readonly int HitRightKey = Animator.StringToHash("is-hitRight");
 
-        public float burst { get; set; }
+        private Joystick _joystick;
+
+        //for pc build
+        //public float burst { get; set; }
         public bool leftTurn { get; set; }
         public bool rightTurn { get; set; }
         public bool firstWeapon { get; set; }
@@ -54,11 +53,17 @@ namespace Scripts
             _playerBody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
             _playerCollider = GetComponent<Collider2D>();
+            _joystick = FindObjectOfType<Joystick>();
         }
 
         private void FixedUpdate()
         {
-            _isMovingForward = burst > 0;
+            //for pc build
+            //_isMovingForward = burst > 0;
+
+            leftTurn = _joystick.Horizontal <= -0.5f;
+            rightTurn = _joystick.Horizontal >= 0.5f;
+            _isMovingForward = _joystick.Vertical <= -0.2f || _joystick.Vertical >= 0.2f;
 
             if (leftTurn)
             {

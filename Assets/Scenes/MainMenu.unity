@@ -629,7 +629,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1046632814}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41f9a4fa143f1774fab174fe79deba6e, type: 3}
+  m_Script: {fileID: 11500000, guid: 86fb4228fea93114494c76e2ccefd14a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _enemies:
@@ -641,9 +641,11 @@ MonoBehaviour:
   - {fileID: 8229194066570239158, guid: 509892d84918db14786ebb3d03b865b5, type: 3}
   - {fileID: 8229194066570239158, guid: e74e6a3b07d777d4c9d397c3b0899f27, type: 3}
   - {fileID: 8229194066570239158, guid: 2ec51e9dee0be0042941635de599b00c, type: 3}
+  - {fileID: 8229194066570239158, guid: 866c01b981a7f974eb0b32bb722b94e3, type: 3}
   _enemiesOnStart: 3
   _spawnCooldown:
-    _value: 1000000
+    _value: 1000
+  _startSpawn: 1
 --- !u!1 &1187176093
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,7 +888,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1748808605}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41f9a4fa143f1774fab174fe79deba6e, type: 3}
+  m_Script: {fileID: 11500000, guid: 86fb4228fea93114494c76e2ccefd14a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _enemies:
@@ -894,9 +896,11 @@ MonoBehaviour:
   - {fileID: 8229194066570239158, guid: 35f608d7858b1c24f88f9415892f7179, type: 3}
   - {fileID: 8229194066570239158, guid: 5ed3ba2b493ef4a44b9d598bb7879f37, type: 3}
   - {fileID: 8229194066570239158, guid: 3d926a059fb52224b82a4cf9b1f35d4f, type: 3}
-  _enemiesOnStart: 2
+  - {fileID: 8229194066570239158, guid: 7eca6830271037a4fb3056d2005e9540, type: 3}
+  _enemiesOnStart: 3
   _spawnCooldown:
-    _value: 1000000
+    _value: 1000
+  _startSpawn: 1
 --- !u!1 &1819805234
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,16 +941,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1819805234}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41f9a4fa143f1774fab174fe79deba6e, type: 3}
+  m_Script: {fileID: 11500000, guid: 86fb4228fea93114494c76e2ccefd14a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _enemies:
   - {fileID: 6926828201911177819, guid: e5c4032338d22684980cc25580080215, type: 3}
   - {fileID: 6926828201911177819, guid: f0a50f8607f47a54a80d99182669befb, type: 3}
   - {fileID: 6926828201911177819, guid: 008b8f4e917043c40a7aca61e5156de3, type: 3}
-  _enemiesOnStart: 3
+  _enemiesOnStart: 5
   _spawnCooldown:
-    _value: 1000000
+    _value: 1000
+  _startSpawn: 1
 --- !u!1001 &550662447514144462
 PrefabInstance:
   m_ObjectHideFlags: 0

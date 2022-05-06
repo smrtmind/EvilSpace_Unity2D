@@ -19,14 +19,10 @@ namespace Scripts
 
         public void PowerUp()
         {
-            var player = FindObjectOfType<PlayerController>();
-            if (player)
-            {
-                if (!player.IsDead)
-                {
-                    _weaponController.PowerUp();
-                }
-            }
+            if (_weaponController)
+                _weaponController.PowerUp();
+            else
+                FindObjectOfType<WeaponController>().PowerUp();
         }
     }
 }
