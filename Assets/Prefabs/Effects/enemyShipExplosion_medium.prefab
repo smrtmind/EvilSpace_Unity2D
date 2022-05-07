@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 190716498238451836}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -51.44166, y: -5.3031907, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 5.7017074}
+  m_LocalScale: {x: 1, y: 1, z: 5.7017074}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -73,8 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: -2059966085
   m_SortingLayer: 4
   m_SortingOrder: 4
-  m_Sprite: {fileID: -8092295105046505211, guid: 3ba18e4838645b04a8dc38c2f5a01eea,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 83267f198987789428b65984a2182961, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,18 +96,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7a614fffbf02141946a8622e3c1bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _frameRate: 10
+  _frameRate: 15
   _clips:
   - _name: boom
     _sprites:
-    - {fileID: -8092295105046505211, guid: 3ba18e4838645b04a8dc38c2f5a01eea, type: 3}
-    - {fileID: -5243772346084840235, guid: 3ba18e4838645b04a8dc38c2f5a01eea, type: 3}
-    - {fileID: -4009157606203222040, guid: 3ba18e4838645b04a8dc38c2f5a01eea, type: 3}
-    - {fileID: 3730887761424324059, guid: 3ba18e4838645b04a8dc38c2f5a01eea, type: 3}
-    - {fileID: -4927540249515241657, guid: 3ba18e4838645b04a8dc38c2f5a01eea, type: 3}
-    - {fileID: 5684552838703836615, guid: 3ba18e4838645b04a8dc38c2f5a01eea, type: 3}
-    - {fileID: -1000500801407918923, guid: 3ba18e4838645b04a8dc38c2f5a01eea, type: 3}
-    - {fileID: -3556220708966662747, guid: 3ba18e4838645b04a8dc38c2f5a01eea, type: 3}
+    - {fileID: 21300000, guid: 83267f198987789428b65984a2182961, type: 3}
+    - {fileID: 21300000, guid: 87f902a63f02c0445b4bbdfe0719a53a, type: 3}
+    - {fileID: 21300000, guid: ecc3894ea9415594db187c0004b680b6, type: 3}
+    - {fileID: 21300000, guid: e7d181c75332e3c4e83511833bd2763e, type: 3}
+    - {fileID: 21300000, guid: 67a640aa2ef9db94091534220516c05f, type: 3}
+    - {fileID: 21300000, guid: 918cdd3e4f1e1a2439b4e660d3b728e5, type: 3}
+    - {fileID: 21300000, guid: 3d492ca66998b674c852535bdea91309, type: 3}
     _loop: 0
     _allowNextClip: 0
     _onComplete:

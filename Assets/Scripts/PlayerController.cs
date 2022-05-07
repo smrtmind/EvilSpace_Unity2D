@@ -26,10 +26,14 @@ namespace Scripts
         private static readonly int HitLeftKey = Animator.StringToHash("is-hitLeft");
         private static readonly int HitRightKey = Animator.StringToHash("is-hitRight");
 
-        private Joystick _joystick;
+        // <---------------------------------- FOR MOBILE BUILD start
+        //private Joystick _joystick;
+        // <---------------------------------- FOR MOBILE BUILD end
 
-        //for pc build
-        //public float burst { get; set; }
+        // <---------------------------------- FOR PC BUILD start
+        public float burst { get; set; }
+        // <---------------------------------- FOR PC BUILD end
+
         public bool leftTurn { get; set; }
         public bool rightTurn { get; set; }
         public bool firstWeapon { get; set; }
@@ -53,17 +57,23 @@ namespace Scripts
             _playerBody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
             _playerCollider = GetComponent<Collider2D>();
-            _joystick = FindObjectOfType<Joystick>();
+
+            // <---------------------------------- FOR MOBILE BUILD start
+            //_joystick = FindObjectOfType<Joystick>();
+            // <---------------------------------- FOR MOBILE BUILD end
         }
 
         private void FixedUpdate()
         {
-            //for pc build
-            //_isMovingForward = burst > 0;
+            // <---------------------------------- FOR PC BUILD start
+            _isMovingForward = burst > 0;
+            // <---------------------------------- FOR PC BUILD end
 
-            leftTurn = _joystick.Horizontal <= -0.5f;
-            rightTurn = _joystick.Horizontal >= 0.5f;
-            _isMovingForward = _joystick.Vertical <= -0.2f || _joystick.Vertical >= 0.2f;
+            // <---------------------------------- FOR MOBILE BUILD start
+            //leftTurn = _joystick.Horizontal <= -0.5f;
+            //rightTurn = _joystick.Horizontal >= 0.5f;
+            //_isMovingForward = _joystick.Vertical <= -0.2f || _joystick.Vertical >= 0.2f;
+            // <---------------------------------- FOR MOBILE BUILD end
 
             if (leftTurn)
             {

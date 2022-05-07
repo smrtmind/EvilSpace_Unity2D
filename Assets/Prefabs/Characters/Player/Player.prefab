@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112501870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.62, z: 0}
+  m_LocalPosition: {x: 0, y: 1.105, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3384156270070165762}
@@ -582,7 +582,7 @@ MonoBehaviour:
     _shootingDelayOnPowerUp: -0.01
     _shootingDelayMin: 0.05
   - _name: Blaster
-    _weapon: {fileID: 475721933866399020, guid: 2594899881cfea04d8d6b954cfa0e7a7,
+    _weapon: {fileID: 475721933866399020, guid: 60118af08bb622949b1f3b60053426c8,
       type: 3}
     _weaponShootingPoint: {fileID: 112501871}
     _ammo: 60
@@ -593,7 +593,7 @@ MonoBehaviour:
     _ammoPerShoot: -1
     _ammoToAddOnPowerUp: 20
     _shootingDelay:
-      _value: 1
+      _value: 0.1
     _shootingDelayOnPowerUp: -0.1
     _shootingDelayMin: 0.1
   _bombTimer: 100
