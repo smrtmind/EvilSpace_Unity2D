@@ -4,6 +4,8 @@ namespace Scripts
 {
     public class BoosterComponent : MonoBehaviour
     {
+        [SerializeField] private SpawnComponent _points;
+
         private GameSession _gameSession;
         private WeaponController _weaponController;
 
@@ -19,10 +21,18 @@ namespace Scripts
 
         public void PowerUp()
         {
-            if (_weaponController)
+            if (!_weaponController)
+                _weaponController = FindObjectOfType<WeaponController>();
+
+            if (!_weaponController.AllWeaponMaxOut)
+            {
                 _weaponController.PowerUp();
+            }
             else
-                FindObjectOfType<WeaponController>().PowerUp();
+            {
+                _gameSession.ModifyXp(1000);
+                _points.Spawn();
+            }
         }
     }
 }

@@ -144,6 +144,7 @@ namespace Scripts
         public void OnBossDie()
         {
             _gameSession.GetComponent<TimerComponent>().SetTimer(0);
+            _gameSession.ReturnMainTheme();
         }
     }
 

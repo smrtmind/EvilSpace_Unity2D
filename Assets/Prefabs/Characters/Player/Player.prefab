@@ -492,8 +492,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14bae68aeaf10f14a90f186e6240f8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 10
-  _maxHealth: 25
+  _health: 5
+  _maxHealth: 20
   _onDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -575,12 +575,12 @@ MonoBehaviour:
     _maxAmmo: 999
     _reloadingDelay:
       _value: 0.01
-    _ammoToReload: 2
+    _ammoToReload: 1
     _ammoPerShoot: -2
     _ammoToAddOnPowerUp: 60
     _shootingDelay:
-      _value: 0.15
-    _shootingDelayOnPowerUp: -0.01
+      _value: 0.1
+    _shootingDelayOnPowerUp: -0.005
     _shootingDelayMin: 0.05
   - _name: Blaster
     _weapon: {fileID: 475721933866399020, guid: 60118af08bb622949b1f3b60053426c8,
@@ -589,13 +589,13 @@ MonoBehaviour:
     _ammo: 30
     _maxAmmo: 500
     _reloadingDelay:
-      _value: 0.01
+      _value: 0.02
     _ammoToReload: 1
     _ammoPerShoot: -1
     _ammoToAddOnPowerUp: 30
     _shootingDelay:
-      _value: 1
-    _shootingDelayOnPowerUp: -0.1
+      _value: 0.5
+    _shootingDelayOnPowerUp: -0.05
     _shootingDelayMin: 0.1
   _bombTimer: 100
   _bombTimerMin: 30

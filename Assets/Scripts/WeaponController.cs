@@ -34,6 +34,7 @@ namespace Scripts
         private PlayerController _playerInput;
         private Rigidbody2D _playerBody;
         private CameraShaker _cameraShaker;
+        private GameSession _gameSession;
 
         private Projectile _weapon;
         private Cooldown _shootingDelay;
@@ -42,6 +43,9 @@ namespace Scripts
         private int _ammoToReload;
         private int _ammoPerShoot;
         private int _currentWeaponType;
+        private bool _allWeaponMaxOut;
+
+        public bool AllWeaponMaxOut => _allWeaponMaxOut;
 
         private void Awake()
         {
@@ -53,6 +57,7 @@ namespace Scripts
             _bombTimerDefault = _bombTimer;
 
             _cameraShaker = FindObjectOfType<CameraShaker>();
+            _gameSession = FindObjectOfType<GameSession>();
         }
 
         private void Start()
@@ -122,18 +127,24 @@ namespace Scripts
 
         public void PowerUp()
         {
+            int _maxOutWeaponCounter = default;
+
             foreach (var weapon in _weaponSettings)
             {
                 weapon.DefaultAmmo += weapon.AmmoToAddOnPowerUp;
                 if (weapon.DefaultAmmo >= weapon.MaxAmmo)
                 {
                     weapon.DefaultAmmo = weapon.MaxAmmo;
+
+                    _maxOutWeaponCounter++;
                 }
                     
                 weapon.ShootingDelay.Value += weapon.ShootingDelayOnPowerUp;
                 if (weapon.ShootingDelay.Value <= weapon.ShootingDelayMin)
                 {
                     weapon.ShootingDelay.Value = weapon.ShootingDelayMin;
+
+                    _maxOutWeaponCounter++;
                 }                    
             }
 
@@ -141,9 +152,17 @@ namespace Scripts
             if (_bombTimerDefault <= _bombTimerMin)
             {
                 _bombTimerDefault = _bombTimerMin;
-            }  
 
-            FindObjectOfType<GameSession>()._isLevelUp = false;
+                _maxOutWeaponCounter++;
+            }
+
+            //length of array with weapon * 2 (amount of characteristics needed to be max out on each weapon) + 1 (bomb timer, which is not included to weapon array)
+            if (_maxOutWeaponCounter == _weaponSettings.Length * 2 + 1)
+            {
+                _allWeaponMaxOut = true;
+            }
+
+            _gameSession._isLevelUp = false;
         }
 
         public void ActivateElectroShield()

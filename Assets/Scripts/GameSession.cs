@@ -7,9 +7,11 @@ namespace Scripts
         [SerializeField] private int _tries;
         [SerializeField] private int _health;
         [SerializeField] private HealthComponent _targetHp;
+        [SerializeField] private AudioSource _mainTheme;
+        [SerializeField] private AudioSource _bossTheme;
 
         [Space]
-        [SerializeField] private ObjectsSpawner[] _enemySpawners;
+        [SerializeField] private GameObject[] _enemySpawners;
 
         [Space]
         [Header("Boss")]
@@ -24,6 +26,7 @@ namespace Scripts
         public bool _isLevelUp;
         private Animator _bossAnimator;
         private PlayerController _player;
+        private AudioSource _audio;
 
         public int Tries => _tries;
         public int Health => _health;
@@ -36,6 +39,7 @@ namespace Scripts
         {
             _bossAnimator = GetComponent<Animator>();
             _player = FindObjectOfType<PlayerController>();
+            _audio = GetComponent<AudioSource>();
         }
 
         public void ModifyXp(int xp)
@@ -78,7 +82,7 @@ namespace Scripts
             _playerLvl++;
             _xp = currentXp;
 
-            if (_playerLvl % 10 == 0)
+            if (_playerLvl % 8 == 0)
             {              
                 SetEnemySpawnersState(false);
                 FindObjectOfType<WeaponController>().KillAllEnemies();
@@ -99,41 +103,49 @@ namespace Scripts
             {
                 //small enemies
                 case 2:
-                    _enemySpawners[0].SetState(true);
+                    _enemySpawners[0].SetActive(true);
                     break;
 
                 //medium enemies
                 case 4:
-                    _enemySpawners[1].SetState(true);
+                    _enemySpawners[1].SetActive(true);
                     break;
 
                 //large enemies
-                case 8:
-                    _enemySpawners[2].SetState(true);
+                case 6:
+                    _enemySpawners[2].SetActive(true);
                     break;
             }
 
             foreach (var spawner in _enemySpawners)
             {
-                if (spawner.StartSpawn)
+                if (spawner.activeSelf)
                 {
                     var enemyCooldown = spawner.GetComponent<ObjectsSpawner>().SpawnCooldown;
                     enemyCooldown.Value -= 1.0f;
 
-                    if (enemyCooldown.Value <= 4.0f)
-                        enemyCooldown.Value = 4.0f;
+                    if (enemyCooldown.Value <= 3.0f)
+                        enemyCooldown.Value = 3.0f;
                 }
             }
         }
 
         public void PlayArrivalSFX()
         {
-            GetComponent<AudioSource>().Play();
+            _audio.Play();
         }
 
         public void SpawnBoss()
         {
             _bossSpawner.Spawn();
+            _mainTheme.Stop();
+            _bossTheme.Play();
+        }
+
+        public void ReturnMainTheme()
+        {
+            _bossTheme.Stop();
+            _mainTheme.Play();
         }
 
         private void SetEnemySpawnersState(bool state)
