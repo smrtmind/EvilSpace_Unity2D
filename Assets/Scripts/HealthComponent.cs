@@ -6,19 +6,19 @@ namespace Scripts
     public class HealthComponent : MonoBehaviour
     {
         [SerializeField] private int _health;
+        [SerializeField] private int _maxHealth;
         [SerializeField] private UnityEvent _onDamage;
         [SerializeField] private UnityEvent _onHeal;
         [SerializeField] public UnityEvent _onDie;
 
         public int Health => _health;
-        public int MaxHealth => _maxHealth;
 
-        private int _maxHealth;
+        private int _defaultHealth;
         private PlayerController _player;
 
         private void Awake()
         {
-            _maxHealth = _health;
+            _defaultHealth = _health;
         }
 
         private void Start()
@@ -28,14 +28,14 @@ namespace Scripts
 
         public void ResetHealth()
         {
-            _health = _maxHealth;
+            _health = _defaultHealth;
         }
 
         public void RiseMaxHealth()
         {
-            _player.RemoveVisualDamage();
+            if (_defaultHealth < _maxHealth)
+                _defaultHealth++;
 
-            _maxHealth++;
             ResetHealth();
         }
 

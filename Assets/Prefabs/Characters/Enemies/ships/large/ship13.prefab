@@ -481,6 +481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 36
+  _maxHealth: 0
   _onDamage:
     m_PersistentCalls:
       m_Calls:

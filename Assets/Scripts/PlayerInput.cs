@@ -25,14 +25,14 @@ namespace Scripts
         // <---------------------------------- FOR PC BUILD end
 
         // <---------------------------------- FOR MOBILE BUILD start
-        //public void WeaponGunShoot() => _player.firstWeapon = true;
-        //public void WeaponGunStop() => _player.firstWeapon = false;
+        public void WeaponGunShoot() => _player.firstWeapon = true;
+        public void WeaponGunStop() => _player.firstWeapon = false;
 
-        //public void WeaponBlasterShoot() => _player.secondWeapon = true;
-        //public void WeaponBlasterStop() => _player.secondWeapon = false;
+        public void WeaponBlasterShoot() => _player.secondWeapon = true;
+        public void WeaponBlasterStop() => _player.secondWeapon = false;
 
-        //public void WeaponBombShoot() => _player.thirdWeapon = true;
-        //public void WeaponBombStop() => _player.thirdWeapon = false;
+        public void WeaponBombShoot() => _player.thirdWeapon = true;
+        public void WeaponBombStop() => _player.thirdWeapon = false;
         // <---------------------------------- FOR MOBILE BUILD end
     }
 }

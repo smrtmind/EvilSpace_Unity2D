@@ -85,8 +85,8 @@ namespace Scripts
                 _bossAnimator.SetTrigger(BossAttentionKey);
             }
 
-            if (_targetHp.MaxHealth < 20)
-                _targetHp.RiseMaxHealth();
+            _player.RemoveVisualDamage();
+            _targetHp.RiseMaxHealth();
 
             _nextLvl = (((_nextLvl / 100) * 20) + _nextLvl);
 

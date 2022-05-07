@@ -492,7 +492,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14bae68aeaf10f14a90f186e6240f8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 100000
+  _health: 10
+  _maxHealth: 25
   _onDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -570,13 +571,13 @@ MonoBehaviour:
     _weapon: {fileID: 475721933866399020, guid: c452583892f964948998169502f98a1c,
       type: 3}
     _weaponShootingPoint: {fileID: 34140864}
-    _ammo: 90
-    _maxAmmo: 900
+    _ammo: 60
+    _maxAmmo: 999
     _reloadingDelay:
-      _value: 0.05
+      _value: 0.01
     _ammoToReload: 2
     _ammoPerShoot: -2
-    _ammoToAddOnPowerUp: 30
+    _ammoToAddOnPowerUp: 60
     _shootingDelay:
       _value: 0.15
     _shootingDelayOnPowerUp: -0.01
@@ -585,20 +586,20 @@ MonoBehaviour:
     _weapon: {fileID: 475721933866399020, guid: 60118af08bb622949b1f3b60053426c8,
       type: 3}
     _weaponShootingPoint: {fileID: 112501871}
-    _ammo: 60
-    _maxAmmo: 600
+    _ammo: 30
+    _maxAmmo: 500
     _reloadingDelay:
-      _value: 0.1
+      _value: 0.01
     _ammoToReload: 1
     _ammoPerShoot: -1
-    _ammoToAddOnPowerUp: 20
+    _ammoToAddOnPowerUp: 30
     _shootingDelay:
-      _value: 0.1
+      _value: 1
     _shootingDelayOnPowerUp: -0.1
     _shootingDelayMin: 0.1
   _bombTimer: 100
   _bombTimerMin: 30
-  _decreaseBombTimerOnPowerUp: -2
+  _decreaseBombTimerOnPowerUp: -5
   _reloadingSpeed:
     _value: 1
   _bombEffect: {fileID: 1556972870}
