@@ -572,10 +572,10 @@ MonoBehaviour:
       type: 3}
     _weaponShootingPoint: {fileID: 34140864}
     _ammo: 60
-    _maxAmmo: 999
+    _maxAmmo: 998
     _reloadingDelay:
-      _value: 0.01
-    _ammoToReload: 1
+      _value: 0.02
+    _ammoToReload: 2
     _ammoPerShoot: -2
     _ammoToAddOnPowerUp: 60
     _shootingDelay:
@@ -589,14 +589,14 @@ MonoBehaviour:
     _ammo: 30
     _maxAmmo: 500
     _reloadingDelay:
-      _value: 0.02
+      _value: 0.01
     _ammoToReload: 1
     _ammoPerShoot: -1
     _ammoToAddOnPowerUp: 30
     _shootingDelay:
-      _value: 0.5
-    _shootingDelayOnPowerUp: -0.05
-    _shootingDelayMin: 0.1
+      _value: 0.3
+    _shootingDelayOnPowerUp: -0.02
+    _shootingDelayMin: 0.08
   _bombTimer: 100
   _bombTimerMin: 30
   _decreaseBombTimerOnPowerUp: -5

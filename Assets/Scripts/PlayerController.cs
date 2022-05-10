@@ -27,11 +27,11 @@ namespace Scripts
         private static readonly int HitRightKey = Animator.StringToHash("is-hitRight");
 
         // <---------------------------------- FOR MOBILE BUILD start
-        private Joystick _joystick;
+        //private Joystick _joystick;
         // <---------------------------------- FOR MOBILE BUILD end
 
         // <---------------------------------- FOR PC BUILD start
-        //public float burst { get; set; }
+        public float burst { get; set; }
         // <---------------------------------- FOR PC BUILD end
 
         public bool leftTurn { get; set; }
@@ -59,20 +59,20 @@ namespace Scripts
             _playerCollider = GetComponent<Collider2D>();
 
             // <---------------------------------- FOR MOBILE BUILD start
-            _joystick = FindObjectOfType<Joystick>();
+            //_joystick = FindObjectOfType<Joystick>();
             // <---------------------------------- FOR MOBILE BUILD end
         }
 
         private void FixedUpdate()
         {
             // <---------------------------------- FOR PC BUILD start
-            //_isMovingForward = burst > 0;
+            _isMovingForward = burst > 0;
             // <---------------------------------- FOR PC BUILD end
 
             // <---------------------------------- FOR MOBILE BUILD start
-            leftTurn = _joystick.Horizontal <= -0.5f;
-            rightTurn = _joystick.Horizontal >= 0.5f;
-            _isMovingForward = _joystick.Vertical <= -0.2f || _joystick.Vertical >= 0.2f;
+            //leftTurn = _joystick.Horizontal <= -0.5f;
+            //rightTurn = _joystick.Horizontal >= 0.5f;
+            //_isMovingForward = _joystick.Vertical <= -0.2f || _joystick.Vertical >= 0.2f;
             // <---------------------------------- FOR MOBILE BUILD end
 
             if (leftTurn)

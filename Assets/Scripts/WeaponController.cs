@@ -161,8 +161,6 @@ namespace Scripts
             {
                 _allWeaponMaxOut = true;
             }
-
-            _gameSession._isLevelUp = false;
         }
 
         public void ActivateElectroShield()

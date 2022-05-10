@@ -23,10 +23,10 @@ namespace Scripts
         private int _xp;
         private int _playerLvl = 1;
         private int _nextLvl = 500;
-        public bool _isLevelUp;
         private Animator _bossAnimator;
         private PlayerController _player;
         private AudioSource _audio;
+        private WeaponController _weaponController;
 
         public int Tries => _tries;
         public int Health => _health;
@@ -40,6 +40,7 @@ namespace Scripts
             _bossAnimator = GetComponent<Animator>();
             _player = FindObjectOfType<PlayerController>();
             _audio = GetComponent<AudioSource>();
+            _weaponController = FindObjectOfType<WeaponController>();
         }
 
         public void ModifyXp(int xp)
@@ -73,11 +74,15 @@ namespace Scripts
 
         private void LevelUp(int currentXp = 0)
         {
-            FindObjectOfType<WeaponController>().Shield.SetActive(true);
-            FindObjectOfType<WeaponController>().Shield.GetComponent<TimerComponent>().SetTimer(0);
-            FindObjectOfType<PlayerController>()._levelUpEffect.Spawn();
+            if (!_weaponController)
+                _weaponController = FindObjectOfType<WeaponController>();
 
-            _isLevelUp = true;
+            if (!_player)
+                _player = FindObjectOfType<PlayerController>();
+
+            _weaponController.Shield.SetActive(true);
+            _weaponController.Shield.GetComponent<TimerComponent>().SetTimer(0);
+            _player._levelUpEffect.Spawn();
 
             _playerLvl++;
             _xp = currentXp;
@@ -85,7 +90,7 @@ namespace Scripts
             if (_playerLvl % 8 == 0)
             {              
                 SetEnemySpawnersState(false);
-                FindObjectOfType<WeaponController>().KillAllEnemies();
+                _weaponController.KillAllEnemies();
                 _bossAnimator.SetTrigger(BossAttentionKey);
             }
 
@@ -124,8 +129,8 @@ namespace Scripts
                     var enemyCooldown = spawner.GetComponent<ObjectsSpawner>().SpawnCooldown;
                     enemyCooldown.Value -= 1.0f;
 
-                    if (enemyCooldown.Value <= 3.0f)
-                        enemyCooldown.Value = 3.0f;
+                    if (enemyCooldown.Value <= 2.0f)
+                        enemyCooldown.Value = 2.0f;
                 }
             }
         }
@@ -138,7 +143,7 @@ namespace Scripts
         public void SpawnBoss()
         {
             _bossSpawner.Spawn();
-            _mainTheme.Stop();
+            _mainTheme.Pause();
             _bossTheme.Play();
         }
 
