@@ -22,7 +22,6 @@ namespace Scripts
         [SerializeField] private SpawnComponent _electroEffect;
         [SerializeField] private GameObject _shield;
         [SerializeField] private GameObject _electroShield;
-        [SerializeField] private AudioSource _bombReloaded;
 
         private int _bombTimerDefault;
         private bool _bombIsReady;
@@ -35,6 +34,7 @@ namespace Scripts
         private Rigidbody2D _playerBody;
         private CameraShaker _cameraShaker;
         private GameSession _gameSession;
+        private AudioComponent _audio;
 
         private Projectile _weapon;
         private Cooldown _shootingDelay;
@@ -58,6 +58,7 @@ namespace Scripts
 
             _cameraShaker = FindObjectOfType<CameraShaker>();
             _gameSession = FindObjectOfType<GameSession>();
+            _audio = FindObjectOfType<AudioComponent>();
         }
 
         private void Start()
@@ -226,7 +227,8 @@ namespace Scripts
 
                 if (_bombTimer == 0)
                 {
-                    _bombReloaded.Play();
+                    _audio.Play("bomb reloaded", 0.8f);
+
                     _bombIsReady = true;
                 }
             }

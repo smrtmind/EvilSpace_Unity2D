@@ -13,7 +13,6 @@ namespace Scripts
         [SerializeField] private GameObject _bodyDamage;
         [SerializeField] private GameObject _hitParticles;
         [SerializeField] private TimerComponent _timers;
-        [SerializeField] private AudioSource _mainTheme;
         [SerializeField] public SpawnComponent _levelUpEffect;
         [SerializeField] private GameObject _safeZone;
         [SerializeField] private GameObject _safeZoneEffect;
@@ -45,8 +44,14 @@ namespace Scripts
         private bool _isMovingForward;
         private CameraShaker _cameraShaker;
         private bool _isDead;
+        private AudioComponent _audio;
 
         public bool IsDead => _isDead;
+
+        private void Awake()
+        {
+            _audio = FindObjectOfType<AudioComponent>();
+        }
 
         private void Start()
         {
@@ -154,7 +159,7 @@ namespace Scripts
                 else
                 {
                     SetObjectStatus(false, gameObject);
-                    _mainTheme.Stop();
+                    _audio.StopMainSource();
                     _timers.SetTimerByName("game over");
                 }
             }

@@ -7,8 +7,6 @@ namespace Scripts
         [SerializeField] private int _tries;
         [SerializeField] private int _health;
         [SerializeField] private HealthComponent _targetHp;
-        [SerializeField] private AudioSource _mainTheme;
-        [SerializeField] private AudioSource _bossTheme;
         [SerializeField] private TimerComponent _timers;
         [SerializeField] private int _bossFightEveryLevel;
         [SerializeField] private float _minEnemySpawnCooldown;
@@ -25,8 +23,8 @@ namespace Scripts
         private int _nextLvl = 500;
         private Animator _bossAnimator;
         private PlayerController _player;
-        private AudioSource _audio;
         private WeaponController _weaponController;
+        private AudioComponent _audio;
 
         public int Tries => _tries;
         public int Health => _health;
@@ -39,8 +37,8 @@ namespace Scripts
         {
             _bossAnimator = GetComponent<Animator>();
             _player = FindObjectOfType<PlayerController>();
-            _audio = GetComponent<AudioSource>();
             _weaponController = FindObjectOfType<WeaponController>();
+            _audio = FindObjectOfType<AudioComponent>();
         }
 
         public void ModifyXp(int xp)
@@ -137,14 +135,15 @@ namespace Scripts
 
         public void PlayArrivalSFX()
         {
-            _audio.Play();
+            _audio.Play("boss arrival", 0.4f);
         }
 
         public void SpawnBoss()
         {
             _bossSpawner.Spawn();
-            _mainTheme.Pause();
-            _bossTheme.Play();
+
+            _audio.PauseMainSource();
+            _audio.Play("boss fight");
         }
 
         private void SetEnemySpawnersState(bool state)
@@ -159,8 +158,8 @@ namespace Scripts
         {
             _timers.SetTimerByName("enemy spawners");
 
-            _bossTheme.Stop();
-            _mainTheme.Play();
+            _audio.Stop();
+            _audio.PlayMainSource();
         }
     }
 }
