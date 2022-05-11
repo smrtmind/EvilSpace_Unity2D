@@ -141,11 +141,7 @@ namespace Scripts
                 _isStopped = false;
         }
 
-        public void OnBossDie()
-        {
-            _gameSession.GetComponent<TimerComponent>().SetTimer(0);
-            _gameSession.ReturnMainTheme();
-        }
+        public void OnBossDie() => _gameSession.RestoreEnemies();
     }
 
     [Serializable]

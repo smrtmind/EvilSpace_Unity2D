@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3919466819556613775}
   - component: {fileID: 8401874113309577546}
   m_Layer: 0
-  m_Name: starterFlame
+  m_Name: starterFlameBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,12 +72,13 @@ SpriteRenderer:
   m_SortingLayerID: -2059966085
   m_SortingLayer: 4
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 950165289a5c8a047a7cca0caf5ace67, type: 3}
+  m_Sprite: {fileID: 7500374398291559410, guid: 113f663ed6c7b104ab37694703a07ef6,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.2, y: 3.2}
+  m_Size: {x: 0.25, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -99,10 +100,10 @@ MonoBehaviour:
   _clips:
   - _name: boost
     _sprites:
-    - {fileID: 21300000, guid: 950165289a5c8a047a7cca0caf5ace67, type: 3}
-    - {fileID: 21300000, guid: c1d3f35a9cb2c7740a7cff73e454ad84, type: 3}
-    - {fileID: 21300000, guid: 1ad05b043b5386c49b9e2a9d02e0f270, type: 3}
-    - {fileID: 21300000, guid: 055e0f545d88d4041ba51eb6eea98e6d, type: 3}
+    - {fileID: 7500374398291559410, guid: 113f663ed6c7b104ab37694703a07ef6, type: 3}
+    - {fileID: 7753784430798552374, guid: 113f663ed6c7b104ab37694703a07ef6, type: 3}
+    - {fileID: -4970357864109955478, guid: 113f663ed6c7b104ab37694703a07ef6, type: 3}
+    - {fileID: 6437139103974744558, guid: 113f663ed6c7b104ab37694703a07ef6, type: 3}
     _loop: 1
     _allowNextClip: 0
     _onComplete:

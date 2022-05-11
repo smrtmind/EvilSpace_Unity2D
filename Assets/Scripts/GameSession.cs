@@ -9,12 +9,12 @@ namespace Scripts
         [SerializeField] private HealthComponent _targetHp;
         [SerializeField] private AudioSource _mainTheme;
         [SerializeField] private AudioSource _bossTheme;
+        [SerializeField] private TimerComponent _timers;
+        [SerializeField] private int _bossFightEveryLevel;
+        [SerializeField] private float _minEnemySpawnCooldown;
 
         [Space]
         [SerializeField] private GameObject[] _enemySpawners;
-
-        [Space]
-        [Header("Boss")]
         [SerializeField] private SpawnComponent _bossSpawner;
 
         private static readonly int BossAttentionKey = Animator.StringToHash("bossAttention");
@@ -87,7 +87,7 @@ namespace Scripts
             _playerLvl++;
             _xp = currentXp;
 
-            if (_playerLvl % 8 == 0)
+            if (_playerLvl % _bossFightEveryLevel == 0)
             {              
                 SetEnemySpawnersState(false);
                 _weaponController.KillAllEnemies();
@@ -129,8 +129,8 @@ namespace Scripts
                     var enemyCooldown = spawner.GetComponent<ObjectsSpawner>().SpawnCooldown;
                     enemyCooldown.Value -= 1.0f;
 
-                    if (enemyCooldown.Value <= 2.0f)
-                        enemyCooldown.Value = 2.0f;
+                    if (enemyCooldown.Value <= _minEnemySpawnCooldown)
+                        enemyCooldown.Value = _minEnemySpawnCooldown;
                 }
             }
         }
@@ -147,18 +147,20 @@ namespace Scripts
             _bossTheme.Play();
         }
 
-        public void ReturnMainTheme()
-        {
-            _bossTheme.Stop();
-            _mainTheme.Play();
-        }
-
         private void SetEnemySpawnersState(bool state)
         {
             foreach (var enemy in _enemySpawners)
             {
                 enemy.GetComponent<ObjectsSpawner>().SetState(state);
             }
+        }
+
+        public void RestoreEnemies()
+        {
+            _timers.SetTimer(2);
+
+            _bossTheme.Stop();
+            _mainTheme.Play();
         }
     }
 }

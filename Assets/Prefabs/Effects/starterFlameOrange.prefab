@@ -72,7 +72,8 @@ SpriteRenderer:
   m_SortingLayerID: -2059966085
   m_SortingLayer: 4
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 7f21c4d3d31cf6f4288cb3ffd784a5f5, type: 3}
+  m_Sprite: {fileID: -8358530477130929841, guid: cffd1f010706e42499678f646b431bec,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,10 +100,10 @@ MonoBehaviour:
   _clips:
   - _name: boost
     _sprites:
-    - {fileID: 21300000, guid: 7f21c4d3d31cf6f4288cb3ffd784a5f5, type: 3}
-    - {fileID: 21300000, guid: cc30c0bca758f3845a71fc6abb340fcf, type: 3}
-    - {fileID: 21300000, guid: d9e1bbc70a1b5eb48936909da022ce7f, type: 3}
-    - {fileID: 21300000, guid: 0293334396f61eb499181360352cc2d4, type: 3}
+    - {fileID: -8358530477130929841, guid: cffd1f010706e42499678f646b431bec, type: 3}
+    - {fileID: 5408576684780489029, guid: cffd1f010706e42499678f646b431bec, type: 3}
+    - {fileID: -2785921214871809801, guid: cffd1f010706e42499678f646b431bec, type: 3}
+    - {fileID: -4919268243127167035, guid: cffd1f010706e42499678f646b431bec, type: 3}
     _loop: 1
     _allowNextClip: 0
     _onComplete:

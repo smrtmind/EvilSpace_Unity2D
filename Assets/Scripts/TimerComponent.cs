@@ -25,6 +25,8 @@ namespace Scripts
         [Serializable]
         public class TimerData
         {
+            [SerializeField] private string _name;
+
             public float Delay;
             public UnityEvent OnTimesUp;
         }

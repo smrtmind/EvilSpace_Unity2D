@@ -12,8 +12,7 @@ namespace Scripts
         [SerializeField] private GameObject _rightWingDamage;
         [SerializeField] private GameObject _bodyDamage;
         [SerializeField] private GameObject _hitParticles;
-        [SerializeField] private TimerComponent _timerToContinue;
-        [SerializeField] private TimerComponent _timerToGameOver;
+        [SerializeField] private TimerComponent _timers;
         [SerializeField] private AudioSource _mainTheme;
         [SerializeField] public SpawnComponent _levelUpEffect;
         [SerializeField] private GameObject _safeZone;
@@ -46,7 +45,6 @@ namespace Scripts
         private bool _isMovingForward;
         private CameraShaker _cameraShaker;
         private bool _isDead;
-        private Collider2D _playerCollider;
 
         public bool IsDead => _isDead;
 
@@ -56,7 +54,6 @@ namespace Scripts
             _health = GetComponent<HealthComponent>();
             _playerBody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
-            _playerCollider = GetComponent<Collider2D>();
 
             // <---------------------------------- FOR MOBILE BUILD start
             //_joystick = FindObjectOfType<Joystick>();
@@ -149,7 +146,7 @@ namespace Scripts
                     _safeZone.GetComponent<Collider2D>().enabled = true;
                     _safeZoneEffect.SetActive(true);
                     _safeZone.GetComponent<TimerComponent>().SetTimer(0);
-                    _timerToContinue.SetTimer(0);
+                    _timers.SetTimer(0);
 
                     transform.position = Vector3.zero;
                     transform.rotation = Quaternion.identity;
@@ -158,7 +155,7 @@ namespace Scripts
                 {
                     SetObjectStatus(false, gameObject);
                     _mainTheme.Stop();
-                    _timerToGameOver.SetTimer(0);
+                    _timers.SetTimer(1);
                 }
             }
 
