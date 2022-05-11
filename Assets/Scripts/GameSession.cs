@@ -157,7 +157,7 @@ namespace Scripts
 
         public void RestoreEnemies()
         {
-            _timers.SetTimer(2);
+            _timers.SetTimerByName("enemy spawners");
 
             _bossTheme.Stop();
             _mainTheme.Play();

@@ -146,7 +146,7 @@ namespace Scripts
                     _safeZone.GetComponent<Collider2D>().enabled = true;
                     _safeZoneEffect.SetActive(true);
                     _safeZone.GetComponent<TimerComponent>().SetTimer(0);
-                    _timers.SetTimer(0);
+                    _timers.SetTimerByName("new life");
 
                     transform.position = Vector3.zero;
                     transform.rotation = Quaternion.identity;
@@ -155,7 +155,7 @@ namespace Scripts
                 {
                     SetObjectStatus(false, gameObject);
                     _mainTheme.Stop();
-                    _timers.SetTimer(1);
+                    _timers.SetTimerByName("game over");
                 }
             }
 

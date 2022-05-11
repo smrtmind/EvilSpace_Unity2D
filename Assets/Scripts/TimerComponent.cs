@@ -15,6 +15,18 @@ namespace Scripts
             StartCoroutine(StartTimer(timer));
         }
 
+        public void SetTimerByName(string name)
+        {
+            foreach (var timer in _timers)
+            {
+                if (timer.Name == name)
+                {
+                    StartCoroutine(StartTimer(timer));
+                    break;
+                }
+            }
+        }
+
         private IEnumerator StartTimer(TimerData timer)
         {
             yield return new WaitForSeconds(timer.Delay);
@@ -26,6 +38,8 @@ namespace Scripts
         public class TimerData
         {
             [SerializeField] private string _name;
+
+            public string Name => _name;
 
             public float Delay;
             public UnityEvent OnTimesUp;
