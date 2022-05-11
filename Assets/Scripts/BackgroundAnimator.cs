@@ -9,6 +9,7 @@ namespace Scripts
 
         private Transform _background;
         private float _defaultPositonX;
+        private bool _stop;
 
         private void Start()
         {
@@ -16,14 +17,21 @@ namespace Scripts
             _defaultPositonX = _background.transform.position.x;
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
-            _background.transform.position = new Vector2(transform.position.x + _speed, transform.position.y);
+            if (!_stop)
+            {
+                _background.transform.position = new Vector2(transform.position.x + _speed, transform.position.y);
 
-            if (_background.transform.position.x > _widthOverBorder)
-            {               
-                _background.transform.position = new Vector2(_defaultPositonX, transform.position.y);
+                if (_background.transform.position.x > _widthOverBorder)
+                {
+                    _background.transform.position = new Vector2(_defaultPositonX, transform.position.y);
+                }
             }
         }
+
+        public void StopBackgroundAnimation() => _stop = true;
+
+        public void StartBackgroundAnimation() => _stop = false;
     }
 }

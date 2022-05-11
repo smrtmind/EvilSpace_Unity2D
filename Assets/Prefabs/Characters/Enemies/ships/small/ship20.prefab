@@ -263,7 +263,7 @@ MonoBehaviour:
   _isBoss: 0
   _canMove: 1
   _rotationSpeed: 130
-  _speed: 16
+  _speed: 14
   _canShoot: 0
   _weapons: []
 --- !u!114 &1540678679572510921
