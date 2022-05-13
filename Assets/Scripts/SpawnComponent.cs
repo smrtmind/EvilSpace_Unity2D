@@ -24,5 +24,7 @@ namespace Scripts
         {
             _prefab = prefab;
         }
+
+        public void SpawnBoss() => FindObjectOfType<GameSession>().SpawnBoss();
     }
 }

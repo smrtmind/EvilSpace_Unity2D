@@ -6,7 +6,6 @@ namespace Scripts
     public class EnemyAI : MonoBehaviour
     {
         [Header("Movement charasteristics")]
-        [SerializeField] private bool _isBoss;
         [SerializeField] private bool _canMove;
         [SerializeField] private float _rotationSpeed = 100f;
         [SerializeField] private float _speed = 5f;
@@ -14,8 +13,6 @@ namespace Scripts
         [Space]
         [SerializeField] private bool _canShoot;
         [SerializeField] private Weapons[] _weapons;
-
-        public bool IsBoss => _isBoss;
 
         private Transform _player;
         private Rigidbody2D _playerBody;
@@ -35,11 +32,7 @@ namespace Scripts
             _playerBody = GetComponent<Rigidbody2D>();
 
             GetPlayerDirection();
-
-            if (!_isBoss)
-            {
-                LookOnPlayerImmediate();
-            }
+            LookOnPlayerImmediate();
         }
 
         private void Update()

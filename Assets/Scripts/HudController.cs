@@ -11,12 +11,15 @@ namespace Scripts
         [SerializeField] private Text _lvlText;
         [SerializeField] private Text _healthAmount;
         [SerializeField] private Text _levelProgress;
+        [SerializeField] private Animator _warning;
 
         [Space]
         [Header("WeaponStatus")]
         [SerializeField] private Text _gunValue;
         [SerializeField] private Text _blasterValue;
         [SerializeField] private Text _bombStatus;
+
+        public Animator Warning => _warning;
 
         private GameSession _gameSession;
         private WeaponController _weaponController;
@@ -37,10 +40,10 @@ namespace Scripts
             _scoreText.text = $"SCORE: {_gameSession.Score}";
             _triesText.text = $"{_gameSession.Tries}";
 
-            if (_gameSession.Health < 0)
+            if (_gameSession.PlayerHealth.Health < 0)
                 _healthAmount.text = "0";
             else
-                _healthAmount.text = $"{_gameSession.Health}";
+                _healthAmount.text = $"{_gameSession.PlayerHealth.Health}";
 
             _lvlText.text = $"LVL {_gameSession.PlayerLVL}";
 

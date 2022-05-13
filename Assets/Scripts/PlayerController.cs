@@ -25,7 +25,7 @@ namespace Scripts
         private static readonly int HitRightKey = Animator.StringToHash("is-hitRight");
 
         // <---------------------------------- FOR MOBILE BUILD start
-        //private Joystick _joystick;
+        private Joystick _joystick;
         // <---------------------------------- FOR MOBILE BUILD end
 
         // <---------------------------------- FOR PC BUILD start
@@ -61,12 +61,14 @@ namespace Scripts
             _animator = GetComponent<Animator>();
 
             // <---------------------------------- FOR MOBILE BUILD start
-            //_joystick = FindObjectOfType<Joystick>();
+            _joystick = FindObjectOfType<Joystick>();
             // <---------------------------------- FOR MOBILE BUILD end
         }
 
         private void FixedUpdate()
         {
+            //CHANGE HERE
+
             // <---------------------------------- FOR PC BUILD start
             _isMovingForward = burst > 0;
             // <---------------------------------- FOR PC BUILD end
@@ -160,6 +162,7 @@ namespace Scripts
                 {
                     SetObjectStatus(false, gameObject);
                     _audio.StopMainSource();
+                    _audio.Stop();
                     _timers.SetTimerByName("game over");
                 }
             }

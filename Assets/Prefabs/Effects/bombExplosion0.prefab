@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4740566307352272267}
   - component: {fileID: 2765966533279301579}
   m_Layer: 0
-  m_Name: electroExplosion
+  m_Name: bombExplosion0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,11 +70,12 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1894459725
-  m_SortingLayer: 3
-  m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 3e3ebd2f266812f4ab2353ab553fcb13, type: 3}
-  m_Color: {r: 1, g: 0.09019607, b: 0.11561625, a: 1}
+  m_SortingLayerID: -2059966085
+  m_SortingLayer: 4
+  m_SortingOrder: 4
+  m_Sprite: {fileID: -8592839770501632309, guid: 2412242e5d8c83f42a42fef154a8409a,
+    type: 3}
+  m_Color: {r: 0.8679245, g: 0.118725546, b: 0.118725546, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -96,18 +97,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7a614fffbf02141946a8622e3c1bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _frameRate: 10
+  _frameRate: 15
   _clips:
   - _name: boom
     _sprites:
-    - {fileID: 21300000, guid: 3e3ebd2f266812f4ab2353ab553fcb13, type: 3}
-    - {fileID: 21300000, guid: 68e0d739acd968a45bd6b8d95be6a4c8, type: 3}
-    - {fileID: 21300000, guid: 2732cfd25a57a3e4493c2ff3915cebdb, type: 3}
-    - {fileID: 21300000, guid: 553f6d7b90ad1ad4bac28d3390c5b307, type: 3}
-    - {fileID: 21300000, guid: acd9f59d120b96b41b328c38d7f99a72, type: 3}
-    - {fileID: 21300000, guid: e84d85ee40bebcd49959f14ed667878b, type: 3}
-    - {fileID: 21300000, guid: 69acdb9907c9e7046ad6508156e723a1, type: 3}
-    - {fileID: 21300000, guid: 901a5d9733e9ffa4191bab8d1c74dbc7, type: 3}
+    - {fileID: -8592839770501632309, guid: 2412242e5d8c83f42a42fef154a8409a, type: 3}
+    - {fileID: 1975622163582171532, guid: 2412242e5d8c83f42a42fef154a8409a, type: 3}
+    - {fileID: 1138500570277433089, guid: 2412242e5d8c83f42a42fef154a8409a, type: 3}
+    - {fileID: -6126581823449176681, guid: 2412242e5d8c83f42a42fef154a8409a, type: 3}
+    - {fileID: 6978403530753984111, guid: 2412242e5d8c83f42a42fef154a8409a, type: 3}
+    - {fileID: -9151148928627538259, guid: 2412242e5d8c83f42a42fef154a8409a, type: 3}
+    - {fileID: -4662137995498519272, guid: 2412242e5d8c83f42a42fef154a8409a, type: 3}
+    - {fileID: -3986557196779755735, guid: 2412242e5d8c83f42a42fef154a8409a, type: 3}
     _loop: 0
     _allowNextClip: 0
     _onComplete:

@@ -436,7 +436,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8540c2b4270bb47a822b40f56d2e4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isBoss: 1
   _canMove: 0
   _rotationSpeed: 180
   _speed: 0
@@ -466,13 +465,13 @@ MonoBehaviour:
   - _name: left rocket
     _weapon: {fileID: 0}
     _shootingDelay:
-      _value: 8
+      _value: 6
     _weaponShootingPoint: {fileID: 0}
     _spawnWeaponPoint: {fileID: 429270340028774861}
   - _name: right rocket
     _weapon: {fileID: 0}
     _shootingDelay:
-      _value: 8
+      _value: 6
     _weaponShootingPoint: {fileID: 0}
     _spawnWeaponPoint: {fileID: 4620300560418895424}
 --- !u!114 &1540678679572510921
@@ -527,7 +526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14bae68aeaf10f14a90f186e6240f8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 500
+  _health: 1000
   _maxHealth: 0
   _onDamage:
     m_PersistentCalls:

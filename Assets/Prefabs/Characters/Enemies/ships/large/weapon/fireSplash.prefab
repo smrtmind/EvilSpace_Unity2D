@@ -289,6 +289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 35
   _secToDestroy: 5
+  _isHostile: 1
 --- !u!114 &644304053469380508
 MonoBehaviour:
   m_ObjectHideFlags: 0

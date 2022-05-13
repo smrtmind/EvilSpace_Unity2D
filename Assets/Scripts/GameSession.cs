@@ -1,33 +1,35 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Scripts
 {
     public class GameSession : MonoBehaviour
     {
         [SerializeField] private int _tries;
-        [SerializeField] private int _health;
-        [SerializeField] private HealthComponent _targetHp;
         [SerializeField] private TimerComponent _timers;
-        [SerializeField] private int _bossFightEveryLevel;
-        [SerializeField] private float _minEnemySpawnCooldown;
 
         [Space]
-        [SerializeField] private GameObject[] _enemySpawners;
-        [SerializeField] private SpawnComponent _bossSpawner;
+        [SerializeField] private float _minEnemySpawnCooldown;
+        [SerializeField] private EnemySpawner[] _enemySpawners;
 
-        private static readonly int BossAttentionKey = Animator.StringToHash("bossAttention");
+        [Space]
+        [SerializeField] private SpawnComponent _bossSpawner;
+        [SerializeField] private int _everyLevelSpawn;
+
+        private static readonly int WarningKey = Animator.StringToHash("warning");
 
         private int _score;
         private int _xp;
         private int _playerLvl = 1;
         private int _nextLvl = 500;
-        private Animator _bossAnimator;
         private PlayerController _player;
         private WeaponController _weaponController;
         private AudioComponent _audio;
+        private HealthComponent _playerHealth;
+        private HudController _hud;
 
         public int Tries => _tries;
-        public int Health => _health;
+        public HealthComponent PlayerHealth => _playerHealth;
         public int Score => _score;
         public int XP => _xp;
         public int PlayerLVL => _playerLvl;
@@ -35,10 +37,11 @@ namespace Scripts
 
         private void Awake()
         {
-            _bossAnimator = GetComponent<Animator>();
             _player = FindObjectOfType<PlayerController>();
             _weaponController = FindObjectOfType<WeaponController>();
             _audio = FindObjectOfType<AudioComponent>();
+            _playerHealth = _player.GetComponent<HealthComponent>();
+            _hud = FindObjectOfType<HudController>();
         }
 
         public void ModifyXp(int xp)
@@ -56,8 +59,6 @@ namespace Scripts
 
         private void Update()
         {
-            _health = _targetHp.Health;
-
             if (_player.IsDead) return;
 
             if (_xp == _nextLvl)
@@ -85,46 +86,34 @@ namespace Scripts
             _playerLvl++;
             _xp = currentXp;
 
-            if (_playerLvl % _bossFightEveryLevel == 0)
-            {              
-                SetEnemySpawnersState(false);
+            if (_playerLvl % _everyLevelSpawn == 0)
+            {
                 _weaponController.KillAllEnemies();
-                _bossAnimator.SetTrigger(BossAttentionKey);
+                DisableEnemySpawners();
+                _hud.Warning.SetTrigger(WarningKey);
+                _timers.SetTimerByName("spawn boss");
             }
 
             _player.RemoveVisualDamage();
-            _targetHp.RiseMaxHealth();
+            _playerHealth.RiseMaxHealth();
 
             _nextLvl = (((_nextLvl / 100) * 20) + _nextLvl);
 
-            PowerUpEnemies();
+            IncreaseDifficulty();
         }
 
-        private void PowerUpEnemies()
+        private void IncreaseDifficulty()
         {
-            switch (_playerLvl)
+            foreach (var enemy in _enemySpawners)
             {
-                //small enemies
-                case 2:
-                    _enemySpawners[0].SetActive(true);
-                    break;
-
-                //medium enemies
-                case 4:
-                    _enemySpawners[1].SetActive(true);
-                    break;
-
-                //large enemies
-                case 6:
-                    _enemySpawners[2].SetActive(true);
-                    break;
-            }
-
-            foreach (var spawner in _enemySpawners)
-            {
-                if (spawner.activeSelf)
+                if (_playerLvl >= enemy.LevelToStartSpawn)
                 {
-                    var enemyCooldown = spawner.GetComponent<ObjectsSpawner>().SpawnCooldown;
+                    enemy.Spawner.enabled = true;
+                }
+
+                if (enemy.Spawner.enabled)
+                {
+                    var enemyCooldown = enemy.Spawner.SpawnCooldown;
                     enemyCooldown.Value -= 1.0f;
 
                     if (enemyCooldown.Value <= _minEnemySpawnCooldown)
@@ -133,24 +122,28 @@ namespace Scripts
             }
         }
 
-        public void PlayArrivalSFX()
-        {
-            _audio.Play("boss arrival", 0.4f);
-        }
-
         public void SpawnBoss()
         {
             _bossSpawner.Spawn();
-
-            _audio.PauseMainSource();
             _audio.Play("boss fight");
         }
 
-        private void SetEnemySpawnersState(bool state)
+        private void DisableEnemySpawners()
         {
             foreach (var enemy in _enemySpawners)
             {
-                enemy.GetComponent<ObjectsSpawner>().SetState(state);
+                enemy.Spawner.SetState(false);
+            }
+        }
+
+        public void EnableEnemySpawners()
+        {
+            foreach (var enemy in _enemySpawners)
+            {
+                if (_playerLvl >= enemy.LevelToStartSpawn)
+                {
+                    enemy.Spawner.SetState(true);
+                }
             }
         }
 
@@ -161,5 +154,15 @@ namespace Scripts
             _audio.Stop();
             _audio.PlayMainSource();
         }
+    }
+
+    [Serializable]
+    public class EnemySpawner
+    {
+        [SerializeField] private ObjectsSpawner _spawner;
+        [SerializeField] private int _levelToStartSpawn;
+
+        public ObjectsSpawner Spawner => _spawner;
+        public int LevelToStartSpawn => _levelToStartSpawn;
     }
 }

@@ -6,6 +6,9 @@ namespace Scripts
     {
         [SerializeField] private float _speed = 5f;
         [SerializeField] private float _secToDestroy = 1f;
+        [SerializeField] private bool _isHostile;
+
+        public bool IsHostile => _isHostile;
 
         private Rigidbody2D _body;
 

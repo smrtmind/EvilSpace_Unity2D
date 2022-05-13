@@ -189,7 +189,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timers:
-  - Delay: 3
+  - _name: 
+    Delay: 3
     OnTimesUp:
       m_PersistentCalls:
         m_Calls:
@@ -690,7 +691,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timers:
-  - Delay: 1.7
+  - _name: 
+    Delay: 1.7
     OnTimesUp:
       m_PersistentCalls:
         m_Calls:
@@ -962,7 +964,7 @@ PrefabInstance:
     - target: {fileID: 550662447517626453, guid: 52d14ecba49610042a3c403779eac1dd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 550662447517626453, guid: 52d14ecba49610042a3c403779eac1dd,
         type: 3}

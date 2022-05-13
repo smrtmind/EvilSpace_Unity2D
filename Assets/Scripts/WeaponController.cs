@@ -33,7 +33,6 @@ namespace Scripts
         private PlayerController _playerInput;
         private Rigidbody2D _playerBody;
         private CameraShaker _cameraShaker;
-        private GameSession _gameSession;
         private AudioComponent _audio;
 
         private Projectile _weapon;
@@ -57,7 +56,6 @@ namespace Scripts
             _bombTimerDefault = _bombTimer;
 
             _cameraShaker = FindObjectOfType<CameraShaker>();
-            _gameSession = FindObjectOfType<GameSession>();
             _audio = FindObjectOfType<AudioComponent>();
         }
 
@@ -255,7 +253,8 @@ namespace Scripts
             var projectiles = FindObjectsOfType<Projectile>();
             foreach (var projectile in projectiles)
             {
-                Destroy(projectile.gameObject);
+                if (projectile.IsHostile)
+                    Destroy(projectile.gameObject);
             }
         }
     }
