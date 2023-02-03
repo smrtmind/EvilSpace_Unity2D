@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 371572311e089684bab91f61484f2df1, type: 3}
+  m_Name: PlayerStorage
+  m_EditorClassIdentifier: 
+  playerPrefsSaveString: _playerSave
+  playerDataStorage: {fileID: 0}
+  concretePlayer:
+    <Score>k__BackingField: 0
+    <IsDead>k__BackingField: 1
+    <GameIsOver>k__BackingField: 0
+    <PlayerDefaultPosition>k__BackingField: {x: 0, y: -17, z: 0}
+    <MaxHealth>k__BackingField: 5
+    <CurrentHealth>k__BackingField: 0
+    <Tries>k__BackingField: 3
+    <CurrentTries>k__BackingField: 0
+    <MovementSpeed>k__BackingField: 9

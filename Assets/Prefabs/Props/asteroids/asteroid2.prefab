@@ -56,6 +56,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -105,6 +106,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _frameRate: 6
+  _onComplete:
+    m_PersistentCalls:
+      m_Calls: []
   _clips:
   - _name: idle
     _sprites:
@@ -123,6 +127,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2623673660072669859}
+          m_TargetAssemblyTypeName: 
           m_MethodName: SetClip
           m_Mode: 5
           m_Arguments:
@@ -141,6 +146,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2436461235105000476}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Spawn
           m_Mode: 1
           m_Arguments:
@@ -152,6 +158,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 141782021}
+          m_TargetAssemblyTypeName: 
           m_MethodName: AddXp
           m_Mode: 3
           m_Arguments:
@@ -163,6 +170,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 7226413975653246018}
+          m_TargetAssemblyTypeName: 
           m_MethodName: DestroyObject
           m_Mode: 1
           m_Arguments:
@@ -274,6 +282,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2623673660072669859}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetClip
         m_Mode: 5
         m_Arguments:
@@ -291,6 +300,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2623673660072669859}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetClip
         m_Mode: 5
         m_Arguments:
@@ -313,10 +323,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 580800971c37a8946b25715aea716744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerStorage: {fileID: 11400000, guid: 0e2cce6871d5eb547801ec25880e2198, type: 2}
   _minSpeed: 3
   _maxSpeed: 10
   _minRotation: 20
   _maxRotation: 50
+  damage: 1
 --- !u!114 &1269104711266798467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,6 +359,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1269104711266798467}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Apply
         m_Mode: 0
         m_Arguments:
