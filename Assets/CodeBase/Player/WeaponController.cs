@@ -1,6 +1,7 @@
 ﻿using CodeBase.Mobs;
 using CodeBase.Player;
 using CodeBase.Service;
+using CodeBase.UI;
 using Scripts;
 using System;
 using UnityEngine;
@@ -76,57 +77,74 @@ namespace CodeBase.Player
             _playerBody = GetComponent<Rigidbody2D>();
         }
 
-        private void Update()
-        {
-            if (_playerInput.firstWeapon)
-            {
-                if (!_playerInput.secondWeapon)
-                {
-                    _currentWeaponType = SetWeaponActive(1);
-                    Reload();
-                }
 
-                _currentWeaponType = SetWeaponActive(0);
-                if (_shootingDelay.IsReady && _weaponSettings[0].Ammo > 0)
-                {
-                    Shoot();
-                }
-            }
 
-            if (_playerInput.secondWeapon)
-            {
-                if (!_playerInput.firstWeapon)
-                {
-                    _currentWeaponType = SetWeaponActive(0);
-                    Reload();
-                }
+        //private void Update()
+        //{
+        //    if (!_playerInput.secondWeapon)
+        //    {
+        //        _currentWeaponType = SetWeaponActive(1);
+        //        Reload();
+        //    }
 
-                _currentWeaponType = SetWeaponActive(1);
-                if (_shootingDelay.IsReady && _weaponSettings[1].Ammo > 0)
-                {
-                    Shoot();
-                }
-            }
+        //    _currentWeaponType = SetWeaponActive(0);
+        //    if (_shootingDelay.IsReady && _weaponSettings[0].Ammo > 0)
+        //    {
+        //        Shoot();
+        //    }
+        //}
 
-            if (!_playerInput.firstWeapon && !_playerInput.secondWeapon)
-            {
-                for (int i = 0; i < _weaponSettings.Length; i++)
-                {
-                    _currentWeaponType = SetWeaponActive(i);
-                    Reload();
-                }
-            }
+        //private void Update()
+        //{
+        //    if (_playerInput.firstWeapon)
+        //    {
+        //        if (!_playerInput.secondWeapon)
+        //        {
+        //            _currentWeaponType = SetWeaponActive(1);
+        //            Reload();
+        //        }
 
-            if (_playerInput.thirdWeapon && _bombIsReady)
-            {
-                UseBomb();
-            }
+        //        _currentWeaponType = SetWeaponActive(0);
+        //        if (_shootingDelay.IsReady && _weaponSettings[0].Ammo > 0)
+        //        {
+        //            Shoot();
+        //        }
+        //    }
 
-            if (!_bombIsReady)
-            {
-                ReloadBomb();
-            }
-        }
+        //    if (_playerInput.secondWeapon)
+        //    {
+        //        if (!_playerInput.firstWeapon)
+        //        {
+        //            _currentWeaponType = SetWeaponActive(0);
+        //            Reload();
+        //        }
+
+        //        _currentWeaponType = SetWeaponActive(1);
+        //        if (_shootingDelay.IsReady && _weaponSettings[1].Ammo > 0)
+        //        {
+        //            Shoot();
+        //        }
+        //    }
+
+        //    if (!_playerInput.firstWeapon && !_playerInput.secondWeapon)
+        //    {
+        //        for (int i = 0; i < _weaponSettings.Length; i++)
+        //        {
+        //            _currentWeaponType = SetWeaponActive(i);
+        //            Reload();
+        //        }
+        //    }
+
+        //    if (_playerInput.thirdWeapon && _bombIsReady)
+        //    {
+        //        UseBomb();
+        //    }
+
+        //    if (!_bombIsReady)
+        //    {
+        //        ReloadBomb();
+        //    }
+        //}
 
         public void PowerUp()
         {

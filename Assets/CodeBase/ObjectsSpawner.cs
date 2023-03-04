@@ -1,5 +1,5 @@
 ﻿using CodeBase.Mobs;
-using CodeBase.Service;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Scripts
@@ -7,12 +7,11 @@ namespace Scripts
     public class ObjectsSpawner : MonoBehaviour
     {
         [SerializeField] private GameObject[] _enemies;
-        [SerializeField] private int _enemiesOnStart;
-        [SerializeField] private Cooldown _spawnCooldown;
+        [SerializeField] private int objectsOnStart;
         [SerializeField] private bool _startSpawn;
+        [field: SerializeField] public float SpawnCooldown { get; set; } = 5f;
 
         public bool StartSpawn => _startSpawn;
-        public Cooldown SpawnCooldown => _spawnCooldown;
 
         private Bounds _screenBounds;
 
@@ -20,32 +19,33 @@ namespace Scripts
         {
             _screenBounds = FindObjectOfType<ScreenBounds>().borderOfBounds;
 
-            if (_startSpawn)
-            {
-                SpawnEnemies(_enemiesOnStart);
-                _spawnCooldown.Reset();
-            } 
+            BurstSpawnObjects(objectsOnStart);
         }
 
-        private void Update()
+        //private void Update()
+        //{
+        //    if (_startSpawn)
+        //    {
+        //        if (_spawnCooldown.IsReady)
+        //        {
+        //            SpawnNewEnemy();
+        //            _spawnCooldown.Reset();
+        //        }
+        //    }
+        //}
+
+        private void BurstSpawnObjects(int count)
         {
-            if (_startSpawn)
+            if (objectsOnStart > 0)
             {
-                if (_spawnCooldown.IsReady)
-                {
-                    SpawnNewEnemy();
-                    _spawnCooldown.Reset();
-                }
+                for (int i = 0; i < count; i++)
+                    SpawnNewObject();
             }
+
+            SpawnObjects();
         }
 
-        private void SpawnEnemies(int count)
-        {
-            for (int i = 0; i < count; i++)
-                SpawnNewEnemy();
-        }
-
-        private void SpawnNewEnemy()
+        private void SpawnNewObject()
         {
             var randomEnemyIndex = Random.Range(0, _enemies.Length);
             var enemyPrefab = _enemies[randomEnemyIndex];
@@ -67,6 +67,16 @@ namespace Scripts
         public void SetState(bool state)
         {
             _startSpawn = state;
+        }
+
+        private async void SpawnObjects()
+        {
+            while (StartSpawn)
+            {
+                await Task.Delay((int)SpawnCooldown * 1000);
+
+                SpawnNewObject();
+            }
         }
     }
 }

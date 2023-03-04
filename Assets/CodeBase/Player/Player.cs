@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CodeBase.UI;
+using System;
 using UnityEngine;
 
 namespace CodeBase.Player
@@ -9,10 +10,10 @@ namespace CodeBase.Player
         [field: Header("Player Progress")]
         [field: SerializeField] public float Score { get; private set; }
         [field: SerializeField] public bool IsDead { get; private set; }
-        [field: SerializeField] public bool GameIsOver { get; private set; }
 
         [field: Header("Player Settings")]
-        [field: SerializeField] public Vector3 PlayerDefaultPosition { get; private set; }
+        [field: SerializeField] public Vector3 DefaultPlayerPosition { get; private set; }
+        [field: SerializeField] public int Lvl { get; private set; }
 
         [field: Space]
         [field: SerializeField] public float MaxHealth { get; private set; }
@@ -24,26 +25,22 @@ namespace CodeBase.Player
 
         [field: Space]
         [field: SerializeField] public float MovementSpeed { get; private set; }
-        //[field: SerializeField] public List<Technology> FactoryParameters { get; private set; } = new List<Technology>();
 
-        //public void SetPlayerData(int caseCapacity, float mainConveyorSpeedDividor, double money, double bank, bool tutorialCompleted)
-        //{
-        //    CaseCapacity = caseCapacity;
-        //    MainConveyorSpeedDividor = mainConveyorSpeedDividor;
-        //    Money = money;
-        //    Bank = bank;
-        //    TutorialCompleted = tutorialCompleted;
-        //}
+        public bool GameIsOver => CurrentTries == 0;
 
-        //public Technology GetFactoryTechData(CrystalType type)
-        //{
-        //    foreach (var parameter in FactoryParameters)
-        //        if (type == parameter.FactoryType)
-        //            return parameter;
+        public void SetPlayerData(Vector3 defaultPlayerPosition, int lvl, float score, float health, int tries, float movementSpeed)
+        {
+            IsDead = false;
+            DefaultPlayerPosition = defaultPlayerPosition;
+            Lvl = lvl;
+            Score = score;
+            MaxHealth = health;
+            Tries = tries;
+            MovementSpeed = movementSpeed;
 
-        //    return null;
-        //}
-
+            CurrentHealth = MaxHealth;
+            CurrentTries = Tries;
+        }
 
         public void ModifyHealth(float health)
         {
@@ -52,22 +49,13 @@ namespace CodeBase.Player
             {
                 CurrentHealth = 0;
                 CurrentTries--;
-                IsDead = true;
-
-                if (CurrentTries == 0)
-                {
-                    GameIsOver = true;
-                }
+                PlayerIsDead(true);
             }
+
+            PlayerController.OnPlayerDamaged?.Invoke();
+            UserInterface.OnHealthChanged?.Invoke();
         }
 
-        public void ResetAllPlayerData()
-        {
-            Score = 0f;
-            CurrentHealth = MaxHealth;
-            CurrentTries = Tries;
-            IsDead = false;
-            GameIsOver = false;
-        }
+        public void PlayerIsDead(bool status) => IsDead = status;
     }
 }

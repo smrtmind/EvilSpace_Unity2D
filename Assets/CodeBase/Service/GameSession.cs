@@ -32,7 +32,7 @@ namespace CodeBase.Service
         private WeaponController _weaponController;
         private AudioComponent _audio;
         private HealthComponent _playerHealth;
-        private HudController _hud;
+        private UserInterface _hud;
 
         public int Tries => _tries;
         public HealthComponent PlayerHealth => _playerHealth;
@@ -47,7 +47,7 @@ namespace CodeBase.Service
             _weaponController = FindObjectOfType<WeaponController>();
             _audio = FindObjectOfType<AudioComponent>();
             _playerHealth = _player.GetComponent<HealthComponent>();
-            _hud = FindObjectOfType<HudController>();
+            _hud = FindObjectOfType<UserInterface>();
         }
 
         public void ModifyXp(int xp)
@@ -120,10 +120,10 @@ namespace CodeBase.Service
                 if (enemy.Spawner.enabled)
                 {
                     var enemyCooldown = enemy.Spawner.SpawnCooldown;
-                    enemyCooldown.Value -= 1.0f;
+                    enemyCooldown -= 1.0f;
 
-                    if (enemyCooldown.Value <= _minEnemySpawnCooldown)
-                        enemyCooldown.Value = _minEnemySpawnCooldown;
+                    if (enemyCooldown <= _minEnemySpawnCooldown)
+                        enemyCooldown = _minEnemySpawnCooldown;
                 }
             }
         }

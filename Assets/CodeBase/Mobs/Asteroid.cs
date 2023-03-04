@@ -9,19 +9,20 @@ namespace CodeBase.Mobs
         [Header("Storages")]
         [SerializeField] private PlayerStorage playerStorage;
 
+        [SerializeField] private Rigidbody2D asteroidBody;
+
         [SerializeField] private float _minSpeed = 1f;
         [SerializeField] private float _maxSpeed = 5f;
         [SerializeField] private float _minRotation = 5f;
         [SerializeField] private float _maxRotation = 25;
         [SerializeField] private float damage = 1f;
 
-        private Rigidbody2D _body;
+        
         private GameSession _gameSession;
         private CameraShaker _cameraShaker;
 
         private void Awake()
         {
-            _body = GetComponent<Rigidbody2D>();
             _gameSession = FindObjectOfType<GameSession>();
             _cameraShaker = FindObjectOfType<CameraShaker>();
         }
@@ -29,10 +30,10 @@ namespace CodeBase.Mobs
         public void Launch()
         {
             var randomDirection = Random.insideUnitCircle.normalized;
-            _body.velocity = randomDirection * Random.Range(_minSpeed, _maxSpeed);
+            asteroidBody.velocity = randomDirection * Random.Range(_minSpeed, _maxSpeed);
 
             var randomRotation = Random.Range(_minRotation, _maxRotation);
-            _body.AddTorque(randomRotation);
+            asteroidBody.AddTorque(randomRotation);
         }
 
         public void AddXp(int xp)
@@ -51,8 +52,8 @@ namespace CodeBase.Mobs
 
                     _cameraShaker.RestoreValues();
 
-                    var force = transform.position - other.transform.position;
-                    force.Normalize();
+                    //var force = transform.position - other.transform.position;
+                    //force.Normalize();
 
                     //player.GetComponent<Rigidbody2D>().AddForce(-force * 500);
                 }

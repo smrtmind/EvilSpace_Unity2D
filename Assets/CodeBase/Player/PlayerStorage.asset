@@ -13,14 +13,13 @@ MonoBehaviour:
   m_Name: PlayerStorage
   m_EditorClassIdentifier: 
   playerPrefsSaveString: _playerSave
-  playerDataStorage: {fileID: 0}
+  playerDataStorage: {fileID: 11400000, guid: 4fa620f6c43b76a4a825cea77b6fb8b8, type: 2}
   concretePlayer:
-    <Score>k__BackingField: 0
+    <Score>k__BackingField: 34
     <IsDead>k__BackingField: 1
-    <GameIsOver>k__BackingField: 0
-    <PlayerDefaultPosition>k__BackingField: {x: 0, y: -17, z: 0}
+    <DefaultPlayerPosition>k__BackingField: {x: 0, y: -17, z: 0}
     <MaxHealth>k__BackingField: 5
-    <CurrentHealth>k__BackingField: 0
+    <CurrentHealth>k__BackingField: 10
     <Tries>k__BackingField: 3
-    <CurrentTries>k__BackingField: 0
+    <CurrentTries>k__BackingField: 2
     <MovementSpeed>k__BackingField: 9

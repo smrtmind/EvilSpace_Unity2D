@@ -39,28 +39,12 @@ namespace CodeBase.Player
 
         private void InitPlayer()
         {
-            concretePlayer.ResetAllPlayerData();
-            //CrystalType[] factoryTypes = { CrystalType.Red, CrystalType.Blue, CrystalType.Pink, CrystalType.Green, CrystalType.Violet };
-            //for (int i = 0; i < factoryTypes.Length; i++)
-            //{
-            //    var tech = technologyStorage.GetTechData(factoryTypes[i]);
-
-            //    Technology newTech = new Technology(tech.FactoryType,
-            //                                        tech.FactoryCost,
-            //                                        tech.Level,
-            //                                        tech.SpawnDelay,
-            //                                        tech.BaseProfit,
-            //                                        tech.BaseUpgradeCost,
-            //                                        tech.UpgradePowerCoeficient);
-
-            //    concretePlayer.FactoryParameters.Add(newTech);
-            //}
-
-            //concretePlayer.SetPlayerData(technologyStorage.CaseCapacity,
-            //                             technologyStorage.MainConveyorSpeedDividor,
-            //                             technologyStorage.Money,
-            //                             technologyStorage.Bank,
-            //                             technologyStorage.TutorialCompleted);
+            concretePlayer.SetPlayerData(playerDataStorage.DefaultPlayerPosition,
+                                         playerDataStorage.DefaultLvl,
+                                         playerDataStorage.DefaulScore,
+                                         playerDataStorage.DefaulHealth,
+                                         playerDataStorage.DefaultTries,
+                                         playerDataStorage.DefaultMovementSpeed);
         }
     }
 }

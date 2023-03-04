@@ -12,3 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c10d9a59b8edb40ad7dcc4521f473e, type: 3}
   m_Name: PlayerDataStorage
   m_EditorClassIdentifier: 
+  <DefaultPlayerPosition>k__BackingField: {x: 0, y: -17, z: 0}
+  <DefaultLvl>k__BackingField: 1
+  <DefaulScore>k__BackingField: 0
+  <DefaulHealth>k__BackingField: 5
+  <DefaultTries>k__BackingField: 3
+  <DefaultMovementSpeed>k__BackingField: 9
