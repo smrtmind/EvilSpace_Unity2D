@@ -5,7 +5,8 @@ namespace CodeBase.Utils
         public enum WeaponType
         {
             None,
-            Blaster
+            Blaster,
+            MachineGun
         }
     }
 }

@@ -11,64 +11,68 @@ namespace CodeBase.UI
         [Header("Storages")]
         [SerializeField] private PlayerStorage playerStorage;
 
-        [SerializeField] private Text _triesText;
-        [SerializeField] public Slider _XpBar;
+        //[SerializeField] private Text _triesText;
+        //[SerializeField] public Slider _XpBar;
+        [SerializeField] private TextMeshProUGUI healthValue;
+        [SerializeField] private TextMeshProUGUI triesValue;
         [SerializeField] private TextMeshProUGUI scoreValue;
         [SerializeField] private TextMeshProUGUI lvlValue;
-        [SerializeField] private Text _healthAmount;
-        [SerializeField] private TextMeshProUGUI lvlProgress;
-        [SerializeField] private Animator _warning;
 
-        [Space]
-        [Header("Buttons")]
-        [SerializeField] private Button machineGunBttn;
-        [SerializeField] private Button blasterBttn;
-        [SerializeField] private Button megaBombBttn;
+        //[SerializeField] private Text _healthAmount;
+        //[SerializeField] private TextMeshProUGUI lvlProgress;
+        //[SerializeField] private Animator _warning;
 
-        [Space]
-        [Header("WeaponStatus")]
-        [SerializeField] private Text _gunValue;
-        [SerializeField] private Text _blasterValue;
-        [SerializeField] private Text _bombStatus;
+        //[Space]
+        //[Header("Buttons")]
+        //[SerializeField] private Button machineGunBttn;
+        //[SerializeField] private Button blasterBttn;
+        //[SerializeField] private Button megaBombBttn;
+
+        //[Space]
+        //[Header("WeaponStatus")]
+        //[SerializeField] private Text _gunValue;
+        //[SerializeField] private Text _blasterValue;
+        //[SerializeField] private Text _bombStatus;
 
         public static Action OnHealthChanged;
-        public static Action OnMachineGunBttnPressed;
+        public static Action OnTriesChanged;
+        //public static Action OnMachineGunBttnPressed;
 
-        public Animator Warning => _warning;
+        //public Animator Warning => _warning;
 
-        private WeaponController _weaponController;
+        //private WeaponController _weaponController;
 
         private void OnEnable()
         {
+            RefreshTriesInfo();
             RefreshHealthInfo();
 
             OnHealthChanged += RefreshHealthInfo;
+            OnTriesChanged += RefreshTriesInfo;
             //machineGunBttn.onClick.AddListener(MachineGunBttnPressed);
         }
 
         private void OnDisable()
         {
             OnHealthChanged -= RefreshHealthInfo;
+            OnTriesChanged -= RefreshTriesInfo;
             //machineGunBttn.onClick.RemoveListener(MachineGunBttnPressed);
         }
 
-        private void MachineGunBttnPressed()
-        {
-            OnMachineGunBttnPressed?.Invoke();
-        }
+        //private void MachineGunBttnPressed()
+        //{
+        //    OnMachineGunBttnPressed?.Invoke();
+        //}
 
-        private void Awake()
-        {
-            _weaponController = FindObjectOfType<WeaponController>();
-        }
+        //private void Awake()
+        //{
+        //    _weaponController = FindObjectOfType<WeaponController>();
+        //}
 
-        private void RefreshHealthInfo()
-        {
-            //if (playerStorage.ConcretePlayer.CurrentHealth < 0)
-            //    _healthAmount.text = "0";
-            //else
-            //    _healthAmount.text = $"{playerStorage.ConcretePlayer.CurrentHealth}";
-        }
+        private void RefreshHealthInfo() => healthValue.text = $"{Mathf.Round(playerStorage.ConcretePlayer.CurrentHealth)}";
+
+        private void RefreshTriesInfo() => triesValue.text = $"{Mathf.Round(playerStorage.ConcretePlayer.CurrentTries)}";
+
 
         private void Update()
         {
@@ -77,10 +81,10 @@ namespace CodeBase.UI
 
             //lvlProgress.text = $"{_XpBar.value} / {_XpBar.maxValue}";
 
-            scoreValue.text = $"SCORE: {playerStorage.ConcretePlayer.Score}";
-            //_triesText.text = $"{playerStorage.ConcretePlayer.CurrentTries}";
+            //scoreValue.text = $"SCORE: {playerStorage.ConcretePlayer.Score}";
+            ////_triesText.text = $"{playerStorage.ConcretePlayer.CurrentTries}";
 
-            lvlValue.text = $"LVL {playerStorage.ConcretePlayer.Lvl}";
+            //lvlValue.text = $"LVL {playerStorage.ConcretePlayer.Lvl}";
 
             //weapon
             //_gunValue.text = $"{_weaponController.WeaponSettings[0].Ammo}";

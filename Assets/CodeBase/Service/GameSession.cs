@@ -96,7 +96,7 @@ namespace CodeBase.Service
             {
                 _weaponController.KillAllEnemies();
                 DisableEnemySpawners();
-                _hud.Warning.SetTrigger(WarningKey);
+                //_hud.Warning.SetTrigger(WarningKey);
                 _timers.SetTimerByName("spawn boss");
             }
 
