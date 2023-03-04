@@ -54,6 +54,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -103,6 +104,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _frameRate: 10
+  _onComplete:
+    m_PersistentCalls:
+      m_Calls: []
   _clips:
   - _name: 
     _sprites:
@@ -184,6 +188,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5655042163995265754}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Apply
         m_Mode: 0
         m_Arguments:
@@ -195,6 +200,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 5254166440082854835}
+        m_TargetAssemblyTypeName: 
         m_MethodName: DestroyObject
         m_Mode: 1
         m_Arguments:
@@ -326,5 +332,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea0181f3a976974e92ebd8634138912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 80
-  _secToDestroy: 3
+  rb: {fileID: 5031865173122266621}
+  speed: 80
+  isHostile: 0

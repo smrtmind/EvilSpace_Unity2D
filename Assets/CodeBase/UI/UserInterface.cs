@@ -43,13 +43,13 @@ namespace CodeBase.UI
             RefreshHealthInfo();
 
             OnHealthChanged += RefreshHealthInfo;
-            machineGunBttn.onClick.AddListener(MachineGunBttnPressed);
+            //machineGunBttn.onClick.AddListener(MachineGunBttnPressed);
         }
 
         private void OnDisable()
         {
             OnHealthChanged -= RefreshHealthInfo;
-            machineGunBttn.onClick.RemoveListener(MachineGunBttnPressed);
+            //machineGunBttn.onClick.RemoveListener(MachineGunBttnPressed);
         }
 
         private void MachineGunBttnPressed()

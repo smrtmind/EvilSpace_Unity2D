@@ -2,14 +2,28 @@
 using CodeBase.Player;
 using CodeBase.Service;
 using CodeBase.UI;
+using CodeBase.Utils;
 using Scripts;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace CodeBase.Player
 {
     public class WeaponController : MonoBehaviour
     {
+        [Header("Storages")]
+        [SerializeField] private DependencyContainer dependencyContainer;
+
+
+        [SerializeField] private List<Projectile> projectilePool;
+        [SerializeField] private Projectile projectilePrefab;
+
+
+
+
+
         [SerializeField] private WeaponSettings[] _weaponSettings;
 
         public WeaponSettings[] WeaponSettings => _weaponSettings;
@@ -35,7 +49,7 @@ namespace CodeBase.Player
         public int BombTimer => _bombTimer;
         public GameObject Shield => _shield;
 
-        private PlayerController _playerInput;
+        //private PlayerController _playerInput;
         private Rigidbody2D _playerBody;
         private CameraShaker _cameraShaker;
         private AudioComponent _audio;
@@ -48,6 +62,7 @@ namespace CodeBase.Player
         private int _ammoPerShoot;
         private int _currentWeaponType;
         private bool _allWeaponMaxOut;
+        private Coroutine shootingCoroutine;
 
         public bool AllWeaponMaxOut => _allWeaponMaxOut;
 
@@ -64,6 +79,16 @@ namespace CodeBase.Player
             _audio = FindObjectOfType<AudioComponent>();
         }
 
+        private void OnEnable()
+        {
+            TouchController.OnStartMoving += gfdgdfgdf;
+        }
+
+        private void OnDisable()
+        {
+            TouchController.OnStartMoving -= gfdgdfgdf;
+        }
+
         private void Start()
         {
             foreach (var weapon in _weaponSettings)
@@ -73,10 +98,32 @@ namespace CodeBase.Player
 
             _bombTimer = _bombTimerDefault;
 
-            _playerInput = GetComponent<PlayerController>();
+            //_playerInput = GetComponent<PlayerController>();
             _playerBody = GetComponent<Rigidbody2D>();
         }
 
+        private void gfdgdfgdf(bool isMoving)
+        {
+            if (isMoving)
+            {
+                _currentWeaponType = SetWeaponActive(0);
+                shootingCoroutine = StartCoroutine(gdgfdgdf());
+            }
+            else
+            {
+                //if (shootingCoroutine != null)
+                    StopCoroutine(shootingCoroutine);
+            }
+        }
+
+        private IEnumerator gdgfdgdf()
+        {     
+            while (_weaponSettings[0].Ammo > 0)
+            {
+                Shoot();
+                yield return new WaitForSeconds(0.15f);
+            }
+        }
 
 
         //private void Update()
@@ -204,11 +251,15 @@ namespace CodeBase.Player
 
         private void Shoot()
         {
-            var projectile = Instantiate(_weapon, _weaponShootingPoint.position, transform.rotation);
+            var projectile = GetFreeProjectile();
+            projectile.SetBusyState(true);
+            projectile.transform.position = _weaponShootingPoint.position;
+            projectile.transform.rotation = transform.rotation;
+                //Instantiate(_weapon, _weaponShootingPoint.position, transform.rotation);
             projectile.Launch(_playerBody.velocity, transform.up);
 
-            _weaponSettings[_currentWeaponType].Ammo += _ammoPerShoot;
-            _shootingDelay.Reset();
+            //_weaponSettings[_currentWeaponType].Ammo += _ammoPerShoot;
+            //_shootingDelay.Reset();
         }
 
         private void Reload()
@@ -278,6 +329,23 @@ namespace CodeBase.Player
                 if (projectile.IsHostile)
                     Destroy(projectile.gameObject);
             }
+        }
+
+        public Projectile GetFreeProjectile()
+        {
+            Projectile freeProjectile = projectilePool.Find(projectile => !projectile.IsBusy);
+            if (freeProjectile == null)
+                freeProjectile = CreateNewProjectile();
+
+            return freeProjectile;
+        }
+
+        private Projectile CreateNewProjectile()
+        {
+            Projectile newProjectile = Instantiate(projectilePrefab, dependencyContainer.Pool.ProjectileContainer);
+            projectilePool.Add(newProjectile);
+
+            return newProjectile;
         }
     }
 

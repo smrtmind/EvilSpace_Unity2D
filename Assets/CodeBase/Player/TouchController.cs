@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace CodeBase.Player
 {
@@ -7,9 +8,11 @@ namespace CodeBase.Player
         [SerializeField] private Rigidbody2D rb;
         [SerializeField] private float moveSpeed = 10f;
 
+        public static Action<bool> OnStartMoving;
+
         private Vector3 mousePosition;
         private Vector3 direction;
-
+        private bool isMoving;
         private float minX;
         private float maxX;
         private float minY;
@@ -24,6 +27,12 @@ namespace CodeBase.Player
         {
             if (Input.GetMouseButton(0))
             {
+                if (!isMoving)
+                {
+                    isMoving = true;
+                    OnStartMoving?.Invoke(isMoving);
+                }
+
                 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 mousePosition.z = 0;
                 direction = (mousePosition - transform.position);
@@ -34,6 +43,14 @@ namespace CodeBase.Player
                 transform.position = constrainedPosition;
 
                 rb.velocity = Vector2.zero;
+            }
+            else
+            {
+                if (isMoving)
+                {
+                    isMoving = false;
+                    OnStartMoving?.Invoke(isMoving);
+                }
             }
         }
 

@@ -633,6 +633,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02130b3dac401049b3af221b011694c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dependencyContainer: {fileID: 11400000, guid: 0971863339e52fc46bfc0f1a78196b51,
+    type: 2}
+  projectilePool: []
+  projectilePrefab: {fileID: 475721933866399020, guid: 60118af08bb622949b1f3b60053426c8,
+    type: 3}
   _weaponSettings:
   - _name: Machine Gun
     _weapon: {fileID: 475721933866399020, guid: c452583892f964948998169502f98a1c,
@@ -649,21 +654,6 @@ MonoBehaviour:
       _value: 0.1
     _shootingDelayOnPowerUp: -0.005
     _shootingDelayMin: 0.05
-  - _name: Blaster
-    _weapon: {fileID: 475721933866399020, guid: 60118af08bb622949b1f3b60053426c8,
-      type: 3}
-    _weaponShootingPoint: {fileID: 112501871}
-    _ammo: 30
-    _maxAmmo: 500
-    _reloadingDelay:
-      _value: 0.01
-    _ammoToReload: 1
-    _ammoPerShoot: -1
-    _ammoToAddOnPowerUp: 30
-    _shootingDelay:
-      _value: 0.3
-    _shootingDelayOnPowerUp: -0.02
-    _shootingDelayMin: 0.08
   _bombTimer: 100
   _bombTimerMin: 30
   _decreaseBombTimerOnPowerUp: -5
@@ -759,7 +749,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3384156270070165760}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18882bc27a457164897c6248fb5fec55, type: 3}
   m_Name: 

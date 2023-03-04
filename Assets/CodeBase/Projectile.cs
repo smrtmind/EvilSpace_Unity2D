@@ -4,25 +4,34 @@ namespace Scripts
 {
     public class Projectile : MonoBehaviour
     {
-        [SerializeField] private float _speed = 5f;
-        [SerializeField] private float _secToDestroy = 1f;
-        [SerializeField] private bool _isHostile;
+        [SerializeField] private Rigidbody2D rb;
+        [SerializeField] private float speed = 5f;
+        [SerializeField] private bool isHostile;
+        public bool IsHostile => isHostile;
+        public bool IsBusy { get; private set; }
 
-        public bool IsHostile => _isHostile;
-
-        private Rigidbody2D _body;
-
-        private void Awake()
+        void Update()
         {
-            _body = GetComponent<Rigidbody2D>();
-            
-            //destroy laser after pointed seconds
-            Destroy(gameObject, _secToDestroy);
+            // Get the screen boundaries in world coordinates
+            Vector2 screenBoundaries = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+
+            // Check if the object is out of the screen boundaries
+            if (transform.position.y > screenBoundaries.y || transform.position.y < -screenBoundaries.y
+            || transform.position.x > screenBoundaries.x || transform.position.x < -screenBoundaries.x)
+            {
+                SetBusyState(false);
+            }
+        }
+
+        public void SetBusyState(bool isBusy)
+        {
+            IsBusy = isBusy;
+            gameObject.SetActive(isBusy);
         }
 
         public void Launch(Vector2 velocity, Vector2 direction)
         {
-            _body.velocity = velocity + direction * _speed;
+            rb.velocity = velocity + direction * speed;
         }
     }
 }
