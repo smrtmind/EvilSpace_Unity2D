@@ -7,6 +7,7 @@ namespace CodeBase.Utils
         [Header("Storages")]
         [SerializeField] private DependencyContainer dependencyContainer;
 
+        [field: Header("Containers")]
         [field: SerializeField] public Transform ProjectileContainer { get; private set; }
 
         private void Awake()

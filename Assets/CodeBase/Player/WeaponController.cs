@@ -1,13 +1,13 @@
 ﻿using CodeBase.Mobs;
-using CodeBase.Player;
+using CodeBase.ObjectBased;
 using CodeBase.Service;
-using CodeBase.UI;
 using CodeBase.Utils;
 using Scripts;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static CodeBase.Utils.Enums;
 
 namespace CodeBase.Player
 {
@@ -15,13 +15,13 @@ namespace CodeBase.Player
     {
         [Header("Storages")]
         [SerializeField] private DependencyContainer dependencyContainer;
+        [SerializeField] private WeaponStorage weaponStorage;
 
 
         [SerializeField] private List<Projectile> projectilePool;
-        [SerializeField] private Projectile projectilePrefab;
 
 
-
+        [SerializeField] private WeaponType currentWeapon;
 
 
         [SerializeField] private WeaponSettings[] _weaponSettings;
@@ -81,12 +81,14 @@ namespace CodeBase.Player
 
         private void OnEnable()
         {
-            TouchController.OnStartMoving += gfdgdfgdf;
+            SetCurrentWeapon(WeaponType.Blaster);
+
+            TouchController.OnStartMoving += StartShooting;
         }
 
         private void OnDisable()
         {
-            TouchController.OnStartMoving -= gfdgdfgdf;
+            TouchController.OnStartMoving -= StartShooting;
         }
 
         private void Start()
@@ -102,21 +104,20 @@ namespace CodeBase.Player
             _playerBody = GetComponent<Rigidbody2D>();
         }
 
-        private void gfdgdfgdf(bool isMoving)
+        private void StartShooting(bool isMoving)
         {
             if (isMoving)
             {
                 _currentWeaponType = SetWeaponActive(0);
-                shootingCoroutine = StartCoroutine(gdgfdgdf());
+                shootingCoroutine = StartCoroutine(EndlessShooting());
             }
             else
             {
-                //if (shootingCoroutine != null)
-                    StopCoroutine(shootingCoroutine);
+                StopCoroutine(shootingCoroutine);
             }
         }
 
-        private IEnumerator gdgfdgdf()
+        private IEnumerator EndlessShooting()
         {     
             while (_weaponSettings[0].Ammo > 0)
             {
@@ -305,6 +306,8 @@ namespace CodeBase.Player
             }
         }
 
+        private void SetCurrentWeapon(WeaponType type) => currentWeapon = type;
+
         public void KillAllEnemies()
         {
             var asteroids = FindObjectsOfType<Asteroid>();
@@ -326,7 +329,7 @@ namespace CodeBase.Player
             var projectiles = FindObjectsOfType<Projectile>();
             foreach (var projectile in projectiles)
             {
-                if (projectile.IsHostile)
+                //if (projectile.IsHostile)
                     Destroy(projectile.gameObject);
             }
         }
@@ -342,7 +345,7 @@ namespace CodeBase.Player
 
         private Projectile CreateNewProjectile()
         {
-            Projectile newProjectile = Instantiate(projectilePrefab, dependencyContainer.Pool.ProjectileContainer);
+            Projectile newProjectile = Instantiate(weaponStorage.GetCurrentWeapon(currentWeapon).Projectile, dependencyContainer.Pool.ProjectileContainer);
             projectilePool.Add(newProjectile);
 
             return newProjectile;
