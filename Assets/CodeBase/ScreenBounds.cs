@@ -1,15 +1,21 @@
-﻿using UnityEngine;
+﻿using CodeBase.Utils;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Scripts
 {
     public class ScreenBounds : MonoBehaviour
     {
+        [Header("Storages")]
+        [SerializeField] private DependencyContainer dependencyContainer;
+
         public Bounds Bounds { get; private set; }
         public Bounds borderOfBounds { get; private set; }
 
         private void Awake()
         {
+            dependencyContainer.ScreenBounds = this;
+
             var mainCamera = FindObjectOfType<Camera>();
 
             var screenMin = mainCamera.ViewportToWorldPoint(Vector3.zero);

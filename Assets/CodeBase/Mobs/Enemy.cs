@@ -11,5 +11,9 @@ namespace CodeBase.Mobs
         [Header("Parent Class Settings")]
         [SerializeField] protected float health;
         [SerializeField] protected float damage;
+
+        [field: SerializeField] protected bool IsBusy {  get; private set; }
+
+        protected virtual void SetBusyState(bool state) => IsBusy = state;
     }
 }

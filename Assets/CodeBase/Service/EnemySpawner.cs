@@ -1,4 +1,5 @@
 ﻿using CodeBase.Mobs;
+using CodeBase.Utils;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,40 +9,45 @@ using Random = UnityEngine.Random;
 
 namespace Scripts
 {
-    public class ObjectsSpawner : MonoBehaviour
+    public class EnemySpawner : MonoBehaviour
     {
-        [SerializeField] private List<EnemyUnit> enemies;
-        [SerializeField, Range(0, 50)] private int spawnUnitsOnStart;
+        [Header("Storages")]
+        [SerializeField] private DependencyContainer dependencyContainer;
 
-        [field: SerializeField] public float SpawnCooldown { get; set; } = 5f;
+        [SerializeField] private List<EnemyUnit> enemies;
 
         private Bounds screenBounds;
 
         private void OnEnable()
         {
-            screenBounds = FindObjectOfType<ScreenBounds>().borderOfBounds;
+            screenBounds = dependencyContainer.ScreenBounds.borderOfBounds;
 
             BurstSpawnObjects();
+            StartCoroutine(SpawnObjects());
         }
 
         private void BurstSpawnObjects()
         {
-            if (spawnUnitsOnStart > 0)
+            foreach (EnemyUnit unit in enemies)
             {
-                for (int i = 0; i < spawnUnitsOnStart; i++)
-                    SpawnNewObject();
+                if (unit.SpawnUnitsOnStart > 0)
+                {
+                    for (int i = 0; i < unit.SpawnUnitsOnStart; i++)
+                        SpawnNewObject();
+                }
             }
-
-            StartCoroutine(SpawnObjects());
         }
 
         private IEnumerator SpawnObjects()
         {
             while (true)
             {
-                yield return new WaitForSeconds(SpawnCooldown);
+                foreach(EnemyUnit unit in enemies)
+                {
+                    yield return new WaitForSeconds(unit.SpawnCooldown);
 
-                SpawnNewObject();
+                    SpawnNewObject();
+                }
             }
         }
 
@@ -49,19 +55,19 @@ namespace Scripts
         {
             foreach (EnemyUnit unit in enemies)
             {
-                var randomEnemyIndex = Random.Range(0, unit.Enemies.Count);
-                var enemyPrefab = unit.Enemies[randomEnemyIndex];
+                int randomEnemyIndex = Random.Range(0, unit.Enemies.Count);
+                Enemy enemyPrefab = unit.Enemies[randomEnemyIndex];
 
-                var yPosition = Random.value > 0.5 ? screenBounds.min.y : screenBounds.max.y;
-                var xPosition = Random.Range(screenBounds.min.x, screenBounds.max.x);
+                float yPosition = Random.value > 0.5 ? screenBounds.min.y : screenBounds.max.y;
+                float xPosition = Random.Range(screenBounds.min.x, screenBounds.max.x);
 
-                var randomSpawnPosition = new Vector3(xPosition, yPosition);
+                Vector3 randomSpawnPosition = new Vector3(xPosition, yPosition);
 
                 switch (unit.EnemyType)
                 {
                     case EnemyType.Asteroid:
                         Asteroid newAsteroid = (Asteroid)Instantiate(enemyPrefab, randomSpawnPosition, Quaternion.identity, transform);
-                        newAsteroid.Launch();
+                        newAsteroid?.Launch();
                         break;
 
                     case EnemyType.SmallShip:
@@ -79,5 +85,7 @@ namespace Scripts
     {
         [field: SerializeField] public EnemyType EnemyType { get; private set; }
         [field: SerializeField] public List<Enemy> Enemies { get; private set; }
+        [field: SerializeField, Range(0, 50)] public int SpawnUnitsOnStart { get; private set; }
+        [field: SerializeField] public float SpawnCooldown { get; private set; }
     }
 }

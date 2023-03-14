@@ -119,11 +119,11 @@ namespace CodeBase.Service
 
                 if (enemy.Spawner.enabled)
                 {
-                    var enemyCooldown = enemy.Spawner.SpawnCooldown;
-                    enemyCooldown -= 1.0f;
+                    //var enemyCooldown = enemy.Spawner.SpawnCooldown;
+                    //enemyCooldown -= 1.0f;
 
-                    if (enemyCooldown <= _minEnemySpawnCooldown)
-                        enemyCooldown = _minEnemySpawnCooldown;
+                    //if (enemyCooldown <= _minEnemySpawnCooldown)
+                    //    enemyCooldown = _minEnemySpawnCooldown;
                 }
             }
         }
@@ -165,10 +165,10 @@ namespace CodeBase.Service
     [Serializable]
     public class EnemySpawner
     {
-        [SerializeField] private ObjectsSpawner _spawner;
+        [SerializeField] private Scripts.EnemySpawner _spawner;
         [SerializeField] private int _levelToStartSpawn;
 
-        public ObjectsSpawner Spawner => _spawner;
+        public Scripts.EnemySpawner Spawner => _spawner;
         public int LevelToStartSpawn => _levelToStartSpawn;
     }
 }

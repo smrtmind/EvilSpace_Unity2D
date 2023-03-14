@@ -1,3 +1,4 @@
+using Scripts;
 using UnityEngine;
 
 namespace CodeBase.Utils
@@ -7,5 +8,6 @@ namespace CodeBase.Utils
     {
         public Pool Pool { get; set; }
         public Camera MainCamera { get; set; }
+        public ScreenBounds ScreenBounds { get; set; }
     }
 }
