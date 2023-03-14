@@ -95,7 +95,7 @@ namespace CodeBase.Service
             if (_playerLvl % _everyLevelSpawn == 0)
             {
                 _weaponController.KillAllEnemies();
-                DisableEnemySpawners();
+                //DisableEnemySpawners();
                 //_hud.Warning.SetTrigger(WarningKey);
                 _timers.SetTimerByName("spawn boss");
             }
@@ -134,24 +134,24 @@ namespace CodeBase.Service
             _audio.Play("boss fight");
         }
 
-        private void DisableEnemySpawners()
-        {
-            foreach (var enemy in _enemySpawners)
-            {
-                enemy.Spawner.SetState(false);
-            }
-        }
+        //private void DisableEnemySpawners()
+        //{
+        //    foreach (var enemy in _enemySpawners)
+        //    {
+        //        enemy.Spawner.SetState(false);
+        //    }
+        //}
 
-        public void EnableEnemySpawners()
-        {
-            foreach (var enemy in _enemySpawners)
-            {
-                if (_playerLvl >= enemy.LevelToStartSpawn)
-                {
-                    enemy.Spawner.SetState(true);
-                }
-            }
-        }
+        //public void EnableEnemySpawners()
+        //{
+        //    foreach (var enemy in _enemySpawners)
+        //    {
+        //        if (_playerLvl >= enemy.LevelToStartSpawn)
+        //        {
+        //            enemy.Spawner.SetState(true);
+        //        }
+        //    }
+        //}
 
         public void RestoreEnemies()
         {

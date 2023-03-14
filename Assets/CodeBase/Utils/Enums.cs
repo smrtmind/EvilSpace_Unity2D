@@ -8,5 +8,15 @@ namespace CodeBase.Utils
             Blaster,
             MachineGun
         }
+
+        public enum EnemyType
+        {
+            None,
+            Asteroid,
+            SmallShip,
+            MediumShip,
+            LargeShip,
+            Boss
+        }
     }
 }

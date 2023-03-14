@@ -1,23 +1,19 @@
-﻿using CodeBase.Player;
-using CodeBase.Service;
+﻿using CodeBase.Service;
 using UnityEngine;
 
 namespace CodeBase.Mobs
 {
-    public class Asteroid : MonoBehaviour
+    public class Asteroid : Enemy
     {
-        [Header("Storages")]
-        [SerializeField] private PlayerStorage playerStorage;
-
+        [Header("Unit Unique Settings")]
         [SerializeField] private Rigidbody2D asteroidBody;
 
+        [Space]
         [SerializeField] private float _minSpeed = 1f;
         [SerializeField] private float _maxSpeed = 5f;
         [SerializeField] private float _minRotation = 5f;
         [SerializeField] private float _maxRotation = 25;
-        [SerializeField] private float damage = 1f;
 
-        
         private GameSession _gameSession;
         private CameraShaker _cameraShaker;
 

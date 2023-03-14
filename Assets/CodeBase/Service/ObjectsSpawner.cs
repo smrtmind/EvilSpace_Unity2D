@@ -1,83 +1,83 @@
 ﻿using CodeBase.Mobs;
+using System;
 using System.Collections;
-using System.Threading.Tasks;
+using System.Collections.Generic;
 using UnityEngine;
+using static CodeBase.Utils.Enums;
+using Random = UnityEngine.Random;
 
 namespace Scripts
 {
     public class ObjectsSpawner : MonoBehaviour
     {
-        [SerializeField] private GameObject[] _enemies;
-        [SerializeField] private int objectsOnStart;
-        [SerializeField] private bool _startSpawn;
+        [SerializeField] private List<EnemyUnit> enemies;
+        [SerializeField, Range(0, 50)] private int spawnUnitsOnStart;
+
         [field: SerializeField] public float SpawnCooldown { get; set; } = 5f;
 
-        public bool StartSpawn => _startSpawn;
+        private Bounds screenBounds;
 
-        private Bounds _screenBounds;
-
-        private void Start()
+        private void OnEnable()
         {
-            _screenBounds = FindObjectOfType<ScreenBounds>().borderOfBounds;
+            screenBounds = FindObjectOfType<ScreenBounds>().borderOfBounds;
 
-            BurstSpawnObjects(objectsOnStart);
+            BurstSpawnObjects();
         }
 
-        //private void Update()
-        //{
-        //    if (_startSpawn)
-        //    {
-        //        if (_spawnCooldown.IsReady)
-        //        {
-        //            SpawnNewEnemy();
-        //            _spawnCooldown.Reset();
-        //        }
-        //    }
-        //}
-
-        private void BurstSpawnObjects(int count)
+        private void BurstSpawnObjects()
         {
-            if (objectsOnStart > 0)
+            if (spawnUnitsOnStart > 0)
             {
-                for (int i = 0; i < count; i++)
+                for (int i = 0; i < spawnUnitsOnStart; i++)
                     SpawnNewObject();
             }
 
-            SpawnObjects();
-        }
-
-        private void SpawnNewObject()
-        {
-            var randomEnemyIndex = Random.Range(0, _enemies.Length);
-            var enemyPrefab = _enemies[randomEnemyIndex];
-
-            var yPosition = Random.value > 0.5 ? _screenBounds.min.y : _screenBounds.max.y;
-            var xPosition = Random.Range(_screenBounds.min.x, _screenBounds.max.x);
-
-            var randomSpawnPosition = new Vector3(xPosition, yPosition);
-
-            var asteroid = enemyPrefab.GetComponent<Asteroid>();
-            if (asteroid)
-            {
-                Instantiate(asteroid, randomSpawnPosition, Quaternion.identity, transform).Launch();
-            }
-            else
-                Instantiate(enemyPrefab, randomSpawnPosition, Quaternion.identity, transform);
-        }
-
-        public void SetState(bool state)
-        {
-            _startSpawn = state;
+            StartCoroutine(SpawnObjects());
         }
 
         private IEnumerator SpawnObjects()
         {
-            while (StartSpawn)
+            while (true)
             {
                 yield return new WaitForSeconds(SpawnCooldown);
 
                 SpawnNewObject();
             }
         }
+
+        private void SpawnNewObject()
+        {
+            foreach (EnemyUnit unit in enemies)
+            {
+                var randomEnemyIndex = Random.Range(0, unit.Enemies.Count);
+                var enemyPrefab = unit.Enemies[randomEnemyIndex];
+
+                var yPosition = Random.value > 0.5 ? screenBounds.min.y : screenBounds.max.y;
+                var xPosition = Random.Range(screenBounds.min.x, screenBounds.max.x);
+
+                var randomSpawnPosition = new Vector3(xPosition, yPosition);
+
+                switch (unit.EnemyType)
+                {
+                    case EnemyType.Asteroid:
+                        Asteroid newAsteroid = (Asteroid)Instantiate(enemyPrefab, randomSpawnPosition, Quaternion.identity, transform);
+                        newAsteroid.Launch();
+                        break;
+
+                    case EnemyType.SmallShip:
+                    case EnemyType.MediumShip:
+                    case EnemyType.LargeShip:
+                        Instantiate(enemyPrefab, randomSpawnPosition, Quaternion.identity, transform);
+                        break;
+                }
+            }              
+        }
+    }
+
+    [Serializable]
+    public class EnemyUnit
+    {
+        [field: SerializeField] public EnemyType EnemyType { get; private set; }
+        [field: SerializeField] public List<Enemy> Enemies { get; private set; }
     }
 }
