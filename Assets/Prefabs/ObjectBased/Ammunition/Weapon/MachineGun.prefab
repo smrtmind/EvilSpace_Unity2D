@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7682915923860260677}
   - component: {fileID: 36623249434427652}
   - component: {fileID: 3321959278719343348}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Body
-  m_TagString: Player
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,9 +124,9 @@ GameObject:
   - component: {fileID: 475721933866399020}
   - component: {fileID: 4042043050675100050}
   - component: {fileID: 5031865173122266621}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: MachineGun
-  m_TagString: Player
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

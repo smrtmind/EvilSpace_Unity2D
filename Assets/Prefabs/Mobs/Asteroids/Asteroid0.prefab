@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6555872918247429592}
   - component: {fileID: 4773985970382647726}
   - component: {fileID: 6335998854527654854}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Asteroid0
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -48,12 +48,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStorage: {fileID: 11400000, guid: 0e2cce6871d5eb547801ec25880e2198, type: 2}
+  <EnemyType>k__BackingField: 1
+  <Health>k__BackingField: 0
+  <Damage>k__BackingField: 0
+  <IsBusy>k__BackingField: 0
   asteroidBody: {fileID: 4773985970382647726}
   _minSpeed: 3
   _maxSpeed: 10
   _minRotation: 20
   _maxRotation: 50
-  damage: 1
 --- !u!58 &6555872918247429592
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -98,7 +101,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6926828201911177819}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18882bc27a457164897c6248fb5fec55, type: 3}
   m_Name: 
@@ -113,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1610631010052137119}
   - component: {fileID: 4571541193739075058}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Body
   m_TagString: Enemy
   m_Icon: {fileID: 0}

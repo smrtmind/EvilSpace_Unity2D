@@ -1,5 +1,7 @@
 using CodeBase.Player;
+using CodeBase.Utils;
 using UnityEngine;
+using static CodeBase.Utils.Enums;
 
 namespace CodeBase.Mobs
 {
@@ -8,12 +10,46 @@ namespace CodeBase.Mobs
         [Header("Storages")]
         [SerializeField] protected PlayerStorage playerStorage;
 
-        [Header("Parent Class Settings")]
-        [SerializeField] protected float health;
-        [SerializeField] protected float damage;
+        [field: Header("Parent Class Settings")]
+        [field: SerializeField] public EnemyType EnemyType { get; private set; }
+        [field: SerializeField] public float Health { get; private set; }
+        [field: SerializeField] public float Damage { get; private set; }
+        [field: SerializeField] public bool IsBusy { get; private set; }
 
-        [field: SerializeField] protected bool IsBusy {  get; private set; }
+        private float currentHealth;
 
-        protected virtual void SetBusyState(bool state) => IsBusy = state;
+        public void SetBusyState(bool state)
+        {
+            IsBusy = state;
+            gameObject.SetActive(IsBusy);
+        }
+
+        public void ModifyHealth(float health)
+        {
+            currentHealth += health;
+            if (currentHealth <= 0f)
+            {
+                currentHealth = Health;
+                IsBusy = false;
+            }
+        }
+
+        public abstract void Launch();
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.tag.Equals(Tags.Projectile))
+            {
+                SetBusyState(false);
+            }
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.tag.Equals(Tags.Projectile))
+            {
+                SetBusyState(false);
+            }
+        }
     }
 }

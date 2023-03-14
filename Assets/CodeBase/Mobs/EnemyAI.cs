@@ -7,11 +7,8 @@ using UnityEngine;
 
 namespace CodeBase.Mobs
 {
-    public class EnemyAI : MonoBehaviour
+    public class EnemyAI : Enemy
     {
-        [Header("Storages")]
-        [SerializeField] private PlayerStorage playerStorage;
-
         [Header("Movement charasteristics")]
         [SerializeField] private bool _canMove;
         [SerializeField] private float _rotationSpeed = 100f;
@@ -82,45 +79,45 @@ namespace CodeBase.Mobs
             _gameSession.ModifyXp(xp);
         }
 
-        private void OnCollisionEnter2D(Collision2D other)
-        {
-            var player = FindObjectOfType<PlayerController>();
-            if (player)
-            {
-                if (!playerStorage.ConcretePlayer.IsDead)
-                {
-                    _cameraShaker.RestoreValues();
+        //private void OnCollisionEnter2D(Collision2D other)
+        //{
+        //    var player = FindObjectOfType<PlayerController>();
+        //    if (player)
+        //    {
+        //        if (!playerStorage.ConcretePlayer.IsDead)
+        //        {
+        //            _cameraShaker.RestoreValues();
 
-                    var force = transform.position - other.transform.position;
-                    force.Normalize();
+        //            var force = transform.position - other.transform.position;
+        //            force.Normalize();
 
-                    player.GetComponent<Rigidbody2D>().AddForce(-force * 500);
-                }
-            }
-        }
+        //            player.GetComponent<Rigidbody2D>().AddForce(-force * 500);
+        //        }
+        //    }
+        //}
 
         public void Shoot()
         {
-            if (_canShoot)
-            {
-                for (int i = 0; i < _weapons.Length; i++)
-                {
-                    if (_weapons[i].ShootingDelay.IsReady)
-                    {
-                        if (!_weapons[i].SpawnWeaponPoint)
-                        {
-                            var projectile = Instantiate(_weapons[i].Weapon, _weapons[i].WeaponShootingPoint.position, transform.rotation);
-                            projectile.Launch(_playerBody.velocity, transform.up);
-                            _weapons[i].ShootingDelay.Reset();
-                        }
-                        else
-                        {
-                            _weapons[i].SpawnWeaponPoint.Spawn();
-                            _weapons[i].ShootingDelay.Reset();
-                        }
-                    }
-                }
-            }
+            //if (_canShoot)
+            //{
+            //    for (int i = 0; i < _weapons.Length; i++)
+            //    {
+            //        if (_weapons[i].ShootingDelay.IsReady)
+            //        {
+            //            if (!_weapons[i].SpawnWeaponPoint)
+            //            {
+            //                var projectile = Instantiate(_weapons[i].Weapon, _weapons[i].WeaponShootingPoint.position, transform.rotation);
+            //                projectile.Launch(_playerBody.velocity, transform.up);
+            //                _weapons[i].ShootingDelay.Reset();
+            //            }
+            //            else
+            //            {
+            //                _weapons[i].SpawnWeaponPoint.Spawn();
+            //                _weapons[i].ShootingDelay.Reset();
+            //            }
+            //        }
+            //    }
+            //}
         }
 
         private void Move()
@@ -132,7 +129,7 @@ namespace CodeBase.Mobs
             transform.position = position;
         }
 
-        public void StopMoving() => _isStopped = true;
+        //public void StopMoving() => _isStopped = true;
 
         private void OnTriggerExit2D(Collider2D other)
         {
@@ -142,6 +139,11 @@ namespace CodeBase.Mobs
         }
 
         public void OnBossDie() => _gameSession.RestoreEnemies();
+
+        public override void Launch()
+        {
+            throw new NotImplementedException();
+        }
     }
 
     [Serializable]

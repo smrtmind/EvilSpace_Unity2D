@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7519627106899723131
 Transform:
   m_ObjectHideFlags: 0
@@ -78,6 +78,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1207392628590953613}
+        m_TargetAssemblyTypeName: 
         m_MethodName: StopMoving
         m_Mode: 1
         m_Arguments:
@@ -242,6 +243,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1207392628590953613}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Shoot
         m_Mode: 1
         m_Arguments:
@@ -311,9 +313,6 @@ GameObject:
   - component: {fileID: 1882682696671317385}
   - component: {fileID: 6426763454310568167}
   - component: {fileID: 1207392628590953613}
-  - component: {fileID: 1540678679572510921}
-  - component: {fileID: 4281603556762935560}
-  - component: {fileID: 1855397895818364425}
   - component: {fileID: 2578468292788464685}
   - component: {fileID: 8836664524562014425}
   - component: {fileID: 8496617069166016872}
@@ -359,6 +358,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -463,7 +463,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8540c2b4270bb47a822b40f56d2e4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isBoss: 0
+  playerStorage: {fileID: 11400000, guid: 0e2cce6871d5eb547801ec25880e2198, type: 2}
+  <EnemyType>k__BackingField: 2
+  <Health>k__BackingField: 0
+  <Damage>k__BackingField: 0
+  <IsBusy>k__BackingField: 0
   _canMove: 1
   _rotationSpeed: 130
   _speed: 8
@@ -476,91 +480,6 @@ MonoBehaviour:
       _value: 1.5
     _weaponShootingPoint: {fileID: 7209977439784247874}
     _spawnWeaponPoint: {fileID: 0}
---- !u!114 &1540678679572510921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8229194066570239158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d59e807b7644ee4a8c62e1b874aaabb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _tag: Player
-  _action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4281603556762935560}
-        m_MethodName: Apply
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &4281603556762935560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8229194066570239158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7faff80a483b7a44b89a0bba87bad81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _healthDelta: -1
---- !u!114 &1855397895818364425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8229194066570239158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14bae68aeaf10f14a90f186e6240f8cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: 6
-  _maxHealth: 0
-  _onDamage:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2578468292788464685}
-        m_MethodName: SetClip
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: hit
-          m_BoolArgument: 0
-        m_CallState: 2
-  _onHeal:
-    m_PersistentCalls:
-      m_Calls: []
-  _onDie:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2578468292788464685}
-        m_MethodName: SetClip
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: destroy
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2578468292788464685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,12 +487,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8229194066570239158}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c7a614fffbf02141946a8622e3c1bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _frameRate: 6
+  _onComplete:
+    m_PersistentCalls:
+      m_Calls: []
   _clips:
   - _name: idle
     _sprites:
@@ -592,6 +514,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2578468292788464685}
+          m_TargetAssemblyTypeName: 
           m_MethodName: SetClip
           m_Mode: 5
           m_Arguments:
@@ -610,6 +533,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 3481807572543194065}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Spawn
           m_Mode: 1
           m_Arguments:
@@ -621,6 +545,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 1207392628590953613}
+          m_TargetAssemblyTypeName: 
           m_MethodName: AddXp
           m_Mode: 3
           m_Arguments:
@@ -632,6 +557,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 1034226320501239324}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Spawn
           m_Mode: 1
           m_Arguments:
@@ -643,6 +569,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 8836664524562014425}
+          m_TargetAssemblyTypeName: 
           m_MethodName: DestroyObject
           m_Mode: 1
           m_Arguments:

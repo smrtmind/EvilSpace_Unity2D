@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1136168339643637028}
   - component: {fileID: 147596783664528376}
   - component: {fileID: 3552969893075127585}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Body
-  m_TagString: Player
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,9 +123,9 @@ GameObject:
   - component: {fileID: 475721933866399020}
   - component: {fileID: 2039925710981863102}
   - component: {fileID: 5031865173122266621}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Blaster
-  m_TagString: Player
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

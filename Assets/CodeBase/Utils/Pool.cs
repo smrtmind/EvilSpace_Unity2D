@@ -9,6 +9,7 @@ namespace CodeBase.Utils
 
         [field: Header("Containers")]
         [field: SerializeField] public Transform ProjectileContainer { get; private set; }
+        [field: SerializeField] public Transform EnemyContainer { get; private set; }
 
         private void Awake()
         {
