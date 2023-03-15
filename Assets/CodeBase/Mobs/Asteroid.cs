@@ -1,5 +1,5 @@
 ﻿using CodeBase.Service;
-using CodeBase.Utils;
+using System.Collections;
 using UnityEngine;
 
 namespace CodeBase.Mobs
@@ -14,36 +14,46 @@ namespace CodeBase.Mobs
         [SerializeField] private float _maxSpeed = 5f;
         [SerializeField] private float _minRotation = 5f;
         [SerializeField] private float _maxRotation = 25;
+        [SerializeField] private float minScale;
+        [SerializeField] private float maxScale;
 
-        private GameSession _gameSession;
-        private CameraShaker _cameraShaker;
+        private GameSession gameSession;
+        private CameraShaker cameraShaker;
+        private Vector2 screenBoundaries;
 
         private void Awake()
         {
-            _gameSession = FindObjectOfType<GameSession>();
-            _cameraShaker = FindObjectOfType<CameraShaker>();
+            gameSession = FindObjectOfType<GameSession>();
+            cameraShaker = FindObjectOfType<CameraShaker>();
         }
 
-        //public override void SetBusyState(bool state)
-        //{
-        //    IsBusy = state;
-        //    gameObject.SetActive(IsBusy);
-        //}
-
-        void Update()
+        private void OnEnable()
         {
-            // Get the screen boundaries in world coordinates
-            Vector2 screenBoundaries = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+            float randomScale = Random.Range(minScale, maxScale);
+            transform.localScale = new Vector3(randomScale, randomScale, 1f);
 
-            // Check if the object is out of the screen boundaries
-            if (transform.position.y > screenBoundaries.y || transform.position.y < -screenBoundaries.y
-            || transform.position.x > screenBoundaries.x || transform.position.x < -screenBoundaries.x)
+            Launch();
+            StartCoroutine(CheckForScreenBounds());
+        }
+
+        private IEnumerator CheckForScreenBounds()
+        {
+            while (true)
             {
-                SetBusyState(false);
+                yield return new WaitForEndOfFrame();
+
+                screenBoundaries = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+
+                if (transform.position.y > screenBoundaries.y || transform.position.y < -screenBoundaries.y
+                || transform.position.x > screenBoundaries.x || transform.position.x < -screenBoundaries.x)
+                {
+                    SetBusyState(false);
+                    break;
+                }
             }
         }
 
-        public override void Launch()
+        private void Launch()
         {
             //var randomDirection = Random.insideUnitCircle.normalized;
             asteroidBody.velocity = Vector2.down * Random.Range(_minSpeed, _maxSpeed);
@@ -54,7 +64,7 @@ namespace CodeBase.Mobs
 
         public void AddXp(int xp)
         {
-            _gameSession.ModifyXp(xp);
+            gameSession.ModifyXp(xp);
         }
 
         //private void OnCollisionEnter2D(Collision2D other)
@@ -75,21 +85,5 @@ namespace CodeBase.Mobs
         //        }
         //    }
         //}
-
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            if (collision.gameObject.tag.Equals(Tags.Projectile))
-            {
-                SetBusyState(false);
-            }
-        }
-
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (collision.gameObject.tag.Equals(Tags.Projectile))
-            {
-                SetBusyState(false);
-            }
-        }
     }
 }

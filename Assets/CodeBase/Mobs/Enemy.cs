@@ -34,8 +34,6 @@ namespace CodeBase.Mobs
             }
         }
 
-        public abstract void Launch();
-
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.tag.Equals(Tags.Projectile))

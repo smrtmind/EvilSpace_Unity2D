@@ -139,11 +139,6 @@ namespace CodeBase.Mobs
         }
 
         public void OnBossDie() => _gameSession.RestoreEnemies();
-
-        public override void Launch()
-        {
-            throw new NotImplementedException();
-        }
     }
 
     [Serializable]

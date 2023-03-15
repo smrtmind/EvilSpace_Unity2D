@@ -110,22 +110,22 @@ namespace CodeBase.Service
 
         private void IncreaseDifficulty()
         {
-            foreach (var enemy in _enemySpawners)
-            {
-                if (_playerLvl >= enemy.LevelToStartSpawn)
-                {
-                    enemy.Spawner.enabled = true;
-                }
+            //foreach (var enemy in _enemySpawners)
+            //{
+            //    if (_playerLvl >= enemy.LevelToStartSpawn)
+            //    {
+            //        enemy.Spawner.enabled = true;
+            //    }
 
-                if (enemy.Spawner.enabled)
-                {
-                    //var enemyCooldown = enemy.Spawner.SpawnCooldown;
-                    //enemyCooldown -= 1.0f;
+            //    if (enemy.Spawner.enabled)
+            //    {
+            //        //var enemyCooldown = enemy.Spawner.SpawnCooldown;
+            //        //enemyCooldown -= 1.0f;
 
-                    //if (enemyCooldown <= _minEnemySpawnCooldown)
-                    //    enemyCooldown = _minEnemySpawnCooldown;
-                }
-            }
+            //        //if (enemyCooldown <= _minEnemySpawnCooldown)
+            //        //    enemyCooldown = _minEnemySpawnCooldown;
+            //    }
+            //}
         }
 
         public void SpawnBoss()
@@ -162,13 +162,13 @@ namespace CodeBase.Service
         }
     }
 
-    [Serializable]
-    public class EnemySpawner
-    {
-        [SerializeField] private Scripts.EnemySpawner _spawner;
-        [SerializeField] private int _levelToStartSpawn;
+    //[Serializable]
+    //public class EnemySpawner
+    //{
+    //    [SerializeField] private Scripts.EnemySpawner _spawner;
+    //    [SerializeField] private int _levelToStartSpawn;
 
-        public Scripts.EnemySpawner Spawner => _spawner;
-        public int LevelToStartSpawn => _levelToStartSpawn;
-    }
+    //    public Scripts.EnemySpawner Spawner => _spawner;
+    //    public int LevelToStartSpawn => _levelToStartSpawn;
+    //}
 }

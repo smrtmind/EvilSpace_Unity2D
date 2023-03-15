@@ -7,7 +7,7 @@ using UnityEngine;
 using static CodeBase.Utils.Enums;
 using Random = UnityEngine.Random;
 
-namespace Scripts
+namespace CodeBase.Service
 {
     public class EnemySpawner : MonoBehaviour
     {
@@ -22,11 +22,29 @@ namespace Scripts
 
         private void OnEnable()
         {
-            screenBounds = dependencyContainer.ScreenBounds.borderOfBounds;
+            ScreenBounds.OnScreenBoundsInitializated += Init;
+        }
+
+        private void OnDisable()
+        {
+            ScreenBounds.OnScreenBoundsInitializated -= Init;
+        }
+
+        private void Init(Bounds bounds)
+        {
+            screenBounds = bounds;
 
             BurstSpawnEnemies();
             StartSpawnEnemies(true);
         }
+
+        //private void Start()
+        //{
+        //    screenBounds = dependencyContainer.ScreenBounds.borderOfBounds;
+
+        //    BurstSpawnEnemies();
+        //    StartSpawnEnemies(true);
+        //}
 
         private void BurstSpawnEnemies()
         {
@@ -35,7 +53,7 @@ namespace Scripts
                 if (unit.SpawnUnitsOnStart > 0)
                 {
                     for (int i = 0; i < unit.SpawnUnitsOnStart; i++)
-                        SpawnNewObject(unit.EnemyType);
+                        SpawnNewObject(unit);
                 }
             }
         }
@@ -46,24 +64,21 @@ namespace Scripts
             {
                 yield return new WaitForSeconds(unit.SpawnCooldown);
 
-                SpawnNewObject(unit.EnemyType);
+                SpawnNewObject(unit);
             }
         }
 
-        private void SpawnNewObject(EnemyType enemyType)
+        private void SpawnNewObject(EnemyUnit unit)
         {
             float yPosition = screenBounds.min.y;/*Random.value > 0.5 ? screenBounds.min.y : screenBounds.max.y;*/
             float xPosition = Random.Range(screenBounds.min.x, screenBounds.max.x);
 
             Vector3 randomPosition = new Vector3(xPosition, yPosition);
 
-            Enemy newEnemy = GetFreeEnemy(enemyType);
+            Enemy newEnemy = GetFreeEnemy(unit);
             newEnemy.transform.position = randomPosition;
             newEnemy.transform.rotation = Quaternion.identity;
-            newEnemy.SetBusyState(true);
-
-            if (enemyType == EnemyType.Asteroid)
-                newEnemy.Launch();            
+            newEnemy.SetBusyState(true);           
         }
 
         public void StartSpawnEnemies(bool start)
@@ -79,40 +94,19 @@ namespace Scripts
             }
         }
 
-        public Enemy GetFreeEnemy(EnemyType enemytype)
+        public Enemy GetFreeEnemy(EnemyUnit unit)
         {
-            Enemy freeEnemy = null;
-
-            foreach (EnemyUnit unit in enemies)
-            {
-                if (unit.EnemyType == enemytype)
-                {
-                    freeEnemy = unit.EnemiesPool.Find(enemy => !enemy.IsBusy);
-                    if (freeEnemy == null)
-                    {
-                        freeEnemy = CreateNewEnemy(enemytype);
-                        break;
-                    }
-                }
-            }
+            Enemy freeEnemy = unit.EnemiesPool.Find(enemy => !enemy.IsBusy);
+            if (freeEnemy == null)
+                freeEnemy = CreateNewEnemy(unit);
 
             return freeEnemy;
         }
 
-        private Enemy CreateNewEnemy(EnemyType enemytype)
+        private Enemy CreateNewEnemy(EnemyUnit unit)
         {
-            Enemy newEnemy = null;
-
-            foreach (EnemyUnit unit in enemies)
-            {
-                if (unit.EnemyType == enemytype)
-                {
-                    newEnemy = Instantiate(unit.Enemies[Random.Range(0, unit.Enemies.Count)], dependencyContainer.Pool.EnemyContainer);
-                    unit.EnemiesPool.Add(newEnemy);
-
-                    break;
-                }
-            }
+            Enemy newEnemy = Instantiate(unit.Enemies[Random.Range(0, unit.Enemies.Count)], dependencyContainer.Pool.EnemyContainer);
+            unit.EnemiesPool.Add(newEnemy);
 
             return newEnemy;
         }

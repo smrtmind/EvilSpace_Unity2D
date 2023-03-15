@@ -424,7 +424,7 @@ MonoBehaviour:
   <Damage>k__BackingField: 0
   <IsBusy>k__BackingField: 0
   _canMove: 1
-  _rotationSpeed: 130
+  _rotationSpeed: 180
   _speed: 8
   _canShoot: 1
   _weapons:

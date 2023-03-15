@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace CodeBase.ObjectBased
 {
@@ -9,16 +10,27 @@ namespace CodeBase.ObjectBased
 
         public bool IsBusy { get; private set; }
 
-        void Update()
-        {
-            // Get the screen boundaries in world coordinates
-            Vector2 screenBoundaries = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        private Vector2 screenBoundaries;
 
-            // Check if the object is out of the screen boundaries
-            if (transform.position.y > screenBoundaries.y || transform.position.y < -screenBoundaries.y
-            || transform.position.x > screenBoundaries.x || transform.position.x < -screenBoundaries.x)
+        private void OnEnable()
+        {
+            StartCoroutine(CheckForScreenBounds());
+        }
+
+        private IEnumerator CheckForScreenBounds()
+        {
+            while (true)
             {
-                SetBusyState(false);
+                yield return new WaitForEndOfFrame();
+
+                screenBoundaries = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+
+                if (transform.position.y > screenBoundaries.y || transform.position.y < -screenBoundaries.y
+                || transform.position.x > screenBoundaries.x || transform.position.x < -screenBoundaries.x)
+                {
+                    SetBusyState(false);
+                    break;
+                }
             }
         }
 
