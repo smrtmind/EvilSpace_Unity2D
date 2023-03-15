@@ -1,4 +1,6 @@
 ﻿using CodeBase.Player;
+using CodeBase.Utils;
+using DG.Tweening;
 using System;
 using TMPro;
 using UnityEngine;
@@ -10,6 +12,7 @@ namespace CodeBase.UI
     {
         [Header("Storages")]
         [SerializeField] private PlayerStorage playerStorage;
+        [SerializeField] private DependencyContainer dependencyContainer;
 
         //[SerializeField] private Text _triesText;
         //[SerializeField] public Slider _XpBar;
@@ -17,6 +20,11 @@ namespace CodeBase.UI
         [SerializeField] private TextMeshProUGUI triesValue;
         [SerializeField] private TextMeshProUGUI scoreValue;
         [SerializeField] private TextMeshProUGUI lvlValue;
+        [SerializeField] private Image loadingFiller;
+        [SerializeField] private Button startBttn;
+        [SerializeField] private GameObject startScreen;
+        [SerializeField] private GameObject loadingScreen;
+        [SerializeField] private float loadingDelay;
 
         //[SerializeField] private Text _healthAmount;
         //[SerializeField] private TextMeshProUGUI lvlProgress;
@@ -36,11 +44,14 @@ namespace CodeBase.UI
 
         public static Action OnHealthChanged;
         public static Action OnTriesChanged;
+        public static Action OnLevelLoaded;
         //public static Action OnMachineGunBttnPressed;
 
         //public Animator Warning => _warning;
 
         //private WeaponController _weaponController;
+
+        private Tween loadingTween;
 
         private void OnEnable()
         {
@@ -49,14 +60,38 @@ namespace CodeBase.UI
 
             OnHealthChanged += RefreshHealthInfo;
             OnTriesChanged += RefreshTriesInfo;
-            //machineGunBttn.onClick.AddListener(MachineGunBttnPressed);
+            startBttn.onClick.AddListener(StartButtonPressed);
+
+            startScreen.SetActive(true);
         }
 
         private void OnDisable()
         {
             OnHealthChanged -= RefreshHealthInfo;
             OnTriesChanged -= RefreshTriesInfo;
-            //machineGunBttn.onClick.RemoveListener(MachineGunBttnPressed);
+            startBttn.onClick.RemoveListener(StartButtonPressed);
+        }
+
+        private void StartButtonPressed()
+        {
+            startScreen.SetActive(false);
+            Loading();
+        }
+
+        private void Loading()
+        {
+            loadingScreen.SetActive(true);
+            loadingFiller.fillAmount = 0f;
+
+            loadingTween?.Kill();
+            loadingTween = loadingFiller.DOFillAmount(1f, loadingDelay <= 1f ? 1f : loadingDelay).OnComplete(() => StartLevel());
+
+            void StartLevel()
+            {
+                loadingScreen.SetActive(false);
+                dependencyContainer.TouchController.enabled = true;
+                OnLevelLoaded?.Invoke();
+            }
         }
 
         //private void MachineGunBttnPressed()

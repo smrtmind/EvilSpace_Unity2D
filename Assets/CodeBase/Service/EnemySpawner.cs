@@ -1,4 +1,5 @@
 ﻿using CodeBase.Mobs;
+using CodeBase.UI;
 using CodeBase.Utils;
 using System;
 using System.Collections;
@@ -20,31 +21,41 @@ namespace CodeBase.Service
         private Bounds screenBounds;
         private List<Coroutine> spawnCoroutines = new List<Coroutine>();
 
-        private void OnEnable()
-        {
-            ScreenBounds.OnScreenBoundsInitializated += Init;
-        }
-
-        private void OnDisable()
-        {
-            ScreenBounds.OnScreenBoundsInitializated -= Init;
-        }
-
-        private void Init(Bounds bounds)
-        {
-            screenBounds = bounds;
-
-            BurstSpawnEnemies();
-            StartSpawnEnemies(true);
-        }
-
-        //private void Start()
+        //private void OnEnable()
         //{
-        //    screenBounds = dependencyContainer.ScreenBounds.borderOfBounds;
+        //    ScreenBounds.OnScreenBoundsInitializated += Init;
+        //}
+
+        //private void OnDisable()
+        //{
+        //    ScreenBounds.OnScreenBoundsInitializated -= Init;
+        //}
+
+        //private void Init(Bounds bounds)
+        //{
+        //    screenBounds = bounds;
 
         //    BurstSpawnEnemies();
         //    StartSpawnEnemies(true);
         //}
+
+        private void OnEnable()
+        {
+            UserInterface.OnLevelLoaded += InitSpawner;
+        }
+
+        private void OnDisable()
+        {
+            UserInterface.OnLevelLoaded -= InitSpawner;
+        }
+
+        private void InitSpawner()
+        {
+            screenBounds = dependencyContainer.ScreenBounds.borderOfBounds;
+
+            BurstSpawnEnemies();
+            StartSpawnEnemies(true);
+        }
 
         private void BurstSpawnEnemies()
         {

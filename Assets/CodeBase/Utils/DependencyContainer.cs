@@ -1,4 +1,4 @@
-using Scripts;
+using CodeBase.Player;
 using UnityEngine;
 
 namespace CodeBase.Utils
@@ -8,5 +8,7 @@ namespace CodeBase.Utils
     {
         public Pool Pool { get; set; }
         public Camera MainCamera { get; set; }
+        public ScreenBounds ScreenBounds { get; set; }
+        public TouchController TouchController { get; set; }
     }
 }

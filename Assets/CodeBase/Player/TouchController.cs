@@ -1,10 +1,15 @@
-﻿using System;
+﻿using CodeBase.Utils;
+using System;
 using UnityEngine;
 
 namespace CodeBase.Player
 {
     public class TouchController : MonoBehaviour
     {
+        [Header("Storages")]
+        [SerializeField] private DependencyContainer dependencyContainer;
+
+        [Space]
         [SerializeField] private Rigidbody2D rb;
         [SerializeField] private float moveSpeed = 10f;
 
@@ -21,6 +26,8 @@ namespace CodeBase.Player
         private void OnEnable()
         {
             CalculateScreenBounds();
+            dependencyContainer.TouchController = this;
+            //enabled = false;
         }
 
         private void Update()

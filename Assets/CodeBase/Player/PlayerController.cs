@@ -1,5 +1,6 @@
 ﻿using CodeBase.ObjectBased;
 using CodeBase.Service;
+using CodeBase.UI;
 using Scripts;
 using System;
 using System.Threading.Tasks;
@@ -55,14 +56,19 @@ namespace CodeBase.Player
 
         private void OnEnable()
         {
-            transform.position = playerStorage.ConcretePlayer.DefaultPlayerPosition;
-
-            OnPlayerDamaged += PlayerDamaged;
+            //OnPlayerDamaged += PlayerDamaged;
+            UserInterface.OnLevelLoaded += InitPlayer;
         }
 
-        private void Start()
+        private void OnDisable()
         {
-            OnPlayerDamaged -= PlayerDamaged;
+            //OnPlayerDamaged -= PlayerDamaged;
+            UserInterface.OnLevelLoaded -= InitPlayer;
+        }
+
+        private void InitPlayer()
+        {
+            transform.position = playerStorage.ConcretePlayer.DefaultPlayerPosition;
         }
 
         //private void FixedUpdate()
