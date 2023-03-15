@@ -2,6 +2,7 @@
 using CodeBase.Utils;
 using DG.Tweening;
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,9 +23,11 @@ namespace CodeBase.UI
         [SerializeField] private TextMeshProUGUI lvlValue;
         [SerializeField] private Image loadingFiller;
         [SerializeField] private Button startBttn;
+        [SerializeField] private Button exitBttn;
         [SerializeField] private GameObject startScreen;
         [SerializeField] private GameObject loadingScreen;
         [SerializeField] private float loadingDelay;
+        [SerializeField] private TextMeshProUGUI loadingText;
 
         //[SerializeField] private Text _healthAmount;
         //[SerializeField] private TextMeshProUGUI lvlProgress;
@@ -52,6 +55,8 @@ namespace CodeBase.UI
         //private WeaponController _weaponController;
 
         private Tween loadingTween;
+        private Coroutine loadingTextCoroutine;
+        private Tween loadingTextTween;
 
         private void OnEnable()
         {
@@ -82,6 +87,7 @@ namespace CodeBase.UI
         {
             loadingScreen.SetActive(true);
             loadingFiller.fillAmount = 0f;
+            loadingTextCoroutine = StartCoroutine(ShakeLoadingText());
 
             loadingTween?.Kill();
             loadingTween = loadingFiller.DOFillAmount(1f, loadingDelay <= 1f ? 1f : loadingDelay).OnComplete(() => StartLevel());
@@ -90,7 +96,19 @@ namespace CodeBase.UI
             {
                 loadingScreen.SetActive(false);
                 dependencyContainer.TouchController.enabled = true;
+                StopCoroutine(loadingTextCoroutine);
                 OnLevelLoaded?.Invoke();
+            }
+        }
+
+        private IEnumerator ShakeLoadingText()
+        {
+            while (true)
+            {
+                loadingTextTween?.Kill();
+                loadingTextTween = loadingText.transform.DOPunchScale(new Vector2(0.1f, 0.1f), 0.25f);
+
+                yield return new WaitForSeconds(0.5f);
             }
         }
 
