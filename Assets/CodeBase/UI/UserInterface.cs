@@ -15,6 +15,7 @@ namespace CodeBase.UI
         [SerializeField] private PlayerStorage playerStorage;
         [SerializeField] private DependencyContainer dependencyContainer;
 
+        [Space]
         //[SerializeField] private Text _triesText;
         //[SerializeField] public Slider _XpBar;
         [SerializeField] private TextMeshProUGUI healthValue;
@@ -26,6 +27,10 @@ namespace CodeBase.UI
         [SerializeField] private Button exitBttn;
         [SerializeField] private GameObject startScreen;
         [SerializeField] private GameObject loadingScreen;
+        [SerializeField] private GameObject confirmationScreen;
+        [SerializeField] private GameObject confirmationWindow;
+        [SerializeField] private Button yesBttn;
+        [SerializeField] private Button noBttn;
         [SerializeField] private float loadingDelay;
         [SerializeField] private TextMeshProUGUI loadingText;
 
@@ -57,6 +62,7 @@ namespace CodeBase.UI
         private Tween loadingTween;
         private Coroutine loadingTextCoroutine;
         private Tween loadingTextTween;
+        private Tween confirmationTween;
 
         private void OnEnable()
         {
@@ -66,6 +72,9 @@ namespace CodeBase.UI
             OnHealthChanged += RefreshHealthInfo;
             OnTriesChanged += RefreshTriesInfo;
             startBttn.onClick.AddListener(StartButtonPressed);
+            exitBttn.onClick.AddListener(ExitButtonPressed);
+            yesBttn.onClick.AddListener(YesButtonPressed);
+            noBttn.onClick.AddListener(NoButtonPressed);
 
             startScreen.SetActive(true);
         }
@@ -75,12 +84,34 @@ namespace CodeBase.UI
             OnHealthChanged -= RefreshHealthInfo;
             OnTriesChanged -= RefreshTriesInfo;
             startBttn.onClick.RemoveListener(StartButtonPressed);
+            exitBttn.onClick.RemoveListener(ExitButtonPressed);
+            yesBttn.onClick.RemoveListener(YesButtonPressed);
+            noBttn.onClick.RemoveListener(NoButtonPressed);
         }
 
         private void StartButtonPressed()
         {
             startScreen.SetActive(false);
             Loading();
+        }
+
+        private void ExitButtonPressed()
+        {
+            confirmationScreen.SetActive(true);
+            confirmationWindow.transform.localScale = Vector3.zero;
+
+            confirmationTween?.Kill();
+            confirmationTween = confirmationWindow.transform.DOScale(new Vector3(1.5f, 1.5f, 1.5f), 0.25f).SetEase(Ease.Linear)
+                                                            .OnComplete(() => confirmationWindow.transform.DOScale(Vector3.one, 0.25f).SetEase(Ease.Linear));
+        }
+
+        private void YesButtonPressed() => Application.Quit();
+
+        private void NoButtonPressed()
+        {
+            confirmationTween?.Kill();
+            confirmationTween = confirmationWindow.transform.DOScale(Vector3.zero, 0.25f).SetEase(Ease.Linear)
+                                                            .OnComplete(() => confirmationScreen.SetActive(false));
         }
 
         private void Loading()
