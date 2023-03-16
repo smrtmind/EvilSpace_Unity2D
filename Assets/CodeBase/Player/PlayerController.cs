@@ -1,4 +1,5 @@
-﻿using CodeBase.ObjectBased;
+﻿using CodeBase.Animation;
+using CodeBase.ObjectBased;
 using CodeBase.Service;
 using CodeBase.UI;
 using Scripts;
@@ -17,8 +18,10 @@ namespace CodeBase.Player
         [SerializeField] private Shield electroShield;
         [SerializeField] private Shield safeZoneShield;
 
+        [SerializeField] private PlayerAnimationController playerAnimationController;
+
         [Space]
-        [SerializeField] private Animator playerAnimator;
+        //[SerializeField] private Animator playerAnimator;
         [SerializeField] private Rigidbody2D playerBody;
         //[SerializeField] private PlayerInput playerInput;
         [SerializeField] private GameObject _idleStarterFlameFirst;
@@ -112,13 +115,13 @@ namespace CodeBase.Player
         {
             foreach (var animation in animations)
             {
-                playerAnimator.SetBool(animation, state);
+                //playerAnimator.SetBool(animation, state);
             }
         }
 
         public void RemoveVisualDamage()
         {
-            playerAnimator.SetBool(LowHpKey, false);
+            //playerAnimator.SetBool(LowHpKey, false);
             SetObjectStatus(false, _leftWingDamage, _rightWingDamage, _bodyDamage);
         }
 

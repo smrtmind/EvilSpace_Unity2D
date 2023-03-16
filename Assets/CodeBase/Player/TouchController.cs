@@ -1,4 +1,5 @@
-﻿using CodeBase.Utils;
+﻿using CodeBase.Animation;
+using CodeBase.Utils;
 using System;
 using UnityEngine;
 
@@ -9,9 +10,10 @@ namespace CodeBase.Player
         [Header("Storages")]
         [SerializeField] private DependencyContainer dependencyContainer;
 
-        [Space]
+        [Header("Player Settings")]
         [SerializeField] private Rigidbody2D rb;
-        [SerializeField] private float moveSpeed = 10f;
+        [SerializeField] private float movementSpeed = 10f;
+        [SerializeField] private PlayerAnimationController playerAnimationController;
 
         public static Action<bool> OnStartMoving;
 
@@ -44,12 +46,14 @@ namespace CodeBase.Player
                 mousePosition.z = 0;
                 direction = (mousePosition - transform.position);
 
-                Vector3 constrainedPosition = transform.position + direction * moveSpeed * Time.deltaTime;
+                Vector3 constrainedPosition = transform.position + direction * movementSpeed * Time.deltaTime;
                 constrainedPosition.x = Mathf.Clamp(constrainedPosition.x, minX, maxX);
                 constrainedPosition.y = Mathf.Clamp(constrainedPosition.y, minY, maxY);
                 transform.position = constrainedPosition;
 
                 rb.velocity = Vector2.zero;
+
+                playerAnimationController.UpdateAnimation(direction.x);
             }
             else
             {
@@ -58,6 +62,8 @@ namespace CodeBase.Player
                     isMoving = false;
                     OnStartMoving?.Invoke(isMoving);
                 }
+
+                playerAnimationController.UpdateAnimation(0f);
             }
         }
 

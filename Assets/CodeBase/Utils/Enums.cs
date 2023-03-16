@@ -18,5 +18,12 @@ namespace CodeBase.Utils
             LargeShip,
             Boss
         }
+
+        public enum MovementState
+        {
+            Left,
+            Straight,
+            Right
+        }
     }
 }
