@@ -17,4 +17,4 @@ MonoBehaviour:
   <DefaulScore>k__BackingField: 0
   <DefaulHealth>k__BackingField: 5
   <DefaultTries>k__BackingField: 3
-  <DefaultMovementSpeed>k__BackingField: 9
+  <DefaultMovementSpeed>k__BackingField: 0

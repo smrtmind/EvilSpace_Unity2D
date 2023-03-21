@@ -761,7 +761,7 @@ MonoBehaviour:
   dependencyContainer: {fileID: 11400000, guid: 0971863339e52fc46bfc0f1a78196b51,
     type: 2}
   rb: {fileID: 6447220743359504510}
-  movementSpeed: 7
+  movementSpeed: 10
   playerAnimationController: {fileID: 1086577806725384660}
 --- !u!1 &3789471796559236244
 GameObject:
@@ -1038,6 +1038,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1374769940890234889}
   <TurnDetectIndent>k__BackingField: 0.5
+  scaleFlameDuration: 0.15
+  minFlameScale: 0.5
+  maxFlameScale: 2
+  averageFlameScale: 1
   starterFlames:
   - {fileID: 7244747641581507058}
   - {fileID: 1447418787804782736}
