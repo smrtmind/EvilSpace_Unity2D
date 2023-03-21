@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 34140864}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: MachineGunPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 112501871}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: BlasterSpawnPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 862699991}
   - component: {fileID: 862699993}
   - component: {fileID: 862699992}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 884646617}
   - component: {fileID: 884646618}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: BombSpawnPosition0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1284404054}
   - component: {fileID: 1284404055}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: PlayerExplosionPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1556972869}
   - component: {fileID: 1556972870}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: BombSpawnPosition1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 2039938314}
   - component: {fileID: 2039938316}
   - component: {fileID: 2039938317}
-  m_Layer: 14
+  m_Layer: 6
   m_Name: SafeZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -462,7 +462,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7437107083712436365}
   - component: {fileID: 1576031856618695178}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LevelUpSpawnPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -507,7 +507,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4333197978638898292}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Shields
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -539,7 +539,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8875489469870836649}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Point0
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
@@ -569,7 +569,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8868940359580818347}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -606,7 +606,7 @@ GameObject:
   - component: {fileID: 2029744859573483892}
   - component: {fileID: 6447220743359504510}
   - component: {fileID: 59980437557311294}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -719,7 +719,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -772,7 +772,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6347544680841192072}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Moveless
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -804,7 +804,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3888961910386753149}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Point0
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -834,7 +834,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2854786538768742660}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -866,7 +866,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6630666287604397336}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Point1
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
@@ -896,7 +896,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3030761257008857239}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Point1
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -929,7 +929,7 @@ GameObject:
   - component: {fileID: 133851473583253558}
   - component: {fileID: 1374769940890234889}
   - component: {fileID: 1086577806725384660}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Body
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1067,7 +1067,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 157263228597138364}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Point1
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -1097,7 +1097,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8072997785090308457}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Point0
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -1127,7 +1127,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8872335625698142617}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: FlamePoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1158,10 +1158,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5841985900872332895}
     m_Modifications:
+    - target: {fileID: 7856672738748085457, guid: 701ebb64c0fcab34fa0cac517f0bfc29,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8138029929139265037, guid: 701ebb64c0fcab34fa0cac517f0bfc29,
         type: 3}
       propertyPath: m_Name
       value: StarterFlameLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138029929139265037, guid: 701ebb64c0fcab34fa0cac517f0bfc29,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8204997595382645091, guid: 701ebb64c0fcab34fa0cac517f0bfc29,
         type: 3}
@@ -1315,6 +1325,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6737185576912962476, guid: c0626aa883569ac48a4c806c115c59cf,
         type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737185576912962476, guid: c0626aa883569ac48a4c806c115c59cf,
+        type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -1426,6 +1441,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6737185576912962476, guid: c0626aa883569ac48a4c806c115c59cf,
         type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737185576912962476, guid: c0626aa883569ac48a4c806c115c59cf,
+        type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -1454,6 +1474,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: electroShield
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610622859288523583, guid: 8a51230058413bd42879237db8753931,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1610622859288523583, guid: 8a51230058413bd42879237db8753931,
         type: 3}
@@ -1610,6 +1635,11 @@ PrefabInstance:
       propertyPath: _timers.Array.data[0].OnTimesUp.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7945865001134537697, guid: 8a51230058413bd42879237db8753931,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a51230058413bd42879237db8753931, type: 3}
 --- !u!1 &2660348259839491949 stripped
@@ -1653,6 +1683,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: shield
+      objectReference: {fileID: 0}
+    - target: {fileID: 3839826120160438654, guid: 86f4458858e4fa2488db6ca10fc2be45,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3839826120160438654, guid: 86f4458858e4fa2488db6ca10fc2be45,
         type: 3}
@@ -1724,6 +1759,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6227223296965598018, guid: 86f4458858e4fa2488db6ca10fc2be45,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5019266968701497398, guid: 86f4458858e4fa2488db6ca10fc2be45, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 86f4458858e4fa2488db6ca10fc2be45, type: 3}
@@ -1759,10 +1799,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5841985900872332895}
     m_Modifications:
+    - target: {fileID: 7856672738748085457, guid: 701ebb64c0fcab34fa0cac517f0bfc29,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8138029929139265037, guid: 701ebb64c0fcab34fa0cac517f0bfc29,
         type: 3}
       propertyPath: m_Name
       value: StarterFlameRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138029929139265037, guid: 701ebb64c0fcab34fa0cac517f0bfc29,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8204997595382645091, guid: 701ebb64c0fcab34fa0cac517f0bfc29,
         type: 3}
@@ -1913,6 +1963,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: bodyDamagePosition
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737185576912962476, guid: c0626aa883569ac48a4c806c115c59cf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6737185576912962476, guid: c0626aa883569ac48a4c806c115c59cf,
         type: 3}

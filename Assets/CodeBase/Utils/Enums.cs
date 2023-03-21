@@ -25,5 +25,10 @@ namespace CodeBase.Utils
             Left,
             Right
         }
+
+        public enum ParticleType
+        {
+            AsteroidExplosion
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using CodeBase.Service;
+using CodeBase.Utils;
 using System.Collections;
 using UnityEngine;
 
@@ -66,6 +67,14 @@ namespace CodeBase.Mobs
         {
             gameSession.ModifyXp(xp);
         }
+
+        //private void OnTriggerEnter2D(Collider2D collision)
+        //{
+        //    if (collision.gameObject.tag.Equals(Tags.Projectile))
+        //    {
+        //        ModifyHealth(-1);
+        //    }
+        //}
 
         //private void OnCollisionEnter2D(Collision2D other)
         //{

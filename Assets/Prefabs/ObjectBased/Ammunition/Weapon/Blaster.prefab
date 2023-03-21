@@ -10,8 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1136168339643637028}
   - component: {fileID: 147596783664528376}
-  - component: {fileID: 3552969893075127585}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -69,8 +68,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -2059966085
-  m_SortingLayer: 4
+  m_SortingLayerID: 423052561
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 2946690649019813517, guid: 1152698a8145c424d88c3fdc056d4be5,
     type: 3}
@@ -84,33 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3552969893075127585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6674879926920974088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c7a614fffbf02141946a8622e3c1bf4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _frameRate: 10
-  _onComplete:
-    m_PersistentCalls:
-      m_Calls: []
-  _clips:
-  - _name: 
-    _sprites:
-    - {fileID: 2946690649019813517, guid: 1152698a8145c424d88c3fdc056d4be5, type: 3}
-    - {fileID: -6350816287176556446, guid: 1152698a8145c424d88c3fdc056d4be5, type: 3}
-    - {fileID: 5874960822596333037, guid: 1152698a8145c424d88c3fdc056d4be5, type: 3}
-    _loop: 1
-    _allowNextClip: 0
-    _onComplete:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!1 &6764601004572402636
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,7 +95,7 @@ GameObject:
   - component: {fileID: 475721933866399020}
   - component: {fileID: 2039925710981863102}
   - component: {fileID: 5031865173122266621}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Blaster
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -158,7 +130,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 5031865173122266621}
-  speed: 70
+  speed: 60
+  <Renderer>k__BackingField: {fileID: 147596783664528376}
+  <DelayBetweenFrames>k__BackingField: 0.1
+  <Frames>k__BackingField:
+  - {fileID: 2946690649019813517, guid: 1152698a8145c424d88c3fdc056d4be5, type: 3}
+  - {fileID: -6350816287176556446, guid: 1152698a8145c424d88c3fdc056d4be5, type: 3}
+  - {fileID: 5874960822596333037, guid: 1152698a8145c424d88c3fdc056d4be5, type: 3}
 --- !u!70 &2039925710981863102
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

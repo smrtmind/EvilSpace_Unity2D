@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 141782021}
   - component: {fileID: 6401407699794426060}
   - component: {fileID: 6876184268225749886}
-  - component: {fileID: 9025660838172528241}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Asteroid1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -47,9 +46,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 580800971c37a8946b25715aea716744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dependencyContainer: {fileID: 11400000, guid: 0971863339e52fc46bfc0f1a78196b51,
+    type: 2}
   playerStorage: {fileID: 11400000, guid: 0e2cce6871d5eb547801ec25880e2198, type: 2}
   <EnemyType>k__BackingField: 1
-  <Health>k__BackingField: 0
+  particleType: 0
+  skinRenderer: {fileID: 152500283892538189}
+  <Health>k__BackingField: 3
   <Damage>k__BackingField: 0
   <IsBusy>k__BackingField: 0
   asteroidBody: {fileID: 6876184268225749886}
@@ -69,7 +72,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -96,18 +99,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &9025660838172528241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6926828201911177819}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18882bc27a457164897c6248fb5fec55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8684136678507209353
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,7 +109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 347069121463486474}
   - component: {fileID: 152500283892538189}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Body
   m_TagString: Enemy
   m_Icon: {fileID: 0}

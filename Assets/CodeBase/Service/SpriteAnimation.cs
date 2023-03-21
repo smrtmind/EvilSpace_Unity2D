@@ -26,7 +26,7 @@ namespace CodeBase.Service
             _renderer = GetComponent<SpriteRenderer>();
             _secondsPerFrame = 1f / _frameRate;
 
-            StartAnimation();
+            //StartAnimation();
         }
 
         public void SetClip(string clipName)
@@ -54,6 +54,8 @@ namespace CodeBase.Service
         private void OnEnable()
         {
             _nextFrameTime = Time.time;
+
+            StartAnimation();
         }
 
         private void Update()

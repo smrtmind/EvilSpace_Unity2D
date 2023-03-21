@@ -345,7 +345,7 @@ namespace CodeBase.Player
 
         private Projectile CreateNewProjectile()
         {
-            Projectile newProjectile = Instantiate(weaponStorage.GetCurrentWeapon(currentWeapon).Projectile, dependencyContainer.Pool.ProjectileContainer);
+            Projectile newProjectile = Instantiate(weaponStorage.GetCurrentWeapon(currentWeapon).Projectile, dependencyContainer.ParticlePool.ProjectileContainer);
             projectilePool.Add(newProjectile);
 
             return newProjectile;

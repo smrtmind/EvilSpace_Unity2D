@@ -14,6 +14,7 @@ namespace CodeBase.Service
     {
         [Header("Storages")]
         [SerializeField] private DependencyContainer dependencyContainer;
+        [SerializeField] private EnemyStorage enemyStorage;
 
         [Space]
         [SerializeField] private List<EnemyUnit> enemies;
@@ -116,7 +117,7 @@ namespace CodeBase.Service
 
         private Enemy CreateNewEnemy(EnemyUnit unit)
         {
-            Enemy newEnemy = Instantiate(unit.Enemies[Random.Range(0, unit.Enemies.Count)], dependencyContainer.Pool.EnemyContainer);
+            Enemy newEnemy = Instantiate(unit.Enemies[Random.Range(0, unit.Enemies.Count)], dependencyContainer.ParticlePool.EnemyContainer);
             unit.EnemiesPool.Add(newEnemy);
 
             return newEnemy;
