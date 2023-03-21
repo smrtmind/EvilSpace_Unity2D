@@ -5280,7 +5280,7 @@ MonoBehaviour:
   confirmationWindow: {fileID: 3786177049404512423}
   yesBttn: {fileID: 4215819058579474369}
   noBttn: {fileID: 3717376390872126260}
-  loadingDelay: 4
+  loadingDelay: 2
   loadingText: {fileID: 6084641939685067903}
 --- !u!1 &7575195153433177724
 GameObject:

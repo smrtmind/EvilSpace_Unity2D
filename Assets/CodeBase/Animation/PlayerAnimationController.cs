@@ -23,20 +23,32 @@ namespace CodeBase.Animation
         private void UpdateStraterFlames(float directionX)
         {
             if (directionX < 0.5f && directionX != 0f)
-            {
-                starterFlames[0].transform.position = flameParameters[0].StarterFlamesPoints[0].position;
-                starterFlames[1].transform.position = flameParameters[0].StarterFlamesPoints[1].position;
-            }
+                ChangeFlamePosition(MovementState.Left);
             else if (directionX > 0.5f && directionX != 0f)
-            {
-                starterFlames[0].transform.position = flameParameters[2].StarterFlamesPoints[0].position;
-                starterFlames[1].transform.position = flameParameters[2].StarterFlamesPoints[1].position;
-            }
+                ChangeFlamePosition(MovementState.Right);
             else
+                ChangeFlamePosition(MovementState.Straight);
+        }
+
+        private void ChangeFlamePosition(MovementState state)
+        {
+            var currentPoints = GetCurrentFlamePoints(state);
+
+            for (int i = 0; i < starterFlames.Count; i++)
+                starterFlames[i].transform.position = currentPoints[i].position;
+        }
+
+        private List<Transform> GetCurrentFlamePoints(MovementState state)
+        {
+            foreach (var points in flameParameters)
             {
-                starterFlames[0].transform.position = flameParameters[1].StarterFlamesPoints[0].position;
-                starterFlames[1].transform.position = flameParameters[1].StarterFlamesPoints[1].position;
+                if (points.MovementState == state)
+                {
+                    return points.StarterFlamesPoints;
+                }
             }
+
+            return null;
         }
     }
 

@@ -53,7 +53,6 @@ namespace CodeBase.Player
 
                 rb.velocity = Vector2.zero;
 
-                playerAnimationController.UpdateAnimation(direction.x);
             }
             else
             {
@@ -64,6 +63,15 @@ namespace CodeBase.Player
                 }
 
                 playerAnimationController.UpdateAnimation(0f);
+            }
+
+            if (Input.GetMouseButton(0) && Mathf.Abs(direction.x) > 0.5f)
+            {
+                Vector3 directionX = new Vector3(direction.x, 0, 0);
+                if (directionX.magnitude > 0.5f)
+                {
+                    playerAnimationController.UpdateAnimation(direction.x);
+                }
             }
         }
 

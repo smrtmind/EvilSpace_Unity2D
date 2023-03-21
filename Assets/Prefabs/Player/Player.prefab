@@ -1045,11 +1045,11 @@ MonoBehaviour:
     <StarterFlamesPoints>k__BackingField:
     - {fileID: 8072997785090308457}
     - {fileID: 3030761257008857239}
-  - <MovementState>k__BackingField: 0
+  - <MovementState>k__BackingField: 1
     <StarterFlamesPoints>k__BackingField:
     - {fileID: 8875489469870836649}
     - {fileID: 6630666287604397336}
-  - <MovementState>k__BackingField: 0
+  - <MovementState>k__BackingField: 2
     <StarterFlamesPoints>k__BackingField:
     - {fileID: 3888961910386753149}
     - {fileID: 157263228597138364}

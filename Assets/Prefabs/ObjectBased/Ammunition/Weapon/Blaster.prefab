@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 5031865173122266621}
-  speed: 80
+  speed: 70
 --- !u!70 &2039925710981863102
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
