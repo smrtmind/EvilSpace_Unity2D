@@ -52,7 +52,6 @@ namespace CodeBase.Player
                 transform.position = constrainedPosition;
 
                 rb.velocity = Vector2.zero;
-
             }
             else
             {
@@ -61,17 +60,32 @@ namespace CodeBase.Player
                     isMoving = false;
                     OnStartMoving?.Invoke(isMoving);
                 }
-
-                playerAnimationController.UpdateAnimation(0f);
             }
 
-            if (Input.GetMouseButton(0) && Mathf.Abs(direction.x) > 0.5f)
+            if (Input.GetMouseButton(0) && Mathf.Abs(direction.x) > playerAnimationController.TurnDetectIndent)
             {
                 Vector3 directionX = new Vector3(direction.x, 0, 0);
-                if (directionX.magnitude > 0.5f)
+                if (directionX.magnitude > playerAnimationController.TurnDetectIndent)
                 {
                     playerAnimationController.UpdateAnimation(direction.x);
                 }
+            }
+            else
+            {
+                playerAnimationController.UpdateAnimation(0f);
+            }
+
+            if (Input.GetMouseButton(0) && Mathf.Abs(direction.y) > playerAnimationController.TurnDetectIndent)
+            {
+                Vector3 directionX = new Vector3(0, direction.y, 0);
+                if (directionX.magnitude > playerAnimationController.TurnDetectIndent)
+                {
+                    playerAnimationController.ScaleFlame(direction.y);
+                }
+            }
+            else
+            {
+                playerAnimationController.ScaleFlame(0f);
             }
         }
 

@@ -21,8 +21,8 @@ namespace CodeBase.Utils
 
         public enum MovementState
         {
+            Moveless,
             Left,
-            Straight,
             Right
         }
     }
