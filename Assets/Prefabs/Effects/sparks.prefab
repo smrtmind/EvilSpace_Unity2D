@@ -44,8 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d78b6195c235954a95dd821bb944b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Type>k__BackingField: 5
+  <Type>k__BackingField: 6
   <IsBusy>k__BackingField: 1
+  <Loop>k__BackingField: 0
   <Renderer>k__BackingField: {fileID: 1543763973673088955}
   <DelayBetweenFrames>k__BackingField: 0.01
   <Frames>k__BackingField:

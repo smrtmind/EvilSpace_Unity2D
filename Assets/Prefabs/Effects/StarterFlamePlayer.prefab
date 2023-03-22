@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2463756572405259219}
   - component: {fileID: 2697692831326873987}
-  - component: {fileID: 7283438714242057167}
   m_Layer: 0
   m_Name: FlameBlue
   m_TagString: Untagged
@@ -84,34 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7283438714242057167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7856672738748085457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c7a614fffbf02141946a8622e3c1bf4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _frameRate: 20
-  _onComplete:
-    m_PersistentCalls:
-      m_Calls: []
-  _clips:
-  - _name: boost
-    _sprites:
-    - {fileID: 7500374398291559410, guid: 113f663ed6c7b104ab37694703a07ef6, type: 3}
-    - {fileID: 7753784430798552374, guid: 113f663ed6c7b104ab37694703a07ef6, type: 3}
-    - {fileID: -4970357864109955478, guid: 113f663ed6c7b104ab37694703a07ef6, type: 3}
-    - {fileID: 6437139103974744558, guid: 113f663ed6c7b104ab37694703a07ef6, type: 3}
-    _loop: 1
-    _allowNextClip: 0
-    _onComplete:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!1 &8138029929139265037
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,6 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8204997595382645091}
+  - component: {fileID: 4251752082879981208}
   m_Layer: 0
   m_Name: StarterFlamePlayer
   m_TagString: Untagged
@@ -143,3 +115,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4251752082879981208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8138029929139265037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d78b6195c235954a95dd821bb944b22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Type>k__BackingField: 0
+  <IsBusy>k__BackingField: 1
+  <Loop>k__BackingField: 1
+  <Renderer>k__BackingField: {fileID: 2697692831326873987}
+  <DelayBetweenFrames>k__BackingField: 0.05
+  <Frames>k__BackingField:
+  - {fileID: 7500374398291559410, guid: 113f663ed6c7b104ab37694703a07ef6, type: 3}
+  - {fileID: 7753784430798552374, guid: 113f663ed6c7b104ab37694703a07ef6, type: 3}
+  - {fileID: -4970357864109955478, guid: 113f663ed6c7b104ab37694703a07ef6, type: 3}
+  - {fileID: 6437139103974744558, guid: 113f663ed6c7b104ab37694703a07ef6, type: 3}

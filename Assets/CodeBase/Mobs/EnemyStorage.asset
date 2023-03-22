@@ -21,3 +21,8 @@ MonoBehaviour:
     - {fileID: 141782021, guid: f0a50f8607f47a54a80d99182669befb, type: 3}
     - {fileID: 141782021, guid: 008b8f4e917043c40a7aca61e5156de3, type: 3}
     - {fileID: 141782021, guid: 173442a630c8b5e4582db943c9f48529, type: 3}
+  - <Type>k__BackingField: 2
+    <Health>k__BackingField: 5
+    <Damage>k__BackingField: 0
+    <Prefabs>k__BackingField:
+    - {fileID: 1207392628590953613, guid: 029d6eae32a1b69479da4919fea0e7df, type: 3}

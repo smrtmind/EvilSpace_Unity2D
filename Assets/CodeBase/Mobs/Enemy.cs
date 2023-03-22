@@ -16,7 +16,8 @@ namespace CodeBase.Mobs
 
         [field: Header("Parent Class Settings")]
         [field: SerializeField] public EnemyType EnemyType { get; private set; }
-        [SerializeField] private ParticleType particleType;
+        [SerializeField] private ParticleType explosionEffect;
+        [SerializeField] private float explosionAdditionalScale;
         [SerializeField] private SpriteRenderer skinRenderer;
         [field: SerializeField] public float Health { get; private set; }
         [field: SerializeField] public float Damage { get; private set; }
@@ -52,10 +53,10 @@ namespace CodeBase.Mobs
             {
                 SetBusyState(false);
 
-                var newEffect = dependencyContainer.ParticlePool.GetFreeObject(particleType);
+                var newEffect = dependencyContainer.ParticlePool.GetFreeObject(explosionEffect);
                 newEffect.gameObject.SetActive(false);
                 newEffect.transform.position = transform.position;
-                newEffect.transform.localScale = new Vector3(transform.localScale.x + 2f, transform.localScale.y + 2f, 1f);
+                newEffect.transform.localScale = new Vector3(transform.localScale.x + explosionAdditionalScale, transform.localScale.y + explosionAdditionalScale, 1f);
                 newEffect.SetBusyState(true);
             }
         }

@@ -317,7 +317,7 @@ namespace CodeBase.Player
                     asteroidHp.ModifyHealth(-asteroidHp.Health);
             }
 
-            var ships = FindObjectsOfType<EnemyAI>();
+            var ships = FindObjectsOfType<ShipAi>();
             foreach (var ship in ships)
             {
                 var shipHp = ship.GetComponent<HealthComponent>();
