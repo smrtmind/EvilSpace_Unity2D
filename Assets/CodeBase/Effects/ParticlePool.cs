@@ -1,3 +1,4 @@
+using CodeBase.ObjectBased;
 using CodeBase.Utils;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,13 @@ namespace CodeBase.Effects
         [SerializeField] private DependencyContainer dependencyContainer;
 
         [field: Header("Containers")]
+
+        [field: Space]
+        [field: Header("Projectiles")]
         [field: SerializeField] public Transform ProjectileContainer { get; private set; }
+        [field: SerializeField] public List<Projectile> ProjectilesPool { get; private set; }
+
+        [field: Space]
         [field: SerializeField] public Transform EnemyContainer { get; private set; }
         [field: SerializeField] public Transform ParticleContainer { get; private set; }
 

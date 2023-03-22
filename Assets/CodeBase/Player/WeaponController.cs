@@ -18,7 +18,6 @@ namespace CodeBase.Player
         [SerializeField] private WeaponStorage weaponStorage;
 
 
-        [SerializeField] private List<Projectile> projectilePool;
 
 
         [SerializeField] private WeaponType currentWeapon;
@@ -336,7 +335,7 @@ namespace CodeBase.Player
 
         public Projectile GetFreeProjectile()
         {
-            Projectile freeProjectile = projectilePool.Find(projectile => !projectile.IsBusy);
+            Projectile freeProjectile = dependencyContainer.ParticlePool.ProjectilesPool.Find(projectile => !projectile.IsBusy);
             if (freeProjectile == null)
                 freeProjectile = CreateNewProjectile();
 
@@ -346,7 +345,8 @@ namespace CodeBase.Player
         private Projectile CreateNewProjectile()
         {
             Projectile newProjectile = Instantiate(weaponStorage.GetCurrentWeapon(currentWeapon).Projectile, dependencyContainer.ParticlePool.ProjectileContainer);
-            projectilePool.Add(newProjectile);
+            dependencyContainer.ParticlePool.ProjectilesPool.Add(newProjectile);
+            Dictionaries.Projectiles.Add(newProjectile.transform, newProjectile);
 
             return newProjectile;
         }
