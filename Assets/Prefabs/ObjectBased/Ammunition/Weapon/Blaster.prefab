@@ -129,6 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea0181f3a976974e92ebd8634138912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponStorage: {fileID: 11400000, guid: e814c13fd8cd88d4098aa7cba97875ce, type: 2}
+  weaponType: 1
   rb: {fileID: 5031865173122266621}
   speed: 60
   <Renderer>k__BackingField: {fileID: 147596783664528376}

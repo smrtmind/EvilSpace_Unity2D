@@ -25,5 +25,6 @@ namespace CodeBase.ObjectBased
     {
         [field: SerializeField] public WeaponType WeaponType { get; private set; }
         [field: SerializeField] public Projectile Projectile { get; private set; }
+        [field: SerializeField] public float Damage { get; private set; }
     }
 }

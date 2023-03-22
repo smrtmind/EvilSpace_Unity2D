@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fe4dd1aa936d5674d89fe15f58e861ef
+guid: 79677258c7c05614f96783f90c777896
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -14,12 +14,6 @@ TextureImporter:
   - first:
       213: 147200075954907950
     second: asteroids_3
-  - first:
-      213: 2686463653476831965
-    second: asteroids_4
-  - first:
-      213: -1465151005206068119
-    second: asteroids_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,6 +100,18 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -125,7 +131,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 60
+        y: 0
         width: 30
         height: 30
       alignment: 0
@@ -146,7 +152,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 30
-        y: 60
+        y: 0
         width: 30
         height: 30
       alignment: 0
@@ -166,8 +172,8 @@ TextureImporter:
       name: asteroids_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 30
+        x: 60
+        y: 0
         width: 30
         height: 30
       alignment: 0
@@ -187,8 +193,8 @@ TextureImporter:
       name: asteroids_3
       rect:
         serializedVersion: 2
-        x: 30
-        y: 30
+        x: 90
+        y: 0
         width: 30
         height: 30
       alignment: 0
@@ -200,48 +206,6 @@ TextureImporter:
       bones: []
       spriteID: e2be33e60b5fa0200800000000000000
       internalID: 147200075954907950
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: asteroids_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dd21c77957c384520800000000000000
-      internalID: 2686463653476831965
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: asteroids_5
-      rect:
-        serializedVersion: 2
-        x: 30
-        y: 0
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 964c2686cecbaabe0800000000000000
-      internalID: -1465151005206068119
       vertices: []
       indices: 
       edges: []

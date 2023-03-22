@@ -24,11 +24,13 @@ namespace CodeBase.Player
         private float maxX;
         private float minY;
         private float maxY;
+        private Camera mainCamera;
 
         private void OnEnable()
         {
-            CalculateScreenBounds();
             dependencyContainer.TouchController = this;
+            mainCamera = dependencyContainer.MainCamera;
+            CalculateScreenBounds();
             //enabled = false;
         }
 
@@ -42,7 +44,7 @@ namespace CodeBase.Player
                     OnStartMoving?.Invoke(isMoving);
                 }
 
-                mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
                 mousePosition.z = 0;
                 direction = (mousePosition - transform.position);
 
@@ -91,8 +93,8 @@ namespace CodeBase.Player
 
         private void CalculateScreenBounds()
         {
-            Vector3 bottomLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, Camera.main.transform.position.z));
-            Vector3 topRight = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, Camera.main.transform.position.z));
+            Vector3 bottomLeft = mainCamera.ViewportToWorldPoint(new Vector3(0, 0, Camera.main.transform.position.z));
+            Vector3 topRight = mainCamera.ViewportToWorldPoint(new Vector3(1, 1, Camera.main.transform.position.z));
 
             minX = bottomLeft.x;
             maxX = topRight.x;

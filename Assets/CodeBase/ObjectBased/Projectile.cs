@@ -2,19 +2,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static CodeBase.Utils.Enums;
 
 namespace CodeBase.ObjectBased
 {
     public class Projectile : MonoBehaviour, IAmAnimated
     {
+        [Header("Storage")]
+        [SerializeField] private WeaponStorage weaponStorage;
+
+        [Space]
+        [SerializeField] private WeaponType weaponType;
         [SerializeField] private Rigidbody2D rb;
         [SerializeField] private float speed = 5f;
-
         [field: SerializeField] public SpriteRenderer Renderer { get; private set; }
         [field: SerializeField] public float DelayBetweenFrames { get; private set; }
         [field: SerializeField] public List<Sprite> Frames { get; private set; }
 
         public bool IsBusy { get; private set; }
+        public Weapon WeaponData { get; private set; }
 
         private Vector2 screenBoundaries;
         private Coroutine animationCoroutine;
@@ -22,12 +28,17 @@ namespace CodeBase.ObjectBased
         private void OnEnable()
         {
             StartCoroutine(CheckForScreenBounds());
-            animationCoroutine = StartCoroutine(StartAnimation());
+            animationCoroutine = StartCoroutine(StartAnimation());     
         }
 
         private void OnDisable()
         {
             StopCoroutine(animationCoroutine);
+        }
+
+        private void Start()
+        {
+            WeaponData = weaponStorage.GetCurrentWeapon(weaponType);
         }
 
         private IEnumerator StartAnimation()

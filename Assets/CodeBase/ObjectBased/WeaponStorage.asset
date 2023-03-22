@@ -16,3 +16,4 @@ MonoBehaviour:
   - <WeaponType>k__BackingField: 1
     <Projectile>k__BackingField: {fileID: 475721933866399020, guid: 60118af08bb622949b1f3b60053426c8,
       type: 3}
+    <Damage>k__BackingField: 1

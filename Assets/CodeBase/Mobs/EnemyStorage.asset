@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: EnemyStorage
   m_EditorClassIdentifier: 
   Enemies:
-  - <Type>k__BackingField: 0
-    <Prefab>k__BackingField: {fileID: 0}
-    <Health>k__BackingField: 0
+  - <Type>k__BackingField: 1
+    <Health>k__BackingField: 3
     <Damage>k__BackingField: 0
+    <Prefabs>k__BackingField:
+    - {fileID: 141782021, guid: e5c4032338d22684980cc25580080215, type: 3}
+    - {fileID: 141782021, guid: f0a50f8607f47a54a80d99182669befb, type: 3}
+    - {fileID: 141782021, guid: 008b8f4e917043c40a7aca61e5156de3, type: 3}
+    - {fileID: 141782021, guid: 173442a630c8b5e4582db943c9f48529, type: 3}

@@ -1,3 +1,4 @@
+using CodeBase.ObjectBased;
 using CodeBase.Player;
 using CodeBase.Utils;
 using DG.Tweening;
@@ -11,6 +12,7 @@ namespace CodeBase.Mobs
         [Header("Storages")]
         [SerializeField] protected DependencyContainer dependencyContainer;
         [SerializeField] protected PlayerStorage playerStorage;
+        [SerializeField] protected EnemyStorage enemyStorage;
 
         [field: Header("Parent Class Settings")]
         [field: SerializeField] public EnemyType EnemyType { get; private set; }
@@ -20,15 +22,8 @@ namespace CodeBase.Mobs
         [field: SerializeField] public float Damage { get; private set; }
         [field: SerializeField] public bool IsBusy { get; private set; }
 
-        private float defaultHealth;
         private Color defaultColor;
         private Tween skinColorTween;
-
-        //private void OnEnable()
-        //{
-        //    defaultHealth = 10f;
-        //    Health = defaultHealth;
-        //}
 
         private void Start()
         {
@@ -42,18 +37,11 @@ namespace CodeBase.Mobs
 
             if (IsBusy)
             {
-                Health = 3f;
+                Health = enemyStorage.GetEnemyUnit(EnemyType).Health;
             }
             else
             {
                 skinRenderer.color = defaultColor;
-                //var newEffect = dependencyContainer.ParticlePool.GetFreeObject(particleType);
-                //newEffect.gameObject.SetActive(false);
-                //newEffect.transform.position = transform.position;
-                //newEffect.transform.localScale = new Vector3(transform.localScale.x + 3f, transform.localScale.y + 3f, 1f);
-                //newEffect.SetBusyState(true);
-
-                //destroyEffect.SetActive(true);
             }
         }
 
@@ -76,10 +64,17 @@ namespace CodeBase.Mobs
         {
             if (collision.gameObject.tag.Equals(Tags.Projectile))
             {
-                ModifyHealth(-1);
+                collision.gameObject.TryGetComponent(out Projectile projectile);//FIX IT
+                ModifyHealth(-projectile.WeaponData.Damage);
 
                 skinColorTween?.Kill();
                 skinColorTween = skinRenderer.DOColor(Color.red, 0.1f).OnComplete(() => skinRenderer.color = defaultColor);
+
+                var newEffect = dependencyContainer.ParticlePool.GetFreeObject(ParticleType.SparksHit);
+                newEffect.gameObject.SetActive(false);
+                newEffect.transform.position = transform.position;
+                newEffect.transform.localScale = new Vector3(0.75f, 0.75f, 1f);
+                newEffect.SetBusyState(true);
             }
         }
     }

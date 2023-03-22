@@ -28,7 +28,12 @@ namespace CodeBase.Utils
 
         public enum ParticleType
         {
-            AsteroidExplosion
+            AsteroidExplosion,
+            SmallShipExplosion,
+            MediumShipExplosion,
+            LargeShipExplosion,
+            BossExplosion,
+            SparksHit
         }
     }
 }

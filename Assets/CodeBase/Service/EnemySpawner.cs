@@ -17,28 +17,10 @@ namespace CodeBase.Service
         [SerializeField] private EnemyStorage enemyStorage;
 
         [Space]
-        [SerializeField] private List<EnemyUnit> enemies;
+        [SerializeField] private List<SpawnParameters> enemies;
 
         private Bounds screenBounds;
         private List<Coroutine> spawnCoroutines = new List<Coroutine>();
-
-        //private void OnEnable()
-        //{
-        //    ScreenBounds.OnScreenBoundsInitializated += Init;
-        //}
-
-        //private void OnDisable()
-        //{
-        //    ScreenBounds.OnScreenBoundsInitializated -= Init;
-        //}
-
-        //private void Init(Bounds bounds)
-        //{
-        //    screenBounds = bounds;
-
-        //    BurstSpawnEnemies();
-        //    StartSpawnEnemies(true);
-        //}
 
         private void OnEnable()
         {
@@ -60,7 +42,7 @@ namespace CodeBase.Service
 
         private void BurstSpawnEnemies()
         {
-            foreach (EnemyUnit unit in enemies)
+            foreach (SpawnParameters unit in enemies)
             {
                 if (unit.SpawnUnitsOnStart > 0)
                 {
@@ -70,7 +52,7 @@ namespace CodeBase.Service
             }
         }
 
-        private IEnumerator SpawnEnemies(EnemyUnit unit)
+        private IEnumerator SpawnEnemies(SpawnParameters unit)
         {
             while (true)
             {
@@ -80,7 +62,7 @@ namespace CodeBase.Service
             }
         }
 
-        private void SpawnNewObject(EnemyUnit unit)
+        private void SpawnNewObject(SpawnParameters unit)
         {
             float yPosition = screenBounds.min.y;/*Random.value > 0.5 ? screenBounds.min.y : screenBounds.max.y;*/
             float xPosition = Random.Range(screenBounds.min.x, screenBounds.max.x);
@@ -106,7 +88,7 @@ namespace CodeBase.Service
             }
         }
 
-        public Enemy GetFreeEnemy(EnemyUnit unit)
+        public Enemy GetFreeEnemy(SpawnParameters unit)
         {
             Enemy freeEnemy = unit.EnemiesPool.Find(enemy => !enemy.IsBusy);
             if (freeEnemy == null)
@@ -115,9 +97,11 @@ namespace CodeBase.Service
             return freeEnemy;
         }
 
-        private Enemy CreateNewEnemy(EnemyUnit unit)
+        private Enemy CreateNewEnemy(SpawnParameters unit)
         {
-            Enemy newEnemy = Instantiate(unit.Enemies[Random.Range(0, unit.Enemies.Count)], dependencyContainer.ParticlePool.EnemyContainer);
+            var enemyUnit = enemyStorage.GetEnemyUnit(unit.Type);
+
+            Enemy newEnemy = Instantiate(enemyUnit.Prefabs[Random.Range(0, enemyUnit.Prefabs.Count)], dependencyContainer.ParticlePool.EnemyContainer);
             unit.EnemiesPool.Add(newEnemy);
 
             return newEnemy;
@@ -125,10 +109,9 @@ namespace CodeBase.Service
     }
 
     [Serializable]
-    public class EnemyUnit
+    public class SpawnParameters
     {
-        [field: SerializeField] public EnemyType EnemyType { get; private set; }
-        [field: SerializeField] public List<Enemy> Enemies { get; private set; }
+        [field: SerializeField] public EnemyType Type { get; private set; }
         [field: SerializeField, Range(0, 50)] public int SpawnUnitsOnStart { get; private set; }
         [field: SerializeField] public float SpawnCooldown { get; private set; }
         [field: SerializeField] public List<Enemy> EnemiesPool { get; private set; }
