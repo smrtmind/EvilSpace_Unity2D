@@ -7,5 +7,6 @@ namespace CodeBase.Utils
         [field: SerializeField] public static string Player { get; private set; } = "Player";
         [field: SerializeField] public static string Enemy { get; private set; } = "Enemy";
         [field: SerializeField] public static string Projectile { get; private set; } = "Projectile";
+        [field: SerializeField] public static string EnemyProjectile { get; private set; } = "EnemyProjectile";
     }
 }

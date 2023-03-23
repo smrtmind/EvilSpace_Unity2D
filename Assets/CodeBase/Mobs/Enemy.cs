@@ -1,4 +1,6 @@
+using CodeBase.ObjectBased;
 using CodeBase.Player;
+using CodeBase.UI;
 using CodeBase.Utils;
 using DG.Tweening;
 using System.Linq;
@@ -19,6 +21,7 @@ namespace CodeBase.Mobs
         [SerializeField] private ParticleType explosionEffect;
         [SerializeField] private float explosionAdditionalScale;
         [SerializeField] private SpriteRenderer skinRenderer;
+        [SerializeField] private PopUp popUp;
         [field: SerializeField] public float Health { get; private set; }
         [field: SerializeField] public float Damage { get; private set; }
         [field: SerializeField] public bool IsBusy { get; private set; }
@@ -58,6 +61,9 @@ namespace CodeBase.Mobs
                 newEffect.transform.position = transform.position;
                 newEffect.transform.localScale = new Vector3(transform.localScale.x + explosionAdditionalScale, transform.localScale.y + explosionAdditionalScale, 1f);
                 newEffect.SetBusyState(true);
+
+                popUp.SetCurrentData(transform, "100", "yellow");
+                popUp.SpawnPopUp();
             }
         }
 
@@ -65,7 +71,7 @@ namespace CodeBase.Mobs
         {
             if (collision.gameObject.tag.Equals(Tags.Projectile))
             {
-                var projectile = Dictionaries.Projectiles.FirstOrDefault(p => p.Key == collision.gameObject.transform);
+                var projectile = Dictionaries.PlayerProjectiles.FirstOrDefault(p => p.Key == collision.gameObject.transform);
                 ModifyHealth(-projectile.Value.WeaponData.Damage);
 
                 skinColorTween?.Kill();

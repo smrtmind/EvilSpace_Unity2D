@@ -1,5 +1,4 @@
 ﻿using CodeBase.Service;
-using CodeBase.Utils;
 using System.Collections;
 using UnityEngine;
 

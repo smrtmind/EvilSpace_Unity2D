@@ -6,7 +6,8 @@ namespace CodeBase.Utils
         {
             None,
             Blaster,
-            MachineGun
+            MachineGun,
+            EnemyWeapon
         }
 
         public enum EnemyType

@@ -651,18 +651,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32f3e97ae30de0249ba2c7a8ad3d45e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dependencyContainer: {fileID: 11400000, guid: 0971863339e52fc46bfc0f1a78196b51,
+    type: 2}
   playerStorage: {fileID: 11400000, guid: 0e2cce6871d5eb547801ec25880e2198, type: 2}
   electroShield: {fileID: 2409545486515073972}
   safeZoneShield: {fileID: 2039938317}
   playerAnimationController: {fileID: 1086577806725384660}
   playerBody: {fileID: 6447220743359504510}
-  _idleStarterFlameFirst: {fileID: 0}
-  _idleStarterFlameSecond: {fileID: 0}
+  skinRenderer: {fileID: 133851473583253558}
   _leftWingDamage: {fileID: 8325390602300255659}
   _rightWingDamage: {fileID: 8325390602316806784}
   _bodyDamage: {fileID: 2733327710686529427}
-  _hitParticles: {fileID: 8485752599289224870, guid: df52a325fd4c3df48abb025170d123b9,
-    type: 3}
   _timers: {fileID: 0}
   _levelUpEffect: {fileID: 1576031856618695178}
   _safeZone: {fileID: 2039938311}
@@ -682,7 +681,6 @@ MonoBehaviour:
   dependencyContainer: {fileID: 11400000, guid: 0971863339e52fc46bfc0f1a78196b51,
     type: 2}
   weaponStorage: {fileID: 11400000, guid: e814c13fd8cd88d4098aa7cba97875ce, type: 2}
-  projectilePool: []
   currentWeapon: 1
   _weaponSettings:
   - _name: Machine Gun

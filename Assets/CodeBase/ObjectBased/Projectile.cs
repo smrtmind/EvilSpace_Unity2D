@@ -11,8 +11,8 @@ namespace CodeBase.ObjectBased
         [Header("Storage")]
         [SerializeField] private WeaponStorage weaponStorage;
 
-        [Space]
-        [SerializeField] private WeaponType weaponType;
+        [field: Space]
+        [field: SerializeField] public WeaponType WeaponType { get; private set; }
         [SerializeField] private Rigidbody2D rb;
         [SerializeField] private float speed = 5f;
         [field: SerializeField] public SpriteRenderer Renderer { get; private set; }
@@ -38,7 +38,7 @@ namespace CodeBase.ObjectBased
 
         private void Start()
         {
-            WeaponData = weaponStorage.GetCurrentWeapon(weaponType);
+            WeaponData = weaponStorage.GetCurrentWeapon(WeaponType);
         }
 
         private IEnumerator StartAnimation()

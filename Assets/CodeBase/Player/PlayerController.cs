@@ -2,16 +2,21 @@
 using CodeBase.ObjectBased;
 using CodeBase.Service;
 using CodeBase.UI;
+using CodeBase.Utils;
+using DG.Tweening;
 using Scripts;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
+using static CodeBase.Utils.Enums;
 
 namespace CodeBase.Player
 {
     public class PlayerController : MonoBehaviour
     {
         [Header("Storages")]
+        [SerializeField] private DependencyContainer dependencyContainer;
         [SerializeField] private PlayerStorage playerStorage;
 
         [Header("Shields")]
@@ -21,15 +26,11 @@ namespace CodeBase.Player
         [SerializeField] private PlayerAnimationController playerAnimationController;
 
         [Space]
-        //[SerializeField] private Animator playerAnimator;
         [SerializeField] private Rigidbody2D playerBody;
-        //[SerializeField] private PlayerInput playerInput;
-        [SerializeField] private GameObject _idleStarterFlameFirst;
-        [SerializeField] private GameObject _idleStarterFlameSecond;
+        [SerializeField] private SpriteRenderer skinRenderer;
         [SerializeField] private GameObject _leftWingDamage;
         [SerializeField] private GameObject _rightWingDamage;
         [SerializeField] private GameObject _bodyDamage;
-        [SerializeField] private GameObject _hitParticles;
         [SerializeField] private TimerComponent _timers;
         [SerializeField] public SpawnComponent _levelUpEffect;
         [SerializeField] private GameObject _safeZone;
@@ -44,12 +45,14 @@ namespace CodeBase.Player
 
         public static Action OnPlayerDamaged;
 
-        public bool firstWeapon { get; set; }
+        public bool IsDead { get; set; }
         public bool secondWeapon { get; set; }
         public bool thirdWeapon { get; set; }
 
         private CameraShaker _cameraShaker;
         private AudioComponent _audio;
+        private Tween skinColorTween;
+        private Color defaultColor;
 
         private void Awake()
         {
@@ -59,6 +62,8 @@ namespace CodeBase.Player
 
         private void OnEnable()
         {
+            defaultColor = skinRenderer.color;
+
             //OnPlayerDamaged += PlayerDamaged;
             UserInterface.OnLevelLoaded += InitPlayer;
         }
@@ -218,6 +223,29 @@ namespace CodeBase.Player
             //}
             //else
             //    playerAnimator.SetTrigger(HitKey);
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.tag.Equals(Tags.EnemyProjectile))
+            {
+                var projectile = Dictionaries.EnemyProjectiles.FirstOrDefault(p => p.Key == collision.gameObject.transform);
+                //ModifyHealth(-projectile.Value.WeaponData.Damage);
+
+                skinColorTween?.Kill();
+                skinColorTween = skinRenderer.DOColor(Color.red, 0.1f).OnComplete(() => skinRenderer.color = defaultColor);
+
+                SpawnSpark(collision.gameObject.transform.position);
+            }
+        }
+
+        private void SpawnSpark(Vector3 projectilePosition)
+        {
+            var newEffect = dependencyContainer.ParticlePool.GetFreeObject(ParticleType.SparksHit);
+            newEffect.gameObject.SetActive(false);
+            newEffect.transform.position = new Vector3(projectilePosition.x, projectilePosition.y - 1f, projectilePosition.z);
+            newEffect.transform.localScale = new Vector3(0.75f, 0.75f, 1f);
+            newEffect.SetBusyState(true);
         }
     }
 }

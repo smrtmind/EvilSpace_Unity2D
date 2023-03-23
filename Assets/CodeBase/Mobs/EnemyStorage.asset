@@ -26,3 +26,11 @@ MonoBehaviour:
     <Damage>k__BackingField: 0
     <Prefabs>k__BackingField:
     - {fileID: 1207392628590953613, guid: 029d6eae32a1b69479da4919fea0e7df, type: 3}
+    - {fileID: 1207392628590953613, guid: d94a869f765722c45881416ba78dbeb1, type: 3}
+    - {fileID: 1207392628590953613, guid: 1d06b958dcde9964694d7a3742877bef, type: 3}
+    - {fileID: 1207392628590953613, guid: b8de19418b79e58498ebf23a22b316b0, type: 3}
+    - {fileID: 1207392628590953613, guid: de0995ed11ca76f4c93f243f465d01db, type: 3}
+    - {fileID: 1207392628590953613, guid: e730ebb47a5dc8346887d4a45b14df44, type: 3}
+    - {fileID: 1207392628590953613, guid: d4622fe3395c62643a12d5d2f80cf76f, type: 3}
+    - {fileID: 1207392628590953613, guid: 9ea4b96df3125aa408e85f2939cff6ec, type: 3}
+    - {fileID: 1207392628590953613, guid: b4cb033b2882e464ba007354b65b98ea, type: 3}

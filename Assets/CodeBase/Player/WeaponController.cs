@@ -118,7 +118,7 @@ namespace CodeBase.Player
 
         private IEnumerator EndlessShooting()
         {     
-            while (_weaponSettings[0].Ammo > 0)
+            while (true)
             {
                 Shoot();
                 yield return new WaitForSeconds(0.15f);
@@ -335,7 +335,7 @@ namespace CodeBase.Player
 
         public Projectile GetFreeProjectile()
         {
-            Projectile freeProjectile = dependencyContainer.ParticlePool.ProjectilesPool.Find(projectile => !projectile.IsBusy);
+            Projectile freeProjectile = dependencyContainer.ParticlePool.ProjectilesPool.Find(projectile => !projectile.IsBusy && projectile.WeaponType == currentWeapon);
             if (freeProjectile == null)
                 freeProjectile = CreateNewProjectile();
 
@@ -346,7 +346,7 @@ namespace CodeBase.Player
         {
             Projectile newProjectile = Instantiate(weaponStorage.GetCurrentWeapon(currentWeapon).Projectile, dependencyContainer.ParticlePool.ProjectileContainer);
             dependencyContainer.ParticlePool.ProjectilesPool.Add(newProjectile);
-            Dictionaries.Projectiles.Add(newProjectile.transform, newProjectile);
+            Dictionaries.PlayerProjectiles.Add(newProjectile.transform, newProjectile);
 
             return newProjectile;
         }

@@ -1,83 +1,68 @@
 ﻿using CodeBase.ObjectBased;
 using CodeBase.Player;
-using CodeBase.Service;
-using Scripts;
-using System;
+using CodeBase.Utils;
+using System.Collections;
 using UnityEngine;
+using static CodeBase.Utils.Enums;
 
 namespace CodeBase.Mobs
 {
     public class ShipAi : Enemy
     {
-        [Header("Movement charasteristics")]
-        //[SerializeField] private bool _canMove;
-        [SerializeField] private float _rotationSpeed = 100f;
-        [SerializeField] private float _speed = 5f;
+        [SerializeField] private WeaponStorage weaponStorage;
 
-        //[Space]
-        //[SerializeField] private bool _canShoot;
-        [SerializeField] private Weapons[] _weapons;
+        [Header("Ship Settings")]
+        [SerializeField] private float rotationSpeed = 100f;
+        [SerializeField] private float movementSpeed = 5f;
+        [SerializeField] private float stopDistance = 10f;
+        [SerializeField] private Rigidbody2D shipBody;
+        [SerializeField] private WeaponType weaponType;
+        [SerializeField] private Transform shootingPoint;
+        [SerializeField] private float delayBetweenShoots;
 
-        private Transform _player;
-        private Rigidbody2D _playerBody;
-        private GameSession _gameSession;
-        private float _zAngle;
-        //private bool _isStopped;
-        private CameraShaker _cameraShaker;
+        private float zAngle;
+        private PlayerController player;
+        private Coroutine moveCoroutine;
+        private Coroutine shootingCoroutine;
 
         private void Awake()
         {
-            _gameSession = FindObjectOfType<GameSession>();
-            _cameraShaker = FindObjectOfType<CameraShaker>();
+            player = FindObjectOfType<PlayerController>();
         }
 
-        private void Start()
+        private void OnEnable()
         {
-            _playerBody = GetComponent<Rigidbody2D>();
-
             GetPlayerDirection();
-            LookOnPlayerImmediate();
+            transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+
+            moveCoroutine = StartCoroutine(StartMove());
         }
 
-        private void Update()
+        private void OnDisable()
         {
-            //if (_canMove && !_isStopped)
-            //{
-                Move();
-            //}
+            moveCoroutine = null;
+            shootingCoroutine = null;
 
-            GetPlayerDirection();
-
-            //calculating rotation
-            Quaternion desiredRotation = Quaternion.Euler(0, 0, _zAngle);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, _rotationSpeed * Time.deltaTime);
+            //GetPlayerDirection();
+            //transform.rotation = Quaternion.Euler(0, 0, zAngle);
         }
 
-        private void LookOnPlayerImmediate()
-        {
-            transform.rotation = Quaternion.Euler(0, 0, _zAngle);
-        }
+        //private void LookOnPlayerImmediate() => transform.rotation = Quaternion.Euler(0, 0, _zAngle);
 
         private void GetPlayerDirection()
         {
-            var player = FindObjectOfType<PlayerController>();
-            if (player != null)
-            {
-                _player = player.transform;
-            }
-            else
-            {
-                return;
-            }
+            Vector3 direction = player.transform.position - transform.position;
+            zAngle = Mathf.Atan2(direction.normalized.y, direction.normalized.x) * Mathf.Rad2Deg - 90;
 
-            Vector3 direction = _player.position - transform.position;
-            _zAngle = Mathf.Atan2(direction.normalized.y, direction.normalized.x) * Mathf.Rad2Deg - 90;
+            //calculate rotation
+            Quaternion desiredRotation = Quaternion.Euler(0, 0, zAngle);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, rotationSpeed * Time.deltaTime);
         }
 
-        public void AddXp(int xp)
-        {
-            _gameSession.ModifyXp(xp);
-        }
+        //public void AddXp(int xp)
+        //{
+        //    _gameSession.ModifyXp(xp);
+        //}
 
         //private void OnCollisionEnter2D(Collision2D other)
         //{
@@ -96,64 +81,70 @@ namespace CodeBase.Mobs
         //    }
         //}
 
-        public void Shoot()
+        //private void CalculateRotation()
+        //{
+        //    Quaternion desiredRotation = Quaternion.Euler(0, 0, zAngle);
+        //    transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, rotationSpeed * Time.deltaTime);
+        //}
+
+        private IEnumerator StartMove()
         {
-            //if (_canShoot)
-            //{
-            //    for (int i = 0; i < _weapons.Length; i++)
-            //    {
-            //        if (_weapons[i].ShootingDelay.IsReady)
-            //        {
-            //            if (!_weapons[i].SpawnWeaponPoint)
-            //            {
-            //                var projectile = Instantiate(_weapons[i].Weapon, _weapons[i].WeaponShootingPoint.position, transform.rotation);
-            //                projectile.Launch(_playerBody.velocity, transform.up);
-            //                _weapons[i].ShootingDelay.Reset();
-            //            }
-            //            else
-            //            {
-            //                _weapons[i].SpawnWeaponPoint.Spawn();
-            //                _weapons[i].ShootingDelay.Reset();
-            //            }
-            //        }
-            //    }
-            //}
+            while (true)
+            {
+                yield return new WaitForEndOfFrame();
+
+                GetPlayerDirection();
+
+                if (Vector3.Distance(transform.position, player.transform.position) > stopDistance)
+                {
+                    Move();
+                }
+                else
+                {
+                    if (shootingCoroutine == null)
+                        shootingCoroutine = StartCoroutine(EndlessShooting());
+                }
+            }
         }
 
         private void Move()
         {
             Vector3 position = transform.position;
-            Vector3 velocity = new Vector3(0, _speed * Time.deltaTime, 0);
+            Vector3 velocity = new Vector3(0, movementSpeed * Time.deltaTime, 0);
 
             position += transform.rotation * velocity;
             transform.position = position;
         }
 
-        //public void StopMoving() => _isStopped = true;
+        private IEnumerator EndlessShooting()
+        {
+            while (true)
+            {
+                var projectile = GetFreeProjectile();
+                projectile.SetBusyState(true);
+                projectile.transform.position = shootingPoint.position;
+                projectile.transform.rotation = transform.rotation;
+                projectile.Launch(shipBody.velocity, transform.up);
 
-        //private void OnTriggerExit2D(Collider2D other)
-        //{
-        //    var isPlayer = other.gameObject.tag == "Player";
-        //    if (isPlayer)
-        //        _isStopped = false;
-        //}
+                yield return new WaitForSeconds(delayBetweenShoots);
+            }
+        }
+        private Projectile GetFreeProjectile()
+        {
+            Projectile freeProjectile = dependencyContainer.ParticlePool.ProjectilesPool.Find(projectile => !projectile.IsBusy && projectile.WeaponType == weaponType);
+            if (freeProjectile == null)
+                freeProjectile = CreateNewProjectile();
 
-        public void OnBossDie() => _gameSession.RestoreEnemies();
-    }
+            return freeProjectile;
+        }
 
-    [Serializable]
-    public class Weapons
-    {
-        [SerializeField] private string _name;
-        [SerializeField] private Projectile _weapon;
-        [SerializeField] private Cooldown _shootingDelay;
-        [SerializeField] private Transform _weaponShootingPoint;
-        [SerializeField] private SpawnComponent _spawnWeaponPoint;
+        private Projectile CreateNewProjectile()
+        {
+            Projectile newProjectile = Instantiate(weaponStorage.GetCurrentWeapon(weaponType).Projectile, dependencyContainer.ParticlePool.ProjectileContainer);
+            dependencyContainer.ParticlePool.ProjectilesPool.Add(newProjectile);
+            Dictionaries.EnemyProjectiles.Add(newProjectile.transform, newProjectile);
 
-        public string Name => _name;
-        public Projectile Weapon => _weapon;
-        public Cooldown ShootingDelay => _shootingDelay;
-        public Transform WeaponShootingPoint => _weaponShootingPoint;
-        public SpawnComponent SpawnWeaponPoint => _spawnWeaponPoint;
+            return newProjectile;
+        }
     }
 }
