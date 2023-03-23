@@ -657,6 +657,7 @@ MonoBehaviour:
   electroShield: {fileID: 2409545486515073972}
   safeZoneShield: {fileID: 2039938317}
   playerAnimationController: {fileID: 1086577806725384660}
+  explosionEffect: 7
   playerBody: {fileID: 6447220743359504510}
   skinRenderer: {fileID: 133851473583253558}
   _leftWingDamage: {fileID: 8325390602300255659}

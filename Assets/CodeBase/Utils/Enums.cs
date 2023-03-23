@@ -36,6 +36,7 @@ namespace CodeBase.Utils
             LargeShipExplosion,
             BossExplosion,
             SparksHit,
+            PlayerExplosion
         }
     }
 }

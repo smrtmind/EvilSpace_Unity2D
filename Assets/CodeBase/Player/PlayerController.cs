@@ -28,6 +28,7 @@ namespace CodeBase.Player
         [SerializeField] private PlayerAnimationController playerAnimationController;
 
         [Space]
+        [SerializeField] private ParticleType explosionEffect;
         [SerializeField] private Rigidbody2D playerBody;
         [SerializeField] private SpriteRenderer skinRenderer;
         [SerializeField] private GameObject _leftWingDamage;
