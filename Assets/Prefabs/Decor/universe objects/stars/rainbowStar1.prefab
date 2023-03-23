@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 8803807425614955259}
   - component: {fileID: 6646864518182358823}
   - component: {fileID: 2095830100635768092}
-  - component: {fileID: 3370134671804004396}
   m_Layer: 0
-  m_Name: rainbow1
+  m_Name: rainbowStar1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,6 +47,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -97,6 +97,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _frameRate: 5
+  _onComplete:
+    m_PersistentCalls:
+      m_Calls: []
   _clips:
   - _name: idle
     _sprites:
@@ -129,15 +132,3 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls: []
---- !u!114 &3370134671804004396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7063785924376062474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac5fc6e91b6d1964aa2540f96b460ee5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

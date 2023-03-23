@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1002696394573669738}
   - component: {fileID: 1002696394573669739}
   - component: {fileID: 1002696394573669736}
-  - component: {fileID: 7986440396332460579}
   m_Layer: 0
   m_Name: terrainDry
   m_TagString: Untagged
@@ -48,6 +47,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -97,6 +97,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _frameRate: 5
+  _onComplete:
+    m_PersistentCalls:
+      m_Calls: []
   _clips:
   - _name: 
     _sprites:
@@ -155,15 +158,3 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls: []
---- !u!114 &7986440396332460579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1002696394573669737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac5fc6e91b6d1964aa2540f96b460ee5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

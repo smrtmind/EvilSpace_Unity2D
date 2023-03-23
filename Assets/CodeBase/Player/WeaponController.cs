@@ -36,8 +36,8 @@ namespace CodeBase.Player
 
         [Space]
         [Header("Effects")]
-        [SerializeField] private SpawnComponent _bombEffect;
-        [SerializeField] private SpawnComponent _electroEffect;
+        //[SerializeField] private SpawnComponent _bombEffect;
+        //[SerializeField] private SpawnComponent _electroEffect;
         [SerializeField] private GameObject _shield;
         [SerializeField] private GameObject _electroShield;
 
@@ -276,8 +276,8 @@ namespace CodeBase.Player
 
         public void UseBomb()
         {
-            _electroEffect.Spawn();
-            _bombEffect.Spawn();
+            //_electroEffect.Spawn();
+            //_bombEffect.Spawn();
 
             _cameraShaker.SetDuration(1.2f);
             _cameraShaker.SetMaxDelta(0.6f);
@@ -309,21 +309,21 @@ namespace CodeBase.Player
 
         public void KillAllEnemies()
         {
-            var asteroids = FindObjectsOfType<Asteroid>();
-            foreach (var asteroid in asteroids)
-            {
-                var asteroidHp = asteroid.GetComponent<HealthComponent>();
-                if (asteroidHp)
-                    asteroidHp.ModifyHealth(-asteroidHp.Health);
-            }
+            //var asteroids = FindObjectsOfType<Asteroid>();
+            //foreach (var asteroid in asteroids)
+            //{
+            //    var asteroidHp = asteroid.GetComponent<HealthComponent>();
+            //    if (asteroidHp)
+            //        asteroidHp.ModifyHealth(-asteroidHp.Health);
+            //}
 
-            var ships = FindObjectsOfType<ShipAi>();
-            foreach (var ship in ships)
-            {
-                var shipHp = ship.GetComponent<HealthComponent>();
-                //shipHp.ModifyHealth(-shipHp.Health);
-                shipHp.ModifyHealth(-50);
-            }
+            //var ships = FindObjectsOfType<ShipAi>();
+            //foreach (var ship in ships)
+            //{
+            //    var shipHp = ship.GetComponent<HealthComponent>();
+            //    //shipHp.ModifyHealth(-shipHp.Health);
+            //    shipHp.ModifyHealth(-50);
+            //}
 
             var projectiles = FindObjectsOfType<Projectile>();
             foreach (var projectile in projectiles)

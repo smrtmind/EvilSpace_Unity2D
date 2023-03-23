@@ -176,9 +176,9 @@ MonoBehaviour:
   <Damage>k__BackingField: 0
   <IsBusy>k__BackingField: 0
   weaponStorage: {fileID: 11400000, guid: e814c13fd8cd88d4098aa7cba97875ce, type: 2}
-  rotationSpeed: 80
-  movementSpeed: 8
-  stopDistance: 15
+  rotationSpeed: 40
+  movementSpeed: 4
+  stopDistance: 30
   shipBody: {fileID: 7183672100055990538}
   weaponType: 3
   shootingPoint: {fileID: 7209977439784247874}

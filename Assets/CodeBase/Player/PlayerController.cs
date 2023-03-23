@@ -34,8 +34,6 @@ namespace CodeBase.Player
         [SerializeField] private GameObject _leftWingDamage;
         [SerializeField] private GameObject _rightWingDamage;
         [SerializeField] private GameObject _bodyDamage;
-        [SerializeField] private TimerComponent _timers;
-        [SerializeField] public SpawnComponent _levelUpEffect;
         [SerializeField] private GameObject _safeZone;
         [SerializeField] private GameObject _safeZoneEffect;
         [SerializeField] private float forceOnEnemyCollision;
@@ -216,7 +214,7 @@ namespace CodeBase.Player
                     SetObjectStatus(false, gameObject);
                     _audio.StopMainSource();
                     _audio.Stop();
-                    _timers.SetTimerByName("game over");
+                    //_timers.SetTimerByName("game over");
                 }
             }
 

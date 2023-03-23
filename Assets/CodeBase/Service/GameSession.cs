@@ -19,7 +19,7 @@ namespace CodeBase.Service
         [SerializeField] private EnemySpawner[] _enemySpawners;
 
         [Space]
-        [SerializeField] private SpawnComponent _bossSpawner;
+        //[SerializeField] private SpawnComponent _bossSpawner;
         [SerializeField] private int _everyLevelSpawn;
 
         private static readonly int WarningKey = Animator.StringToHash("warning");
@@ -31,11 +31,11 @@ namespace CodeBase.Service
         private PlayerController _player;
         private WeaponController _weaponController;
         private AudioComponent _audio;
-        private HealthComponent _playerHealth;
+        //private HealthComponent _playerHealth;
         private UserInterface _hud;
 
         public int Tries => _tries;
-        public HealthComponent PlayerHealth => _playerHealth;
+        //public HealthComponent PlayerHealth => _playerHealth;
         public int Score => _score;
         public int XP => _xp;
         public int PlayerLVL => _playerLvl;
@@ -46,7 +46,7 @@ namespace CodeBase.Service
             _player = FindObjectOfType<PlayerController>();
             _weaponController = FindObjectOfType<WeaponController>();
             _audio = FindObjectOfType<AudioComponent>();
-            _playerHealth = _player.GetComponent<HealthComponent>();
+            //_playerHealth = _player.GetComponent<HealthComponent>();
             _hud = FindObjectOfType<UserInterface>();
         }
 
@@ -87,7 +87,7 @@ namespace CodeBase.Service
 
             _weaponController.Shield.SetActive(true);
             _weaponController.Shield.GetComponent<TimerComponent>().SetTimer(0);
-            _player._levelUpEffect.Spawn();
+            //_player._levelUpEffect.Spawn();
 
             _playerLvl++;
             _xp = currentXp;
@@ -101,7 +101,7 @@ namespace CodeBase.Service
             }
 
             _player.RemoveVisualDamage();
-            _playerHealth.RiseMaxHealth();
+            //_playerHealth.RiseMaxHealth();
 
             _nextLvl = (((_nextLvl / 100) * 20) + _nextLvl);
 
@@ -130,7 +130,7 @@ namespace CodeBase.Service
 
         public void SpawnBoss()
         {
-            _bossSpawner.Spawn();
+            //_bossSpawner.Spawn();
             _audio.Play("boss fight");
         }
 
