@@ -8,21 +8,21 @@ namespace CodeBase.ObjectBased
     [CreateAssetMenu(fileName = "WeaponStorage", menuName = "ScriptableObjects/WeaponStorage")]
     public class WeaponStorage : ScriptableObject
     {
-        [SerializeField] private List<Weapon> playerWeapons;
-        [SerializeField] private List<Weapon> enemyWeapons;
+        [SerializeField] private List<WeaponData> playerWeapons;
+        [SerializeField] private List<WeaponData> enemyWeapons;
 
-        public Weapon GetPlayerWeapon(WeaponType type)
+        public WeaponData GetPlayerWeapon(WeaponType type)
         {
-            foreach (Weapon weapon in playerWeapons)
+            foreach (WeaponData weapon in playerWeapons)
                 if (type == weapon.WeaponType)
                     return weapon;
 
             return null;
         }
 
-        public Weapon GetEnemyWeapon(WeaponType type)
+        public WeaponData GetEnemyWeapon(WeaponType type)
         {
-            foreach (Weapon weapon in enemyWeapons)
+            foreach (WeaponData weapon in enemyWeapons)
                 if (type == weapon.WeaponType)
                     return weapon;
 
@@ -31,7 +31,7 @@ namespace CodeBase.ObjectBased
     }
 
     [Serializable]
-    public class Weapon
+    public class WeaponData
     {
         [field: SerializeField] public WeaponType WeaponType { get; private set; }
         [field: SerializeField] public Projectile Projectile { get; private set; }

@@ -21,7 +21,7 @@ namespace CodeBase.ObjectBased
         [field: SerializeField] public List<Sprite> Frames { get; private set; }
 
         public bool IsBusy { get; private set; }
-        public Weapon WeaponData { get; private set; }
+        public WeaponData WeaponData { get; private set; }
 
         private Vector2 screenBoundaries;
         private Coroutine animationCoroutine;

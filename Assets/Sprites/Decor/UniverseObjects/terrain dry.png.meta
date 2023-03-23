@@ -1,157 +1,157 @@
 fileFormatVersion: 2
-guid: b71946428f780ba4884de24c13188604
+guid: f5a6daf71da35ec4dac1a3dd830f19aa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1889614509359300901
-    second: core_spritesheet_0
+      213: 8754573770440005219
+    second: terrain dry_0
   - first:
-      213: -375915036923352070
-    second: core_spritesheet_1
+      213: 1622545029242349824
+    second: terrain dry_1
   - first:
-      213: -7754541945254598471
-    second: core_spritesheet_2
+      213: 1387305529116251414
+    second: terrain dry_2
   - first:
-      213: -5357666935327545480
-    second: core_spritesheet_3
+      213: -366544553809059735
+    second: terrain dry_3
   - first:
-      213: 6765850440801488607
-    second: core_spritesheet_4
+      213: 9016865263039609546
+    second: terrain dry_4
   - first:
-      213: 8981037853628971700
-    second: core_spritesheet_5
+      213: -7508400818004373616
+    second: terrain dry_5
   - first:
-      213: 7397681710628038883
-    second: core_spritesheet_6
+      213: -6792351015459064753
+    second: terrain dry_6
   - first:
-      213: -1826228551926558571
-    second: core_spritesheet_7
+      213: 3334034192583800976
+    second: terrain dry_7
   - first:
-      213: -3953965701551488513
-    second: core_spritesheet_8
+      213: 7045407867479825980
+    second: terrain dry_8
   - first:
-      213: -3836157144071415942
-    second: core_spritesheet_9
+      213: 2901169984636493024
+    second: terrain dry_9
   - first:
-      213: 1698489253339905891
-    second: core_spritesheet_10
+      213: -8135073551390379048
+    second: terrain dry_10
   - first:
-      213: -5150468893700109475
-    second: core_spritesheet_11
+      213: -7194858620780175884
+    second: terrain dry_11
   - first:
-      213: 8071280630111086808
-    second: core_spritesheet_12
+      213: 822690598297065595
+    second: terrain dry_12
   - first:
-      213: -3023152893731736265
-    second: core_spritesheet_13
+      213: 7885801826845908172
+    second: terrain dry_13
   - first:
-      213: 7515316745945735076
-    second: core_spritesheet_14
+      213: 2037754138153247789
+    second: terrain dry_14
   - first:
-      213: -3290644598115835168
-    second: core_spritesheet_15
+      213: 6126686668726556504
+    second: terrain dry_15
   - first:
-      213: 1182241093947926337
-    second: core_spritesheet_16
+      213: 2201756067370128895
+    second: terrain dry_16
   - first:
-      213: -3636771953852966516
-    second: core_spritesheet_17
+      213: 6085862291667213161
+    second: terrain dry_17
   - first:
-      213: 2621543396208203591
-    second: core_spritesheet_18
+      213: 9086995809540386717
+    second: terrain dry_18
   - first:
-      213: 7548895706874117810
-    second: core_spritesheet_19
+      213: -7501056190182628207
+    second: terrain dry_19
   - first:
-      213: -6807426413918001247
-    second: core_spritesheet_20
+      213: 6046413039688724334
+    second: terrain dry_20
   - first:
-      213: -8413648351310294160
-    second: core_spritesheet_21
+      213: 2411316405603333899
+    second: terrain dry_21
   - first:
-      213: -6184221762652899173
-    second: core_spritesheet_22
+      213: 6100117659005609139
+    second: terrain dry_22
   - first:
-      213: -8331996949992808416
-    second: core_spritesheet_23
+      213: -7856803380058133238
+    second: terrain dry_23
   - first:
-      213: 4238315072927115060
-    second: core_spritesheet_24
+      213: -6908484441984201875
+    second: terrain dry_24
   - first:
-      213: -4041680202578926926
-    second: core_spritesheet_25
+      213: -4947266522905153215
+    second: terrain dry_25
   - first:
-      213: 1167298117083795756
-    second: core_spritesheet_26
+      213: -6784108988353933118
+    second: terrain dry_26
   - first:
-      213: -949073965335840217
-    second: core_spritesheet_27
+      213: -5491187872448678047
+    second: terrain dry_27
   - first:
-      213: 7134819884671281906
-    second: core_spritesheet_28
+      213: -6713188923892013462
+    second: terrain dry_28
   - first:
-      213: -295399592495046190
-    second: core_spritesheet_29
+      213: 8221323676869383054
+    second: terrain dry_29
   - first:
-      213: -3933674542163372468
-    second: core_spritesheet_30
+      213: -8129426469352365077
+    second: terrain dry_30
   - first:
-      213: 1706322231306042698
-    second: core_spritesheet_31
+      213: 4840293674966347936
+    second: terrain dry_31
   - first:
-      213: 8151941803416620412
-    second: core_spritesheet_32
+      213: 1903743739544863896
+    second: terrain dry_32
   - first:
-      213: 1973411629740733472
-    second: core_spritesheet_33
+      213: -5684167702365918438
+    second: terrain dry_33
   - first:
-      213: -610958372464442234
-    second: core_spritesheet_34
+      213: 2431113213015465070
+    second: terrain dry_34
   - first:
-      213: 2942875130551551551
-    second: core_spritesheet_35
+      213: 7619351302184429509
+    second: terrain dry_35
   - first:
-      213: -3565157131821622631
-    second: core_spritesheet_36
+      213: 4328493788419632920
+    second: terrain dry_36
   - first:
-      213: -4663000782610616953
-    second: core_spritesheet_37
+      213: -3116850582071983365
+    second: terrain dry_37
   - first:
-      213: -3019771656198470277
-    second: core_spritesheet_38
+      213: 7863197458688525888
+    second: terrain dry_38
   - first:
-      213: -1682466269928837219
-    second: core_spritesheet_39
+      213: 6866000029086344449
+    second: terrain dry_39
   - first:
-      213: -7108235103899985013
-    second: core_spritesheet_40
+      213: -3562704222469777353
+    second: terrain dry_40
   - first:
-      213: -5745242649262241494
-    second: core_spritesheet_41
+      213: 2747881558314006755
+    second: terrain dry_41
   - first:
-      213: -3203321001232362965
-    second: core_spritesheet_42
+      213: 7717174530364849489
+    second: terrain dry_42
   - first:
-      213: -5552115715110210544
-    second: core_spritesheet_43
+      213: 1128888761133315928
+    second: terrain dry_43
   - first:
-      213: 6549309584720471294
-    second: core_spritesheet_44
+      213: 4410318520986076054
+    second: terrain dry_44
   - first:
-      213: -2746341322807704015
-    second: core_spritesheet_45
+      213: 7957135326656007710
+    second: terrain dry_45
   - first:
-      213: 4736868587760105155
-    second: core_spritesheet_46
+      213: 4465013293772618166
+    second: terrain dry_46
   - first:
-      213: 4072992559308109085
-    second: core_spritesheet_47
+      213: 9093113707609216406
+    second: terrain dry_47
   - first:
-      213: 1469292429925288473
-    second: core_spritesheet_48
+      213: -3991964250591652236
+    second: terrain dry_48
   - first:
-      213: 9053672342477494877
-    second: core_spritesheet_49
+      213: 857414824646615324
+    second: terrain dry_49
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -173,6 +173,7 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -182,8 +183,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -204,9 +205,12 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -237,223 +241,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: core_spritesheet_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 800
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bdef6378d9db6c5e0800000000000000
-      internalID: -1889614509359300901
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: core_spritesheet_1
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 800
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: afba47ef34b78caf0800000000000000
-      internalID: -375915036923352070
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: core_spritesheet_2
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 800
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b8ab35af25526490800000000000000
-      internalID: -7754541945254598471
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: core_spritesheet_3
-      rect:
-        serializedVersion: 2
-        x: 600
-        y: 800
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 87722f6fe4eb5a5b0800000000000000
-      internalID: -5357666935327545480
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: core_spritesheet_4
-      rect:
-        serializedVersion: 2
-        x: 800
-        y: 800
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fde846ff02125ed50800000000000000
-      internalID: 6765850440801488607
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: core_spritesheet_5
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 800
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4ba34e3285e03ac70800000000000000
-      internalID: 8981037853628971700
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: core_spritesheet_6
-      rect:
-        serializedVersion: 2
-        x: 1200
-        y: 800
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3e8636b3258d9a660800000000000000
-      internalID: 7397681710628038883
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: core_spritesheet_7
-      rect:
-        serializedVersion: 2
-        x: 1400
-        y: 800
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 590ddbbcecee7a6e0800000000000000
-      internalID: -1826228551926558571
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: core_spritesheet_8
-      rect:
-        serializedVersion: 2
-        x: 1600
-        y: 800
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff102f8b421b029c0800000000000000
-      internalID: -3953965701551488513
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: core_spritesheet_9
-      rect:
-        serializedVersion: 2
-        x: 1800
-        y: 800
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a77db0df66b33cac0800000000000000
-      internalID: -3836157144071415942
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: core_spritesheet_10
+      name: terrain dry_0
       rect:
         serializedVersion: 2
         x: 0
         y: 600
-        width: 200
-        height: 200
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -461,20 +255,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36fb4281afe329710800000000000000
-      internalID: 1698489253339905891
+      spriteID: 3665703e57e7e7970800000000000000
+      internalID: 8754573770440005219
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_11
+      name: terrain dry_1
       rect:
         serializedVersion: 2
-        x: 200
+        x: 150
         y: 600
-        width: 200
-        height: 200
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -482,20 +276,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5b4e4c54dbd588b0800000000000000
-      internalID: -5150468893700109475
+      spriteID: 009e0148b10748610800000000000000
+      internalID: 1622545029242349824
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_12
+      name: terrain dry_2
       rect:
         serializedVersion: 2
-        x: 400
+        x: 300
         y: 600
-        width: 200
-        height: 200
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -503,20 +297,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d8234838f2f20070800000000000000
-      internalID: 8071280630111086808
+      spriteID: 615d8e94703b04310800000000000000
+      internalID: 1387305529116251414
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_13
+      name: terrain dry_3
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 600
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9606bdb9ba5c9eaf0800000000000000
+      internalID: -366544553809059735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain dry_4
       rect:
         serializedVersion: 2
         x: 600
         y: 600
-        width: 200
-        height: 200
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -524,20 +339,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 735fc63e57a9b06d0800000000000000
-      internalID: -3023152893731736265
+      spriteID: acaf80fee27522d70800000000000000
+      internalID: 9016865263039609546
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_14
+      name: terrain dry_5
       rect:
         serializedVersion: 2
-        x: 800
+        x: 750
         y: 600
-        width: 200
-        height: 200
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -545,20 +360,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4afd3a833c4cb4860800000000000000
-      internalID: 7515316745945735076
+      spriteID: 09fc89bbc3dccc790800000000000000
+      internalID: -7508400818004373616
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_15
+      name: terrain dry_6
       rect:
         serializedVersion: 2
-        x: 1000
+        x: 900
         y: 600
-        width: 200
-        height: 200
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -566,20 +381,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e26f3f2c284552d0800000000000000
-      internalID: -3290644598115835168
+      spriteID: f447cc52db8bcb1a0800000000000000
+      internalID: -6792351015459064753
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_16
+      name: terrain dry_7
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 600
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 098b6f50f6ed44e20800000000000000
+      internalID: 3334034192583800976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain dry_8
       rect:
         serializedVersion: 2
         x: 1200
         y: 600
-        width: 200
-        height: 200
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -587,20 +423,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 147a2abd20a286010800000000000000
-      internalID: 1182241093947926337
+      spriteID: c3e90e6902156c160800000000000000
+      internalID: 7045407867479825980
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_17
+      name: terrain dry_9
       rect:
         serializedVersion: 2
-        x: 1400
+        x: 1350
         y: 600
-        width: 200
-        height: 200
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -608,62 +444,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c899d792d27978dc0800000000000000
-      internalID: -3636771953852966516
+      spriteID: 0ec984fdab6034820800000000000000
+      internalID: 2901169984636493024
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_18
-      rect:
-        serializedVersion: 2
-        x: 1600
-        y: 600
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 747d24e44d7916420800000000000000
-      internalID: 2621543396208203591
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: core_spritesheet_19
-      rect:
-        serializedVersion: 2
-        x: 1800
-        y: 600
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2bef3be46a013c860800000000000000
-      internalID: 7548895706874117810
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: core_spritesheet_20
+      name: terrain dry_10
       rect:
         serializedVersion: 2
         x: 0
-        y: 400
-        width: 200
-        height: 200
+        y: 450
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -671,20 +465,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a76ecb6eb92781a0800000000000000
-      internalID: -6807426413918001247
+      spriteID: 8d373bbd4b96a1f80800000000000000
+      internalID: -8135073551390379048
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_21
+      name: terrain dry_11
       rect:
         serializedVersion: 2
-        x: 200
-        y: 400
-        width: 200
-        height: 200
+        x: 150
+        y: 450
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -692,20 +486,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0735913e667bc3b80800000000000000
-      internalID: -8413648351310294160
+      spriteID: 4fd9d33543ab62c90800000000000000
+      internalID: -7194858620780175884
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_22
+      name: terrain dry_12
       rect:
         serializedVersion: 2
-        x: 400
-        y: 400
-        width: 200
-        height: 200
+        x: 300
+        y: 450
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -713,20 +507,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9875d0821b3d2aa0800000000000000
-      internalID: -6184221762652899173
+      spriteID: b78dc878db8ca6b00800000000000000
+      internalID: 822690598297065595
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_23
+      name: terrain dry_13
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 450
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cccd6421bfeff6d60800000000000000
+      internalID: 7885801826845908172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain dry_14
       rect:
         serializedVersion: 2
         x: 600
-        y: 400
-        width: 200
-        height: 200
+        y: 450
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -734,20 +549,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0206a063becce5c80800000000000000
-      internalID: -8331996949992808416
+      spriteID: d24e438979e874c10800000000000000
+      internalID: 2037754138153247789
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_24
+      name: terrain dry_15
       rect:
         serializedVersion: 2
-        x: 800
-        y: 400
-        width: 200
-        height: 200
+        x: 750
+        y: 450
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -755,20 +570,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43721007a1581da30800000000000000
-      internalID: 4238315072927115060
+      spriteID: 857519b801d560550800000000000000
+      internalID: 6126686668726556504
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_25
+      name: terrain dry_16
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 400
-        width: 200
-        height: 200
+        x: 900
+        y: 450
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -776,20 +591,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b2ed8df44119e7c0800000000000000
-      internalID: -4041680202578926926
+      spriteID: ff558a55a753e8e10800000000000000
+      internalID: 2201756067370128895
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_26
+      name: terrain dry_17
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 450
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96bd4ce8283557450800000000000000
+      internalID: 6085862291667213161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain dry_18
       rect:
         serializedVersion: 2
         x: 1200
-        y: 400
-        width: 200
-        height: 200
+        y: 450
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -797,20 +633,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2113cfe373133010800000000000000
-      internalID: 1167298117083795756
+      spriteID: d9f2e173b8e7b1e70800000000000000
+      internalID: 9086995809540386717
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_27
+      name: terrain dry_19
       rect:
         serializedVersion: 2
-        x: 1400
-        y: 400
-        width: 200
-        height: 200
+        x: 1350
+        y: 450
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -818,62 +654,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72af596c14634d2f0800000000000000
-      internalID: -949073965335840217
+      spriteID: 1946be72325e6e790800000000000000
+      internalID: -7501056190182628207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_28
-      rect:
-        serializedVersion: 2
-        x: 1600
-        y: 400
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2faa93a12e8f30360800000000000000
-      internalID: 7134819884671281906
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: core_spritesheet_29
-      rect:
-        serializedVersion: 2
-        x: 1800
-        y: 400
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2d1a98eb2a786ebf0800000000000000
-      internalID: -295399592495046190
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: core_spritesheet_30
+      name: terrain dry_20
       rect:
         serializedVersion: 2
         x: 0
-        y: 200
-        width: 200
-        height: 200
+        y: 300
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -881,20 +675,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c46da5c68d7c869c0800000000000000
-      internalID: -3933674542163372468
+      spriteID: e6fafe3df9c29e350800000000000000
+      internalID: 6046413039688724334
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_31
+      name: terrain dry_21
       rect:
         serializedVersion: 2
-        x: 200
-        y: 200
-        width: 200
-        height: 200
+        x: 150
+        y: 300
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -902,20 +696,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4d395567031ea710800000000000000
-      internalID: 1706322231306042698
+      spriteID: b07fe05ce77b67120800000000000000
+      internalID: 2411316405603333899
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_32
+      name: terrain dry_22
       rect:
         serializedVersion: 2
-        x: 400
-        y: 200
-        width: 200
-        height: 200
+        x: 300
+        y: 300
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -923,20 +717,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7d0e4e11e3812170800000000000000
-      internalID: 8151941803416620412
+      spriteID: 3b4ed19e0b8f7a450800000000000000
+      internalID: 6100117659005609139
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_33
+      name: terrain dry_23
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 300
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0deb85f3f607f290800000000000000
+      internalID: -7856803380058133238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain dry_24
       rect:
         serializedVersion: 2
         x: 600
-        y: 200
-        width: 200
-        height: 200
+        y: 300
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -944,20 +759,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0243252fb67f26b10800000000000000
-      internalID: 1973411629740733472
+      spriteID: d6b0833b0022020a0800000000000000
+      internalID: -6908484441984201875
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_34
+      name: terrain dry_25
       rect:
         serializedVersion: 2
-        x: 800
-        y: 200
-        width: 200
-        height: 200
+        x: 750
+        y: 300
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -965,20 +780,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 684c4b4e8907587f0800000000000000
-      internalID: -610958372464442234
+      spriteID: 1417e052f47c75bb0800000000000000
+      internalID: -4947266522905153215
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_35
+      name: terrain dry_26
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 200
-        width: 200
-        height: 200
+        x: 900
+        y: 300
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -986,20 +801,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f364bd6d65137d820800000000000000
-      internalID: 2942875130551551551
+      spriteID: 2c011af91d00ad1a0800000000000000
+      internalID: -6784108988353933118
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_36
+      name: terrain dry_27
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 300
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16773cb39b16bc3b0800000000000000
+      internalID: -5491187872448678047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain dry_28
       rect:
         serializedVersion: 2
         x: 1200
-        y: 200
-        width: 200
-        height: 200
+        y: 300
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1007,20 +843,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99a52554a74068ec0800000000000000
-      internalID: -3565157131821622631
+      spriteID: a666451ed36f5d2a0800000000000000
+      internalID: -6713188923892013462
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_37
+      name: terrain dry_29
       rect:
         serializedVersion: 2
-        x: 1400
-        y: 200
-        width: 200
-        height: 200
+        x: 1350
+        y: 300
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1028,20 +864,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78d202d6e71b94fb0800000000000000
-      internalID: -4663000782610616953
+      spriteID: e83de4f5352081270800000000000000
+      internalID: 8221323676869383054
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_38
+      name: terrain dry_30
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 200
-        width: 200
-        height: 200
+        x: 0
+        y: 150
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1049,20 +885,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b754f799dad9716d0800000000000000
-      internalID: -3019771656198470277
+      spriteID: be3289a92b97e2f80800000000000000
+      internalID: -8129426469352365077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_39
+      name: terrain dry_31
       rect:
         serializedVersion: 2
-        x: 1800
-        y: 200
-        width: 200
-        height: 200
+        x: 150
+        y: 150
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1070,20 +906,188 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9fa05277dda6a8e0800000000000000
-      internalID: -1682466269928837219
+      spriteID: 0a070f0d37d2c2340800000000000000
+      internalID: 4840293674966347936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_40
+      name: terrain dry_32
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 150
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89402fa38d47b6a10800000000000000
+      internalID: 1903743739544863896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain dry_33
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 150
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1b2bb83797cd11b0800000000000000
+      internalID: -5684167702365918438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain dry_34
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 150
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6c9b8e269c0db120800000000000000
+      internalID: 2431113213015465070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain dry_35
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 150
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c7ec99e3af5db960800000000000000
+      internalID: 7619351302184429509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain dry_36
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 150
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81fac3fca26e11c30800000000000000
+      internalID: 4328493788419632920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain dry_37
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 150
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf241adc8e8beb4d0800000000000000
+      internalID: -3116850582071983365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain dry_38
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 150
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04642eb7d60bf1d60800000000000000
+      internalID: 7863197458688525888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain dry_39
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 150
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 105638916aee84f50800000000000000
+      internalID: 6866000029086344449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain dry_40
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 200
-        height: 200
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1091,20 +1095,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8b541485d97a5d90800000000000000
-      internalID: -7108235103899985013
+      spriteID: 73897ebb26bbe8ec0800000000000000
+      internalID: -3562704222469777353
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_41
+      name: terrain dry_41
       rect:
         serializedVersion: 2
-        x: 200
+        x: 150
         y: 0
-        width: 200
-        height: 200
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1112,20 +1116,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a29cc46004cc440b0800000000000000
-      internalID: -5745242649262241494
+      spriteID: 3e83728e7bf622620800000000000000
+      internalID: 2747881558314006755
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_42
+      name: terrain dry_42
       rect:
         serializedVersion: 2
-        x: 400
+        x: 300
         y: 0
-        width: 200
-        height: 200
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1133,20 +1137,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b221ff375848b83d0800000000000000
-      internalID: -3203321001232362965
+      spriteID: 15db6181959e81b60800000000000000
+      internalID: 7717174530364849489
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_43
+      name: terrain dry_43
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 0
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 857384ed85e9aaf00800000000000000
+      internalID: 1128888761133315928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain dry_44
       rect:
         serializedVersion: 2
         x: 600
         y: 0
-        width: 200
-        height: 200
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1154,20 +1179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 014fdf86c2ce2f2b0800000000000000
-      internalID: -5552115715110210544
+      spriteID: 69383b5f359943d30800000000000000
+      internalID: 4410318520986076054
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_44
+      name: terrain dry_45
       rect:
         serializedVersion: 2
-        x: 800
+        x: 750
         y: 0
-        width: 200
-        height: 200
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1175,20 +1200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef423591e52d3ea50800000000000000
-      internalID: 6549309584720471294
+      spriteID: e1e0b0fbb6c6d6e60800000000000000
+      internalID: 7957135326656007710
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_45
+      name: terrain dry_46
       rect:
         serializedVersion: 2
-        x: 1000
+        x: 900
         y: 0
-        width: 200
-        height: 200
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1196,20 +1221,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 136021e1e1903e9d0800000000000000
-      internalID: -2746341322807704015
+      spriteID: 6b9b6bc1fe9e6fd30800000000000000
+      internalID: 4465013293772618166
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_46
+      name: terrain dry_47
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 0
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 695584c5dba313e70800000000000000
+      internalID: 9093113707609216406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain dry_48
       rect:
         serializedVersion: 2
         x: 1200
         y: 0
-        width: 200
-        height: 200
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1217,20 +1263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c6b52132ecbcb140800000000000000
-      internalID: 4736868587760105155
+      spriteID: 4761d671aa1b998c0800000000000000
+      internalID: -3991964250591652236
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: core_spritesheet_47
+      name: terrain dry_49
       rect:
         serializedVersion: 2
-        x: 1400
+        x: 1350
         y: 0
-        width: 200
-        height: 200
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1238,50 +1284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d157e5e272d268830800000000000000
-      internalID: 4072992559308109085
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: core_spritesheet_48
-      rect:
-        serializedVersion: 2
-        x: 1600
-        y: 0
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 91a0edc2ea9f36410800000000000000
-      internalID: 1469292429925288473
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: core_spritesheet_49
-      rect:
-        serializedVersion: 2
-        x: 1800
-        y: 0
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d5a562ee60b15ad70800000000000000
-      internalID: 9053672342477494877
+      spriteID: c1127308d3626eb00800000000000000
+      internalID: 857414824646615324
       vertices: []
       indices: 
       edges: []
