@@ -666,6 +666,10 @@ MonoBehaviour:
   _levelUpEffect: {fileID: 1576031856618695178}
   _safeZone: {fileID: 2039938311}
   _safeZoneEffect: {fileID: 862699990}
+  forceOnEnemyCollision: 500
+  tagsToReact:
+  - EnemyProjectile
+  - Enemy
 --- !u!114 &870214922
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,7 +11,8 @@ namespace CodeBase.ObjectBased
         [Header("Storage")]
         [SerializeField] private WeaponStorage weaponStorage;
 
-        [field: Space]
+        [Space]
+        [SerializeField] private bool isEnemyProjectile;
         [field: SerializeField] public WeaponType WeaponType { get; private set; }
         [SerializeField] private Rigidbody2D rb;
         [SerializeField] private float speed = 5f;
@@ -24,6 +25,12 @@ namespace CodeBase.ObjectBased
 
         private Vector2 screenBoundaries;
         private Coroutine animationCoroutine;
+        private Camera mainCamera;
+
+        private void Awake()
+        {
+            mainCamera = Camera.main;
+        }
 
         private void OnEnable()
         {
@@ -38,7 +45,7 @@ namespace CodeBase.ObjectBased
 
         private void Start()
         {
-            WeaponData = weaponStorage.GetCurrentWeapon(WeaponType);
+            WeaponData = isEnemyProjectile ? weaponStorage.GetEnemyWeapon(WeaponType) : weaponStorage.GetPlayerWeapon(WeaponType);
         }
 
         private IEnumerator StartAnimation()
@@ -58,7 +65,7 @@ namespace CodeBase.ObjectBased
             {
                 yield return new WaitForEndOfFrame();
 
-                screenBoundaries = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+                screenBoundaries = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
 
                 if (transform.position.y > screenBoundaries.y || transform.position.y < -screenBoundaries.y
                 || transform.position.x > screenBoundaries.x || transform.position.x < -screenBoundaries.x)
@@ -82,7 +89,7 @@ namespace CodeBase.ObjectBased
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.tag.Equals(Tags.Enemy))
+            if (collision.gameObject.tag.Equals(isEnemyProjectile ? Tags.Player : Tags.Enemy))
             {
                 SetBusyState(false);
             }

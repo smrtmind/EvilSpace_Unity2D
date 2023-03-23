@@ -142,10 +142,10 @@ MonoBehaviour:
   <Damage>k__BackingField: 0
   <IsBusy>k__BackingField: 0
   asteroidBody: {fileID: 6876184268225749886}
-  _minSpeed: 3
-  _maxSpeed: 10
-  _minRotation: 20
-  _maxRotation: 50
+  minSpeed: 3
+  maxSpeed: 10
+  minRotation: 20
+  maxRotation: 50
   minScale: 3
   maxScale: 9
 --- !u!58 &1993999045159036112

@@ -1,4 +1,3 @@
-using CodeBase.ObjectBased;
 using CodeBase.Player;
 using CodeBase.UI;
 using CodeBase.Utils;
@@ -61,18 +60,16 @@ namespace CodeBase.Mobs
                 newEffect.transform.position = transform.position;
                 newEffect.transform.localScale = new Vector3(transform.localScale.x + explosionAdditionalScale, transform.localScale.y + explosionAdditionalScale, 1f);
                 newEffect.SetBusyState(true);
-
-                popUp.SetCurrentData(transform, "100", "yellow");
-                popUp.SpawnPopUp();
             }
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        protected virtual void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.tag.Equals(Tags.Projectile))
             {
-                var projectile = Dictionaries.PlayerProjectiles.FirstOrDefault(p => p.Key == collision.gameObject.transform);
+                var projectile = Dictionaries.Projectiles.FirstOrDefault(p => p.Key == collision.gameObject.transform);
                 ModifyHealth(-projectile.Value.WeaponData.Damage);
+                if (Health <= 0f) TakeExp();
 
                 skinColorTween?.Kill();
                 skinColorTween = skinRenderer.DOColor(Color.red, 0.1f).OnComplete(() => skinRenderer.color = defaultColor);
@@ -88,6 +85,12 @@ namespace CodeBase.Mobs
             newEffect.transform.position = new Vector3(projectilePosition.x, projectilePosition.y + 1f, projectilePosition.z);
             newEffect.transform.localScale = new Vector3(0.75f, 0.75f, 1f);
             newEffect.SetBusyState(true);
+        }
+
+        private void TakeExp()
+        {
+            popUp.SetCurrentData(transform, "100", "yellow");
+            popUp.SpawnPopUp();
         }
     }
 }

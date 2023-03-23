@@ -281,7 +281,7 @@ namespace CodeBase.Player
 
             _cameraShaker.SetDuration(1.2f);
             _cameraShaker.SetMaxDelta(0.6f);
-            _cameraShaker.ShakeCamera();
+            //_cameraShaker.ShakeCamera();
 
             KillAllEnemies();
 
@@ -344,9 +344,9 @@ namespace CodeBase.Player
 
         private Projectile CreateNewProjectile()
         {
-            Projectile newProjectile = Instantiate(weaponStorage.GetCurrentWeapon(currentWeapon).Projectile, dependencyContainer.ParticlePool.ProjectileContainer);
+            Projectile newProjectile = Instantiate(weaponStorage.GetPlayerWeapon(currentWeapon).Projectile, dependencyContainer.ParticlePool.ProjectileContainer);
             dependencyContainer.ParticlePool.ProjectilesPool.Add(newProjectile);
-            Dictionaries.PlayerProjectiles.Add(newProjectile.transform, newProjectile);
+            Dictionaries.Projectiles.Add(newProjectile.transform, newProjectile);
 
             return newProjectile;
         }

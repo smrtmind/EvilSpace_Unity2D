@@ -140,9 +140,9 @@ namespace CodeBase.Mobs
 
         private Projectile CreateNewProjectile()
         {
-            Projectile newProjectile = Instantiate(weaponStorage.GetCurrentWeapon(weaponType).Projectile, dependencyContainer.ParticlePool.ProjectileContainer);
+            Projectile newProjectile = Instantiate(weaponStorage.GetEnemyWeapon(weaponType).Projectile, dependencyContainer.ParticlePool.ProjectileContainer);
             dependencyContainer.ParticlePool.ProjectilesPool.Add(newProjectile);
-            Dictionaries.EnemyProjectiles.Add(newProjectile.transform, newProjectile);
+            Dictionaries.Projectiles.Add(newProjectile.transform, newProjectile);
 
             return newProjectile;
         }

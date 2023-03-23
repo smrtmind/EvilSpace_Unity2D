@@ -1,6 +1,8 @@
-﻿using CodeBase.Service;
+﻿using CodeBase.Utils;
+using System;
 using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace CodeBase.Mobs
 {
@@ -10,21 +12,22 @@ namespace CodeBase.Mobs
         [SerializeField] private Rigidbody2D asteroidBody;
 
         [Space]
-        [SerializeField] private float _minSpeed = 1f;
-        [SerializeField] private float _maxSpeed = 5f;
-        [SerializeField] private float _minRotation = 5f;
-        [SerializeField] private float _maxRotation = 25;
+        [SerializeField, Range(1f, 10f)] private float minSpeed = 1f;
+        [SerializeField, Range(1f, 10f)] private float maxSpeed = 5f;
+        [SerializeField, Range(1f, 50f)] private float minRotation = 5f;
+        [SerializeField, Range(1f, 50f)] private float maxRotation = 25;
         [SerializeField] private float minScale;
         [SerializeField] private float maxScale;
 
-        private GameSession gameSession;
-        private CameraShaker cameraShaker;
+        public static Action<Vector3> OnPlayerCollision;
+
         private Vector2 screenBoundaries;
+        private Coroutine boundsCoroutine;
+        private Camera mainCamera;
 
         private void Awake()
         {
-            gameSession = FindObjectOfType<GameSession>();
-            cameraShaker = FindObjectOfType<CameraShaker>();
+            mainCamera = Camera.main;
         }
 
         private void OnEnable()
@@ -32,8 +35,13 @@ namespace CodeBase.Mobs
             float randomScale = Random.Range(minScale, maxScale);
             transform.localScale = new Vector3(randomScale, randomScale, 1f);
 
+            boundsCoroutine = StartCoroutine(CheckForScreenBounds());
             Launch();
-            StartCoroutine(CheckForScreenBounds());
+        }
+
+        private void OnDisable()
+        {
+            StopCoroutine(boundsCoroutine);
         }
 
         private IEnumerator CheckForScreenBounds()
@@ -42,7 +50,7 @@ namespace CodeBase.Mobs
             {
                 yield return new WaitForEndOfFrame();
 
-                screenBoundaries = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+                screenBoundaries = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
 
                 if (transform.position.y > screenBoundaries.y || transform.position.y < -screenBoundaries.y
                 || transform.position.x > screenBoundaries.x || transform.position.x < -screenBoundaries.x)
@@ -56,42 +64,21 @@ namespace CodeBase.Mobs
         private void Launch()
         {
             //var randomDirection = Random.insideUnitCircle.normalized;
-            asteroidBody.velocity = Vector2.down * Random.Range(_minSpeed, _maxSpeed);
+            asteroidBody.velocity = Vector2.down * Random.Range(minSpeed, maxSpeed);
 
-            var randomRotation = Random.Range(_minRotation, _maxRotation);
+            var randomRotation = Random.Range(minRotation, maxRotation);
             asteroidBody.AddTorque(randomRotation);
         }
 
-        public void AddXp(int xp)
+        protected override void OnTriggerEnter2D(Collider2D collision)
         {
-            gameSession.ModifyXp(xp);
+            base.OnTriggerEnter2D(collision);
+
+            if (collision.gameObject.tag.Equals(Tags.Player))
+            {
+                ModifyHealth(-Health);
+                OnPlayerCollision?.Invoke(transform.position);
+            }
         }
-
-        //private void OnTriggerEnter2D(Collider2D collision)
-        //{
-        //    if (collision.gameObject.tag.Equals(Tags.Projectile))
-        //    {
-        //        ModifyHealth(-1);
-        //    }
-        //}
-
-        //private void OnCollisionEnter2D(Collision2D other)
-        //{
-        //    var player = other.gameObject.CompareTag("Player");
-        //    if (player)
-        //    {
-        //        if (!playerStorage.ConcretePlayer.IsDead)
-        //        {
-        //            playerStorage.ConcretePlayer.ModifyHealth(-Damage);
-
-        //            _cameraShaker.RestoreValues();
-
-        //            //var force = transform.position - other.transform.position;
-        //            //force.Normalize();
-
-        //            //player.GetComponent<Rigidbody2D>().AddForce(-force * 500);
-        //        }
-        //    }
-        //}
     }
 }

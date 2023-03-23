@@ -1,59 +1,74 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
-
+using Random = UnityEngine.Random;
 
 namespace CodeBase.Service
 {
     [RequireComponent(typeof(Camera))]
     public class CameraShaker : MonoBehaviour
     {
-        [SerializeField] private float _duration = 0.2f;
-        [SerializeField] private float _maxDelta = 0.1f;
+        [SerializeField] private float duration = 0.2f;
+        [SerializeField] private float maxDelta = 0.1f;
 
-        private Vector3 _defaultPosition;
-        private float _animationDuration;
-        private Coroutine _coroutine;
-        private float _defaultDuration;
-        private float _defaultMaxDelta;
+        public static Action OnShakeCamera;
 
-        private void Awake()
+        private Vector3 defaultPosition;
+        private Coroutine shakeCoroutine;
+        private float animationDuration;
+        //private float defaultDuration;
+        //private float defaultMaxDelta;
+
+        //private void Awake()
+        //{
+        //    defaultPosition = transform.position;
+        //    //defaultDuration = duration;
+        //    //defaultMaxDelta = maxDelta;
+        //}
+
+        private void OnEnable()
         {
-            _defaultPosition = transform.position;
-            _defaultDuration = _duration;
-            _defaultMaxDelta = _maxDelta;   
+            defaultPosition = transform.position;
+
+            OnShakeCamera += ShakeCamera;
         }
 
-        public void ShakeCamera()
+        private void OnDisable()
         {
-            if (_coroutine != null)
-                StopCoroutine(_coroutine);
-
-            _coroutine = StartCoroutine(StartAnimation());
+            OnShakeCamera -= ShakeCamera;
         }
 
-        public void SetDuration(float value) => _duration = value;
-        public void SetMaxDelta(float value) => _maxDelta = value;
+        private void ShakeCamera()
+        {
+            if (shakeCoroutine != null)
+                StopCoroutine(shakeCoroutine);
+
+            shakeCoroutine = StartCoroutine(StartAnimation());
+        }
+
+        public void SetDuration(float value) => duration = value;
+        public void SetMaxDelta(float value) => maxDelta = value;
 
         private IEnumerator StartAnimation()
         {
-            _animationDuration = 0;
+            animationDuration = 0;
 
-            while (_animationDuration < _duration)
+            while (animationDuration < duration)
             {
-                _animationDuration += Time.deltaTime;
-                Vector3 delta = Random.insideUnitCircle.normalized * _maxDelta;
-                transform.position = _defaultPosition + delta;
+                animationDuration += Time.deltaTime;
+                Vector3 delta = Random.insideUnitCircle.normalized * maxDelta;
+                transform.position = defaultPosition + delta;
 
                 yield return null;
             }
 
-            transform.position = _defaultPosition;
+            transform.position = defaultPosition;
         }
 
-        public void RestoreValues()
-        {
-            _duration = _defaultDuration;
-            _maxDelta = _defaultMaxDelta;
-        }
+        //public void RestoreValues()
+        //{
+        //    duration = defaultDuration;
+        //    maxDelta = defaultMaxDelta;
+        //}
     }
 }

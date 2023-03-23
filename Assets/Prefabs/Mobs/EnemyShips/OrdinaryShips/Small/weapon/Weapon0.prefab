@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponStorage: {fileID: 11400000, guid: e814c13fd8cd88d4098aa7cba97875ce, type: 2}
+  isEnemyProjectile: 1
   <WeaponType>k__BackingField: 3
   rb: {fileID: 5031865173122266621}
   speed: 8

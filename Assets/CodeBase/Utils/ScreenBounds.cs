@@ -12,9 +12,13 @@ namespace CodeBase.Utils
 
         private Camera mainCamera;
 
+        private void Awake()
+        {
+            mainCamera = Camera.main;
+        }
+
         private void OnEnable()
         {
-            mainCamera = dependencyContainer.MainCamera;
             dependencyContainer.ScreenBounds = this;
 
             Vector3 screenMin = mainCamera.ViewportToWorldPoint(Vector3.zero);

@@ -26,10 +26,14 @@ namespace CodeBase.Player
         private float maxY;
         private Camera mainCamera;
 
+        private void Awake()
+        {
+            mainCamera = Camera.main;
+        }
+
         private void OnEnable()
         {
             dependencyContainer.TouchController = this;
-            mainCamera = dependencyContainer.MainCamera;
             CalculateScreenBounds();
             //enabled = false;
         }

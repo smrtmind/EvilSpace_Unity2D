@@ -1,4 +1,5 @@
 ﻿using CodeBase.Animation;
+using CodeBase.Mobs;
 using CodeBase.ObjectBased;
 using CodeBase.Service;
 using CodeBase.UI;
@@ -6,6 +7,7 @@ using CodeBase.Utils;
 using DG.Tweening;
 using Scripts;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -35,6 +37,8 @@ namespace CodeBase.Player
         [SerializeField] public SpawnComponent _levelUpEffect;
         [SerializeField] private GameObject _safeZone;
         [SerializeField] private GameObject _safeZoneEffect;
+        [SerializeField] private float forceOnEnemyCollision;
+        [SerializeField] private List<string> tagsToReact;
 
         private static readonly int LowHpKey = Animator.StringToHash("lowHp");
         private static readonly int LeftTurnKey = Animator.StringToHash("left-turn");
@@ -66,12 +70,14 @@ namespace CodeBase.Player
 
             //OnPlayerDamaged += PlayerDamaged;
             UserInterface.OnLevelLoaded += InitPlayer;
+            Asteroid.OnPlayerCollision += ForceBackPlayer;
         }
 
         private void OnDisable()
         {
             //OnPlayerDamaged -= PlayerDamaged;
             UserInterface.OnLevelLoaded -= InitPlayer;
+            Asteroid.OnPlayerCollision -= ForceBackPlayer;
         }
 
         private void InitPlayer()
@@ -154,12 +160,12 @@ namespace CodeBase.Player
             var session = FindObjectOfType<GameSession>();
 
             //Instantiate(_hitParticles, other.GetContact(0).point, Quaternion.identity);
-            _cameraShaker.ShakeCamera();
+            //_cameraShaker.ShakeCamera();
 
             var projectile = FindObjectOfType<Projectile>();
             if (projectile)
             {
-                FindObjectOfType<CameraShaker>().RestoreValues();
+                //FindObjectOfType<CameraShaker>().RestoreValues();
             }
 
             if (playerStorage.ConcretePlayer.CurrentHealth == 3)
@@ -227,15 +233,20 @@ namespace CodeBase.Player
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.tag.Equals(Tags.EnemyProjectile))
+            foreach (string tag in tagsToReact)
             {
-                var projectile = Dictionaries.EnemyProjectiles.FirstOrDefault(p => p.Key == collision.gameObject.transform);
-                //ModifyHealth(-projectile.Value.WeaponData.Damage);
+                if (collision.gameObject.tag.Equals(tag))
+                {
+                    var projectile = Dictionaries.Projectiles.FirstOrDefault(p => p.Key == collision.gameObject.transform);
+                    //ModifyHealth(-projectile.Value.WeaponData.Damage);
 
-                skinColorTween?.Kill();
-                skinColorTween = skinRenderer.DOColor(Color.red, 0.1f).OnComplete(() => skinRenderer.color = defaultColor);
+                    skinColorTween?.Kill();
+                    skinColorTween = skinRenderer.DOColor(Color.red, 0.1f).OnComplete(() => skinRenderer.color = defaultColor);
 
-                SpawnSpark(collision.gameObject.transform.position);
+                    SpawnSpark(collision.gameObject.transform.position);
+
+                    CameraShaker.OnShakeCamera?.Invoke();
+                }
             }
         }
 
@@ -246,6 +257,12 @@ namespace CodeBase.Player
             newEffect.transform.position = new Vector3(projectilePosition.x, projectilePosition.y - 1f, projectilePosition.z);
             newEffect.transform.localScale = new Vector3(0.75f, 0.75f, 1f);
             newEffect.SetBusyState(true);
+        }
+
+        private void ForceBackPlayer(Vector3 asteroidPosition)
+        {
+            var force = asteroidPosition - transform.position;
+            playerBody.AddForce(-force.normalized * forceOnEnemyCollision);
         }
     }
 }

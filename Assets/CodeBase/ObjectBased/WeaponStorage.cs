@@ -8,11 +8,21 @@ namespace CodeBase.ObjectBased
     [CreateAssetMenu(fileName = "WeaponStorage", menuName = "ScriptableObjects/WeaponStorage")]
     public class WeaponStorage : ScriptableObject
     {
-        [SerializeField] private List<Weapon> weapons;
+        [SerializeField] private List<Weapon> playerWeapons;
+        [SerializeField] private List<Weapon> enemyWeapons;
 
-        public Weapon GetCurrentWeapon(WeaponType type)
+        public Weapon GetPlayerWeapon(WeaponType type)
         {
-            foreach (Weapon weapon in weapons)
+            foreach (Weapon weapon in playerWeapons)
+                if (type == weapon.WeaponType)
+                    return weapon;
+
+            return null;
+        }
+
+        public Weapon GetEnemyWeapon(WeaponType type)
+        {
+            foreach (Weapon weapon in enemyWeapons)
                 if (type == weapon.WeaponType)
                     return weapon;
 
