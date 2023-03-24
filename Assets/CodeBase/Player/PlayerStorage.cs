@@ -39,12 +39,12 @@ namespace CodeBase.Player
 
         private void InitPlayer()
         {
-            concretePlayer.SetPlayerData(playerDataStorage.DefaultPlayerPosition,
-                                         playerDataStorage.DefaultLvl,
-                                         playerDataStorage.DefaulScore,
-                                         playerDataStorage.DefaulHealth,
+            concretePlayer.SetPlayerData(playerDataStorage.DefaultHealth,
                                          playerDataStorage.DefaultTries,
-                                         playerDataStorage.DefaultMovementSpeed);
+                                         playerDataStorage.DefaultLvl,
+                                         playerDataStorage.DefaultScore,
+                                         playerDataStorage.DefaultMovementSpeed,
+                                         playerDataStorage.DefaultPlayerPosition);
         }
     }
 }

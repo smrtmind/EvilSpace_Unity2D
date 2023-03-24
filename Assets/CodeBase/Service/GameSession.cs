@@ -1,7 +1,6 @@
 ﻿using CodeBase.Player;
 using CodeBase.UI;
 using Scripts;
-using System;
 using UnityEngine;
 
 namespace CodeBase.Service
@@ -100,7 +99,7 @@ namespace CodeBase.Service
                 _timers.SetTimerByName("spawn boss");
             }
 
-            _player.RemoveVisualDamage();
+            //_player.RemoveVisualDamage();
             //_playerHealth.RiseMaxHealth();
 
             _nextLvl = (((_nextLvl / 100) * 20) + _nextLvl);

@@ -1,9 +1,11 @@
 ﻿using CodeBase.Mobs;
+using CodeBase.ObjectBased;
 using CodeBase.UI;
 using CodeBase.Utils;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using static CodeBase.Utils.Enums;
 using Random = UnityEngine.Random;
@@ -25,11 +27,13 @@ namespace CodeBase.Service
         private void OnEnable()
         {
             UserInterface.OnLevelLoaded += InitSpawner;
+            UserInterface.OnGameRestarted += DisableAllEnemies;
         }
 
         private void OnDisable()
         {
             UserInterface.OnLevelLoaded -= InitSpawner;
+            UserInterface.OnGameRestarted -= DisableAllEnemies;
         }
 
         private void InitSpawner()
@@ -99,12 +103,35 @@ namespace CodeBase.Service
 
         private Enemy CreateNewEnemy(SpawnParameters unit)
         {
-            var enemyUnit = enemyStorage.GetEnemyUnit(unit.Type);
+            var enemyUnit = enemyStorage.GetEnemyUnitData(unit.Type);
 
             Enemy newEnemy = Instantiate(enemyUnit.Prefabs[Random.Range(0, enemyUnit.Prefabs.Count)], dependencyContainer.ParticlePool.EnemyContainer);
             unit.EnemiesPool.Add(newEnemy);
+            newEnemy.InitEnemyData();
 
             return newEnemy;
+        }
+
+        private void DisableAllEnemies()
+        {
+            foreach (SpawnParameters unit in enemies)
+            {
+                foreach (Enemy enemy in unit.EnemiesPool)
+                {
+                    if (enemy.IsBusy)
+                        enemy.SetBusyState(false);
+                }
+            }
+
+            foreach (Coroutine enemySpawner in spawnCoroutines)
+                StopCoroutine(enemySpawner);
+
+            List<Projectile> projectiles = Dictionaries.Projectiles.Values.ToList();
+            foreach (Projectile projectile in projectiles)
+            {
+                if (projectile.IsBusy)
+                    projectile.SetBusyState(false);
+            }
         }
     }
 

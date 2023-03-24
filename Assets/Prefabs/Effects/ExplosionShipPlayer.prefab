@@ -48,7 +48,7 @@ MonoBehaviour:
   <IsBusy>k__BackingField: 1
   <Loop>k__BackingField: 0
   <Renderer>k__BackingField: {fileID: 6984075108583789657}
-  <DelayBetweenFrames>k__BackingField: 0.05
+  <DelayBetweenFrames>k__BackingField: 0.1
   <Frames>k__BackingField:
   - {fileID: -8092295105046505211, guid: 3ba18e4838645b04a8dc38c2f5a01eea, type: 3}
   - {fileID: -5243772346084840235, guid: 3ba18e4838645b04a8dc38c2f5a01eea, type: 3}

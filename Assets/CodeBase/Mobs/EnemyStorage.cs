@@ -10,7 +10,7 @@ namespace CodeBase.Mobs
     {
         [SerializeField] private List<EnemyUnitData> Enemies;
 
-        public EnemyUnitData GetEnemyUnit(EnemyType type)
+        public EnemyUnitData GetEnemyUnitData(EnemyType type)
         {
             foreach (EnemyUnitData unitData in Enemies)
             {
@@ -29,7 +29,7 @@ namespace CodeBase.Mobs
     {
         [field: SerializeField] public EnemyType Type { get; private set; }
         [field: SerializeField] public float Health { get; private set; }
-        [field: SerializeField] public float Damage { get; private set; }
+        [field: SerializeField] public float Score { get; private set; }
         [field: SerializeField] public List<Enemy> Prefabs { get; private set; }
     }
 }

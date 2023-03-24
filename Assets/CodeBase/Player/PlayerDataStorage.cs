@@ -6,11 +6,11 @@ namespace CodeBase.Player
     public class PlayerDataStorage : ScriptableObject
     {
         [field: Header("Player Settings")]
-        [field: SerializeField] public Vector3 DefaultPlayerPosition { get; private set; }
-        [field: SerializeField] public int DefaultLvl { get; private set; }
-        [field: SerializeField] public float DefaulScore { get; private set; }
-        [field: SerializeField] public float DefaulHealth { get; private set; }
+        [field: SerializeField] public float DefaultHealth { get; private set; }
         [field: SerializeField] public int DefaultTries { get; private set; }
+        [field: SerializeField] public int DefaultLvl { get; private set; }
+        [field: SerializeField] public float DefaultScore { get; private set; }
         [field: SerializeField] public float DefaultMovementSpeed { get; private set; }
+        [field: SerializeField] public Vector3 DefaultPlayerPosition { get; private set; }
     }
 }

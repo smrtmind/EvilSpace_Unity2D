@@ -22,8 +22,9 @@ namespace CodeBase.Mobs
         [SerializeField] private SpriteRenderer skinRenderer;
         [SerializeField] private PopUp popUp;
         [field: SerializeField] public float Health { get; private set; }
-        [field: SerializeField] public float Damage { get; private set; }
         [field: SerializeField] public bool IsBusy { get; private set; }
+
+        public EnemyUnitData EnemyData { get; private set; }
 
         private Color defaultColor;
         private Tween skinColorTween;
@@ -33,19 +34,17 @@ namespace CodeBase.Mobs
             defaultColor = skinRenderer.color;
         }
 
+        public void InitEnemyData() => EnemyData = enemyStorage.GetEnemyUnitData(EnemyType);
+
         public void SetBusyState(bool state)
         {
             IsBusy = state;
             gameObject.SetActive(IsBusy);
 
             if (IsBusy)
-            {
-                Health = enemyStorage.GetEnemyUnit(EnemyType).Health;
-            }
+                Health = EnemyData.Health;
             else
-            {
                 skinRenderer.color = defaultColor;
-            }
         }
 
         public void ModifyHealth(float health)
@@ -69,7 +68,7 @@ namespace CodeBase.Mobs
             {
                 var projectile = Dictionaries.Projectiles.FirstOrDefault(p => p.Key == collision.gameObject.transform);
                 ModifyHealth(-projectile.Value.WeaponData.Damage);
-                if (Health <= 0f) TakeExp();
+                if (Health <= 0f) TakeScore();
 
                 skinColorTween?.Kill();
                 skinColorTween = skinRenderer.DOColor(Color.red, 0.1f).OnComplete(() => skinRenderer.color = defaultColor);
@@ -87,10 +86,12 @@ namespace CodeBase.Mobs
             newEffect.SetBusyState(true);
         }
 
-        private void TakeExp()
+        private void TakeScore()
         {
-            popUp.SetCurrentData(transform, "100", "yellow");
+            popUp.SetCurrentData(transform, $"{EnemyData.Score}", "yellow");
             popUp.SpawnPopUp();
+
+            playerStorage.ConcretePlayer.ModifyScore(EnemyData.Score);
         }
     }
 }

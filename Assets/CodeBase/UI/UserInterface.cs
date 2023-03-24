@@ -11,28 +11,38 @@ namespace CodeBase.UI
 {
     public class UserInterface : MonoBehaviour
     {
+        #region Variables
         [Header("Storages")]
         [SerializeField] private PlayerStorage playerStorage;
         [SerializeField] private DependencyContainer dependencyContainer;
 
-        [Space]
-        //[SerializeField] private Text _triesText;
-        //[SerializeField] public Slider _XpBar;
+        [Header("UI")]
         [SerializeField] private TextMeshProUGUI healthValue;
         [SerializeField] private TextMeshProUGUI triesValue;
-        [SerializeField] private TextMeshProUGUI scoreValue;
         [SerializeField] private TextMeshProUGUI lvlValue;
-        [SerializeField] private Image loadingFiller;
-        [SerializeField] private Button startBttn;
-        [SerializeField] private Button exitBttn;
-        [SerializeField] private GameObject startScreen;
+        [SerializeField] private TextMeshProUGUI scoreValue;
+
+        [Header("Loading Screen")]
         [SerializeField] private GameObject loadingScreen;
-        [SerializeField] private GameObject confirmationScreen;
-        [SerializeField] private GameObject confirmationWindow;
-        [SerializeField] private Button yesBttn;
-        [SerializeField] private Button noBttn;
+        [SerializeField] private Image loadingFiller;
         [SerializeField] private float loadingDelay;
         [SerializeField] private TextMeshProUGUI loadingText;
+
+        [Header("Game Over Screen")]
+        [SerializeField] private GameObject gameOverScreen;
+        [SerializeField] private TextMeshProUGUI finalScoreValue;
+        [SerializeField] private Button replayBttn;
+        [SerializeField] private Button exitGameBttn;
+
+        [Header("Start Screen")]
+        [SerializeField] private GameObject startScreen;
+        [SerializeField] private GameObject confirmationScreen;
+        [SerializeField] private GameObject confirmationWindow;
+        [SerializeField] private Button startBttn;
+        [SerializeField] private Button exitBttn;
+        [SerializeField] private Button yesBttn;
+        [SerializeField] private Button noBttn;
+
 
         //[SerializeField] private Text _healthAmount;
         //[SerializeField] private TextMeshProUGUI lvlProgress;
@@ -52,29 +62,30 @@ namespace CodeBase.UI
 
         public static Action OnHealthChanged;
         public static Action OnTriesChanged;
+        public static Action OnPlayerLevelChanged;
+        public static Action OnScoreChanged;
         public static Action OnLevelLoaded;
-        //public static Action OnMachineGunBttnPressed;
-
-        //public Animator Warning => _warning;
-
-        //private WeaponController _weaponController;
+        public static Action OnGameOver;
+        public static Action OnGameRestarted;
 
         private Tween loadingTween;
         private Coroutine loadingTextCoroutine;
         private Tween loadingTextTween;
         private Tween confirmationTween;
+        #endregion
 
         private void OnEnable()
         {
-            RefreshTriesInfo();
-            RefreshHealthInfo();
-
             OnHealthChanged += RefreshHealthInfo;
             OnTriesChanged += RefreshTriesInfo;
+            OnScoreChanged += RefreshScoreInfo;
+            OnGameOver += ShowGameOverScreen;
             startBttn.onClick.AddListener(StartButtonPressed);
             exitBttn.onClick.AddListener(ExitButtonPressed);
             yesBttn.onClick.AddListener(YesButtonPressed);
             noBttn.onClick.AddListener(NoButtonPressed);
+            replayBttn.onClick.AddListener(ReplayButtonPressed);
+            exitGameBttn.onClick.AddListener(YesButtonPressed);
 
             startScreen.SetActive(true);
         }
@@ -83,10 +94,14 @@ namespace CodeBase.UI
         {
             OnHealthChanged -= RefreshHealthInfo;
             OnTriesChanged -= RefreshTriesInfo;
+            OnScoreChanged -= RefreshScoreInfo;
+            OnGameOver -= ShowGameOverScreen;
             startBttn.onClick.RemoveListener(StartButtonPressed);
             exitBttn.onClick.RemoveListener(ExitButtonPressed);
             yesBttn.onClick.RemoveListener(YesButtonPressed);
             noBttn.onClick.RemoveListener(NoButtonPressed);
+            replayBttn.onClick.RemoveListener(ReplayButtonPressed);
+            exitGameBttn.onClick.RemoveListener(YesButtonPressed);
         }
 
         private void StartButtonPressed()
@@ -103,6 +118,15 @@ namespace CodeBase.UI
             confirmationTween?.Kill();
             confirmationTween = confirmationWindow.transform.DOScale(new Vector3(1.5f, 1.5f, 1.5f), 0.25f).SetEase(Ease.Linear)
                                                             .OnComplete(() => confirmationWindow.transform.DOScale(Vector3.one, 0.25f).SetEase(Ease.Linear));
+        }
+
+        private void ReplayButtonPressed()
+        {
+            OnGameRestarted?.Invoke();
+
+            gameOverScreen.SetActive(false);
+            Time.timeScale = 1f;
+            Loading();
         }
 
         private void YesButtonPressed() => Application.Quit();
@@ -125,6 +149,10 @@ namespace CodeBase.UI
 
             void StartLevel()
             {
+                RefreshHealthInfo();
+                RefreshTriesInfo();
+                RefreshScoreInfo();
+
                 loadingScreen.SetActive(false);
                 dependencyContainer.TouchController.enabled = true;
                 StopCoroutine(loadingTextCoroutine);
@@ -143,6 +171,13 @@ namespace CodeBase.UI
             }
         }
 
+        private void ShowGameOverScreen()
+        {
+            gameOverScreen.SetActive(true);
+            Time.timeScale = 0f;
+            finalScoreValue.text = $"final score: {Mathf.Round(playerStorage.ConcretePlayer.Score)}";
+        }
+
         //private void MachineGunBttnPressed()
         //{
         //    OnMachineGunBttnPressed?.Invoke();
@@ -155,7 +190,9 @@ namespace CodeBase.UI
 
         private void RefreshHealthInfo() => healthValue.text = $"{Mathf.Round(playerStorage.ConcretePlayer.CurrentHealth)}";
 
-        private void RefreshTriesInfo() => triesValue.text = $"{Mathf.Round(playerStorage.ConcretePlayer.CurrentTries)}";
+        private void RefreshTriesInfo() => triesValue.text = $"{playerStorage.ConcretePlayer.CurrentTries}";
+
+        private void RefreshScoreInfo() => scoreValue.text = $"{Mathf.Round(playerStorage.ConcretePlayer.Score)}";
 
 
         private void Update()
