@@ -103,11 +103,10 @@ namespace CodeBase.Service
 
         private Enemy CreateNewEnemy(SpawnParameters unit)
         {
-            var enemyUnit = enemyStorage.GetEnemyUnitData(unit.Type);
+            var enemies = enemyStorage.GetEnemyUnits(unit.Type);
 
-            Enemy newEnemy = Instantiate(enemyUnit.Prefabs[Random.Range(0, enemyUnit.Prefabs.Count)], dependencyContainer.ParticlePool.EnemyContainer);
+            Enemy newEnemy = Instantiate(enemies[Random.Range(0, enemies.Count)], dependencyContainer.ParticlePool.EnemyContainer);
             unit.EnemiesPool.Add(newEnemy);
-            newEnemy.InitEnemyData();
 
             return newEnemy;
         }
@@ -138,7 +137,7 @@ namespace CodeBase.Service
     [Serializable]
     public class SpawnParameters
     {
-        [field: SerializeField] public EnemyType Type { get; private set; }
+        [field: SerializeField] public ObjectType Type { get; private set; }
         [field: SerializeField, Range(0, 50)] public int SpawnUnitsOnStart { get; private set; }
         [field: SerializeField] public float SpawnCooldown { get; private set; }
         [field: SerializeField] public List<Enemy> EnemiesPool { get; private set; }

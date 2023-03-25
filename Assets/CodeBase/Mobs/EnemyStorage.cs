@@ -8,15 +8,18 @@ namespace CodeBase.Mobs
     [CreateAssetMenu(fileName = "EnemyStorage", menuName = "ScriptableObjects/EnemyStorage")]
     public class EnemyStorage : ScriptableObject
     {
-        [SerializeField] private List<EnemyUnitData> Enemies;
+        [field: SerializeField] public float DamageOnCollision { get; private set; }
 
-        public EnemyUnitData GetEnemyUnitData(EnemyType type)
+        [Space]
+        [SerializeField] private List<ObjectsGroup> ObjectGroups;
+
+        public List<Enemy> GetEnemyUnits(ObjectType enemyClass)
         {
-            foreach (EnemyUnitData unitData in Enemies)
+            foreach (var group in ObjectGroups)
             {
-                if (unitData.Type == type)
+                if (group.Type == enemyClass)
                 {
-                    return unitData;
+                    return group.Objects;
                 }
             }
 
@@ -25,11 +28,9 @@ namespace CodeBase.Mobs
     }
 
     [Serializable]
-    public class EnemyUnitData
+    public class ObjectsGroup
     {
-        [field: SerializeField] public EnemyType Type { get; private set; }
-        [field: SerializeField] public float Health { get; private set; }
-        [field: SerializeField] public float Score { get; private set; }
-        [field: SerializeField] public List<Enemy> Prefabs { get; private set; }
+        [field: SerializeField] public ObjectType Type { get; private set; }
+        [field: SerializeField] public List<Enemy> Objects { get; private set; }
     }
 }

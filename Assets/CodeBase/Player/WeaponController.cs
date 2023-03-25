@@ -1,11 +1,9 @@
-﻿using CodeBase.Mobs;
-using CodeBase.ObjectBased;
+﻿using CodeBase.ObjectBased;
 using CodeBase.Service;
 using CodeBase.Utils;
 using Scripts;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using static CodeBase.Utils.Enums;
 
@@ -15,12 +13,14 @@ namespace CodeBase.Player
     {
         [Header("Storages")]
         [SerializeField] private DependencyContainer dependencyContainer;
-        [SerializeField] private WeaponStorage weaponStorage;
+        //[SerializeField] private WeaponStorage weaponStorage;
 
 
 
 
-        [SerializeField] private WeaponType currentWeapon;
+        //[SerializeField] private WeaponType currentWeapon;
+        [SerializeField] private Projectile blaster;
+        [SerializeField] private float blasterDamage;
 
 
         [SerializeField] private WeaponSettings[] _weaponSettings;
@@ -80,7 +80,7 @@ namespace CodeBase.Player
 
         private void OnEnable()
         {
-            SetCurrentWeapon(WeaponType.Blaster);
+            //SetCurrentWeapon(WeaponType.Blaster);
 
             TouchController.OnStartMoving += StartShooting;
         }
@@ -121,7 +121,7 @@ namespace CodeBase.Player
             while (true)
             {
                 Shoot();
-                yield return new WaitForSeconds(0.15f);
+                yield return new WaitForSeconds(0.1f);
             }
         }
 
@@ -305,7 +305,7 @@ namespace CodeBase.Player
             }
         }
 
-        private void SetCurrentWeapon(WeaponType type) => currentWeapon = type;
+        //private void SetCurrentWeapon(WeaponType type) => currentWeapon = type;
 
         public void KillAllEnemies()
         {
@@ -335,7 +335,7 @@ namespace CodeBase.Player
 
         public Projectile GetFreeProjectile()
         {
-            Projectile freeProjectile = dependencyContainer.ParticlePool.ProjectilesPool.Find(projectile => !projectile.IsBusy && projectile.WeaponType == currentWeapon);
+            Projectile freeProjectile = dependencyContainer.ParticlePool.ProjectilesPool.Find(projectile => !projectile.IsBusy && projectile.WeaponType == blaster.WeaponType);
             if (freeProjectile == null)
                 freeProjectile = CreateNewProjectile();
 
@@ -344,9 +344,10 @@ namespace CodeBase.Player
 
         private Projectile CreateNewProjectile()
         {
-            Projectile newProjectile = Instantiate(weaponStorage.GetPlayerWeapon(currentWeapon).Projectile, dependencyContainer.ParticlePool.ProjectileContainer);
+            Projectile newProjectile = Instantiate(blaster, dependencyContainer.ParticlePool.ProjectileContainer);
             dependencyContainer.ParticlePool.ProjectilesPool.Add(newProjectile);
             Dictionaries.Projectiles.Add(newProjectile.transform, newProjectile);
+            newProjectile.SetDamage(blasterDamage);
 
             return newProjectile;
         }

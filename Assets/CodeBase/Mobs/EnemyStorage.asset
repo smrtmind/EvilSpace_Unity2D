@@ -12,19 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad8e518749bdc524eb8b567de112f9b3, type: 3}
   m_Name: EnemyStorage
   m_EditorClassIdentifier: 
-  Enemies:
-  - <Type>k__BackingField: 1
-    <Health>k__BackingField: 3
-    <Score>k__BackingField: 15
-    <Prefabs>k__BackingField:
+  <DamageOnCollision>k__BackingField: 1
+  ObjectGroups:
+  - <Type>k__BackingField: 0
+    <Objects>k__BackingField:
     - {fileID: 141782021, guid: e5c4032338d22684980cc25580080215, type: 3}
     - {fileID: 141782021, guid: f0a50f8607f47a54a80d99182669befb, type: 3}
     - {fileID: 141782021, guid: 008b8f4e917043c40a7aca61e5156de3, type: 3}
     - {fileID: 141782021, guid: 173442a630c8b5e4582db943c9f48529, type: 3}
-  - <Type>k__BackingField: 2
-    <Health>k__BackingField: 5
-    <Score>k__BackingField: 50
-    <Prefabs>k__BackingField:
+  - <Type>k__BackingField: 1
+    <Objects>k__BackingField:
     - {fileID: 1207392628590953613, guid: 029d6eae32a1b69479da4919fea0e7df, type: 3}
     - {fileID: 1207392628590953613, guid: d94a869f765722c45881416ba78dbeb1, type: 3}
     - {fileID: 1207392628590953613, guid: 1d06b958dcde9964694d7a3742877bef, type: 3}
@@ -34,27 +31,26 @@ MonoBehaviour:
     - {fileID: 1207392628590953613, guid: d4622fe3395c62643a12d5d2f80cf76f, type: 3}
     - {fileID: 1207392628590953613, guid: 9ea4b96df3125aa408e85f2939cff6ec, type: 3}
     - {fileID: 1207392628590953613, guid: b4cb033b2882e464ba007354b65b98ea, type: 3}
-  - <Type>k__BackingField: 3
-    <Health>k__BackingField: 10
-    <Score>k__BackingField: 200
-    <Prefabs>k__BackingField:
+  - <Type>k__BackingField: 2
+    <Objects>k__BackingField:
     - {fileID: 1207392628590953613, guid: 9fbdd5bacd7603448aa08fa451b5b227, type: 3}
     - {fileID: 1207392628590953613, guid: 41a95c19e5786df4ab98ba3f59dc98f7, type: 3}
     - {fileID: 1207392628590953613, guid: 1d0d1ad4dd2e4234bb0b5214105d03f6, type: 3}
     - {fileID: 1207392628590953613, guid: a96423616d6f98141893badd0a357a6a, type: 3}
     - {fileID: 1207392628590953613, guid: 3601a2a8d98d1934db2689b2c6eb0dd4, type: 3}
-  - <Type>k__BackingField: 4
-    <Health>k__BackingField: 15
-    <Score>k__BackingField: 450
-    <Prefabs>k__BackingField:
+  - <Type>k__BackingField: 3
+    <Objects>k__BackingField:
     - {fileID: 1207392628590953613, guid: 18e05f8996146c2488218f2a12dcd7c0, type: 3}
     - {fileID: 1207392628590953613, guid: ae8e372cb6557f344b7b46f08cd270ec, type: 3}
     - {fileID: 1207392628590953613, guid: 805db5702b6586c4eb9ef3448f9a388d, type: 3}
     - {fileID: 1207392628590953613, guid: 9896248963683ec4d9f2f71601be4ea8, type: 3}
     - {fileID: 1207392628590953613, guid: 6b502b79ad42b024ab9381a997c18d04, type: 3}
     - {fileID: 1207392628590953613, guid: ce7af9d3c2425ba4cb9243f992adb229, type: 3}
+  - <Type>k__BackingField: 4
+    <Objects>k__BackingField: []
   - <Type>k__BackingField: 5
-    <Health>k__BackingField: 30
-    <Score>k__BackingField: 1000
-    <Prefabs>k__BackingField:
-    - {fileID: 1207392628590953613, guid: 2290ce13b5247c7418ef6a7c8a682fc5, type: 3}
+    <Objects>k__BackingField: []
+  - <Type>k__BackingField: 6
+    <Objects>k__BackingField: []
+  - <Type>k__BackingField: 7
+    <Objects>k__BackingField: []

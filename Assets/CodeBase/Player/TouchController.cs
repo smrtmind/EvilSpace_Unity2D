@@ -9,10 +9,10 @@ namespace CodeBase.Player
     {
         [Header("Storages")]
         [SerializeField] private DependencyContainer dependencyContainer;
+        [SerializeField] private PlayerStorage playerStorage;
 
         [Header("Player Settings")]
         [SerializeField] private Rigidbody2D rb;
-        [SerializeField] private float movementSpeed = 10f;
         [SerializeField] private PlayerAnimationController playerAnimationController;
 
         public static Action<bool> OnStartMoving;
@@ -35,7 +35,6 @@ namespace CodeBase.Player
         {
             dependencyContainer.TouchController = this;
             CalculateScreenBounds();
-            //enabled = false;
         }
 
         private void Update()
@@ -52,7 +51,7 @@ namespace CodeBase.Player
                 mousePosition.z = 0;
                 direction = (mousePosition - transform.position);
 
-                Vector3 constrainedPosition = transform.position + direction * movementSpeed * Time.deltaTime;
+                Vector3 constrainedPosition = transform.position + direction * playerStorage.ConcretePlayer.MovementSpeed * Time.deltaTime;
                 constrainedPosition.x = Mathf.Clamp(constrainedPosition.x, minX, maxX);
                 constrainedPosition.y = Mathf.Clamp(constrainedPosition.y, minY, maxY);
                 transform.position = constrainedPosition;

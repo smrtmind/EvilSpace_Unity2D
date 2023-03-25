@@ -7,17 +7,41 @@ namespace CodeBase.Utils
             None,
             Blaster,
             MachineGun,
-            EnemyWeapon
+            EnemyA,
+            EnemyB,
+            EnemyC,
+            EnemyD,
+            EnemyE,
+            EnemyF,
+            EnemyG,
+            EnemyH,
+            EnemyI,
+            EnemyJ,
+            EnemyK,
+            EnemyL,
+            EnemyM,
+            EnemyN,
+            EnemyO,
+            EnemyP,
+            EnemyQ,
+            EnemyR,
+            EnemyS,
+            EnemyT,
+            EnemyU,
+            EnemyV,
+            EnemyW
         }
 
-        public enum EnemyType
+        public enum ObjectType
         {
-            None,
             Asteroid,
             SmallShip,
             MediumShip,
             LargeShip,
-            Boss
+            BossShip,
+            Heal,
+            OneUp,
+            PowerUp
         }
 
         public enum MovementState

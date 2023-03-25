@@ -8,10 +8,6 @@ namespace CodeBase.ObjectBased
 {
     public class Projectile : MonoBehaviour, IAmAnimated
     {
-        [Header("Storage")]
-        [SerializeField] private WeaponStorage weaponStorage;
-
-        [Space]
         [SerializeField] private bool isEnemyProjectile;
         [field: SerializeField] public WeaponType WeaponType { get; private set; }
         [SerializeField] private Rigidbody2D rb;
@@ -21,7 +17,7 @@ namespace CodeBase.ObjectBased
         [field: SerializeField] public List<Sprite> Frames { get; private set; }
 
         public bool IsBusy { get; private set; }
-        public WeaponData WeaponData { get; private set; }
+        public float Damage { get; private set; }
 
         private Vector2 screenBoundaries;
         private Coroutine animationCoroutine;
@@ -43,10 +39,7 @@ namespace CodeBase.ObjectBased
             StopCoroutine(animationCoroutine);
         }
 
-        private void Start()
-        {
-            WeaponData = isEnemyProjectile ? weaponStorage.GetEnemyWeapon(WeaponType) : weaponStorage.GetPlayerWeapon(WeaponType);
-        }
+        public void SetDamage(float damage) => Damage = damage;
 
         private IEnumerator StartAnimation()
         {

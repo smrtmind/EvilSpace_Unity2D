@@ -16,25 +16,24 @@ namespace CodeBase.Mobs
         [SerializeField] protected EnemyStorage enemyStorage;
 
         [field: Header("Parent Class Settings")]
-        [field: SerializeField] public EnemyType EnemyType { get; private set; }
         [SerializeField] private ParticleType explosionEffect;
         [SerializeField] private float explosionAdditionalScale;
         [SerializeField] private SpriteRenderer skinRenderer;
         [SerializeField] private PopUp popUp;
-        [field: SerializeField] public float Health { get; private set; }
-        [field: SerializeField] public bool IsBusy { get; private set; }
 
-        public EnemyUnitData EnemyData { get; private set; }
+        [field: Header("Enemy Unit Settings")]
+        [field: SerializeField] public float Health { get; private set; }
+        [field: SerializeField] public float Score { get; private set; }
+        [field: SerializeField] public bool IsBusy { get; private set; }
 
         private Color defaultColor;
         private Tween skinColorTween;
+        private float currentHealth;
 
         private void Start()
         {
             defaultColor = skinRenderer.color;
         }
-
-        public void InitEnemyData() => EnemyData = enemyStorage.GetEnemyUnitData(EnemyType);
 
         public void SetBusyState(bool state)
         {
@@ -42,15 +41,15 @@ namespace CodeBase.Mobs
             gameObject.SetActive(IsBusy);
 
             if (IsBusy)
-                Health = EnemyData.Health;
+                currentHealth = Health;
             else
                 skinRenderer.color = defaultColor;
         }
 
         public void ModifyHealth(float health)
         {
-            Health += health;
-            if (Health <= 0f)
+            currentHealth += health;
+            if (currentHealth <= 0f)
             {
                 SetBusyState(false);
 
@@ -67,8 +66,8 @@ namespace CodeBase.Mobs
             if (collision.gameObject.tag.Equals(Tags.Projectile))
             {
                 var projectile = Dictionaries.Projectiles.FirstOrDefault(p => p.Key == collision.gameObject.transform);
-                ModifyHealth(-projectile.Value.WeaponData.Damage);
-                if (Health <= 0f) TakeScore();
+                ModifyHealth(-projectile.Value.Damage);
+                if (currentHealth <= 0f) TakeScore();
 
                 skinColorTween?.Kill();
                 skinColorTween = skinRenderer.DOColor(Color.red, 0.1f).OnComplete(() => skinRenderer.color = defaultColor);
@@ -88,10 +87,10 @@ namespace CodeBase.Mobs
 
         private void TakeScore()
         {
-            popUp.SetCurrentData(transform, $"{EnemyData.Score}", "yellow");
+            popUp.SetCurrentData(transform, $"{Score}", "yellow");
             popUp.SpawnPopUp();
 
-            playerStorage.ConcretePlayer.ModifyScore(EnemyData.Score);
+            playerStorage.ConcretePlayer.ModifyScore(Score);
         }
     }
 }

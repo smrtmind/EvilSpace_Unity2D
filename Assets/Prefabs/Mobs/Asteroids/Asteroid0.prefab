@@ -51,13 +51,12 @@ MonoBehaviour:
     type: 2}
   playerStorage: {fileID: 11400000, guid: 0e2cce6871d5eb547801ec25880e2198, type: 2}
   enemyStorage: {fileID: 11400000, guid: 0af4be7ae2373814d9ecf424aadbf7bb, type: 2}
-  <EnemyType>k__BackingField: 1
   explosionEffect: 1
-  explosionAdditionalScale: 2
+  explosionAdditionalScale: 3
   skinRenderer: {fileID: 4571541193739075058}
   popUp: {fileID: 2077377512178938478}
   <Health>k__BackingField: 3
-  <Damage>k__BackingField: 0
+  <Score>k__BackingField: 5
   <IsBusy>k__BackingField: 0
   asteroidBody: {fileID: 4773985970382647726}
   minSpeed: 3

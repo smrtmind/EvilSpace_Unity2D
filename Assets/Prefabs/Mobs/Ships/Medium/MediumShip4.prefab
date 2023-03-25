@@ -166,22 +166,21 @@ MonoBehaviour:
     type: 2}
   playerStorage: {fileID: 11400000, guid: 0e2cce6871d5eb547801ec25880e2198, type: 2}
   enemyStorage: {fileID: 11400000, guid: 0af4be7ae2373814d9ecf424aadbf7bb, type: 2}
-  <EnemyType>k__BackingField: 3
   explosionEffect: 3
   explosionAdditionalScale: 1
   skinRenderer: {fileID: 3577628184001162504}
   popUp: {fileID: 8741304508958990111}
-  <Health>k__BackingField: 0
-  <Damage>k__BackingField: 0
+  <Health>k__BackingField: 10
+  <Score>k__BackingField: 140
   <IsBusy>k__BackingField: 0
-  weaponStorage: {fileID: 11400000, guid: e814c13fd8cd88d4098aa7cba97875ce, type: 2}
+  weapon: {fileID: 475721933866399020, guid: 42a1cc189526fec429887493d69f5957, type: 3}
+  shipDamage: 2
   rotationSpeed: 60
   movementSpeed: 6
   stopDistance: 22.5
   shipBody: {fileID: 7183672100055990538}
-  weaponType: 3
   shootingPoint: {fileID: 7209977439784247874}
-  delayBetweenShoots: 1
+  delayBetweenShoots: 3
 --- !u!70 &4672651440076525283
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

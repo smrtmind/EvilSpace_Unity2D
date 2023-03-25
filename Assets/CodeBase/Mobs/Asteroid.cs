@@ -1,5 +1,5 @@
-﻿using CodeBase.Utils;
-using System;
+﻿using CodeBase.Player;
+using CodeBase.Utils;
 using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -8,7 +8,7 @@ namespace CodeBase.Mobs
 {
     public class Asteroid : Enemy
     {
-        [Header("Unit Unique Settings")]
+        [Header("Asteroid Settings")]
         [SerializeField] private Rigidbody2D asteroidBody;
 
         [Space]
@@ -18,8 +18,6 @@ namespace CodeBase.Mobs
         [SerializeField, Range(1f, 50f)] private float maxRotation = 25;
         [SerializeField] private float minScale;
         [SerializeField] private float maxScale;
-
-        public static Action<Vector3> OnPlayerCollision;
 
         private Vector2 screenBoundaries;
         private Coroutine boundsCoroutine;
@@ -77,7 +75,7 @@ namespace CodeBase.Mobs
             if (collision.gameObject.tag.Equals(Tags.Player))
             {
                 ModifyHealth(-Health);
-                OnPlayerCollision?.Invoke(transform.position);
+                PlayerController.OnPlayerCollision?.Invoke(transform.position);
             }
         }
     }

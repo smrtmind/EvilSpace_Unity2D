@@ -3,20 +3,18 @@ using CodeBase.Player;
 using CodeBase.Utils;
 using System.Collections;
 using UnityEngine;
-using static CodeBase.Utils.Enums;
 
 namespace CodeBase.Mobs
 {
     public class ShipAi : Enemy
     {
-        [SerializeField] private WeaponStorage weaponStorage;
-
         [Header("Ship Settings")]
+        [SerializeField] private Projectile weapon;
+        [SerializeField] private float shipDamage;
         [SerializeField] private float rotationSpeed = 100f;
         [SerializeField] private float movementSpeed = 5f;
         [SerializeField] private float stopDistance = 10f;
         [SerializeField] private Rigidbody2D shipBody;
-        [SerializeField] private WeaponType weaponType;
         [SerializeField] private Transform shootingPoint;
         [SerializeField] private float delayBetweenShoots;
 
@@ -36,12 +34,16 @@ namespace CodeBase.Mobs
             transform.rotation = Quaternion.Euler(0f, 0f, 180f);
 
             moveCoroutine = StartCoroutine(StartMove());
+
+            PlayerController.OnPlayerDied += ChangeBehaviour;
         }
 
         private void OnDisable()
         {
             moveCoroutine = null;
             shootingCoroutine = null;
+
+            PlayerController.OnPlayerDied -= ChangeBehaviour;
 
             //GetPlayerDirection();
             //transform.rotation = Quaternion.Euler(0, 0, zAngle);
@@ -58,34 +60,6 @@ namespace CodeBase.Mobs
             Quaternion desiredRotation = Quaternion.Euler(0, 0, zAngle);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, rotationSpeed * Time.deltaTime);
         }
-
-        //public void AddXp(int xp)
-        //{
-        //    _gameSession.ModifyXp(xp);
-        //}
-
-        //private void OnCollisionEnter2D(Collision2D other)
-        //{
-        //    var player = FindObjectOfType<PlayerController>();
-        //    if (player)
-        //    {
-        //        if (!playerStorage.ConcretePlayer.IsDead)
-        //        {
-        //            _cameraShaker.RestoreValues();
-
-        //            var force = transform.position - other.transform.position;
-        //            force.Normalize();
-
-        //            player.GetComponent<Rigidbody2D>().AddForce(-force * 500);
-        //        }
-        //    }
-        //}
-
-        //private void CalculateRotation()
-        //{
-        //    Quaternion desiredRotation = Quaternion.Euler(0, 0, zAngle);
-        //    transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, rotationSpeed * Time.deltaTime);
-        //}
 
         private IEnumerator StartMove()
         {
@@ -131,7 +105,7 @@ namespace CodeBase.Mobs
         }
         private Projectile GetFreeProjectile()
         {
-            Projectile freeProjectile = dependencyContainer.ParticlePool.ProjectilesPool.Find(projectile => !projectile.IsBusy && projectile.WeaponType == weaponType);
+            Projectile freeProjectile = dependencyContainer.ParticlePool.ProjectilesPool.Find(projectile => !projectile.IsBusy && projectile.WeaponType == weapon.WeaponType);
             if (freeProjectile == null)
                 freeProjectile = CreateNewProjectile();
 
@@ -140,11 +114,27 @@ namespace CodeBase.Mobs
 
         private Projectile CreateNewProjectile()
         {
-            Projectile newProjectile = Instantiate(weaponStorage.GetEnemyWeapon(weaponType).Projectile, dependencyContainer.ParticlePool.ProjectileContainer);
+            Projectile newProjectile = Instantiate(weapon, dependencyContainer.ParticlePool.ProjectileContainer);
             dependencyContainer.ParticlePool.ProjectilesPool.Add(newProjectile);
             Dictionaries.Projectiles.Add(newProjectile.transform, newProjectile);
+            newProjectile.SetDamage(shipDamage);
 
             return newProjectile;
+        }
+
+        private void ChangeBehaviour()
+        {
+            ////StopCoroutine(moveCoroutine);
+            //StopCoroutine(shootingCoroutine); 
+            //shootingCoroutine = null;
+        }
+
+        private void OnTriggerStay2D(Collider2D collision)
+        {
+            if (collision.gameObject.tag.Equals(Tags.Player))
+            {
+                PlayerController.OnPlayerCollision?.Invoke(transform.position);
+            }
         }
     }
 }
