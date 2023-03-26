@@ -149,6 +149,7 @@ namespace CodeBase.Player
             playerCollider.enabled = true;
             transform.position = playerStorage.ConcretePlayer.DefaultPlayerPosition;
 
+            playerAnimationController.HideFlame(false);
             playerStorage.ConcretePlayer.RevivePlayer();
         }
 
@@ -168,14 +169,23 @@ namespace CodeBase.Player
 
             if (!isRotating)
             {
+                playerAnimationController.HideFlame(true);
                 isRotating = true;
                 playerCollisionTween?.Kill();
-                playerCollisionTween = transform.DORotate(new Vector3(0f, 0f, 360f), 1f, RotateMode.FastBeyond360).OnComplete(() => isRotating = false);
+                playerCollisionTween = transform.DORotate(new Vector3(0f, 0f, 360f), 1f, RotateMode.FastBeyond360).OnComplete(() => CompleteCollisionEffect());
+            }
+
+            void CompleteCollisionEffect()
+            {
+                playerAnimationController.HideFlame(false);
+                isRotating = false;
             }
         }
 
         private void DestroyPlayer()
         {
+            playerAnimationController.HideFlame(true);
+
             var newEffect = dependencyContainer.ParticlePool.GetFreeObject(explosionEffect);
             newEffect.gameObject.SetActive(false);
             newEffect.transform.position = transform.position;
@@ -193,6 +203,8 @@ namespace CodeBase.Player
             body.SetActive(true);
             playerCollider.enabled = true;
             transform.position = playerStorage.ConcretePlayer.DefaultPlayerPosition;
+
+            playerAnimationController.HideFlame(false);
         }
     }
 }

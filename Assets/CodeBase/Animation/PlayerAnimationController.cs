@@ -90,6 +90,12 @@ namespace CodeBase.Animation
                 }
             }
         }
+
+        public void HideFlame(bool hide)
+        {
+            foreach (Transform flamePivot in starterFlames)
+                flamePivot.DOScale(hide ? Vector3.zero : Vector3.one, scaleFlameDuration);
+        }
     }
 
     [Serializable]
