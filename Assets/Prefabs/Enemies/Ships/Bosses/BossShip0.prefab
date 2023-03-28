@@ -168,7 +168,7 @@ MonoBehaviour:
   explosionAdditionalScale: 15
   skinRenderer: {fileID: 3577628184001162504}
   popUp: {fileID: 8741304508958990111}
-  <Health>k__BackingField: 10
+  <Health>k__BackingField: 100
   <Score>k__BackingField: 1000
   <IsBusy>k__BackingField: 0
   weapon: {fileID: 475721933866399020, guid: 0e7d6c208e99ba8408836306addec7f4, type: 3}

@@ -91,18 +91,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1002696394573669737}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c7a614fffbf02141946a8622e3c1bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _frameRate: 5
-  _onComplete:
-    m_PersistentCalls:
-      m_Calls: []
-  _clips:
-  - _name: 
-    _sprites:
+  spriteRenderer: {fileID: 1002696394573669739}
+  frameRate: 10
+  clips:
+  - <Sprites>k__BackingField:
     - {fileID: 5309788771701705700, guid: 54d2b472b1c2e584dace4fd0c870fda9, type: 3}
     - {fileID: -6676889857868802381, guid: 54d2b472b1c2e584dace4fd0c870fda9, type: 3}
     - {fileID: -2073027374262704469, guid: 54d2b472b1c2e584dace4fd0c870fda9, type: 3}
@@ -153,8 +150,4 @@ MonoBehaviour:
     - {fileID: -5373100602415440663, guid: 54d2b472b1c2e584dace4fd0c870fda9, type: 3}
     - {fileID: -8295067301154778711, guid: 54d2b472b1c2e584dace4fd0c870fda9, type: 3}
     - {fileID: 5047211991057404314, guid: 54d2b472b1c2e584dace4fd0c870fda9, type: 3}
-    _loop: 1
-    _allowNextClip: 0
-    _onComplete:
-      m_PersistentCalls:
-        m_Calls: []
+    <Loop>k__BackingField: 1
