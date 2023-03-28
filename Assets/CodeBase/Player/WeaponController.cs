@@ -32,7 +32,7 @@ namespace CodeBase.Player
         [SerializeField] private int _bombTimer;
         [SerializeField] private int _bombTimerMin;
         [SerializeField] private int _decreaseBombTimerOnPowerUp;
-        [SerializeField] private Cooldown _reloadingSpeed;
+        //[SerializeField] private Cooldown _reloadingSpeed;
 
         [Space]
         [Header("Effects")]
@@ -54,8 +54,8 @@ namespace CodeBase.Player
         private AudioComponent _audio;
 
         private Projectile _weapon;
-        private Cooldown _shootingDelay;
-        private Cooldown _reloadingDelay;
+        //private Cooldown _shootingDelay;
+        //private Cooldown _reloadingDelay;
         private Transform _weaponShootingPoint;
         private int _ammoToReload;
         private int _ammoPerShoot;
@@ -193,48 +193,48 @@ namespace CodeBase.Player
         //    }
         //}
 
-        public void PowerUp()
-        {
-            int _maxOutWeaponCounter = default;
+        //public void PowerUp()
+        //{
+        //    int _maxOutWeaponCounter = default;
 
-            foreach (var weapon in _weaponSettings)
-            {
-                weapon.DefaultAmmo += weapon.AmmoToAddOnPowerUp;
-                if (weapon.DefaultAmmo >= weapon.MaxAmmo)
-                {
-                    weapon.DefaultAmmo = weapon.MaxAmmo;
+        //    foreach (var weapon in _weaponSettings)
+        //    {
+        //        weapon.DefaultAmmo += weapon.AmmoToAddOnPowerUp;
+        //        if (weapon.DefaultAmmo >= weapon.MaxAmmo)
+        //        {
+        //            weapon.DefaultAmmo = weapon.MaxAmmo;
 
-                    _maxOutWeaponCounter++;
-                }
+        //            _maxOutWeaponCounter++;
+        //        }
                     
-                weapon.ShootingDelay.Value += weapon.ShootingDelayOnPowerUp;
-                if (weapon.ShootingDelay.Value <= weapon.ShootingDelayMin)
-                {
-                    weapon.ShootingDelay.Value = weapon.ShootingDelayMin;
+        //        weapon.ShootingDelay.Value += weapon.ShootingDelayOnPowerUp;
+        //        if (weapon.ShootingDelay.Value <= weapon.ShootingDelayMin)
+        //        {
+        //            weapon.ShootingDelay.Value = weapon.ShootingDelayMin;
 
-                    _maxOutWeaponCounter++;
-                }                    
-            }
+        //            _maxOutWeaponCounter++;
+        //        }                    
+        //    }
 
-            _bombTimerDefault += _decreaseBombTimerOnPowerUp;
-            if (_bombTimerDefault <= _bombTimerMin)
-            {
-                _bombTimerDefault = _bombTimerMin;
+        //    _bombTimerDefault += _decreaseBombTimerOnPowerUp;
+        //    if (_bombTimerDefault <= _bombTimerMin)
+        //    {
+        //        _bombTimerDefault = _bombTimerMin;
 
-                _maxOutWeaponCounter++;
-            }
+        //        _maxOutWeaponCounter++;
+        //    }
 
-            //length of array with weapon * 2 (amount of characteristics needed to be max out on each weapon) + 1 (bomb timer, which is not included to weapon array)
-            if (_maxOutWeaponCounter == _weaponSettings.Length * 2 + 1)
-            {
-                _allWeaponMaxOut = true;
-            }
-        }
+        //    //length of array with weapon * 2 (amount of characteristics needed to be max out on each weapon) + 1 (bomb timer, which is not included to weapon array)
+        //    if (_maxOutWeaponCounter == _weaponSettings.Length * 2 + 1)
+        //    {
+        //        _allWeaponMaxOut = true;
+        //    }
+        //}
 
         public void ActivateElectroShield()
         {
             _electroShield.SetActive(true);
-            _electroShield.GetComponent<TimerComponent>().SetTimer(0);
+            //_electroShield.GetComponent<TimerComponent>().SetTimer(0);
         }
 
         private int SetWeaponActive(int type)
@@ -242,8 +242,8 @@ namespace CodeBase.Player
             _ammoPerShoot = _weaponSettings[type].AmmoPerShoot;
             _ammoToReload = _weaponSettings[type].AmmoToReload;
             _weapon = _weaponSettings[type].Weapon;
-            _shootingDelay = _weaponSettings[type].ShootingDelay;
-            _reloadingDelay = _weaponSettings[type].ReloadingDelay;
+            //_shootingDelay = _weaponSettings[type].ShootingDelay;
+            //_reloadingDelay = _weaponSettings[type].ReloadingDelay;
             _weaponShootingPoint = _weaponSettings[type].WeaponShootingPoint;
 
             return type;
@@ -262,17 +262,17 @@ namespace CodeBase.Player
             //_shootingDelay.Reset();
         }
 
-        private void Reload()
-        {
-            if (_reloadingDelay.IsReady)
-            {
-                if (_weaponSettings[_currentWeaponType].Ammo != _weaponSettings[_currentWeaponType].DefaultAmmo)
-                {
-                    _weaponSettings[_currentWeaponType].Ammo += _ammoToReload;
-                    _reloadingDelay.Reset();
-                }
-            }
-        }
+        //private void Reload()
+        //{
+        //    if (_reloadingDelay.IsReady)
+        //    {
+        //        if (_weaponSettings[_currentWeaponType].Ammo != _weaponSettings[_currentWeaponType].DefaultAmmo)
+        //        {
+        //            _weaponSettings[_currentWeaponType].Ammo += _ammoToReload;
+        //            //_reloadingDelay.Reset();
+        //        }
+        //    }
+        //}
 
         public void UseBomb()
         {
@@ -289,21 +289,21 @@ namespace CodeBase.Player
             _bombTimer = _bombTimerDefault;
         }
 
-        private void ReloadBomb()
-        {
-            if (_reloadingSpeed.IsReady)
-            {
-                _bombTimer--;
-                _reloadingSpeed.Reset();
+        //private void ReloadBomb()
+        //{
+        //    if (_reloadingSpeed.IsReady)
+        //    {
+        //        _bombTimer--;
+        //        _reloadingSpeed.Reset();
 
-                if (_bombTimer == 0)
-                {
-                    _audio.Play("bomb reloaded", 0.8f);
+        //        if (_bombTimer == 0)
+        //        {
+        //            _audio.Play("bomb reloaded", 0.8f);
 
-                    _bombIsReady = true;
-                }
-            }
-        }
+        //            _bombIsReady = true;
+        //        }
+        //    }
+        //}
 
         //private void SetCurrentWeapon(WeaponType type) => currentWeapon = type;
 
@@ -363,13 +363,13 @@ namespace CodeBase.Player
         [Space]
         [SerializeField] private int _ammo;
         [SerializeField] private int _maxAmmo;
-        [SerializeField] private Cooldown _reloadingDelay;
+        //[SerializeField] private Cooldown _reloadingDelay;
         [SerializeField] private int _ammoToReload;
         [SerializeField] private int _ammoPerShoot;
         [SerializeField] private int _ammoToAddOnPowerUp;
 
         [Space]
-        [SerializeField] private Cooldown _shootingDelay;
+        //[SerializeField] private Cooldown _shootingDelay;
         [SerializeField] private float _shootingDelayOnPowerUp;
         [SerializeField] private float _shootingDelayMin;
 
@@ -385,11 +385,11 @@ namespace CodeBase.Player
 
         public int MaxAmmo => _maxAmmo;
         public int DefaultAmmo { get; set; }
-        public Cooldown ReloadingDelay => _reloadingDelay;
+        //public Cooldown ReloadingDelay => _reloadingDelay;
         public int AmmoToReload => _ammoToReload;
         public int AmmoPerShoot => _ammoPerShoot;
         public int AmmoToAddOnPowerUp => _ammoToAddOnPowerUp;
-        public Cooldown ShootingDelay => _shootingDelay;
+        //public Cooldown ShootingDelay => _shootingDelay;
         public float ShootingDelayOnPowerUp => _shootingDelayOnPowerUp;
         public float ShootingDelayMin => _shootingDelayMin;
     }

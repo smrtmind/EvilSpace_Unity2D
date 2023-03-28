@@ -11,7 +11,7 @@ namespace CodeBase.Service
         [SerializeField] private PlayerStorage playerStorage;
 
         [SerializeField] private int _tries;
-        [SerializeField] private TimerComponent _timers;
+        //[SerializeField] private TimerComponent _timers;
 
         [Space]
         [SerializeField] private float _minEnemySpawnCooldown;
@@ -85,7 +85,7 @@ namespace CodeBase.Service
                 _player = FindObjectOfType<PlayerController>();
 
             _weaponController.Shield.SetActive(true);
-            _weaponController.Shield.GetComponent<TimerComponent>().SetTimer(0);
+            //_weaponController.Shield.GetComponent<TimerComponent>().SetTimer(0);
             //_player._levelUpEffect.Spawn();
 
             _playerLvl++;
@@ -96,7 +96,7 @@ namespace CodeBase.Service
                 _weaponController.KillAllEnemies();
                 //DisableEnemySpawners();
                 //_hud.Warning.SetTrigger(WarningKey);
-                _timers.SetTimerByName("spawn boss");
+                //_timers.SetTimerByName("spawn boss");
             }
 
             //_player.RemoveVisualDamage();
@@ -154,7 +154,7 @@ namespace CodeBase.Service
 
         public void RestoreEnemies()
         {
-            _timers.SetTimerByName("enemy spawners");
+            //_timers.SetTimerByName("enemy spawners");
 
             _audio.Stop();
             _audio.PlayMainSource();
