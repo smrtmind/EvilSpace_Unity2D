@@ -2,12 +2,12 @@ using CodeBase.Effects;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static CodeBase.Utils.Enums;
 
 namespace CodeBase.ObjectBased
 {
     public class Effect : ParticleObject, IAmAnimated
     {
-        [field: SerializeField] public bool Loop { get; private set; }
         [field: SerializeField] public SpriteRenderer Renderer { get; private set; }
         [field: SerializeField] public float DelayBetweenFrames { get; private set; }
         [field: SerializeField] public List<Sprite> Frames { get; private set; }
@@ -26,7 +26,7 @@ namespace CodeBase.ObjectBased
 
         private IEnumerator StartAnimation()
         {
-            if (Loop)
+            if (Type == ParticleType.Endless)
             {
                 while (true)
                 {

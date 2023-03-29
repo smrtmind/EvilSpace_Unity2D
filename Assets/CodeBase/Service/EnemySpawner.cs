@@ -107,6 +107,7 @@ namespace CodeBase.Service
 
             Enemy newEnemy = Instantiate(enemies[Random.Range(0, enemies.Count)], dependencyContainer.ParticlePool.EnemyContainer);
             unit.EnemiesPool.Add(newEnemy);
+            Dictionaries.Enemies.Add(newEnemy.transform, newEnemy);
 
             return newEnemy;
         }

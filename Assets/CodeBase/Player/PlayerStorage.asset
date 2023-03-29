@@ -15,12 +15,15 @@ MonoBehaviour:
   playerPrefsSaveString: _playerSave
   playerDataStorage: {fileID: 11400000, guid: 4fa620f6c43b76a4a825cea77b6fb8b8, type: 2}
   concretePlayer:
-    <Score>k__BackingField: 0
     <IsDead>k__BackingField: 0
-    <DefaultPlayerPosition>k__BackingField: {x: 0, y: -17, z: 0}
-    <Lvl>k__BackingField: 1
-    <MaxHealth>k__BackingField: 5
-    <CurrentHealth>k__BackingField: 5
+    <Health>k__BackingField: 15
+    <CurrentHealth>k__BackingField: 3
     <Tries>k__BackingField: 3
     <CurrentTries>k__BackingField: 3
-    <MovementSpeed>k__BackingField: 9
+    <Lvl>k__BackingField: 1
+    <Score>k__BackingField: 185
+    <MovementSpeed>k__BackingField: 8
+    <DefaultPlayerPosition>k__BackingField: {x: 0, y: -17, z: 0}
+    <DefaultHealth>k__BackingField: 15
+    <DefaultTries>k__BackingField: 3
+    <DefaultMovementSpeed>k__BackingField: 8

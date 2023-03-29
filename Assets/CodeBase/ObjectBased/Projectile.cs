@@ -8,10 +8,10 @@ namespace CodeBase.ObjectBased
 {
     public class Projectile : MonoBehaviour, IAmAnimated
     {
-        [SerializeField] private bool isEnemyProjectile;
         [field: SerializeField] public WeaponType WeaponType { get; private set; }
         [SerializeField] private Rigidbody2D rb;
         [SerializeField] private float speed = 5f;
+
         [field: SerializeField] public SpriteRenderer Renderer { get; private set; }
         [field: SerializeField] public float DelayBetweenFrames { get; private set; }
         [field: SerializeField] public List<Sprite> Frames { get; private set; }
@@ -52,6 +52,7 @@ namespace CodeBase.ObjectBased
                 }
             }
         }
+
         private IEnumerator CheckForScreenBounds()
         {
             while (true)
@@ -80,9 +81,9 @@ namespace CodeBase.ObjectBased
             rb.velocity = velocity + direction * speed;
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        protected virtual void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.tag.Equals(isEnemyProjectile ? Tags.Player : Tags.Enemy))
+            if (collision.gameObject.tag.Equals(Tags.Enemy))
             {
                 SetBusyState(false);
             }

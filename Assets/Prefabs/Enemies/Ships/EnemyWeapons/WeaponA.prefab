@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8543966997462428724}
-  - component: {fileID: 475721933866399020}
+  - component: {fileID: 5071306960603665447}
   - component: {fileID: 1552845671927141381}
   - component: {fileID: 5031865173122266621}
   m_Layer: 9
@@ -117,7 +117,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &475721933866399020
+--- !u!114 &5071306960603665447
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,14 +126,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6764601004572402636}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ea0181f3a976974e92ebd8634138912, type: 3}
+  m_Script: {fileID: 11500000, guid: 6eff3032286bf744c856602ba19920d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnemyProjectile: 1
   <WeaponType>k__BackingField: 3
-  <Damage>k__BackingField: 2
   rb: {fileID: 5031865173122266621}
-  speed: 8
+  speed: 5
   <Renderer>k__BackingField: {fileID: 7144421180963429163}
   <DelayBetweenFrames>k__BackingField: 0.15
   <Frames>k__BackingField:

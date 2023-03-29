@@ -9,6 +9,8 @@ namespace CodeBase.Animation
     public class PlayerAnimationController : MonoBehaviour
     {
         [SerializeField] private Animator animator;
+        [SerializeField] private SpriteRenderer skinRenderer;
+
         [field: SerializeField] public float TurnDetectIndent { get; private set; } = 0.5f;
 
         [Header("Flame Settings")]
@@ -17,15 +19,26 @@ namespace CodeBase.Animation
         [SerializeField] private float maxFlameScale;
         [SerializeField] private float averageFlameScale;
         [SerializeField] private List<Transform> starterFlames;
+        [SerializeField] private List<SpriteRenderer> starterFlamesSkins;
+        [SerializeField] private Transform criticalDamageFlame;
+        [SerializeField] private Vector3 criticalDamageScale;
         [SerializeField] private List<StarterFlameParameters> flameParameters;
 
         private static readonly int MoveKey = Animator.StringToHash("direction");
 
+        private Color defaultColor;
         private MovementState previousState;
         private bool flameIsScaling;
         private float currentScaleValue;
         private float previousScaleValue;
         private Vector3 newFlameScale;
+        private Sequence criticalBehaviour;
+        private Tween criticalDamageFlameTween;
+
+        private void Start()
+        {
+            defaultColor = skinRenderer.color;
+        }
 
         public void UpdateAnimation(float directionX)
         {
@@ -49,20 +62,22 @@ namespace CodeBase.Animation
             if (state != previousState)
             {
                 previousState = state;
-                var currentPoints = GetCurrentFlamePoints(state);
+                var currentPoints = GetCurrentFlameParameters(state);
 
                 for (int i = 0; i < starterFlames.Count; i++)
-                    starterFlames[i].position = currentPoints[i].position;
+                    starterFlames[i].position = currentPoints.StarterFlamesPoints[i].position;
+
+                criticalDamageFlame.position = currentPoints.DamageFlamePoint.position;
             }
         }
 
-        private List<Transform> GetCurrentFlamePoints(MovementState state)
+        private StarterFlameParameters GetCurrentFlameParameters(MovementState state)
         {
             foreach (var points in flameParameters)
             {
                 if (points.MovementState == state)
                 {
-                    return points.StarterFlamesPoints;
+                    return points;
                 }
             }
 
@@ -91,10 +106,36 @@ namespace CodeBase.Animation
             }
         }
 
-        public void HideFlame(bool hide)
+        public void EnableCriticalDamageVisual(bool enable)
         {
-            foreach (Transform flamePivot in starterFlames)
-                flamePivot.DOScale(hide ? Vector3.zero : Vector3.one, scaleFlameDuration);
+            if (enable && !criticalDamageFlame.gameObject.activeSelf)
+            {
+                criticalDamageFlame.localScale = Vector3.zero;
+                criticalDamageFlame.gameObject.SetActive(true);
+
+                criticalDamageFlameTween?.Kill();
+                criticalDamageFlameTween = criticalDamageFlame.DOScale(criticalDamageScale, 2f);
+
+                criticalBehaviour = DOTween.Sequence().SetAutoKill(true);
+                criticalBehaviour.Append(skinRenderer.DOColor(Color.red, 0.1f))
+                                 .Append(skinRenderer.DOColor(defaultColor, 0.1f))
+                                 .SetLoops(-1);
+            }
+            else if (!enable)
+            {
+                criticalDamageFlame.gameObject.SetActive(false);
+
+                if (criticalBehaviour != null)
+                    criticalBehaviour.Kill();
+
+                skinRenderer.color = defaultColor;
+            }
+        }
+
+        public void EnableStarterFlames(bool enable)
+        {
+            foreach (var flameSkin in starterFlamesSkins)
+                flameSkin.enabled = enable;
         }
     }
 
@@ -103,5 +144,6 @@ namespace CodeBase.Animation
     {
         [field: SerializeField] public MovementState MovementState { get; private set; }
         [field: SerializeField] public List<Transform> StarterFlamesPoints { get; private set; }
+        [field: SerializeField] public Transform DamageFlamePoint { get; private set; }
     }
 }

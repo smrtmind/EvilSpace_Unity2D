@@ -372,10 +372,10 @@ RectTransform:
   m_Father: {fileID: 6670752570527009233}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 495.53796, y: -270}
-  m_SizeDelta: {x: 670.88, y: 180}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &796432921011535957
 CanvasRenderer:
@@ -5008,12 +5008,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStorage: {fileID: 11400000, guid: 0e2cce6871d5eb547801ec25880e2198, type: 2}
-  dependencyContainer: {fileID: 11400000, guid: 0971863339e52fc46bfc0f1a78196b51,
-    type: 2}
   healthValue: {fileID: 5927565018595446870}
   triesValue: {fileID: 5313357832873452674}
   lvlValue: {fileID: 5030215304068549142}
   scoreValue: {fileID: 6234204775570328121}
+  scoreValueScaleOnChange: {x: 0.35, y: 0.35, z: 1}
   loadingScreen: {fileID: 7895791644029447332}
   loadingFiller: {fileID: 1055112452447870379}
   loadingDelay: 2
@@ -6185,10 +6184,10 @@ RectTransform:
   m_Father: {fileID: 6670752570527009233}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 495.53796, y: -90}
-  m_SizeDelta: {x: 444.93, y: 180}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1392431073796242023
 CanvasRenderer:

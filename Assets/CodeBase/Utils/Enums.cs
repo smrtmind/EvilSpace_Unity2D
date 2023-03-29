@@ -53,7 +53,7 @@ namespace CodeBase.Utils
 
         public enum ParticleType
         {
-            None,
+            Endless,
             AsteroidExplosion,
             SmallShipExplosion,
             MediumShipExplosion,

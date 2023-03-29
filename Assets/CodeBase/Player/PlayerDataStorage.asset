@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c10d9a59b8edb40ad7dcc4521f473e, type: 3}
   m_Name: PlayerDataStorage
   m_EditorClassIdentifier: 
-  <DefaultHealth>k__BackingField: 5
+  <DefaultHealth>k__BackingField: 100
   <DefaultTries>k__BackingField: 3
   <DefaultLvl>k__BackingField: 1
   <DefaultScore>k__BackingField: 0

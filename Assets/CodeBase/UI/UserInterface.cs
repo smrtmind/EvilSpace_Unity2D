@@ -1,5 +1,4 @@
 ﻿using CodeBase.Player;
-using CodeBase.Utils;
 using DG.Tweening;
 using System;
 using System.Collections;
@@ -14,13 +13,15 @@ namespace CodeBase.UI
         #region Variables
         [Header("Storages")]
         [SerializeField] private PlayerStorage playerStorage;
-        [SerializeField] private DependencyContainer dependencyContainer;
 
         [Header("UI")]
         [SerializeField] private TextMeshProUGUI healthValue;
         [SerializeField] private TextMeshProUGUI triesValue;
         [SerializeField] private TextMeshProUGUI lvlValue;
+
+        [Space]
         [SerializeField] private TextMeshProUGUI scoreValue;
+        [SerializeField] private Vector3 scoreValueScaleOnChange;
 
         [Header("Loading Screen")]
         [SerializeField] private GameObject loadingScreen;
@@ -55,6 +56,7 @@ namespace CodeBase.UI
         private Coroutine loadingTextCoroutine;
         private Tween loadingTextTween;
         private Tween confirmationTween;
+        private bool scoreIsScaling;
         #endregion
 
         private void OnEnable()
@@ -137,7 +139,6 @@ namespace CodeBase.UI
                 RefreshScoreInfo();
 
                 loadingScreen.SetActive(false);
-                dependencyContainer.TouchController.enabled = true;
                 StopCoroutine(loadingTextCoroutine);
                 OnLevelLoaded?.Invoke();
             }
@@ -165,6 +166,16 @@ namespace CodeBase.UI
 
         private void RefreshTriesInfo() => triesValue.text = $"{playerStorage.ConcretePlayer.CurrentTries}";
 
-        private void RefreshScoreInfo() => scoreValue.text = $"{Mathf.Round(playerStorage.ConcretePlayer.Score)}";
+        private void RefreshScoreInfo()
+        {
+            scoreValue.text = $"{Mathf.Round(playerStorage.ConcretePlayer.Score)}";
+
+            if (!scoreIsScaling)
+            {
+                scoreIsScaling = true;
+                scoreValue.transform.DOPunchScale(scoreValueScaleOnChange, 0.25f)
+                                    .OnComplete(() => scoreIsScaling = false);
+            }
+        }
     }
 }

@@ -103,7 +103,7 @@ namespace CodeBase.Player
             _playerBody = GetComponent<Rigidbody2D>();
         }
 
-        private void StartShooting(bool isMoving)
+        public void StartShooting(bool isMoving)
         {
             if (isMoving)
             {

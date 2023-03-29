@@ -24,9 +24,12 @@ namespace CodeBase.Player
 
         [Header("Shields")]
         [SerializeField] private Shield electroShield;
-        [SerializeField] private Shield safeZoneShield;
+        [field: SerializeField] public float ElectroShieldActiveDuration { get; private set; }
 
+        [Header("Components")]
         [SerializeField] private PlayerAnimationController playerAnimationController;
+        [SerializeField] private TouchController touchController;
+        [SerializeField] private WeaponController weaponController;
 
         [Space]
         [SerializeField] private PopUp popUp;
@@ -42,18 +45,18 @@ namespace CodeBase.Player
         [SerializeField] private GameObject _safeZone;
         [SerializeField] private GameObject _safeZoneEffect;
         [SerializeField] private float forceOnEnemyCollision;
+        [SerializeField] private float minPercentOfHealthToBlink;
         [SerializeField] private List<string> tagsToReact;
 
         public static Action OnPlayerDied;
         public static Action<Vector3> OnPlayerCollision;
 
         private AudioComponent _audio;
-        private Tween skinColorTween;
         private Color defaultColor;
         private Coroutine newLifeCoroutine;
         private Coroutine gameOverCoroutine;
-        private Tween playerCollisionTween;
-        private bool isRotating;
+        private Sequence playerCollisionBehaviour;
+        private bool isChangedColor;
 
         private void Awake()
         {
@@ -64,7 +67,7 @@ namespace CodeBase.Player
         {
             defaultColor = skinRenderer.color;
 
-            UserInterface.OnLevelLoaded += InitPlayer;
+            UserInterface.OnLevelLoaded += EnableTouchControls;
             UserInterface.OnGameRestarted += StartNewGame;
             OnPlayerCollision += ForceBackPlayer;
 
@@ -72,64 +75,63 @@ namespace CodeBase.Player
 
         private void OnDisable()
         {
-            UserInterface.OnLevelLoaded -= InitPlayer;
+            UserInterface.OnLevelLoaded -= EnableTouchControls;
             UserInterface.OnGameRestarted -= StartNewGame;
             OnPlayerCollision -= ForceBackPlayer;
         }
 
-        private void InitPlayer()
+        private void EnableTouchControls() => touchController.enabled = true;
+
+        private void Start()
         {
             transform.position = playerStorage.ConcretePlayer.DefaultPlayerPosition;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            foreach (string tag in tagsToReact)
+            if (collision.gameObject.tag.Equals(Tags.EnemyProjectile) && !electroShield.IsActive)
             {
-                if (collision.gameObject.tag.Equals(tag))
-                {
-                    var damage = GetCurrentEnemyDamage(collision);
-                    playerStorage.ConcretePlayer.ModifyHealth(-damage);
+                var projectile = Dictionaries.Projectiles.FirstOrDefault(p => p.Key == collision.gameObject.transform);
+                playerStorage.ConcretePlayer.ModifyHealth(-projectile.Value.Damage);
 
-                    popUp.SetCurrentData(transform, $"-{damage}", "red");
-                    popUp.SpawnPopUp();
-
-                    skinColorTween?.Kill();
-                    skinColorTween = skinRenderer.DOColor(Color.red, 0.1f).OnComplete(() => skinRenderer.color = defaultColor);
-
-                    SpawnSpark(collision.gameObject.transform.position);
-                    CameraShaker.OnShakeCamera?.Invoke();
-
-                    if (playerStorage.ConcretePlayer.IsDead)
-                    {
-                        if (playerStorage.ConcretePlayer.CurrentTries > 0)
-                            newLifeCoroutine = StartCoroutine(StartNewLife());
-                        else
-                            gameOverCoroutine = StartCoroutine(GameOver());
-
-                        OnPlayerDied?.Invoke();
-                    }
-                }
+                SpawnSpark(collision.gameObject.transform.position);
+                CheckBehaviourDueToDamageTaken();
             }
         }
 
-        private float GetCurrentEnemyDamage(Collider2D collision)
+        private void CheckBehaviourDueToDamageTaken()
         {
-            float damage = 0f;
-
-            switch (collision.gameObject.tag)
+            if (!isChangedColor)
             {
-                case "EnemyProjectile":
-                    var projectile = Dictionaries.Projectiles.FirstOrDefault(p => p.Key == collision.gameObject.transform);                   
-                    damage = projectile.Value.Damage;
-                    break;
+                isChangedColor = true;
 
-                case "Enemy":
-                    damage = enemyStorage.DamageOnCollision;
-                    break;
+                playerCollisionBehaviour = DOTween.Sequence().SetAutoKill(true);
+                playerCollisionBehaviour.Append(skinRenderer.DOColor(Color.red, 0.1f))
+                                        .Append(skinRenderer.DOColor(defaultColor, 0.1f))
+                                        .OnComplete(() => isChangedColor = false);
             }
 
-            return damage;
+            CameraShaker.OnShakeCamera?.Invoke();
+
+            var minHealthEdge = (playerStorage.ConcretePlayer.Health / 100f) * minPercentOfHealthToBlink;
+            if (playerStorage.ConcretePlayer.CurrentHealth <= minHealthEdge && playerStorage.ConcretePlayer.CurrentHealth > 0f)
+            {
+                playerAnimationController.EnableCriticalDamageVisual(true);
+
+                popUp.SetCurrentData(transform, "danger", "red");
+                popUp.SpawnPopUp();
+            }
+
+            if (playerStorage.ConcretePlayer.IsDead)
+            {
+                DestroyPlayer();
+                OnPlayerDied?.Invoke();
+
+                if (playerStorage.ConcretePlayer.CurrentTries > 0 && newLifeCoroutine == null)
+                    newLifeCoroutine = StartCoroutine(StartNewLife());             
+                else if (playerStorage.ConcretePlayer.CurrentTries <= 0 && gameOverCoroutine == null)
+                    gameOverCoroutine = StartCoroutine(GameOver());             
+            }
         }
 
         private IEnumerator GameOver()
@@ -137,6 +139,7 @@ namespace CodeBase.Player
             DestroyPlayer();
             yield return new WaitForSeconds(3f);
             UserInterface.OnGameOver?.Invoke();
+            gameOverCoroutine = null;
         }
 
         private IEnumerator StartNewLife()
@@ -145,12 +148,19 @@ namespace CodeBase.Player
 
             yield return new WaitForSeconds(3f);
 
+            transform.position = playerStorage.ConcretePlayer.DefaultPlayerPosition;
+            electroShield.gameObject.SetActive(true);
+
+            yield return new WaitForSeconds(0.5f);
+
+            touchController.enabled = true;
+
             body.SetActive(true);
             playerCollider.enabled = true;
-            transform.position = playerStorage.ConcretePlayer.DefaultPlayerPosition;
 
-            playerAnimationController.HideFlame(false);
+            playerAnimationController.EnableStarterFlames(true);
             playerStorage.ConcretePlayer.RevivePlayer();
+            newLifeCoroutine = null;
         }
 
         private void SpawnSpark(Vector3 projectilePosition)
@@ -165,26 +175,18 @@ namespace CodeBase.Player
         private void ForceBackPlayer(Vector3 asteroidPosition)
         {
             var force = asteroidPosition - transform.position;
-            playerBody.AddForce(-force.normalized * forceOnEnemyCollision);
+            playerBody.AddForce(-force.normalized * (forceOnEnemyCollision * 100f));
+            playerStorage.ConcretePlayer.ModifyHealth(-enemyStorage.DamageOnCollision);
 
-            if (!isRotating)
-            {
-                playerAnimationController.HideFlame(true);
-                isRotating = true;
-                playerCollisionTween?.Kill();
-                playerCollisionTween = transform.DORotate(new Vector3(0f, 0f, 360f), 1f, RotateMode.FastBeyond360).OnComplete(() => CompleteCollisionEffect());
-            }
-
-            void CompleteCollisionEffect()
-            {
-                playerAnimationController.HideFlame(false);
-                isRotating = false;
-            }
+            CheckBehaviourDueToDamageTaken();
         }
 
         private void DestroyPlayer()
         {
-            playerAnimationController.HideFlame(true);
+            touchController.enabled = false;
+            weaponController.StartShooting(false);
+            playerAnimationController.EnableCriticalDamageVisual(false);
+            playerAnimationController.EnableStarterFlames(false);
 
             var newEffect = dependencyContainer.ParticlePool.GetFreeObject(explosionEffect);
             newEffect.gameObject.SetActive(false);
@@ -199,12 +201,11 @@ namespace CodeBase.Player
         private void StartNewGame()
         {
             playerStorage.ConcretePlayer.StartNewGame();
+            playerAnimationController.EnableStarterFlames(true);
 
             body.SetActive(true);
             playerCollider.enabled = true;
             transform.position = playerStorage.ConcretePlayer.DefaultPlayerPosition;
-
-            playerAnimationController.HideFlame(false);
         }
     }
 }

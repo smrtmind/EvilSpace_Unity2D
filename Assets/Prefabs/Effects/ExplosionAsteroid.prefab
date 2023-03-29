@@ -46,7 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Type>k__BackingField: 1
   <IsBusy>k__BackingField: 1
-  <Loop>k__BackingField: 0
   <Renderer>k__BackingField: {fileID: 153468222957032547}
   <DelayBetweenFrames>k__BackingField: 0.1
   <Frames>k__BackingField:
