@@ -29,7 +29,36 @@ namespace CodeBase.Utils
             EnemyT,
             EnemyU,
             EnemyV,
-            EnemyW
+            EnemyW,
+            EnemyX,
+            EnemyY,
+            EnemyZ,
+            EnemyAA,
+            EnemyBB,
+            EnemyCC,
+            EnemyDD,
+            EnemyEE,
+            EnemyFF,
+            EnemyGG,
+            EnemyHH,
+            EnemyII,
+            EnemyJJ,
+            EnemyKK,
+            EnemyLL,
+            EnemyMM,
+            EnemyNN,
+            EnemyOO,
+            EnemyPP,
+            EnemyQQ,
+            EnemyRR,
+            EnemySS,
+            EnemyTT,
+            EnemyUU,
+            EnemyVV,
+            EnemyWW,
+            EnemyXX,
+            EnemyYY,
+            EnemyZZ
         }
 
         public enum ObjectType
@@ -60,7 +89,8 @@ namespace CodeBase.Utils
             LargeShipExplosion,
             BossExplosion,
             SparksHit,
-            PlayerExplosion
+            PlayerExplosion,
+            RocketExplosion
         }
     }
 }

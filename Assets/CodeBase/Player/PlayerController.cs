@@ -8,7 +8,6 @@ using DG.Tweening;
 using Scripts;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using static CodeBase.Utils.Enums;
@@ -39,14 +38,8 @@ namespace CodeBase.Player
         [SerializeField] private float explosionAdditionalScale;
         [SerializeField] private Rigidbody2D playerBody;
         [SerializeField] private SpriteRenderer skinRenderer;
-        [SerializeField] private GameObject _leftWingDamage;
-        [SerializeField] private GameObject _rightWingDamage;
-        [SerializeField] private GameObject _bodyDamage;
-        [SerializeField] private GameObject _safeZone;
-        [SerializeField] private GameObject _safeZoneEffect;
         [SerializeField] private float forceOnEnemyCollision;
         [SerializeField] private float minPercentOfHealthToBlink;
-        [SerializeField] private List<string> tagsToReact;
 
         public static Action OnPlayerDied;
         public static Action<Vector3> OnPlayerCollision;

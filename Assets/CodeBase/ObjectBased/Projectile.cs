@@ -10,7 +10,7 @@ namespace CodeBase.ObjectBased
     {
         [field: SerializeField] public WeaponType WeaponType { get; private set; }
         [SerializeField] private Rigidbody2D rb;
-        [SerializeField] private float speed = 5f;
+        [SerializeField] protected float speed = 5f;
 
         [field: SerializeField] public SpriteRenderer Renderer { get; private set; }
         [field: SerializeField] public float DelayBetweenFrames { get; private set; }

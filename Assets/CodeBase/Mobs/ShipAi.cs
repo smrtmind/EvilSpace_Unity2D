@@ -103,6 +103,7 @@ namespace CodeBase.Mobs
                 yield return new WaitForSeconds(delayBetweenShoots);
             }
         }
+
         private Projectile GetFreeProjectile()
         {
             Projectile freeProjectile = dependencyContainer.ParticlePool.ProjectilesPool.Find(projectile => !projectile.IsBusy && projectile.WeaponType == weapon.WeaponType);

@@ -3,41 +3,32 @@ guid: 66e20132089f77b499723bf09d217331
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7749793947356104391
-    second: rockets_0
+      213: 473274070761331931
+    second: Rockets_0
   - first:
-      213: 2907136375816992923
-    second: rockets_1
+      213: -5133557913223314321
+    second: Rockets_1
   - first:
-      213: 2588566620476108522
-    second: rockets_2
+      213: -2614319498392067418
+    second: Rockets_2
   - first:
-      213: -830622866084125905
-    second: rockets_3
+      213: -60293860126843675
+    second: Rockets_3
   - first:
-      213: -2857207164409786213
-    second: rockets_4
+      213: 1820725727740804239
+    second: Rockets_4
   - first:
-      213: 735079408492014916
-    second: rockets_5
+      213: -4880807394984081213
+    second: Rockets_5
   - first:
-      213: 6442534096696605146
-    second: rockets_6
+      213: 4854019298518098847
+    second: Rockets_6
   - first:
-      213: -7889616032537696500
-    second: rockets_7
+      213: -7631984775992892916
+    second: Rockets_7
   - first:
-      213: -3964866737021712163
-    second: rockets_8
-  - first:
-      213: 498100347284895839
-    second: rockets_9
-  - first:
-      213: -6081917618411335086
-    second: rockets_10
-  - first:
-      213: 416401028856165176
-    second: rockets_11
+      213: -3557884206115973558
+    second: Rockets_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -59,6 +50,7 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -68,8 +60,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -90,9 +82,12 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -119,17 +114,41 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rockets_0
+      name: Rockets_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 148
-        width: 60
-        height: 74
+        y: 80
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +156,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c602a2f88ccc8b60800000000000000
-      internalID: 7749793947356104391
+      spriteID: bdcd1258248619600800000000000000
+      internalID: 473274070761331931
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rockets_1
+      name: Rockets_1
       rect:
         serializedVersion: 2
-        x: 60
-        y: 148
-        width: 60
-        height: 74
+        x: 40
+        y: 80
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +177,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9830329129385820800000000000000
-      internalID: 2907136375816992923
+      spriteID: f64cd64d640f1c8b0800000000000000
+      internalID: -5133557913223314321
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rockets_2
+      name: Rockets_2
       rect:
         serializedVersion: 2
-        x: 120
-        y: 148
-        width: 60
-        height: 74
+        x: 80
+        y: 80
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,41 +198,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aee69e260af6ce320800000000000000
-      internalID: 2588566620476108522
+      spriteID: 6a2a6f8744218bbd0800000000000000
+      internalID: -2614319498392067418
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rockets_3
-      rect:
-        serializedVersion: 2
-        x: 180
-        y: 148
-        width: 60
-        height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f232db477e80974f0800000000000000
-      internalID: -830622866084125905
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rockets_4
+      name: Rockets_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 74
-        width: 60
-        height: 74
+        y: 40
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +219,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9057abd8392958d0800000000000000
-      internalID: -2857207164409786213
+      spriteID: 5ec900dbd0bc92ff0800000000000000
+      internalID: -60293860126843675
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rockets_5
+      name: Rockets_4
       rect:
         serializedVersion: 2
-        x: 60
-        y: 74
-        width: 60
-        height: 74
+        x: 40
+        y: 40
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +240,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44deed0d3d6833a00800000000000000
-      internalID: 735079408492014916
+      spriteID: f8cb76b1764844910800000000000000
+      internalID: 1820725727740804239
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rockets_6
+      name: Rockets_5
       rect:
         serializedVersion: 2
-        x: 120
-        y: 74
-        width: 60
-        height: 74
+        x: 80
+        y: 40
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,41 +261,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad971fe70aa786950800000000000000
-      internalID: 6442534096696605146
+      spriteID: 3c8cfdca883e34cb0800000000000000
+      internalID: -4880807394984081213
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rockets_7
-      rect:
-        serializedVersion: 2
-        x: 180
-        y: 74
-        width: 60
-        height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c072d56f404728290800000000000000
-      internalID: -7889616032537696500
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rockets_8
+      name: Rockets_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 60
-        height: 74
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,20 +282,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd80f0e95b6f9f8c0800000000000000
-      internalID: -3964866737021712163
+      spriteID: f93ef0595d0fc5340800000000000000
+      internalID: 4854019298518098847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rockets_9
+      name: Rockets_7
       rect:
         serializedVersion: 2
-        x: 60
+        x: 40
         y: 0
-        width: 60
-        height: 74
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -326,20 +303,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f583a6670ab99e600800000000000000
-      internalID: 498100347284895839
+      spriteID: c0221cf384eb51690800000000000000
+      internalID: -7631984775992892916
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rockets_10
+      name: Rockets_8
       rect:
         serializedVersion: 2
-        x: 120
+        x: 80
         y: 0
-        width: 60
-        height: 74
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -347,29 +324,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25217614620b89ba0800000000000000
-      internalID: -6081917618411335086
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rockets_11
-      rect:
-        serializedVersion: 2
-        x: 180
-        y: 0
-        width: 60
-        height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8333411978a57c500800000000000000
-      internalID: 416401028856165176
+      spriteID: a461c7e3a2bdf9ec0800000000000000
+      internalID: -3557884206115973558
       vertices: []
       indices: 
       edges: []

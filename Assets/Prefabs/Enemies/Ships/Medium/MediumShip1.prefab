@@ -203,7 +203,7 @@ MonoBehaviour:
   <Health>k__BackingField: 15
   <Score>k__BackingField: 50
   <IsBusy>k__BackingField: 0
-  weapon: {fileID: 5071306960603665447, guid: 0e7d6c208e99ba8408836306addec7f4, type: 3}
+  weapon: {fileID: 1752974203466350733, guid: 8abb7f4a4afcfb741bc75ae5092256ec, type: 3}
   shipDamage: 2
   rotationSpeed: 60
   movementSpeed: 6
