@@ -1,4 +1,5 @@
-﻿using CodeBase.Mobs;
+﻿using CodeBase.Effects;
+using CodeBase.Mobs;
 using CodeBase.ObjectBased;
 using CodeBase.UI;
 using CodeBase.Utils;
@@ -7,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Zenject;
 using static CodeBase.Utils.Enums;
 using Random = UnityEngine.Random;
 
@@ -15,14 +17,24 @@ namespace CodeBase.Service
     public class EnemySpawner : MonoBehaviour
     {
         [Header("Storages")]
-        [SerializeField] private DependencyContainer dependencyContainer;
         [SerializeField] private EnemyStorage enemyStorage;
 
         [Space]
         [SerializeField] private List<SpawnParameters> enemies;
 
+        [Inject] private DiContainer diContainer;
+
         private Bounds screenBounds;
         private List<Coroutine> spawnCoroutines = new List<Coroutine>();
+        private ParticlePool particlePool;
+        private ScreenBounds boundsOfScreen;
+
+        [Inject]
+        private void Construct(ScreenBounds bounds, ParticlePool pool)
+        {
+            boundsOfScreen = bounds;
+            particlePool = pool;
+        }
 
         private void OnEnable()
         {
@@ -38,7 +50,7 @@ namespace CodeBase.Service
 
         private void InitSpawner()
         {
-            screenBounds = dependencyContainer.ScreenBounds.borderOfBounds;
+            screenBounds = boundsOfScreen.borderOfBounds;
 
             BurstSpawnEnemies();
             StartSpawnEnemies(true);
@@ -104,8 +116,9 @@ namespace CodeBase.Service
         private Enemy CreateNewEnemy(SpawnParameters unit)
         {
             var enemies = enemyStorage.GetEnemyUnits(unit.Type);
+            var randomEnemy = enemies[Random.Range(0, enemies.Count)];
 
-            Enemy newEnemy = Instantiate(enemies[Random.Range(0, enemies.Count)], dependencyContainer.ParticlePool.EnemyContainer);
+            Enemy newEnemy = diContainer.InstantiatePrefabForComponent<Enemy>(randomEnemy, particlePool.EnemyContainer);
             unit.EnemiesPool.Add(newEnemy);
             Dictionaries.Enemies.Add(newEnemy.transform, newEnemy);
 

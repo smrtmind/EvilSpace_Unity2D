@@ -2,6 +2,7 @@ using CodeBase.Player;
 using CodeBase.Utils;
 using System.Collections;
 using UnityEngine;
+using Zenject;
 
 namespace CodeBase.ObjectBased
 {
@@ -10,12 +11,13 @@ namespace CodeBase.ObjectBased
         [SerializeField] private float rotationSpeed;
 
         private float zAngle;
-        private PlayerController player;
+        private PlayerController playerController;
         private Coroutine moveCoroutine;
 
-        private void Awake()
+        [Inject]
+        private void Construct(PlayerController player)
         {
-            player = FindObjectOfType<PlayerController>();
+            playerController = player;
         }
 
         private void OnEnable()
@@ -36,7 +38,7 @@ namespace CodeBase.ObjectBased
 
         private void GetPlayerDirection()
         {
-            Vector3 direction = player.transform.position - transform.position;
+            Vector3 direction = playerController.transform.position - transform.position;
             zAngle = Mathf.Atan2(direction.normalized.y, direction.normalized.x) * Mathf.Rad2Deg - 90;
 
             //calculate rotation

@@ -1,26 +1,24 @@
-﻿using UnityEngine;
+﻿using CodeBase.Service;
+using UnityEngine;
+using Zenject;
 
 namespace CodeBase.Utils
 {
     public class ScreenBounds : MonoBehaviour
     {
-        [Header("Storages")]
-        [SerializeField] private DependencyContainer dependencyContainer;
-
         public Bounds Bounds { get; private set; }
         public Bounds borderOfBounds { get; private set; }
 
         private Camera mainCamera;
 
-        private void Awake()
+        [Inject]
+        private void Construct(CameraController cameraController)
         {
-            mainCamera = Camera.main;
+            mainCamera = cameraController.MainCamera;
         }
 
         private void OnEnable()
         {
-            dependencyContainer.ScreenBounds = this;
-
             Vector3 screenMin = mainCamera.ViewportToWorldPoint(Vector3.zero);
             Vector3 screenMax = mainCamera.ViewportToWorldPoint(Vector3.one);
 

@@ -1,9 +1,11 @@
+using CodeBase.Effects;
 using CodeBase.Player;
 using CodeBase.UI;
 using CodeBase.Utils;
 using DG.Tweening;
 using System.Linq;
 using UnityEngine;
+using Zenject;
 using static CodeBase.Utils.Enums;
 
 namespace CodeBase.Mobs
@@ -11,7 +13,6 @@ namespace CodeBase.Mobs
     public abstract class Enemy : MonoBehaviour
     {
         [Header("Storages")]
-        [SerializeField] protected DependencyContainer dependencyContainer;
         [SerializeField] protected PlayerStorage playerStorage;
         [SerializeField] protected EnemyStorage enemyStorage;
 
@@ -29,6 +30,13 @@ namespace CodeBase.Mobs
         private Color defaultColor;
         private Tween skinColorTween;
         private float currentHealth;
+        protected ParticlePool particlePool;
+
+        [Inject]
+        private void Construct(ParticlePool pool)
+        {
+            particlePool = pool;
+        }
 
         private void Start()
         {
@@ -53,7 +61,7 @@ namespace CodeBase.Mobs
             {
                 SetBusyState(false);
 
-                var newEffect = dependencyContainer.ParticlePool.GetFreeObject(explosionEffect);
+                var newEffect = particlePool.GetFreeObject(explosionEffect);
                 newEffect.gameObject.SetActive(false);
                 newEffect.transform.position = transform.position;
                 newEffect.transform.localScale = new Vector3(transform.localScale.x + explosionAdditionalScale, transform.localScale.y + explosionAdditionalScale, 1f);
@@ -78,7 +86,7 @@ namespace CodeBase.Mobs
 
         private void SpawnSpark(Vector3 projectilePosition)
         {
-            var newEffect = dependencyContainer.ParticlePool.GetFreeObject(ParticleType.SparksHit);
+            var newEffect = particlePool.GetFreeObject(ParticleType.SparksHit);
             newEffect.gameObject.SetActive(false);
             newEffect.transform.position = new Vector3(projectilePosition.x, projectilePosition.y + 1f, projectilePosition.z);
             newEffect.transform.localScale = new Vector3(0.75f, 0.75f, 1f);

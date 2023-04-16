@@ -1,4 +1,5 @@
 ﻿using CodeBase.Animation;
+using CodeBase.Effects;
 using CodeBase.Mobs;
 using CodeBase.ObjectBased;
 using CodeBase.Service;
@@ -10,6 +11,7 @@ using System;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
+using Zenject;
 using static CodeBase.Utils.Enums;
 
 namespace CodeBase.Player
@@ -17,7 +19,6 @@ namespace CodeBase.Player
     public class PlayerController : MonoBehaviour
     {
         [Header("Storages")]
-        [SerializeField] private DependencyContainer dependencyContainer;
         [SerializeField] private PlayerStorage playerStorage;
         [SerializeField] private EnemyStorage enemyStorage;
 
@@ -27,7 +28,6 @@ namespace CodeBase.Player
 
         [Header("Components")]
         [SerializeField] private PlayerAnimationController playerAnimationController;
-        [SerializeField] private TouchController touchController;
         [SerializeField] private WeaponController weaponController;
 
         [Space]
@@ -50,6 +50,15 @@ namespace CodeBase.Player
         private Coroutine gameOverCoroutine;
         private Sequence playerCollisionBehaviour;
         private bool isChangedColor;
+        private ParticlePool particlePool;
+        private TouchController touchController;
+
+        [Inject]
+        private void Construct(ParticlePool pool, TouchController touch)
+        {
+            particlePool = pool;
+            touchController = touch;
+        }
 
         private void Awake()
         {
@@ -158,7 +167,7 @@ namespace CodeBase.Player
 
         private void SpawnSpark(Vector3 projectilePosition)
         {
-            var newEffect = dependencyContainer.ParticlePool.GetFreeObject(ParticleType.SparksHit);
+            var newEffect = particlePool.GetFreeObject(ParticleType.SparksHit);
             newEffect.gameObject.SetActive(false);
             newEffect.transform.position = new Vector3(projectilePosition.x, projectilePosition.y - 1f, projectilePosition.z);
             newEffect.transform.localScale = new Vector3(0.75f, 0.75f, 1f);
@@ -181,7 +190,7 @@ namespace CodeBase.Player
             playerAnimationController.EnableCriticalDamageVisual(false);
             playerAnimationController.EnableStarterFlames(false);
 
-            var newEffect = dependencyContainer.ParticlePool.GetFreeObject(explosionEffect);
+            var newEffect = particlePool.GetFreeObject(explosionEffect);
             newEffect.gameObject.SetActive(false);
             newEffect.transform.position = transform.position;
             newEffect.transform.localScale = new Vector3(transform.localScale.x + explosionAdditionalScale, transform.localScale.y + explosionAdditionalScale, 1f);

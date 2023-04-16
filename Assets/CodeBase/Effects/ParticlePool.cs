@@ -1,5 +1,4 @@
 using CodeBase.ObjectBased;
-using CodeBase.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 using static CodeBase.Utils.Enums;
@@ -8,28 +7,17 @@ namespace CodeBase.Effects
 {
     public class ParticlePool : MonoBehaviour
     {
-        [Header("Storages")]
-        [SerializeField] private DependencyContainer dependencyContainer;
-
-        [field: Header("Containers")]
-
-        [field: Space]
         [field: Header("Projectiles")]
         [field: SerializeField] public Transform ProjectileContainer { get; private set; }
         [field: SerializeField] public List<Projectile> ProjectilesPool { get; private set; }
 
-        [field: Space]
+        [field: Header("Containers")]
         [field: SerializeField] public Transform EnemyContainer { get; private set; }
         [field: SerializeField] public Transform ParticleContainer { get; private set; }
         [field: SerializeField] public Transform PopUpContainer { get; private set; }
 
         [Space]
         [SerializeField] private List<ParticleObject> objects = new List<ParticleObject>();
-
-        private void Awake()
-        {
-            dependencyContainer.ParticlePool = this;
-        }
 
         public ParticleObject GetFreeObject(ParticleType type)
         {

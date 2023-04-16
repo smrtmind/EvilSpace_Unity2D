@@ -1,14 +1,14 @@
 ﻿using CodeBase.Animation;
-using CodeBase.Utils;
+using CodeBase.Service;
 using System;
 using UnityEngine;
+using Zenject;
 
 namespace CodeBase.Player
 {
     public class TouchController : MonoBehaviour
     {
         [Header("Storages")]
-        [SerializeField] private DependencyContainer dependencyContainer;
         [SerializeField] private PlayerStorage playerStorage;
 
         [Header("Player Settings")]
@@ -26,14 +26,14 @@ namespace CodeBase.Player
         private float maxY;
         private Camera mainCamera;
 
-        private void Awake()
+        [Inject]
+        private void Construct(CameraController cameraController)
         {
-            mainCamera = Camera.main;
+            mainCamera = cameraController.MainCamera;
         }
 
         private void OnEnable()
         {
-            dependencyContainer.TouchController = this;
             CalculateScreenBounds();
         }
 

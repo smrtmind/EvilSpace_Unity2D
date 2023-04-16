@@ -3,6 +3,7 @@ using CodeBase.Player;
 using CodeBase.Utils;
 using System.Collections;
 using UnityEngine;
+using Zenject;
 
 namespace CodeBase.Mobs
 {
@@ -18,14 +19,17 @@ namespace CodeBase.Mobs
         [SerializeField] private Transform shootingPoint;
         [SerializeField] private float delayBetweenShoots;
 
+        [Inject] private DiContainer diContainer;
+
         private float zAngle;
-        private PlayerController player;
+        private PlayerController playerController;
         private Coroutine moveCoroutine;
         private Coroutine shootingCoroutine;
 
-        private void Awake()
+        [Inject]
+        private void Construct(PlayerController player)
         {
-            player = FindObjectOfType<PlayerController>();
+            playerController = player;
         }
 
         private void OnEnable()
@@ -53,7 +57,7 @@ namespace CodeBase.Mobs
 
         private void GetPlayerDirection()
         {
-            Vector3 direction = player.transform.position - transform.position;
+            Vector3 direction = playerController.transform.position - transform.position;
             zAngle = Mathf.Atan2(direction.normalized.y, direction.normalized.x) * Mathf.Rad2Deg - 90;
 
             //calculate rotation
@@ -69,7 +73,7 @@ namespace CodeBase.Mobs
 
                 GetPlayerDirection();
 
-                if (Vector3.Distance(transform.position, player.transform.position) > stopDistance)
+                if (Vector3.Distance(transform.position, playerController.transform.position) > stopDistance)
                 {
                     Move();
                 }
@@ -106,7 +110,7 @@ namespace CodeBase.Mobs
 
         private Projectile GetFreeProjectile()
         {
-            Projectile freeProjectile = dependencyContainer.ParticlePool.ProjectilesPool.Find(projectile => !projectile.IsBusy && projectile.WeaponType == weapon.WeaponType);
+            Projectile freeProjectile = particlePool.ProjectilesPool.Find(projectile => !projectile.IsBusy && projectile.WeaponType == weapon.WeaponType);
             if (freeProjectile == null)
                 freeProjectile = CreateNewProjectile();
 
@@ -115,8 +119,8 @@ namespace CodeBase.Mobs
 
         private Projectile CreateNewProjectile()
         {
-            Projectile newProjectile = Instantiate(weapon, dependencyContainer.ParticlePool.ProjectileContainer);
-            dependencyContainer.ParticlePool.ProjectilesPool.Add(newProjectile);
+            Projectile newProjectile = diContainer.InstantiatePrefabForComponent<Projectile>(weapon, particlePool.ProjectileContainer);
+            particlePool.ProjectilesPool.Add(newProjectile);
             Dictionaries.Projectiles.Add(newProjectile.transform, newProjectile);
             newProjectile.SetDamage(shipDamage);
 

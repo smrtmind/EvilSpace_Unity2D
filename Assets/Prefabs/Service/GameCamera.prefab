@@ -89,8 +89,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe6d0e3d8b219643ae2262d0a365188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dependencyContainer: {fileID: 11400000, guid: 0971863339e52fc46bfc0f1a78196b51,
-    type: 2}
 --- !u!114 &2019322824889001267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,5 +115,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3915efd623290b469cb65f395c073d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dependencyContainer: {fileID: 11400000, guid: 0971863339e52fc46bfc0f1a78196b51,
-    type: 2}
+  <MainCamera>k__BackingField: {fileID: 2019322824889001422}

@@ -1,15 +1,13 @@
-using CodeBase.Utils;
+using CodeBase.Effects;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using Zenject;
 
 namespace CodeBase.UI
 {
     public class PopUp : MonoBehaviour
     {
-        [Header("Storages")]
-        [SerializeField] private DependencyContainer dependencyContainer;
-
         [field: SerializeField] public TextMeshProUGUI ValueInfo { get; private set; }
         [SerializeField] private Vector3 startingScale;
 
@@ -18,6 +16,13 @@ namespace CodeBase.UI
         private Quaternion defaultPopUpRotation;
         private Color defaultPopUpColor;
         private bool popUpIsActive;
+        private ParticlePool particlePool;
+
+        [Inject]
+        private void Construct(ParticlePool pool)
+        {
+            particlePool = pool;
+        }
 
         private void OnEnable()
         {
@@ -40,7 +45,7 @@ namespace CodeBase.UI
             if (!popUpIsActive)
             {
                 popUpIsActive = true;
-                transform.SetParent(dependencyContainer.ParticlePool.PopUpContainer);
+                transform.SetParent(particlePool.PopUpContainer);
                 transform.position = targetPoint.position;
                 transform.localScale = Vector3.zero;
                 transform.rotation = defaultPopUpRotation;

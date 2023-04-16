@@ -1,22 +1,20 @@
-﻿using CodeBase.ObjectBased;
+﻿using CodeBase.Effects;
+using CodeBase.ObjectBased;
 using CodeBase.Service;
 using CodeBase.Utils;
 using Scripts;
 using System;
 using System.Collections;
 using UnityEngine;
+using Zenject;
 using static CodeBase.Utils.Enums;
 
 namespace CodeBase.Player
 {
     public class WeaponController : MonoBehaviour
     {
-        [Header("Storages")]
-        [SerializeField] private DependencyContainer dependencyContainer;
+        //[Header("Storages")]
         //[SerializeField] private WeaponStorage weaponStorage;
-
-
-
 
         //[SerializeField] private WeaponType currentWeapon;
         [SerializeField] private Projectile blaster;
@@ -62,6 +60,14 @@ namespace CodeBase.Player
         private int _currentWeaponType;
         private bool _allWeaponMaxOut;
         private Coroutine shootingCoroutine;
+        private ParticlePool particlePool;
+
+        [Inject]
+        private void Construct(ParticlePool pool)
+        {
+            particlePool = pool;
+        }
+
 
         public bool AllWeaponMaxOut => _allWeaponMaxOut;
 
@@ -335,7 +341,7 @@ namespace CodeBase.Player
 
         public Projectile GetFreeProjectile()
         {
-            Projectile freeProjectile = dependencyContainer.ParticlePool.ProjectilesPool.Find(projectile => !projectile.IsBusy && projectile.WeaponType == blaster.WeaponType);
+            Projectile freeProjectile = particlePool.ProjectilesPool.Find(projectile => !projectile.IsBusy && projectile.WeaponType == blaster.WeaponType);
             if (freeProjectile == null)
                 freeProjectile = CreateNewProjectile();
 
@@ -344,8 +350,8 @@ namespace CodeBase.Player
 
         private Projectile CreateNewProjectile()
         {
-            Projectile newProjectile = Instantiate(blaster, dependencyContainer.ParticlePool.ProjectileContainer);
-            dependencyContainer.ParticlePool.ProjectilesPool.Add(newProjectile);
+            Projectile newProjectile = Instantiate(blaster, particlePool.ProjectileContainer);
+            particlePool.ProjectilesPool.Add(newProjectile);
             Dictionaries.Projectiles.Add(newProjectile.transform, newProjectile);
             newProjectile.SetDamage(blasterDamage);
 
