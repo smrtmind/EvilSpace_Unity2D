@@ -12,6 +12,7 @@ public class BaseInstaller : MonoInstaller
     [SerializeField] private ScreenBounds screenBounds;
     [SerializeField] private CameraController cameraController;
     [SerializeField] private TouchController touchController;
+    [SerializeField] private WeaponController weaponController;
 
     public override void InstallBindings()
     {
@@ -20,6 +21,7 @@ public class BaseInstaller : MonoInstaller
         BindScreenBounds();
         BindCameraController();
         BindTouchController();
+        BindWeaponController();
     }
 
     private void BindPlayer()
@@ -50,5 +52,11 @@ public class BaseInstaller : MonoInstaller
     {
         Container.Bind<TouchController>().FromInstance(touchController).AsSingle().NonLazy();
         Container.QueueForInject(touchController);
+    }
+
+    private void BindWeaponController()
+    {
+        Container.Bind<WeaponController>().FromInstance(weaponController).AsSingle().NonLazy();
+        Container.QueueForInject(weaponController);
     }
 }

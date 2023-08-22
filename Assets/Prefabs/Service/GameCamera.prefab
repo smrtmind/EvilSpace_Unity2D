@@ -91,7 +91,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <MainCamera>k__BackingField: {fileID: 2019322824889001422}
-  skyBoxColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  colorOnHit: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 1}
+  colorOnBombExplosion: {r: 0.8773585, g: 0.67957294, b: 0.30955854, a: 1}
   effectDuration: 0.35
 --- !u!114 &8778268690185338860
 MonoBehaviour:

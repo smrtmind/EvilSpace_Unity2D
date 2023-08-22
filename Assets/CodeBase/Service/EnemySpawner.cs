@@ -6,9 +6,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using UnityEngine;
 using Zenject;
 using static CodeBase.Utils.Enums;
+using static UnityEngine.EventSystems.EventTrigger;
 using Random = UnityEngine.Random;
 
 namespace CodeBase.Service
@@ -38,13 +40,15 @@ namespace CodeBase.Service
         private void OnEnable()
         {
             EventObserver.OnLevelLoaded += InitSpawner;
-            EventObserver.OnGameRestarted += DisableAllEnemies;
+            EventObserver.OnGameRestarted += DisableAllObjectsOnScreen;
+            EventObserver.OnBombButtonPressed += DestroyAllEnemies;
         }
 
         private void OnDisable()
         {
             EventObserver.OnLevelLoaded -= InitSpawner;
-            EventObserver.OnGameRestarted -= DisableAllEnemies;
+            EventObserver.OnGameRestarted -= DisableAllObjectsOnScreen;
+            EventObserver.OnBombButtonPressed -= DestroyAllEnemies;
         }
 
         private void InitSpawner()
@@ -124,7 +128,7 @@ namespace CodeBase.Service
             return newEnemy;
         }
 
-        private void DisableAllEnemies()
+        private void DisableAllObjectsOnScreen()
         {
             foreach (SpawnParameters unit in enemies)
             {
@@ -138,6 +142,28 @@ namespace CodeBase.Service
             foreach (Coroutine enemySpawner in spawnCoroutines)
                 StopCoroutine(enemySpawner);
 
+            DestroyEnemyParticles();
+        }
+
+        private void DestroyAllEnemies()
+        {
+            foreach (SpawnParameters unit in enemies)
+            {
+                foreach (Enemy enemy in unit.EnemiesPool)
+                {
+                    if (enemy.IsBusy)
+                    {
+                        enemy.ModifyHealth(-enemy.Health);
+                        enemy.TakeScore();
+                    }
+                }
+            }
+
+            DestroyEnemyParticles();
+        }
+
+        private void DestroyEnemyParticles()
+        {
             List<Projectile> projectiles = Dictionaries.Projectiles.Values.ToList();
             foreach (Projectile projectile in projectiles)
             {

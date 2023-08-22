@@ -5,14 +5,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Zenject;
 
 namespace CodeBase.ObjectBased
 {
     public class Shield : MonoBehaviour, IAmAnimated
     {
-        [SerializeField] private PlayerController playerController;
-
-        [field: Space]
         [field: SerializeField] public SpriteRenderer Renderer { get; private set; }
         [field: SerializeField] public float DelayBetweenFrames { get; private set; }
         [field: SerializeField] public List<Sprite> Frames { get; private set; }
@@ -27,6 +25,13 @@ namespace CodeBase.ObjectBased
         private Coroutine animationCoroutine;
         private Sequence shieldBahaviour;
         private Vector3 defaultScale;
+        private PlayerController playerController;
+
+        [Inject]
+        private void Construct(PlayerController player)
+        {
+            playerController = player;
+        }
 
         private void Awake()
         {
@@ -84,6 +89,7 @@ namespace CodeBase.ObjectBased
             {
                 var enemy = Dictionaries.Enemies.FirstOrDefault(p => p.Key == collision.gameObject.transform);
                 enemy.Value.ModifyHealth(-enemy.Value.Health);
+                enemy.Value.TakeScore();
             }
         }
     }

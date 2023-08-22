@@ -93,7 +93,7 @@ namespace CodeBase.Mobs
             newEffect.SetBusyState(true);
         }
 
-        private void TakeScore()
+        public void TakeScore()
         {
             popUp.SetCurrentData(transform, $"{Score}", "yellow");
             popUp.SpawnPopUp();

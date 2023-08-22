@@ -1,6 +1,6 @@
 ﻿using CodeBase.Animation;
 using CodeBase.Service;
-using System;
+using CodeBase.Utils;
 using UnityEngine;
 using Zenject;
 
@@ -14,8 +14,6 @@ namespace CodeBase.Player
         [Header("Player Settings")]
         [SerializeField] private Rigidbody2D rb;
         [SerializeField] private PlayerAnimationController playerAnimationController;
-
-        public static Action<bool> OnStartMoving;
 
         private Vector3 mousePosition;
         private Vector3 direction;
@@ -44,7 +42,7 @@ namespace CodeBase.Player
                 if (!isMoving)
                 {
                     isMoving = true;
-                    OnStartMoving?.Invoke(isMoving);
+                    EventObserver.OnStartMoving?.Invoke(isMoving);
                 }
 
                 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
@@ -63,7 +61,7 @@ namespace CodeBase.Player
                 if (isMoving)
                 {
                     isMoving = false;
-                    OnStartMoving?.Invoke(isMoving);
+                    EventObserver.OnStartMoving?.Invoke(isMoving);
                 }
             }
 

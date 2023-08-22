@@ -1,10 +1,12 @@
 ﻿using CodeBase.Player;
 using CodeBase.Utils;
 using DG.Tweening;
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace CodeBase.UI
 {
@@ -18,6 +20,9 @@ namespace CodeBase.UI
         [SerializeField] private TextMeshProUGUI healthValue;
         [SerializeField] private TextMeshProUGUI triesValue;
         [SerializeField] private TextMeshProUGUI lvlValue;
+        [SerializeField] private Button bombBttn;
+        [SerializeField] private Image bombReloadFiller;
+        [SerializeField] private TextMeshProUGUI bombTimerValue;
 
         [Space]
         [SerializeField] private TextMeshProUGUI scoreValue;
@@ -49,7 +54,15 @@ namespace CodeBase.UI
         private Tween loadingTextTween;
         private Tween confirmationTween;
         private bool scoreIsScaling;
+        private Tween bombFillerTween;
+        private WeaponController weaponController;
         #endregion
+
+        [Inject]
+        private void Construct(WeaponController weapon)
+        {
+            weaponController = weapon;
+        }
 
         private void OnEnable()
         {
@@ -57,6 +70,7 @@ namespace CodeBase.UI
             EventObserver.OnTriesChanged += RefreshTriesInfo;
             EventObserver.OnScoreChanged += RefreshScoreInfo;
             EventObserver.OnGameOver += ShowGameOverScreen;
+            EventObserver.OnPlayerDied += DisableBombButton;
 
             startBttn.onClick.AddListener(StartButtonPressed);
             exitBttn.onClick.AddListener(ExitButtonPressed);
@@ -64,6 +78,7 @@ namespace CodeBase.UI
             noBttn.onClick.AddListener(NoButtonPressed);
             replayBttn.onClick.AddListener(ReplayButtonPressed);
             exitGameBttn.onClick.AddListener(YesButtonPressed);
+            bombBttn.onClick.AddListener(BombButtonPressed);
         }
 
         private void OnDisable()
@@ -72,6 +87,7 @@ namespace CodeBase.UI
             EventObserver.OnTriesChanged -= RefreshTriesInfo;
             EventObserver.OnScoreChanged -= RefreshScoreInfo;
             EventObserver.OnGameOver -= ShowGameOverScreen;
+            EventObserver.OnPlayerDied -= DisableBombButton;
 
             startBttn.onClick.RemoveListener(StartButtonPressed);
             exitBttn.onClick.RemoveListener(ExitButtonPressed);
@@ -79,11 +95,15 @@ namespace CodeBase.UI
             noBttn.onClick.RemoveListener(NoButtonPressed);
             replayBttn.onClick.RemoveListener(ReplayButtonPressed);
             exitGameBttn.onClick.RemoveListener(YesButtonPressed);
+            bombBttn.onClick.RemoveListener(BombButtonPressed);
         }
 
         private void Start()
         {
             startScreen.SetActive(true);
+
+            bombReloadFiller.fillAmount = 0f;
+            bombTimerValue.gameObject.SetActive(false);
         }
 
         private void StartButtonPressed()
@@ -120,10 +140,47 @@ namespace CodeBase.UI
                                                             .OnComplete(() => confirmationScreen.SetActive(false));
         }
 
+        private void BombButtonPressed()
+        {
+            bombReloadFiller.fillAmount = 1f;
+            bombBttn.interactable = false;
+
+            bombFillerTween?.Kill();
+            bombFillerTween = bombReloadFiller.DOFillAmount(0f, weaponController.BombReloadDelay).SetEase(Ease.Linear)
+                .OnComplete(() => bombBttn.interactable = true);
+
+            StartCoroutine(StartBombTimer());
+
+            EventObserver.OnBombButtonPressed?.Invoke();
+        }
+
+        private IEnumerator StartBombTimer()
+        {
+            bombTimerValue.gameObject.SetActive(true);
+
+            var timer = weaponController.BombReloadDelay;
+            while (timer > 0f)
+            {
+                bombTimerValue.text = $"{Mathf.Floor(timer)}";
+                yield return timer -= Time.deltaTime;
+            }
+
+            bombTimerValue.gameObject.SetActive(false);
+        }
+
+        private void DisableBombButton()
+        {
+            bombBttn.interactable = false;
+            Invoke(nameof(EnableBombButton), 3.5f);
+        }
+
+        private void EnableBombButton() => bombBttn.interactable = true;
+
         private void Loading()
         {
             loadingScreen.SetActive(true);
             loadingFiller.fillAmount = 0f;
+            bombReloadFiller.fillAmount = 0f;
             loadingTextCoroutine = StartCoroutine(ShakeLoadingText());
 
             loadingTween?.Kill();

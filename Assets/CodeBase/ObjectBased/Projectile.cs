@@ -1,7 +1,9 @@
-﻿using CodeBase.Utils;
+﻿using CodeBase.Service;
+using CodeBase.Utils;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 using static CodeBase.Utils.Enums;
 
 namespace CodeBase.ObjectBased
@@ -22,10 +24,13 @@ namespace CodeBase.ObjectBased
         private Vector2 screenBoundaries;
         private Coroutine animationCoroutine;
         private Camera mainCamera;
+        private Vector3 mainCameraPosition;
 
-        private void Awake()
+        [Inject]
+        private void Construct(CameraController cameraController)
         {
-            mainCamera = Camera.main;
+            mainCamera = cameraController.MainCamera;
+            mainCameraPosition = cameraController.MainCamera.transform.position;
         }
 
         private void OnEnable()
@@ -59,7 +64,7 @@ namespace CodeBase.ObjectBased
             {
                 yield return new WaitForEndOfFrame();
 
-                screenBoundaries = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+                screenBoundaries = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, mainCameraPosition.z));
 
                 if (transform.position.y > screenBoundaries.y || transform.position.y < -screenBoundaries.y
                 || transform.position.x > screenBoundaries.x || transform.position.x < -screenBoundaries.x)

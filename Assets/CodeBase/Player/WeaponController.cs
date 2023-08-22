@@ -16,6 +16,9 @@ namespace CodeBase.Player
         //[Header("Storages")]
         //[SerializeField] private WeaponStorage weaponStorage;
 
+        [field: SerializeField] public float BombReloadDelay { get; private set; } = 5f;
+        [field: SerializeField] public float BombEffectDuration { get; private set; } = 1.2f;
+
         //[SerializeField] private WeaponType currentWeapon;
         [SerializeField] private Projectile blaster;
         [SerializeField] private float blasterDamage;
@@ -46,11 +49,12 @@ namespace CodeBase.Player
         public int BombTimer => _bombTimer;
         public GameObject Shield => _shield;
 
+        [Inject] private DiContainer diContainer;
+
         //private PlayerController _playerInput;
         private Rigidbody2D _playerBody;
         private CameraShaker _cameraShaker;
         private AudioComponent _audio;
-
         private Projectile _weapon;
         //private Cooldown _shootingDelay;
         //private Cooldown _reloadingDelay;
@@ -61,13 +65,14 @@ namespace CodeBase.Player
         private bool _allWeaponMaxOut;
         private Coroutine shootingRoutine;
         private ParticlePool particlePool;
+        private PlayerController playerController;
 
         [Inject]
-        private void Construct(ParticlePool pool)
+        private void Construct(ParticlePool pool, PlayerController player)
         {
             particlePool = pool;
+            playerController = player;
         }
-
 
         public bool AllWeaponMaxOut => _allWeaponMaxOut;
 
@@ -88,12 +93,14 @@ namespace CodeBase.Player
         {
             //SetCurrentWeapon(WeaponType.Blaster);
 
-            TouchController.OnStartMoving += StartShooting;
+            EventObserver.OnStartMoving += StartShooting;
+            EventObserver.OnBombButtonPressed += UseBomb;
         }
 
         private void OnDisable()
         {
-            TouchController.OnStartMoving -= StartShooting;
+            EventObserver.OnStartMoving -= StartShooting;
+            EventObserver.OnBombButtonPressed -= UseBomb;
         }
 
         private void Start()
@@ -286,16 +293,26 @@ namespace CodeBase.Player
             //_electroEffect.Spawn();
             //_bombEffect.Spawn();
 
-            EventObserver.OnShakeCamera?.Invoke(1.2f, 0.6f);
+            EventObserver.OnShakeCamera?.Invoke(BombEffectDuration, 0.6f);
+
+            var internalWave = particlePool.GetFreeObject(ParticleType.MegaBombExplosionInternal);
+            internalWave.gameObject.SetActive(false);
+            internalWave.transform.position = playerController.transform.position;
+            internalWave.SetBusyState(true);
+
+            var externalWave = particlePool.GetFreeObject(ParticleType.MegaBombExplosionExternal);
+            externalWave.gameObject.SetActive(false);
+            externalWave.transform.position = playerController.transform.position;
+            externalWave.SetBusyState(true);
 
             //_cameraShaker.SetDuration(1.2f);
             //_cameraShaker.SetMaxDelta(0.6f);
             //_cameraShaker.ShakeCamera();
 
-            KillAllEnemies();
+            //KillAllEnemies();
 
-            _bombIsReady = false;
-            _bombTimer = _bombTimerDefault;
+            //_bombIsReady = false;
+            //_bombTimer = _bombTimerDefault;
         }
 
         //private void ReloadBomb()
@@ -353,7 +370,7 @@ namespace CodeBase.Player
 
         private Projectile CreateNewProjectile()
         {
-            Projectile newProjectile = Instantiate(blaster, particlePool.ProjectileContainer);
+            Projectile newProjectile = diContainer.InstantiatePrefabForComponent<Projectile>(blaster, particlePool.ProjectileContainer);
             particlePool.ProjectilesPool.Add(newProjectile);
             Dictionaries.Projectiles.Add(newProjectile.transform, newProjectile);
             newProjectile.SetDamage(blasterDamage);

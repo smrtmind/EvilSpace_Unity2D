@@ -21,5 +21,9 @@ namespace CodeBase.Utils
         public static Action OnLevelLoaded;
         public static Action OnGameRestarted;
         public static Action OnGameOver;
+        public static Action OnBombButtonPressed;
+
+        [Header("Touch events")]
+        public static Action<bool> OnStartMoving;
     }
 }

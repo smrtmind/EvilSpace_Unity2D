@@ -90,7 +90,9 @@ namespace CodeBase.Utils
             BossExplosion,
             SparksHit,
             PlayerExplosion,
-            RocketExplosion
+            RocketExplosion,
+            MegaBombExplosionInternal,
+            MegaBombExplosionExternal
         }
     }
 }
