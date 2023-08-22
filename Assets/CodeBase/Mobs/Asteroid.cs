@@ -20,9 +20,9 @@ namespace CodeBase.Mobs
         [SerializeField] private float minScale;
         [SerializeField] private float maxScale;
 
-        private Vector2 screenBoundaries;
-        private Coroutine boundsCoroutine;
         private Camera mainCamera;
+        private Coroutine boundsCoroutine;
+        private Vector2 screenBoundaries;
         private Vector3 mainCameraPosition;
 
         [Inject]
@@ -50,8 +50,6 @@ namespace CodeBase.Mobs
         {
             while (true)
             {
-                yield return new WaitForEndOfFrame();
-
                 screenBoundaries = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, mainCameraPosition.z));
 
                 if (transform.position.y > screenBoundaries.y || transform.position.y < -screenBoundaries.y
@@ -60,6 +58,8 @@ namespace CodeBase.Mobs
                     SetBusyState(false);
                     break;
                 }
+
+                yield return new WaitForEndOfFrame();
             }
         }
 

@@ -6,11 +6,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using UnityEngine;
 using Zenject;
 using static CodeBase.Utils.Enums;
-using static UnityEngine.EventSystems.EventTrigger;
 using Random = UnityEngine.Random;
 
 namespace CodeBase.Service
@@ -25,15 +23,15 @@ namespace CodeBase.Service
 
         [Inject] private DiContainer diContainer;
 
-        private Bounds screenBounds;
+        private ScreenBounds screenBounds;
+        private Bounds bounds;
         private List<Coroutine> spawnCoroutines = new List<Coroutine>();
         private ParticlePool particlePool;
-        private ScreenBounds boundsOfScreen;
 
         [Inject]
         private void Construct(ScreenBounds bounds, ParticlePool pool)
         {
-            boundsOfScreen = bounds;
+            screenBounds = bounds;
             particlePool = pool;
         }
 
@@ -53,7 +51,7 @@ namespace CodeBase.Service
 
         private void InitSpawner()
         {
-            screenBounds = boundsOfScreen.borderOfBounds;
+            bounds = screenBounds.borderOfBounds;
 
             BurstSpawnEnemies();
             StartSpawnEnemies(true);
@@ -83,8 +81,8 @@ namespace CodeBase.Service
 
         private void SpawnNewObject(SpawnParameters unit)
         {
-            float yPosition = screenBounds.min.y;/*Random.value > 0.5 ? screenBounds.min.y : screenBounds.max.y;*/
-            float xPosition = Random.Range(screenBounds.min.x, screenBounds.max.x);
+            float yPosition = bounds.min.y;/*Random.value > 0.5 ? screenBounds.min.y : screenBounds.max.y;*/
+            float xPosition = Random.Range(bounds.min.x, bounds.max.x);
 
             Vector3 randomPosition = new Vector3(xPosition, yPosition);
 

@@ -3,8 +3,6 @@ using UnityEngine;
 
 namespace CodeBase.Service
 {
-    [RequireComponent(typeof(SpriteRenderer))]
-
     public class SpriteAnimation : MonoBehaviour
     {
         [SerializeField] private SpriteRenderer spriteRenderer;

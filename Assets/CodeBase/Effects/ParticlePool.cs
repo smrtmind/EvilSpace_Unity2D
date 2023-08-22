@@ -15,6 +15,7 @@ namespace CodeBase.Effects
         [field: SerializeField] public Transform EnemyContainer { get; private set; }
         [field: SerializeField] public Transform ParticleContainer { get; private set; }
         [field: SerializeField] public Transform PopUpContainer { get; private set; }
+        [field: SerializeField] public Transform PlanetContainer { get; private set; }
 
         [Space]
         [SerializeField] private List<ParticleObject> objects = new List<ParticleObject>();
