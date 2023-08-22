@@ -6,6 +6,7 @@ namespace CodeBase.Utils
     public class EventObserver
     {
         [Header("Player events")]
+        public static Action OnPlayerHit;
         public static Action OnPlayerDied;
         public static Action<Vector3> OnPlayerCollision;
 

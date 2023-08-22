@@ -16,6 +16,7 @@ namespace CodeBase.Player
 {
     public class PlayerController : MonoBehaviour
     {
+        #region Variables
         [Header("Storages")]
         [SerializeField] private PlayerStorage playerStorage;
         [SerializeField] private EnemyStorage enemyStorage;
@@ -38,6 +39,7 @@ namespace CodeBase.Player
         [SerializeField] private SpriteRenderer skinRenderer;
         [SerializeField] private float forceOnEnemyCollision;
         [SerializeField] private float minPercentOfHealthToBlink;
+        [SerializeField] private Color playerHitColor = Color.red;
 
         private AudioComponent _audio;
         private Color defaultColor;
@@ -47,6 +49,7 @@ namespace CodeBase.Player
         private bool isChangedColor;
         private ParticlePool particlePool;
         private TouchController touchController;
+        #endregion
 
         [Inject]
         private void Construct(ParticlePool pool, TouchController touch)
@@ -62,12 +65,9 @@ namespace CodeBase.Player
 
         private void OnEnable()
         {
-            defaultColor = skinRenderer.color;
-
             EventObserver.OnLevelLoaded += EnableTouchControls;
             EventObserver.OnGameRestarted += StartNewGame;
             EventObserver.OnPlayerCollision += ForceBackPlayer;
-
         }
 
         private void OnDisable()
@@ -81,6 +81,7 @@ namespace CodeBase.Player
 
         private void Start()
         {
+            defaultColor = skinRenderer.color;
             transform.position = playerStorage.ConcretePlayer.DefaultPlayerPosition;
         }
 
@@ -98,18 +99,6 @@ namespace CodeBase.Player
 
         private void CheckBehaviourDueToDamageTaken()
         {
-            if (!isChangedColor)
-            {
-                isChangedColor = true;
-
-                playerCollisionBehaviour = DOTween.Sequence().SetAutoKill(true);
-                playerCollisionBehaviour.Append(skinRenderer.DOColor(Color.red, 0.1f))
-                                        .Append(skinRenderer.DOColor(defaultColor, 0.1f))
-                                        .OnComplete(() => isChangedColor = false);
-            }
-
-            EventObserver.OnShakeCamera?.Invoke(0.2f, 0.1f);
-
             var minHealthEdge = (playerStorage.ConcretePlayer.Health / 100f) * minPercentOfHealthToBlink;
             if (playerStorage.ConcretePlayer.CurrentHealth <= minHealthEdge && playerStorage.ConcretePlayer.CurrentHealth > 0f)
             {
@@ -125,9 +114,27 @@ namespace CodeBase.Player
                 EventObserver.OnPlayerDied?.Invoke();
 
                 if (playerStorage.ConcretePlayer.CurrentTries > 0 && newLifeCoroutine == null)
-                    newLifeCoroutine = StartCoroutine(StartNewLife());             
+                    newLifeCoroutine = StartCoroutine(StartNewLife());
                 else if (playerStorage.ConcretePlayer.CurrentTries <= 0 && gameOverCoroutine == null)
-                    gameOverCoroutine = StartCoroutine(GameOver());             
+                    gameOverCoroutine = StartCoroutine(GameOver());
+            }
+
+            ChangeBodyColor();
+
+            EventObserver.OnShakeCamera?.Invoke(0.2f, 0.25f);
+            EventObserver.OnPlayerHit?.Invoke();
+        }
+
+        private void ChangeBodyColor()
+        {
+            if (!isChangedColor)
+            {
+                isChangedColor = true;
+
+                playerCollisionBehaviour = DOTween.Sequence().SetAutoKill(true);
+                playerCollisionBehaviour.Append(skinRenderer.DOColor(playerHitColor, 0.1f))
+                                        .Append(skinRenderer.DOColor(defaultColor, 0.1f))
+                                        .OnComplete(() => isChangedColor = false);
             }
         }
 
