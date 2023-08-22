@@ -183,7 +183,7 @@ TextureImporter:
       213: -5940630769823141273
     second: MediumStar_59
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -203,6 +203,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -212,8 +214,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -234,10 +236,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -253,6 +259,42 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1536,6 +1578,67 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      MediumStar_25: 5592390529410908353
+      MediumStar_37: -8489681222724764237
+      MediumStar_58: -4699376238111467442
+      MediumStar_31: 8225224404893485576
+      MediumStar_33: 8434132406400493229
+      MediumStar_43: 6434944141319237497
+      MediumStar_0: 8510502377809818247
+      MediumStar_10: -1046463114343854223
+      MediumStar_38: -2997965125833882293
+      MediumStar_41: -4476744756353159037
+      MediumStar_45: -7076116181246311374
+      MediumStar_56: 6738419268565693062
+      MediumStar_3: 8688873850934029954
+      MediumStar_53: 8582618042266189640
+      MediumStar_34: 3416068995311020752
+      MediumStar_1: -4791393819068718054
+      MediumStar_24: 1280304112425161103
+      MediumStar_49: -1491588795228165145
+      MediumStar_4: -6420497945902439064
+      MediumStar_44: 5255451813103519426
+      MediumStar_2: 6507402509274670182
+      MediumStar_36: 2159090075907004224
+      MediumStar_50: -7955076307217086087
+      MediumStar_5: -8279763681373327782
+      MediumStar_32: 6625880548342148530
+      MediumStar_28: 6988566009061928940
+      MediumStar_22: -6509545253830910768
+      MediumStar_21: 5705654520452565369
+      MediumStar_13: -4105347719318908707
+      MediumStar_54: -7541273535462471826
+      MediumStar_19: 8236921198954152732
+      MediumStar_18: 589270688239577428
+      MediumStar_27: -1677762031079082061
+      MediumStar_55: -8361502534130501933
+      MediumStar_6: 7822326654678665062
+      MediumStar_30: 322056437596117987
+      MediumStar_20: -9174838619102956197
+      MediumStar_17: 752461423820950807
+      MediumStar_23: -6799559112106687430
+      MediumStar_29: -8681462977672563650
+      MediumStar_7: 4773778488596089663
+      MediumStar_57: -2729941084321267114
+      MediumStar_51: 3590940117252745305
+      MediumStar_26: 5213165412353817912
+      MediumStar_52: 2240963196735470814
+      MediumStar_46: 1691292354750989401
+      MediumStar_48: 5934917669461844897
+      MediumStar_11: -269919386059581816
+      MediumStar_16: 8569562053252897339
+      MediumStar_39: 2592128254861362087
+      MediumStar_59: -5940630769823141273
+      MediumStar_40: 1904715273019201411
+      MediumStar_12: -2612139872623328864
+      MediumStar_15: 5349114347856184294
+      MediumStar_42: -3925147402796607016
+      MediumStar_9: -8213649003283101832
+      MediumStar_14: -4039980886560879468
+      MediumStar_8: 4716789076980456471
+      MediumStar_35: -4348919029478652236
+      MediumStar_47: 8106060991824415095
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

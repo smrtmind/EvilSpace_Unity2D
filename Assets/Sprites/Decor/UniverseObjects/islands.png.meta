@@ -153,7 +153,7 @@ TextureImporter:
       213: 764503246145835941
     second: islands_49
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -174,6 +174,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -212,6 +213,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -227,6 +229,42 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1300,6 +1338,57 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      islands_40: -1054414360653865971
+      islands_29: -1678721704344199166
+      islands_4: -2493926215916491905
+      islands_11: -8726851894567451790
+      islands_18: 4382148507567644241
+      islands_28: -8732557056799639081
+      islands_42: -1555170064871438722
+      islands_26: 6096636596596728850
+      islands_47: -3893465051917215809
+      islands_1: 1371074782014302068
+      islands_39: 8627912685851935592
+      islands_25: 848398970503691522
+      islands_23: -3695104606681519679
+      islands_2: -2593166970290744829
+      islands_12: 4918972064934771484
+      islands_14: -6078069415020584769
+      islands_21: 526822617724738189
+      islands_24: -7349412356930994971
+      islands_43: 6285783190015895989
+      islands_3: -3923815537569020999
+      islands_38: 3244382349785356447
+      islands_8: 2002091917349491277
+      islands_6: -2376567235193688938
+      islands_20: 853660737337189998
+      islands_22: 7304552283129694631
+      islands_9: -5353653800228387646
+      islands_35: 4844952945947888925
+      islands_5: -1336909959096483705
+      islands_33: 7050562644734313947
+      islands_30: -8399892664393289826
+      islands_34: -5364671627728506603
+      islands_41: 6389578951042747835
+      islands_45: -6428140823186642149
+      islands_27: -7870709659777036814
+      islands_17: 8298864618057582263
+      islands_31: 7318466013628100740
+      islands_49: 764503246145835941
+      islands_37: -3751947617518824559
+      islands_0: 897089110629237537
+      islands_19: 8877986025266023867
+      islands_36: -2543927357756595356
+      islands_10: 1008794738392715034
+      islands_13: 7525461147519654719
+      islands_16: 2230685325738334197
+      islands_46: 4554108475867151884
+      islands_44: 7225917772997389041
+      islands_48: 6294081994199660378
+      islands_15: 7972921935651053883
+      islands_32: -2879652696259987216
+      islands_7: -5370502727439212540
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

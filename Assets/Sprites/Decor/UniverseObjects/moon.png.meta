@@ -153,7 +153,7 @@ TextureImporter:
       213: 7416183482199591865
     second: moon_49
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -174,6 +174,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -212,6 +213,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -227,6 +229,42 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1300,6 +1338,57 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      moon_0: 9083969447635318612
+      moon_14: 3265104997304781126
+      moon_27: -2446425368989202441
+      moon_41: -7710776228795369327
+      moon_47: -2006524956829266801
+      moon_24: -2844274786670252689
+      moon_28: 3606764086726671060
+      moon_42: 5316124888616036736
+      moon_1: -5679657590885005731
+      moon_37: 7001207597000110229
+      moon_23: 152341125571461098
+      moon_39: -4733931316812468166
+      moon_6: 6901942967387306250
+      moon_21: -1368849271864694501
+      moon_19: 6941118120725496146
+      moon_18: -3031713021584256797
+      moon_43: 4213702775356209292
+      moon_29: -2658450367855205920
+      moon_17: -2115715057330891185
+      moon_26: -5714107859521966818
+      moon_45: 7397784903030694644
+      moon_11: -8513730273280913422
+      moon_12: 4866200794757218116
+      moon_7: -7857193861968469892
+      moon_2: -1825352000054201894
+      moon_35: 7138835694218532896
+      moon_8: 8598691610351655480
+      moon_22: 8999585625311851296
+      moon_16: -5586192455156009045
+      moon_25: -4196785868417390050
+      moon_46: 3692061370262270271
+      moon_49: 7416183482199591865
+      moon_31: 1788770953727312188
+      moon_5: -7591269622283923513
+      moon_38: -7561771566025793075
+      moon_3: -6130851942531297651
+      moon_48: 167721120831052218
+      moon_30: -2462301532047447380
+      moon_40: 8405430957116665683
+      moon_13: -3448617533897018304
+      moon_33: -6611214141503864795
+      moon_20: -5070518830753595589
+      moon_15: 1479202402247836509
+      moon_4: -4894877219555033837
+      moon_32: -5925520770014825664
+      moon_10: 6701494610166044060
+      moon_44: -498806233473959318
+      moon_36: -953717398554737322
+      moon_9: -7479219666984558549
+      moon_34: -4862833597359887020
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

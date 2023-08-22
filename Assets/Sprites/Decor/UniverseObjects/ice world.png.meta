@@ -153,7 +153,7 @@ TextureImporter:
       213: 430214764648562501
     second: ice world_49
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -174,6 +174,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -212,6 +213,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -227,6 +229,42 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1300,6 +1338,57 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      ice world_44: -6478127853652267317
+      ice world_46: -1736466199243969393
+      ice world_24: -2887937405706091553
+      ice world_31: -2274811084460499984
+      ice world_5: 5373691378614437007
+      ice world_47: -7464200426475030029
+      ice world_32: -2813389082982078819
+      ice world_23: 2262639230263006769
+      ice world_17: -4313279608765287817
+      ice world_4: 490541945109285766
+      ice world_20: 8804164045105719200
+      ice world_16: 795393507228798567
+      ice world_19: -6789556716296701890
+      ice world_15: -2432049945366095888
+      ice world_11: -3804584095474838483
+      ice world_18: 6528201942546246500
+      ice world_10: 7078088434086611116
+      ice world_43: 656337472498442310
+      ice world_45: 894239211592793540
+      ice world_6: -9174861757721402479
+      ice world_1: -1851171699599140789
+      ice world_40: 7099668676444044619
+      ice world_22: 424977772695494808
+      ice world_12: 8874449083600046733
+      ice world_33: -297364728737231687
+      ice world_2: 918296501476594467
+      ice world_9: 7744100544538433425
+      ice world_28: -1760550565287408728
+      ice world_14: 7943426305511822990
+      ice world_29: -8200658700043368798
+      ice world_49: 430214764648562501
+      ice world_26: -3730976263994674659
+      ice world_3: -7226613286255551585
+      ice world_39: -558561208178037117
+      ice world_34: -987987485291527594
+      ice world_48: 4789128534760214280
+      ice world_25: 8137641357531706958
+      ice world_35: -4794293385324900400
+      ice world_0: 3730538644060928797
+      ice world_27: 2513147914552200006
+      ice world_37: 784147366875575632
+      ice world_7: -8971863723447436512
+      ice world_30: 3234184295365655502
+      ice world_13: -8027032713031008047
+      ice world_42: -1170701476334017820
+      ice world_41: -1328146040772661108
+      ice world_36: 7028097664514464176
+      ice world_8: -2782967818756812977
+      ice world_38: -556772895379692034
+      ice world_21: -4092228950718559555
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

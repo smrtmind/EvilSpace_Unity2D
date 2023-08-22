@@ -153,7 +153,7 @@ TextureImporter:
       213: 8080141258437906843
     second: lava world_49
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -174,6 +174,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -212,6 +213,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -227,6 +229,42 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1300,6 +1338,57 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      lava world_34: 6401276076655152153
+      lava world_1: 98892660358640292
+      lava world_19: -1157907151618853462
+      lava world_2: 1857937114168502692
+      lava world_46: 3268888050726164027
+      lava world_13: -6943324435874211606
+      lava world_42: 5589979233008891703
+      lava world_20: 4858155114720648628
+      lava world_26: 3723622197941831657
+      lava world_48: -4244020958013750867
+      lava world_21: 7413785454829421144
+      lava world_14: 4768113150235645119
+      lava world_41: 1236962059785352942
+      lava world_38: -8833998478063509433
+      lava world_18: 3909045052967169551
+      lava world_31: -8084280291677208014
+      lava world_43: -52116964316343105
+      lava world_15: 5773407664898772991
+      lava world_44: 1565451655354426702
+      lava world_8: -7926721170354103839
+      lava world_49: 8080141258437906843
+      lava world_7: -9023381764184804773
+      lava world_0: 6539930214998820438
+      lava world_5: 8714683518243346025
+      lava world_11: 6861857280420010305
+      lava world_36: 282636258293024908
+      lava world_27: 3599008747776573838
+      lava world_25: -9173827107072608373
+      lava world_32: -5872780108097917661
+      lava world_40: 8444428998346023867
+      lava world_10: -3063308449004966728
+      lava world_16: 3431428951971891034
+      lava world_33: 4511740252098674701
+      lava world_28: -3083896076531288630
+      lava world_45: 5704242133701649128
+      lava world_29: 7753502113083964963
+      lava world_22: 6248135063151208800
+      lava world_24: 1375889050753262524
+      lava world_23: -2217920191997865765
+      lava world_17: -3252600859741637497
+      lava world_35: 8539220483882098127
+      lava world_12: 1683803418902017333
+      lava world_37: 667963069799312171
+      lava world_47: -1348625667013973538
+      lava world_4: -7230106606477543892
+      lava world_9: 7628856827280240548
+      lava world_39: -370984213183713754
+      lava world_30: -8490302883967591151
+      lava world_6: -2287151475211638730
+      lava world_3: -1081275010881817894
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

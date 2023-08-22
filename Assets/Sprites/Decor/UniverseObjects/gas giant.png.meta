@@ -153,7 +153,7 @@ TextureImporter:
       213: -6644143017959062428
     second: gas giant_49
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -174,6 +174,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -212,6 +213,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -227,6 +229,42 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1300,6 +1338,57 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      gas giant_27: -2888010095640885351
+      gas giant_39: -5520220349729627044
+      gas giant_5: 7625816645528733024
+      gas giant_35: -4985810712592619282
+      gas giant_8: 6009514243944525055
+      gas giant_24: 4639655206599991395
+      gas giant_1: 1181105631229938715
+      gas giant_18: -1190480327992706348
+      gas giant_26: -1646811323595095107
+      gas giant_49: -6644143017959062428
+      gas giant_28: 2978503590687733242
+      gas giant_33: -332624990132033144
+      gas giant_40: 8324765960930437606
+      gas giant_32: -7163355298011789893
+      gas giant_30: -5868904079459359183
+      gas giant_12: -680555173348412249
+      gas giant_45: 5982280469373287793
+      gas giant_48: 8343341515745350851
+      gas giant_11: 3629466706524354869
+      gas giant_2: -2509875187809482710
+      gas giant_21: 7164803236256210855
+      gas giant_41: 8672895601013376399
+      gas giant_43: -27657540137255494
+      gas giant_7: -167272163548187699
+      gas giant_20: 8038689736504695582
+      gas giant_15: -187659464128661659
+      gas giant_10: 7764511749318419839
+      gas giant_47: -9013068382410952170
+      gas giant_13: 3003926540274672960
+      gas giant_25: -6133114963246833678
+      gas giant_37: 8745658129183456011
+      gas giant_42: -2032387035000684636
+      gas giant_14: -6756733983767323769
+      gas giant_36: -3040338603582229447
+      gas giant_23: -9037236378602861367
+      gas giant_6: 8349732158695600447
+      gas giant_16: -464426509403356211
+      gas giant_0: -6215730420229240775
+      gas giant_17: 7659348938018518155
+      gas giant_44: 2191727443643643877
+      gas giant_46: 7694825134534950796
+      gas giant_34: 8515859447306942289
+      gas giant_38: -7703722378182971356
+      gas giant_31: 6661520817184282303
+      gas giant_4: 1746909604518016710
+      gas giant_3: 6146554319255599660
+      gas giant_29: 1686327046568908759
+      gas giant_9: -6084701415318255544
+      gas giant_19: 3729765473916012330
+      gas giant_22: 4417426741464160504
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

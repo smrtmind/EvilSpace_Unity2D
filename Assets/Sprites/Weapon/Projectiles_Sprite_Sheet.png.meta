@@ -264,7 +264,7 @@ TextureImporter:
       213: 7336036488151079754
     second: Projectiles_Sprite_Sheet_86
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -285,6 +285,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -323,6 +324,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -362,6 +364,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -2212,6 +2226,94 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Projectiles_Sprite_Sheet_29: 5037454907222929835
+      Projectiles_Sprite_Sheet_36: -7559263678496296316
+      Projectiles_Sprite_Sheet_44: 2498546106757765798
+      Projectiles_Sprite_Sheet_17: 2288917959932479727
+      Projectiles_Sprite_Sheet_37: -5293082036045588008
+      Projectiles_Sprite_Sheet_24: -1668927072086692254
+      Projectiles_Sprite_Sheet_20: 5957081015301353741
+      Projectiles_Sprite_Sheet_23: -3817650827939590097
+      Projectiles_Sprite_Sheet_15: -6443779245736899935
+      Projectiles_Sprite_Sheet_45: 9039891265835233530
+      Projectiles_Sprite_Sheet_0: 4261012439500361387
+      Projectiles_Sprite_Sheet_30: -1106282546099375787
+      Projectiles_Sprite_Sheet_48: -6314742538420138213
+      Projectiles_Sprite_Sheet_3: -56195957275974831
+      Projectiles_Sprite_Sheet_60: 5618870801056690143
+      Projectiles_Sprite_Sheet_62: 602562169781411214
+      Projectiles_Sprite_Sheet_10: 8540128634093562222
+      Projectiles_Sprite_Sheet_11: 7611616025271731123
+      Projectiles_Sprite_Sheet_65: -4221465458112091900
+      Projectiles_Sprite_Sheet_34: 3691220269439156859
+      Projectiles_Sprite_Sheet_50: 3091569885536672401
+      Projectiles_Sprite_Sheet_59: 7610381998170530954
+      Projectiles_Sprite_Sheet_84: 2671867842785898229
+      Projectiles_Sprite_Sheet_22: 2430218342865913568
+      Projectiles_Sprite_Sheet_14: 3976896355659494840
+      Projectiles_Sprite_Sheet_28: 4507927860964580944
+      Projectiles_Sprite_Sheet_41: -1990157209773069154
+      Projectiles_Sprite_Sheet_61: -3511588480074293063
+      Projectiles_Sprite_Sheet_85: -5145860508347746283
+      Projectiles_Sprite_Sheet_6: -8690464320706285942
+      Projectiles_Sprite_Sheet_39: -7768591244299140213
+      Projectiles_Sprite_Sheet_16: -3788270821001716275
+      Projectiles_Sprite_Sheet_31: 6851919143327294004
+      Projectiles_Sprite_Sheet_26: -7013894800488509370
+      Projectiles_Sprite_Sheet_54: -7849059364619135776
+      Projectiles_Sprite_Sheet_49: -5927624578367222933
+      Projectiles_Sprite_Sheet_7: -5510040181432026599
+      Projectiles_Sprite_Sheet_25: 582512665167773815
+      Projectiles_Sprite_Sheet_18: -6094921479010768406
+      Projectiles_Sprite_Sheet_58: -5955228846796573167
+      Projectiles_Sprite_Sheet_79: 7842603939348882959
+      Projectiles_Sprite_Sheet_47: 6514385682615470105
+      Projectiles_Sprite_Sheet_81: 5190566731920919690
+      Projectiles_Sprite_Sheet_75: 4190647391889554737
+      Projectiles_Sprite_Sheet_33: -7869927971040634315
+      Projectiles_Sprite_Sheet_77: -1432738602314696954
+      Projectiles_Sprite_Sheet_42: -6176904104178726996
+      Projectiles_Sprite_Sheet_43: 5605223117628788701
+      Projectiles_Sprite_Sheet_80: 9055382959639344539
+      Projectiles_Sprite_Sheet_9: -3944076317468838009
+      Projectiles_Sprite_Sheet_38: -269039471509516114
+      Projectiles_Sprite_Sheet_19: 2191722579125687886
+      Projectiles_Sprite_Sheet_70: 6738951741139870687
+      Projectiles_Sprite_Sheet_5: 6900415489746475169
+      Projectiles_Sprite_Sheet_46: -4990698396154099740
+      Projectiles_Sprite_Sheet_27: 4403557385174237675
+      Projectiles_Sprite_Sheet_56: 3377277097091861464
+      Projectiles_Sprite_Sheet_68: -20167444797440644
+      Projectiles_Sprite_Sheet_72: 8482512921726474101
+      Projectiles_Sprite_Sheet_2: 6106416273833747007
+      Projectiles_Sprite_Sheet_1: -1880456403976194998
+      Projectiles_Sprite_Sheet_52: 1205947187944715200
+      Projectiles_Sprite_Sheet_53: -5838933419541061187
+      Projectiles_Sprite_Sheet_63: 1565606306533885184
+      Projectiles_Sprite_Sheet_86: 7336036488151079754
+      Projectiles_Sprite_Sheet_76: -4270571448927040707
+      Projectiles_Sprite_Sheet_74: -2879206952715382904
+      Projectiles_Sprite_Sheet_55: -5311329339880808388
+      Projectiles_Sprite_Sheet_40: 5042121994112199901
+      Projectiles_Sprite_Sheet_57: 1568517865698510007
+      Projectiles_Sprite_Sheet_82: -7127252972873326884
+      Projectiles_Sprite_Sheet_83: 5613522434161336873
+      Projectiles_Sprite_Sheet_4: -5712969150854995845
+      Projectiles_Sprite_Sheet_12: -3868124838838509202
+      Projectiles_Sprite_Sheet_66: 7440216512232236220
+      Projectiles_Sprite_Sheet_21: 5109123574733039747
+      Projectiles_Sprite_Sheet_32: 4084852366341444287
+      Projectiles_Sprite_Sheet_8: 1267546182187699343
+      Projectiles_Sprite_Sheet_51: -8446158242941463179
+      Projectiles_Sprite_Sheet_67: 1135099125707580317
+      Projectiles_Sprite_Sheet_71: 4894828635323027662
+      Projectiles_Sprite_Sheet_78: -7603700687595711864
+      Projectiles_Sprite_Sheet_73: -8200176513516573943
+      Projectiles_Sprite_Sheet_13: 100549329072013836
+      Projectiles_Sprite_Sheet_69: 1302887499534002676
+      Projectiles_Sprite_Sheet_35: -5065782479276178925
+      Projectiles_Sprite_Sheet_64: 3850875838430509374
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

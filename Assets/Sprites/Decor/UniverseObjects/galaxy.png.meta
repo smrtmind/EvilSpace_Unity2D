@@ -153,7 +153,7 @@ TextureImporter:
       213: 4480583441004083597
     second: galaxy_49
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -174,6 +174,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -212,6 +213,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -227,6 +229,42 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1300,6 +1338,57 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      galaxy_35: -8853565380490681579
+      galaxy_44: -2898238254527731919
+      galaxy_28: -350921615478190193
+      galaxy_8: 1942887208001691337
+      galaxy_17: 7296866762580631831
+      galaxy_29: -1501269346543798325
+      galaxy_1: -3387699791014045460
+      galaxy_6: -4732823706994317715
+      galaxy_38: 5109012674386166714
+      galaxy_13: -1022754615849466766
+      galaxy_5: 3538064156922067728
+      galaxy_9: -3546239694810194485
+      galaxy_11: 5420420382657551953
+      galaxy_23: 4613764978483368687
+      galaxy_40: -6435520166215188131
+      galaxy_21: 4531103546417471831
+      galaxy_39: 6157993741642379198
+      galaxy_2: 1369050767280673026
+      galaxy_7: -6396307275628667764
+      galaxy_47: 5926686553527225624
+      galaxy_26: 6841378104165312010
+      galaxy_43: -1377244673397135005
+      galaxy_42: 5094259999406183547
+      galaxy_10: -8096999735295783057
+      galaxy_3: -6225603507749226707
+      galaxy_33: -725948594175266155
+      galaxy_4: 3737724373291257584
+      galaxy_32: 3208686906723133748
+      galaxy_48: -4424577627989068366
+      galaxy_12: -8832684700312313055
+      galaxy_24: 4397241904353263932
+      galaxy_20: 6092821925602937342
+      galaxy_36: 9189506390204924313
+      galaxy_14: 7544539886651076488
+      galaxy_46: -3881670902888168467
+      galaxy_49: 4480583441004083597
+      galaxy_31: -3132279795426427052
+      galaxy_16: 5907535184742735547
+      galaxy_19: 3525324820621116565
+      galaxy_27: -2815989770308489462
+      galaxy_18: -8221299107122243294
+      galaxy_22: -8648270779414361680
+      galaxy_0: -8111889152495878255
+      galaxy_41: -1606419227180713608
+      galaxy_34: 4467379151079747684
+      galaxy_15: 2942381859170155663
+      galaxy_30: 6399436624028648508
+      galaxy_25: 6361248605384386784
+      galaxy_45: -2748717855934098532
+      galaxy_37: 1759720070750933682
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

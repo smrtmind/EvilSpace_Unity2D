@@ -87,7 +87,7 @@ TextureImporter:
       213: 3828078696904868383
     second: oneUp_27
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -107,6 +107,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -116,8 +118,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -138,10 +140,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -157,6 +163,42 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -768,6 +810,35 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      oneUp_12: 3694596787275035529
+      oneUp_17: -5881496367681159823
+      oneUp_4: -2415877343781877565
+      oneUp_0: -1455740839342090726
+      oneUp_7: -4342684200380109172
+      oneUp_8: -2289861610730447915
+      oneUp_14: -7594963458444785229
+      oneUp_20: -6451442987068285006
+      oneUp_22: -6784104192906584615
+      oneUp_15: 1186468747669463472
+      oneUp_6: 3952098519593692617
+      oneUp_19: 4426527050412784069
+      oneUp_13: -8913582930696361503
+      oneUp_18: 7691722874463711743
+      oneUp_10: -6897891682512051279
+      oneUp_11: 7696261863660835108
+      oneUp_21: -8131246533079692865
+      oneUp_25: 1197378132964889980
+      oneUp_5: 5110525565024478675
+      oneUp_26: -8222874381447821780
+      oneUp_9: 5200280982146024439
+      oneUp_23: 230976109411099267
+      oneUp_27: 3828078696904868383
+      oneUp_1: 8265977481279190014
+      oneUp_3: 318713714763731045
+      oneUp_24: 3373842228686880681
+      oneUp_16: -8293166656891851465
+      oneUp_2: -4486415252823163809
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
