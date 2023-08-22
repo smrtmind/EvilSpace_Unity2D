@@ -64,8 +64,6 @@ namespace CodeBase.UI
             noBttn.onClick.AddListener(NoButtonPressed);
             replayBttn.onClick.AddListener(ReplayButtonPressed);
             exitGameBttn.onClick.AddListener(YesButtonPressed);
-
-            startScreen.SetActive(true);
         }
 
         private void OnDisable()
@@ -81,6 +79,11 @@ namespace CodeBase.UI
             noBttn.onClick.RemoveListener(NoButtonPressed);
             replayBttn.onClick.RemoveListener(ReplayButtonPressed);
             exitGameBttn.onClick.RemoveListener(YesButtonPressed);
+        }
+
+        private void Start()
+        {
+            startScreen.SetActive(true);
         }
 
         private void StartButtonPressed()
@@ -153,16 +156,16 @@ namespace CodeBase.UI
         {
             gameOverScreen.SetActive(true);
             Time.timeScale = 0f;
-            finalScoreValue.text = $"final score: {Mathf.Round(playerStorage.ConcretePlayer.Score)}";
+            finalScoreValue.text = $"final score: {Mathf.Round(playerStorage.PlayerData.Score)}";
         }
 
-        private void RefreshHealthInfo() => healthValue.text = $"{Mathf.Round(playerStorage.ConcretePlayer.CurrentHealth)}";
+        private void RefreshHealthInfo() => healthValue.text = $"{Mathf.Round(playerStorage.PlayerData.CurrentHealth)}";
 
-        private void RefreshTriesInfo() => triesValue.text = $"{playerStorage.ConcretePlayer.CurrentTries}";
+        private void RefreshTriesInfo() => triesValue.text = $"{playerStorage.PlayerData.CurrentTries}";
 
         private void RefreshScoreInfo()
         {
-            scoreValue.text = $"{Mathf.Round(playerStorage.ConcretePlayer.Score)}";
+            scoreValue.text = $"{Mathf.Round(playerStorage.PlayerData.Score)}";
 
             if (!scoreIsScaling)
             {

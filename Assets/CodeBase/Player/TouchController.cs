@@ -51,7 +51,7 @@ namespace CodeBase.Player
                 mousePosition.z = 0;
                 direction = (mousePosition - transform.position);
 
-                Vector3 constrainedPosition = transform.position + direction * playerStorage.ConcretePlayer.MovementSpeed * Time.deltaTime;
+                Vector3 constrainedPosition = transform.position + direction * playerStorage.PlayerData.MovementSpeed * Time.deltaTime;
                 constrainedPosition.x = Mathf.Clamp(constrainedPosition.x, minX, maxX);
                 constrainedPosition.y = Mathf.Clamp(constrainedPosition.y, minY, maxY);
                 transform.position = constrainedPosition;

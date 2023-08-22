@@ -9,16 +9,14 @@ namespace CodeBase.Player
         [SerializeField] private PlayerDataStorage playerDataStorage;
 
         [Header("ConcretePlayer")]
-        [SerializeField] private Player concretePlayer = new Player();
+        [SerializeField] private Player playerData = new Player();
 
-        public Player ConcretePlayer => concretePlayer;
-
-        public float MovementSpeed { get; internal set; }
+        public Player PlayerData => playerData;
 
         public void SavePlayer()
         {
             Debug.Log("SAVED");
-            PlayerPrefs.SetString(playerPrefsSaveString, JsonUtility.ToJson(concretePlayer));
+            PlayerPrefs.SetString(playerPrefsSaveString, JsonUtility.ToJson(playerData));
         }
 
         public void LoadPlayer()
@@ -27,24 +25,24 @@ namespace CodeBase.Player
             if (playerString != "")
             {
                 Debug.Log("LOADED");
-                concretePlayer = JsonUtility.FromJson<Player>(playerString);
+                playerData = JsonUtility.FromJson<Player>(playerString);
             }
             else
             {
                 Debug.Log("NEW GAME");
-                concretePlayer = new Player();
+                playerData = new Player();
                 InitPlayer();
             }
         }
 
         private void InitPlayer()
         {
-            concretePlayer.SetPlayerData(playerDataStorage.DefaultHealth,
-                                         playerDataStorage.DefaultTries,
-                                         playerDataStorage.DefaultLvl,
-                                         playerDataStorage.DefaultScore,
-                                         playerDataStorage.DefaultMovementSpeed,
-                                         playerDataStorage.DefaultPlayerPosition);
+            playerData.SetPlayerData(playerDataStorage.DefaultHealth,
+                                     playerDataStorage.DefaultTries,
+                                     playerDataStorage.DefaultLvl,
+                                     playerDataStorage.DefaultScore,
+                                     playerDataStorage.DefaultMovementSpeed,
+                                     playerDataStorage.DefaultPlayerPosition);
         }
     }
 }

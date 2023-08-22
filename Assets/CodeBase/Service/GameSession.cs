@@ -64,7 +64,7 @@ namespace CodeBase.Service
 
         private void Update()
         {
-            if (playerStorage.ConcretePlayer.IsDead) return;
+            if (playerStorage.PlayerData.IsDead) return;
 
             if (_xp == _nextLvl)
             {

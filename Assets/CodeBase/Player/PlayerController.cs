@@ -82,7 +82,7 @@ namespace CodeBase.Player
         private void Start()
         {
             defaultColor = skinRenderer.color;
-            transform.position = playerStorage.ConcretePlayer.DefaultPlayerPosition;
+            transform.position = playerStorage.PlayerData.DefaultPlayerPosition;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -90,7 +90,7 @@ namespace CodeBase.Player
             if (collision.gameObject.tag.Equals(Tags.EnemyProjectile) && !electroShield.IsActive)
             {
                 var projectile = Dictionaries.Projectiles.FirstOrDefault(p => p.Key == collision.gameObject.transform);
-                playerStorage.ConcretePlayer.ModifyHealth(-projectile.Value.Damage);
+                playerStorage.PlayerData.ModifyHealth(-projectile.Value.Damage);
 
                 SpawnSpark(collision.gameObject.transform.position);
                 CheckBehaviourDueToDamageTaken();
@@ -99,8 +99,8 @@ namespace CodeBase.Player
 
         private void CheckBehaviourDueToDamageTaken()
         {
-            var minHealthEdge = (playerStorage.ConcretePlayer.Health / 100f) * minPercentOfHealthToBlink;
-            if (playerStorage.ConcretePlayer.CurrentHealth <= minHealthEdge && playerStorage.ConcretePlayer.CurrentHealth > 0f)
+            var minHealthEdge = (playerStorage.PlayerData.Health / 100f) * minPercentOfHealthToBlink;
+            if (playerStorage.PlayerData.CurrentHealth <= minHealthEdge && playerStorage.PlayerData.CurrentHealth > 0f)
             {
                 playerAnimationController.EnableCriticalDamageVisual(true);
 
@@ -108,14 +108,14 @@ namespace CodeBase.Player
                 popUp.SpawnPopUp();
             }
 
-            if (playerStorage.ConcretePlayer.IsDead)
+            if (playerStorage.PlayerData.IsDead)
             {
                 DestroyPlayer();
                 EventObserver.OnPlayerDied?.Invoke();
 
-                if (playerStorage.ConcretePlayer.CurrentTries > 0 && newLifeCoroutine == null)
+                if (playerStorage.PlayerData.CurrentTries > 0 && newLifeCoroutine == null)
                     newLifeCoroutine = StartCoroutine(StartNewLife());
-                else if (playerStorage.ConcretePlayer.CurrentTries <= 0 && gameOverCoroutine == null)
+                else if (playerStorage.PlayerData.CurrentTries <= 0 && gameOverCoroutine == null)
                     gameOverCoroutine = StartCoroutine(GameOver());
             }
 
@@ -152,7 +152,7 @@ namespace CodeBase.Player
 
             yield return new WaitForSeconds(3f);
 
-            transform.position = playerStorage.ConcretePlayer.DefaultPlayerPosition;
+            transform.position = playerStorage.PlayerData.DefaultPlayerPosition;
             electroShield.gameObject.SetActive(true);
 
             yield return new WaitForSeconds(0.5f);
@@ -163,7 +163,7 @@ namespace CodeBase.Player
             playerCollider.enabled = true;
 
             playerAnimationController.EnableStarterFlames(true);
-            playerStorage.ConcretePlayer.RevivePlayer();
+            playerStorage.PlayerData.RevivePlayer();
             newLifeCoroutine = null;
         }
 
@@ -180,7 +180,7 @@ namespace CodeBase.Player
         {
             var force = asteroidPosition - transform.position;
             playerBody.AddForce(-force.normalized * (forceOnEnemyCollision * 100f));
-            playerStorage.ConcretePlayer.ModifyHealth(-enemyStorage.DamageOnCollision);
+            playerStorage.PlayerData.ModifyHealth(-enemyStorage.DamageOnCollision);
 
             CheckBehaviourDueToDamageTaken();
         }
@@ -204,12 +204,12 @@ namespace CodeBase.Player
 
         private void StartNewGame()
         {
-            playerStorage.ConcretePlayer.StartNewGame();
+            playerStorage.PlayerData.StartNewGame();
             playerAnimationController.EnableStarterFlames(true);
 
             body.SetActive(true);
             playerCollider.enabled = true;
-            transform.position = playerStorage.ConcretePlayer.DefaultPlayerPosition;
+            transform.position = playerStorage.PlayerData.DefaultPlayerPosition;
         }
     }
 }

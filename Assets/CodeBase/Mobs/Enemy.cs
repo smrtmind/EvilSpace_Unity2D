@@ -98,7 +98,7 @@ namespace CodeBase.Mobs
             popUp.SetCurrentData(transform, $"{Score}", "yellow");
             popUp.SpawnPopUp();
 
-            playerStorage.ConcretePlayer.ModifyScore(Score);
+            playerStorage.PlayerData.ModifyScore(Score);
         }
     }
 }
