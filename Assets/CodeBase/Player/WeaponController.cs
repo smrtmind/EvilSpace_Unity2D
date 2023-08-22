@@ -59,7 +59,7 @@ namespace CodeBase.Player
         private int _ammoPerShoot;
         private int _currentWeaponType;
         private bool _allWeaponMaxOut;
-        private Coroutine shootingCoroutine;
+        private Coroutine shootingRoutine;
         private ParticlePool particlePool;
 
         [Inject]
@@ -114,16 +114,17 @@ namespace CodeBase.Player
             if (isMoving)
             {
                 _currentWeaponType = SetWeaponActive(0);
-                shootingCoroutine = StartCoroutine(EndlessShooting());
+                shootingRoutine = StartCoroutine(EndlessShooting());
             }
             else
             {
-                StopCoroutine(shootingCoroutine);
+                if (shootingRoutine != null)
+                    StopCoroutine(shootingRoutine);
             }
         }
 
         private IEnumerator EndlessShooting()
-        {     
+        {
             while (true)
             {
                 Shoot();
@@ -212,7 +213,7 @@ namespace CodeBase.Player
 
         //            _maxOutWeaponCounter++;
         //        }
-                    
+
         //        weapon.ShootingDelay.Value += weapon.ShootingDelayOnPowerUp;
         //        if (weapon.ShootingDelay.Value <= weapon.ShootingDelayMin)
         //        {
@@ -261,7 +262,7 @@ namespace CodeBase.Player
             projectile.SetBusyState(true);
             projectile.transform.position = _weaponShootingPoint.position;
             projectile.transform.rotation = transform.rotation;
-                //Instantiate(_weapon, _weaponShootingPoint.position, transform.rotation);
+            //Instantiate(_weapon, _weaponShootingPoint.position, transform.rotation);
             projectile.Launch(_playerBody.velocity, transform.up);
 
             //_weaponSettings[_currentWeaponType].Ammo += _ammoPerShoot;
@@ -337,7 +338,7 @@ namespace CodeBase.Player
             foreach (var projectile in projectiles)
             {
                 //if (projectile.IsHostile)
-                    Destroy(projectile.gameObject);
+                Destroy(projectile.gameObject);
             }
         }
 

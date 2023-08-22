@@ -1,7 +1,8 @@
-﻿using CodeBase.Player;
+﻿using CodeBase.Service;
 using CodeBase.Utils;
 using System.Collections;
 using UnityEngine;
+using Zenject;
 using Random = UnityEngine.Random;
 
 namespace CodeBase.Mobs
@@ -22,10 +23,13 @@ namespace CodeBase.Mobs
         private Vector2 screenBoundaries;
         private Coroutine boundsCoroutine;
         private Camera mainCamera;
+        private Vector3 mainCameraPosition;
 
-        private void Awake()
+        [Inject]
+        private void Construct(CameraController cameraController)
         {
-            mainCamera = Camera.main;
+            mainCamera = cameraController.MainCamera;
+            mainCameraPosition = cameraController.MainCamera.transform.position;
         }
 
         private void OnEnable()
@@ -48,7 +52,7 @@ namespace CodeBase.Mobs
             {
                 yield return new WaitForEndOfFrame();
 
-                screenBoundaries = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+                screenBoundaries = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, mainCameraPosition.z));
 
                 if (transform.position.y > screenBoundaries.y || transform.position.y < -screenBoundaries.y
                 || transform.position.x > screenBoundaries.x || transform.position.x < -screenBoundaries.x)
