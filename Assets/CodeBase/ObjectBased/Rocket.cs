@@ -80,7 +80,7 @@ namespace CodeBase.ObjectBased
         {
             if (collision.gameObject.tag.Equals(Tags.Player))
             {
-                PlayerController.OnPlayerCollision?.Invoke(transform.position);
+                EventObserver.OnPlayerCollision?.Invoke(transform.position);
             }
         }
     }

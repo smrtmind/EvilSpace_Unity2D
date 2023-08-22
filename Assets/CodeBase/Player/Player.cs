@@ -1,4 +1,4 @@
-﻿using CodeBase.UI;
+﻿using CodeBase.Utils;
 using System;
 using UnityEngine;
 
@@ -57,7 +57,7 @@ namespace CodeBase.Player
                 CurrentHealth = 0f;
             }
 
-            UserInterface.OnHealthChanged?.Invoke();
+            EventObserver.OnHealthChanged?.Invoke();
         }
 
         public void ModifyTries(int tries)
@@ -66,19 +66,19 @@ namespace CodeBase.Player
             if (CurrentTries <= 0)
                 CurrentTries = 0;
 
-            UserInterface.OnTriesChanged?.Invoke();
+            EventObserver.OnTriesChanged?.Invoke();
         }
 
         private void SetPlayerLvl(int lvl)
         {
             Lvl = lvl;
-            UserInterface.OnPlayerLevelChanged?.Invoke();
+            EventObserver.OnPlayerLevelChanged?.Invoke();
         }
 
         public void ModifyScore(float score)
         {
             Score += score;
-            UserInterface.OnScoreChanged?.Invoke();
+            EventObserver.OnScoreChanged?.Invoke();
         }
 
         public void RevivePlayer()

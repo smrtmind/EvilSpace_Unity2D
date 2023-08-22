@@ -1,4 +1,4 @@
-﻿using System;
+﻿using CodeBase.Utils;
 using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -8,67 +8,45 @@ namespace CodeBase.Service
     [RequireComponent(typeof(Camera))]
     public class CameraShaker : MonoBehaviour
     {
-        [SerializeField] private float duration = 0.2f;
-        [SerializeField] private float maxDelta = 0.1f;
-
-        public static Action OnShakeCamera;
-
         private Vector3 defaultPosition;
-        private Coroutine shakeCoroutine;
-        private float animationDuration;
-        //private float defaultDuration;
-        //private float defaultMaxDelta;
-
-        //private void Awake()
-        //{
-        //    defaultPosition = transform.position;
-        //    //defaultDuration = duration;
-        //    //defaultMaxDelta = maxDelta;
-        //}
+        private Coroutine shakeRoutine;
 
         private void OnEnable()
         {
-            defaultPosition = transform.position;
-
-            OnShakeCamera += ShakeCamera;
+            EventObserver.OnShakeCamera += ShakeCamera;
         }
 
         private void OnDisable()
         {
-            OnShakeCamera -= ShakeCamera;
+            EventObserver.OnShakeCamera -= ShakeCamera;
         }
 
-        private void ShakeCamera()
+        private void Start()
         {
-            if (shakeCoroutine != null)
-                StopCoroutine(shakeCoroutine);
-
-            shakeCoroutine = StartCoroutine(StartAnimation());
+            defaultPosition = transform.position;
         }
 
-        public void SetDuration(float value) => duration = value;
-        public void SetMaxDelta(float value) => maxDelta = value;
-
-        private IEnumerator StartAnimation()
+        private void ShakeCamera(float duration, float strength)
         {
-            animationDuration = 0;
+            if (shakeRoutine == null)
+                shakeRoutine = StartCoroutine(PerformShake(duration, strength));
+        }
+
+        private IEnumerator PerformShake(float duration, float strength)
+        {
+            var animationDuration = 0f;
 
             while (animationDuration < duration)
             {
                 animationDuration += Time.deltaTime;
-                Vector3 delta = Random.insideUnitCircle.normalized * maxDelta;
+                Vector3 delta = Random.insideUnitCircle.normalized * strength;
                 transform.position = defaultPosition + delta;
 
-                yield return null;
+                yield return new WaitForEndOfFrame();
             }
 
             transform.position = defaultPosition;
+            shakeRoutine = null;
         }
-
-        //public void RestoreValues()
-        //{
-        //    duration = defaultDuration;
-        //    maxDelta = defaultMaxDelta;
-        //}
     }
 }

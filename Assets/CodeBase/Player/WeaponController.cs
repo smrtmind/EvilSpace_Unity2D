@@ -285,8 +285,10 @@ namespace CodeBase.Player
             //_electroEffect.Spawn();
             //_bombEffect.Spawn();
 
-            _cameraShaker.SetDuration(1.2f);
-            _cameraShaker.SetMaxDelta(0.6f);
+            EventObserver.OnShakeCamera?.Invoke(1.2f, 0.6f);
+
+            //_cameraShaker.SetDuration(1.2f);
+            //_cameraShaker.SetMaxDelta(0.6f);
             //_cameraShaker.ShakeCamera();
 
             KillAllEnemies();

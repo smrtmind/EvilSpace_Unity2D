@@ -1,7 +1,6 @@
 ﻿using CodeBase.Effects;
 using CodeBase.Mobs;
 using CodeBase.ObjectBased;
-using CodeBase.UI;
 using CodeBase.Utils;
 using System;
 using System.Collections;
@@ -38,14 +37,14 @@ namespace CodeBase.Service
 
         private void OnEnable()
         {
-            UserInterface.OnLevelLoaded += InitSpawner;
-            UserInterface.OnGameRestarted += DisableAllEnemies;
+            EventObserver.OnLevelLoaded += InitSpawner;
+            EventObserver.OnGameRestarted += DisableAllEnemies;
         }
 
         private void OnDisable()
         {
-            UserInterface.OnLevelLoaded -= InitSpawner;
-            UserInterface.OnGameRestarted -= DisableAllEnemies;
+            EventObserver.OnLevelLoaded -= InitSpawner;
+            EventObserver.OnGameRestarted -= DisableAllEnemies;
         }
 
         private void InitSpawner()

@@ -2,12 +2,10 @@
 using CodeBase.Effects;
 using CodeBase.Mobs;
 using CodeBase.ObjectBased;
-using CodeBase.Service;
 using CodeBase.UI;
 using CodeBase.Utils;
 using DG.Tweening;
 using Scripts;
-using System;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
@@ -41,9 +39,6 @@ namespace CodeBase.Player
         [SerializeField] private float forceOnEnemyCollision;
         [SerializeField] private float minPercentOfHealthToBlink;
 
-        public static Action OnPlayerDied;
-        public static Action<Vector3> OnPlayerCollision;
-
         private AudioComponent _audio;
         private Color defaultColor;
         private Coroutine newLifeCoroutine;
@@ -69,17 +64,17 @@ namespace CodeBase.Player
         {
             defaultColor = skinRenderer.color;
 
-            UserInterface.OnLevelLoaded += EnableTouchControls;
-            UserInterface.OnGameRestarted += StartNewGame;
-            OnPlayerCollision += ForceBackPlayer;
+            EventObserver.OnLevelLoaded += EnableTouchControls;
+            EventObserver.OnGameRestarted += StartNewGame;
+            EventObserver.OnPlayerCollision += ForceBackPlayer;
 
         }
 
         private void OnDisable()
         {
-            UserInterface.OnLevelLoaded -= EnableTouchControls;
-            UserInterface.OnGameRestarted -= StartNewGame;
-            OnPlayerCollision -= ForceBackPlayer;
+            EventObserver.OnLevelLoaded -= EnableTouchControls;
+            EventObserver.OnGameRestarted -= StartNewGame;
+            EventObserver.OnPlayerCollision -= ForceBackPlayer;
         }
 
         private void EnableTouchControls() => touchController.enabled = true;
@@ -113,7 +108,7 @@ namespace CodeBase.Player
                                         .OnComplete(() => isChangedColor = false);
             }
 
-            CameraShaker.OnShakeCamera?.Invoke();
+            EventObserver.OnShakeCamera?.Invoke(0.2f, 0.1f);
 
             var minHealthEdge = (playerStorage.ConcretePlayer.Health / 100f) * minPercentOfHealthToBlink;
             if (playerStorage.ConcretePlayer.CurrentHealth <= minHealthEdge && playerStorage.ConcretePlayer.CurrentHealth > 0f)
@@ -127,7 +122,7 @@ namespace CodeBase.Player
             if (playerStorage.ConcretePlayer.IsDead)
             {
                 DestroyPlayer();
-                OnPlayerDied?.Invoke();
+                EventObserver.OnPlayerDied?.Invoke();
 
                 if (playerStorage.ConcretePlayer.CurrentTries > 0 && newLifeCoroutine == null)
                     newLifeCoroutine = StartCoroutine(StartNewLife());             
@@ -140,7 +135,7 @@ namespace CodeBase.Player
         {
             DestroyPlayer();
             yield return new WaitForSeconds(3f);
-            UserInterface.OnGameOver?.Invoke();
+            EventObserver.OnGameOver?.Invoke();
             gameOverCoroutine = null;
         }
 

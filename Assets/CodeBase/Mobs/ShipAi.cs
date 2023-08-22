@@ -39,7 +39,7 @@ namespace CodeBase.Mobs
 
             moveCoroutine = StartCoroutine(StartMove());
 
-            PlayerController.OnPlayerDied += ChangeBehaviour;
+            EventObserver.OnPlayerDied += ChangeBehaviour;
         }
 
         private void OnDisable()
@@ -47,7 +47,7 @@ namespace CodeBase.Mobs
             moveCoroutine = null;
             shootingCoroutine = null;
 
-            PlayerController.OnPlayerDied -= ChangeBehaviour;
+            EventObserver.OnPlayerDied -= ChangeBehaviour;
 
             //GetPlayerDirection();
             //transform.rotation = Quaternion.Euler(0, 0, zAngle);
@@ -138,7 +138,7 @@ namespace CodeBase.Mobs
         {
             if (collision.gameObject.tag.Equals(Tags.Player))
             {
-                PlayerController.OnPlayerCollision?.Invoke(transform.position);
+                EventObserver.OnPlayerCollision?.Invoke(transform.position);
             }
         }
     }

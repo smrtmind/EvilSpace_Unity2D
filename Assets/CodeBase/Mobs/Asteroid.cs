@@ -75,7 +75,7 @@ namespace CodeBase.Mobs
             if (collision.gameObject.tag.Equals(Tags.Player))
             {
                 ModifyHealth(-Health);
-                PlayerController.OnPlayerCollision?.Invoke(transform.position);
+                EventObserver.OnPlayerCollision?.Invoke(transform.position);
             }
         }
     }

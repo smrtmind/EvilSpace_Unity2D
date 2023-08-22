@@ -1,6 +1,6 @@
 ﻿using CodeBase.Player;
+using CodeBase.Utils;
 using DG.Tweening;
-using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -44,14 +44,6 @@ namespace CodeBase.UI
         [SerializeField] private Button yesBttn;
         [SerializeField] private Button noBttn;
 
-        public static Action OnHealthChanged;
-        public static Action OnTriesChanged;
-        public static Action OnPlayerLevelChanged;
-        public static Action OnScoreChanged;
-        public static Action OnLevelLoaded;
-        public static Action OnGameOver;
-        public static Action OnGameRestarted;
-
         private Tween loadingTween;
         private Coroutine loadingTextCoroutine;
         private Tween loadingTextTween;
@@ -61,10 +53,11 @@ namespace CodeBase.UI
 
         private void OnEnable()
         {
-            OnHealthChanged += RefreshHealthInfo;
-            OnTriesChanged += RefreshTriesInfo;
-            OnScoreChanged += RefreshScoreInfo;
-            OnGameOver += ShowGameOverScreen;
+            EventObserver.OnHealthChanged += RefreshHealthInfo;
+            EventObserver.OnTriesChanged += RefreshTriesInfo;
+            EventObserver.OnScoreChanged += RefreshScoreInfo;
+            EventObserver.OnGameOver += ShowGameOverScreen;
+
             startBttn.onClick.AddListener(StartButtonPressed);
             exitBttn.onClick.AddListener(ExitButtonPressed);
             yesBttn.onClick.AddListener(YesButtonPressed);
@@ -77,10 +70,11 @@ namespace CodeBase.UI
 
         private void OnDisable()
         {
-            OnHealthChanged -= RefreshHealthInfo;
-            OnTriesChanged -= RefreshTriesInfo;
-            OnScoreChanged -= RefreshScoreInfo;
-            OnGameOver -= ShowGameOverScreen;
+            EventObserver.OnHealthChanged -= RefreshHealthInfo;
+            EventObserver.OnTriesChanged -= RefreshTriesInfo;
+            EventObserver.OnScoreChanged -= RefreshScoreInfo;
+            EventObserver.OnGameOver -= ShowGameOverScreen;
+
             startBttn.onClick.RemoveListener(StartButtonPressed);
             exitBttn.onClick.RemoveListener(ExitButtonPressed);
             yesBttn.onClick.RemoveListener(YesButtonPressed);
@@ -107,7 +101,7 @@ namespace CodeBase.UI
 
         private void ReplayButtonPressed()
         {
-            OnGameRestarted?.Invoke();
+            EventObserver.OnGameRestarted?.Invoke();
 
             gameOverScreen.SetActive(false);
             Time.timeScale = 1f;
@@ -140,7 +134,7 @@ namespace CodeBase.UI
 
                 loadingScreen.SetActive(false);
                 StopCoroutine(loadingTextCoroutine);
-                OnLevelLoaded?.Invoke();
+                EventObserver.OnLevelLoaded?.Invoke();
             }
         }
 
