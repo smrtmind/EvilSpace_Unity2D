@@ -72,7 +72,7 @@ namespace CodeBase.Player
         private void SetPlayerLvl(int lvl)
         {
             Lvl = lvl;
-            EventObserver.OnPlayerLevelChanged?.Invoke();
+            EventObserver.OnLevelChanged?.Invoke();
         }
 
         public void ModifyScore(float score)

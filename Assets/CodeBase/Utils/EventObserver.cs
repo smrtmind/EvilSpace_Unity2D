@@ -15,10 +15,10 @@ namespace CodeBase.Utils
         [Header("UI events")]
         public static Action OnHealthChanged;
         public static Action OnTriesChanged;
-        public static Action OnPlayerLevelChanged;
+        public static Action OnLevelChanged;
         public static Action OnScoreChanged;
         public static Action OnLevelLoaded;
-        public static Action OnGameOver;
         public static Action OnGameRestarted;
+        public static Action OnGameOver;
     }
 }
