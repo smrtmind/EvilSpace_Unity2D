@@ -70,9 +70,8 @@ namespace CodeBase.Service
             var newPlanet = GetFreePlanet();
             newPlanet.Take();
             newPlanet.transform.position = randomPosition;
+            newPlanet.transform.rotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
             newPlanet.SetSpeed(Random.Range(minSpeed, maxSpeed));
-            //newPlanet.transform.rotation = Quaternion.identity;
-            //newEnemy.SetBusyState(true);
         }
 
         public Planet GetFreePlanet()
@@ -88,9 +87,6 @@ namespace CodeBase.Service
 
         private Planet CreateNewPlanet(PlanetType type)
         {
-            //var enemies = enemyStorage.GetEnemyUnits(unit.Type);
-            //var randomEnemy = enemies[Random.Range(0, enemies.Count)];
-
             Planet newPlanet = diContainer.InstantiatePrefabForComponent<Planet>(planetStorage.GetPlanet(type), particlePool.PlanetContainer);
             planets.Add(newPlanet);
 
