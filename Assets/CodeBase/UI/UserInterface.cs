@@ -1,7 +1,6 @@
 ﻿using CodeBase.Player;
 using CodeBase.Utils;
 using DG.Tweening;
-using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -20,13 +19,23 @@ namespace CodeBase.UI
         [SerializeField] private TextMeshProUGUI healthValue;
         [SerializeField] private TextMeshProUGUI triesValue;
         [SerializeField] private TextMeshProUGUI lvlValue;
+        [SerializeField] private TextMeshProUGUI scoreValue;
+        [SerializeField] private Vector3 scoreValueScaleOnChange;
+
+        [Header("Buttons")]
         [SerializeField] private Button bombBttn;
         [SerializeField] private Image bombReloadFiller;
         [SerializeField] private TextMeshProUGUI bombTimerValue;
 
         [Space]
-        [SerializeField] private TextMeshProUGUI scoreValue;
-        [SerializeField] private Vector3 scoreValueScaleOnChange;
+        [SerializeField] private GameObject optionsPanel;
+        [SerializeField] private Button optionsBttn;
+        [SerializeField] private Button soundBttn;
+        [SerializeField] private Sprite soundOn;
+        [SerializeField] private Sprite soundOff;
+        [SerializeField] private Button vibroBttn;
+        [SerializeField] private Sprite vibroOn;
+        [SerializeField] private Sprite vibroOff;
 
         [Header("Loading Screen")]
         [SerializeField] private GameObject loadingScreen;
@@ -79,6 +88,9 @@ namespace CodeBase.UI
             replayBttn.onClick.AddListener(ReplayButtonPressed);
             exitGameBttn.onClick.AddListener(YesButtonPressed);
             bombBttn.onClick.AddListener(BombButtonPressed);
+            optionsBttn.onClick.AddListener(ShowOptionsPanel);
+            soundBttn.onClick.AddListener(EnableSound);
+            vibroBttn.onClick.AddListener(EnableVibrations);
         }
 
         private void OnDisable()
@@ -96,6 +108,9 @@ namespace CodeBase.UI
             replayBttn.onClick.RemoveListener(ReplayButtonPressed);
             exitGameBttn.onClick.RemoveListener(YesButtonPressed);
             bombBttn.onClick.RemoveListener(BombButtonPressed);
+            optionsBttn.onClick.RemoveListener(ShowOptionsPanel);
+            soundBttn.onClick.RemoveListener(EnableSound);
+            vibroBttn.onClick.RemoveListener(EnableVibrations);
         }
 
         private void Start()
@@ -191,6 +206,7 @@ namespace CodeBase.UI
                 RefreshHealthInfo();
                 RefreshTriesInfo();
                 RefreshScoreInfo();
+                RefreshOptionsPanel();
 
                 loadingScreen.SetActive(false);
                 StopCoroutine(loadingTextCoroutine);
@@ -214,6 +230,30 @@ namespace CodeBase.UI
             gameOverScreen.SetActive(true);
             Time.timeScale = 0f;
             finalScoreValue.text = $"final score: {Mathf.Round(playerStorage.PlayerData.Score)}";
+        }
+
+        private void ShowOptionsPanel() => optionsPanel.SetActive(!optionsPanel.activeSelf);
+
+        private void EnableSound()
+        {
+            playerStorage.PlayerData.EnableSound(!playerStorage.PlayerData.SoundOn);
+            RefreshOptionsPanel();
+
+            EventObserver.OnSoundActivated?.Invoke(playerStorage.PlayerData.SoundOn);
+        }
+
+        private void EnableVibrations()
+        {
+            playerStorage.PlayerData.EnableVibrations(!playerStorage.PlayerData.VibrationsOn);
+            RefreshOptionsPanel();
+
+            EventObserver.OnVibrationsActivated?.Invoke(playerStorage.PlayerData.VibrationsOn);
+        }
+
+        private void RefreshOptionsPanel()
+        {
+            soundBttn.image.sprite = playerStorage.PlayerData.SoundOn ? soundOn : soundOff;
+            vibroBttn.image.sprite = playerStorage.PlayerData.VibrationsOn ? vibroOn : vibroOff;
         }
 
         private void RefreshHealthInfo() => healthValue.text = $"{Mathf.Round(playerStorage.PlayerData.CurrentHealth)}";

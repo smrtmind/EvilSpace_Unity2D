@@ -25,5 +25,9 @@ namespace CodeBase.Utils
 
         [Header("Touch events")]
         public static Action<bool> OnStartMoving;
+
+        [Header("Settings events")]
+        public static Action<bool> OnSoundActivated;
+        public static Action<bool> OnVibrationsActivated;
     }
 }

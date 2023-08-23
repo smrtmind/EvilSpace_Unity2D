@@ -7,6 +7,10 @@ namespace CodeBase.Player
     [Serializable]
     public class Player
     {
+        [field: Header("Device Settings")]
+        [field: SerializeField] public bool SoundOn { get; private set; } = true;
+        [field: SerializeField] public bool VibrationsOn { get; private set; } = true;
+
         [field: Header("Player Settings")]
         [field: SerializeField] public bool IsDead { get; private set; }
 
@@ -97,5 +101,9 @@ namespace CodeBase.Player
             ModifyScore(-Score);
             MovementSpeed = DefaultMovementSpeed;
         }
+
+        public void EnableSound(bool enable) => SoundOn = enable;
+
+        public void EnableVibrations(bool enable) => VibrationsOn = enable;
     }
 }
