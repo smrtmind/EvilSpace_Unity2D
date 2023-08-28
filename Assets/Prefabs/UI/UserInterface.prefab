@@ -2874,7 +2874,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -32, y: 384}
+  m_AnchoredPosition: {x: -16, y: 384}
   m_SizeDelta: {x: 135, y: 135}
   m_Pivot: {x: 1, y: 0}
 --- !u!1 &5719519520147671473
@@ -3168,7 +3168,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 32, y: -128}
+  m_AnchoredPosition: {x: 16, y: -128}
   m_SizeDelta: {x: 112, y: 112}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &4741042484879943147
@@ -3409,7 +3409,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -32, y: -128}
+  m_AnchoredPosition: {x: -16, y: -128}
   m_SizeDelta: {x: 108, y: 478}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &7108871444614943419
@@ -4637,6 +4637,7 @@ MonoBehaviour:
   bombBttn: {fileID: 2528458163743903524}
   bombReloadFiller: {fileID: 5771056101508016477}
   bombTimerValue: {fileID: 760750028617293571}
+  delayToAutoHidePanel: 5
   optionsPanel: {fileID: 7575195153662061206}
   optionsBttn: {fileID: 114018151980653955}
   soundBttn: {fileID: 7575195152866235697}
@@ -4695,7 +4696,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 32, y: -250}
+  m_AnchoredPosition: {x: 16, y: -250}
   m_SizeDelta: {x: 112, y: 224}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &7575195153662061288

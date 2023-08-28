@@ -28,6 +28,7 @@ namespace CodeBase.UI
         [SerializeField] private TextMeshProUGUI bombTimerValue;
 
         [Space]
+        [SerializeField] private float delayToAutoHidePanel = 10f;
         [SerializeField] private GameObject optionsPanel;
         [SerializeField] private Button optionsBttn;
         [SerializeField] private Button soundBttn;
@@ -66,6 +67,7 @@ namespace CodeBase.UI
         private Tween bombFillerTween;
         private WeaponController weaponController;
         private Tween optionsPanelTween;
+        private Coroutine hidePanelRoutine;
         #endregion
 
         [Inject]
@@ -235,25 +237,45 @@ namespace CodeBase.UI
 
         private void ShowOptionsPanel()
         {
-            optionsPanelTween?.Kill();
-
             if (optionsPanel.activeSelf)
             {
-                optionsPanelTween = optionsPanel.transform.DOScale(Vector3.zero, 0.15f).SetEase(Ease.Linear)
-                    .OnComplete(() => optionsPanel.SetActive(false));
+                if (hidePanelRoutine != null)
+                {
+                    StopCoroutine(hidePanelRoutine);
+                    hidePanelRoutine = StartCoroutine(HideOptionsPanel());
+                }
             }
             else
             {
                 optionsPanel.transform.localScale = Vector3.zero;
                 optionsPanel.SetActive(true);
+
+                optionsPanelTween?.Kill();
                 optionsPanelTween = optionsPanel.transform.DOScale(Vector3.one, 0.15f).SetEase(Ease.Linear);
+
+                if (hidePanelRoutine == null)
+                    hidePanelRoutine = StartCoroutine(HideOptionsPanel(delayToAutoHidePanel));
             }
+        }
+
+        private IEnumerator HideOptionsPanel(float delay = 0f)
+        {
+            yield return new WaitForSeconds(delay);
+
+            optionsPanelTween?.Kill();
+            optionsPanelTween = optionsPanel.transform.DOScale(Vector3.zero, 0.15f).SetEase(Ease.Linear)
+                .OnComplete(() => optionsPanel.SetActive(false));
+
+            hidePanelRoutine = null;
         }
 
         private void EnableSound()
         {
             playerStorage.PlayerData.EnableSound(!playerStorage.PlayerData.SoundOn);
             RefreshOptionsPanel();
+
+            StopCoroutine(hidePanelRoutine);
+            hidePanelRoutine = StartCoroutine(HideOptionsPanel(delayToAutoHidePanel));
 
             EventObserver.OnSoundActivated?.Invoke(playerStorage.PlayerData.SoundOn);
         }
@@ -262,6 +284,9 @@ namespace CodeBase.UI
         {
             playerStorage.PlayerData.EnableVibrations(!playerStorage.PlayerData.VibrationsOn);
             RefreshOptionsPanel();
+
+            StopCoroutine(hidePanelRoutine);
+            hidePanelRoutine = StartCoroutine(HideOptionsPanel(delayToAutoHidePanel));
 
             EventObserver.OnVibrationsActivated?.Invoke(playerStorage.PlayerData.VibrationsOn);
         }
@@ -278,7 +303,7 @@ namespace CodeBase.UI
 
         private void RefreshScoreInfo()
         {
-            scoreValue.text = $"{Mathf.Round(playerStorage.PlayerData.Score)}";
+            scoreValue.text = $"score: {Mathf.Round(playerStorage.PlayerData.Score)}";
 
             if (!scoreIsScaling)
             {

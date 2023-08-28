@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2004492487847295208}
-  - component: {fileID: 3900071613002575263}
   m_Layer: 13
   m_Name: effectPosition
   m_TagString: Untagged
@@ -31,21 +30,6 @@ Transform:
   m_Father: {fileID: 9189476791698383287}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3900071613002575263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 82746950219201390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a523f1eaf8b31c4aa334dcbdb8b15b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 2004492487847295208}
-  _prefab: {fileID: 6469350666797897011, guid: a750889364090a74d863fe6b6fa160c2, type: 3}
-  _invertXScale: 0
 --- !u!1 &5402518915234663952
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,13 +41,10 @@ GameObject:
   - component: {fileID: 9189476791698383287}
   - component: {fileID: 5102007477941824130}
   - component: {fileID: 5151267230898865728}
-  - component: {fileID: 3023214216566811913}
   - component: {fileID: 7485517924715460861}
   - component: {fileID: 5353876597758346955}
   - component: {fileID: 1344459526897691784}
   - component: {fileID: 2633307696664293919}
-  - component: {fileID: 1669949585239468324}
-  - component: {fileID: -4750828163132356237}
   m_Layer: 13
   m_Name: oneUp
   m_TagString: Untagged
@@ -101,6 +82,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -149,62 +131,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7a614fffbf02141946a8622e3c1bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _frameRate: 8
-  _clips:
-  - _name: idle
-    _sprites:
-    - {fileID: -1455740839342090726, guid: 048bce0568b89564faa5c879f2060593, type: 3}
-    - {fileID: 8265977481279190014, guid: 048bce0568b89564faa5c879f2060593, type: 3}
-    - {fileID: -4486415252823163809, guid: 048bce0568b89564faa5c879f2060593, type: 3}
-    - {fileID: 318713714763731045, guid: 048bce0568b89564faa5c879f2060593, type: 3}
-    - {fileID: -2415877343781877565, guid: 048bce0568b89564faa5c879f2060593, type: 3}
-    _loop: 1
-    _allowNextClip: 0
-    _onComplete:
-      m_PersistentCalls:
-        m_Calls: []
-  - _name: get
-    _sprites: []
-    _loop: 0
-    _allowNextClip: 0
-    _onComplete:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3900071613002575263}
-          m_MethodName: Spawn
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 3023214216566811913}
-          m_MethodName: DestroyObject
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &3023214216566811913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5402518915234663952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1a9b9dcd6ea5ea45b1537ed109bd2be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 5402518915234663952}
+  frameRate: 10
+  loop: 0
+  <Sprites>k__BackingField: []
+  spriteRenderer: {fileID: 0}
 --- !u!50 &7485517924715460861
 Rigidbody2D:
   serializedVersion: 4
@@ -271,10 +201,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 580800971c37a8946b25715aea716744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpeed: 5
-  _maxSpeed: 15
-  _minRotation: 0
-  _maxRotation: 0
+  playerStorage: {fileID: 0}
+  enemyStorage: {fileID: 0}
+  explosionEffect: 0
+  explosionAdditionalScale: 0
+  skinRenderer: {fileID: 0}
+  popUp: {fileID: 0}
+  <Health>k__BackingField: 0
+  <Score>k__BackingField: 0
+  <IsBusy>k__BackingField: 0
+  asteroidBody: {fileID: 0}
+  minSpeed: 1
+  maxSpeed: 5
+  minRotation: 5
+  maxRotation: 25
+  minScale: 0
+  maxScale: 0
 --- !u!114 &2633307696664293919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,57 +229,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18882bc27a457164897c6248fb5fec55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1669949585239468324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5402518915234663952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 232f8e543d85a6c4e86358d14771f883, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _tag: Player
-  _layer:
-    serializedVersion: 2
-    m_Bits: 256
-  _action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -4750828163132356237}
-        m_MethodName: AddOneLife
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: get
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5151267230898865728}
-        m_MethodName: SetClip
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: get
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &-4750828163132356237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5402518915234663952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83d11917e1aebd9419ca63f014e69fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _points: {fileID: 0}
