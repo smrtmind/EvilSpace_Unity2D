@@ -65,6 +65,7 @@ namespace CodeBase.UI
         private bool scoreIsScaling;
         private Tween bombFillerTween;
         private WeaponController weaponController;
+        private Tween optionsPanelTween;
         #endregion
 
         [Inject]
@@ -232,7 +233,22 @@ namespace CodeBase.UI
             finalScoreValue.text = $"final score: {Mathf.Round(playerStorage.PlayerData.Score)}";
         }
 
-        private void ShowOptionsPanel() => optionsPanel.SetActive(!optionsPanel.activeSelf);
+        private void ShowOptionsPanel()
+        {
+            optionsPanelTween?.Kill();
+
+            if (optionsPanel.activeSelf)
+            {
+                optionsPanelTween = optionsPanel.transform.DOScale(Vector3.zero, 0.15f).SetEase(Ease.Linear)
+                    .OnComplete(() => optionsPanel.SetActive(false));
+            }
+            else
+            {
+                optionsPanel.transform.localScale = Vector3.zero;
+                optionsPanel.SetActive(true);
+                optionsPanelTween = optionsPanel.transform.DOScale(Vector3.one, 0.15f).SetEase(Ease.Linear);
+            }
+        }
 
         private void EnableSound()
         {

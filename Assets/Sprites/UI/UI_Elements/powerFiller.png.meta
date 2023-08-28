@@ -1,28 +1,22 @@
 fileFormatVersion: 2
-guid: e29ff4ac55c2bce4e87d20de28810c53
+guid: ddcb2466eef79dd44a6194923b41a8db
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2101916639101073191
-    second: uiElementFrame_0
+      213: -3592965188839055242
+    second: powerFiller_0
   - first:
-      213: 6166324115493766232
-    second: uiElementFrame_1
+      213: -9123195081835354993
+    second: powerFiller_1
   - first:
-      213: 8130902568377159997
-    second: uiElementFrame_2
+      213: -5484351259634646734
+    second: powerFiller_2
   - first:
-      213: -3279231947333479019
-    second: uiElementFrame_3
+      213: -7779212094949771690
+    second: powerFiller_3
   - first:
-      213: 8612387982213699785
-    second: uiElementFrame_4
-  - first:
-      213: 1026557086067335267
-    second: uiElementFrame_5
-  - first:
-      213: -319330527206498804
-    second: uiElementFrame_6
+      213: -7373111368114560739
+    second: powerFiller_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -136,13 +130,97 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: uiElementFrame_0
+      name: powerFiller_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 60
+        width: 42
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67067e47239332ec0800000000000000
+      internalID: -3592965188839055242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powerFiller_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 45
+        width: 42
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f84ec9ae866e36180800000000000000
+      internalID: -9123195081835354993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powerFiller_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 30
+        width: 42
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 231c202369ba3e3b0800000000000000
+      internalID: -5484351259634646734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powerFiller_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 15
+        width: 42
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 656b810d0dfaa0490800000000000000
+      internalID: -7779212094949771690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powerFiller_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 54
-        height: 77
+        width: 42
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,134 +228,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d8c5e204fd74d2e0800000000000000
-      internalID: -2101916639101073191
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: uiElementFrame_1
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 0
-        width: 54
-        height: 77
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8544ee9cc1f239550800000000000000
-      internalID: 6166324115493766232
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: uiElementFrame_2
-      rect:
-        serializedVersion: 2
-        x: 108
-        y: 0
-        width: 54
-        height: 77
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d319e6b7ec4c6d070800000000000000
-      internalID: 8130902568377159997
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: uiElementFrame_3
-      rect:
-        serializedVersion: 2
-        x: 162
-        y: 0
-        width: 54
-        height: 77
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 59553130be3dd72d0800000000000000
-      internalID: -3279231947333479019
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: uiElementFrame_4
-      rect:
-        serializedVersion: 2
-        x: 216
-        y: 0
-        width: 54
-        height: 77
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9c8d0bb4d39558770800000000000000
-      internalID: 8612387982213699785
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: uiElementFrame_5
-      rect:
-        serializedVersion: 2
-        x: 270
-        y: 0
-        width: 54
-        height: 77
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 36024b81b301f3e00800000000000000
-      internalID: 1026557086067335267
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: uiElementFrame_6
-      rect:
-        serializedVersion: 2
-        x: 324
-        y: 0
-        width: 54
-        height: 77
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c0e1befc392819bf0800000000000000
-      internalID: -319330527206498804
+      spriteID: d11232e66427da990800000000000000
+      internalID: -7373111368114560739
       vertices: []
       indices: 
       edges: []

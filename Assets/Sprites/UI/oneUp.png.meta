@@ -1,28 +1,22 @@
 fileFormatVersion: 2
-guid: e29ff4ac55c2bce4e87d20de28810c53
+guid: 048bce0568b89564faa5c879f2060593
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2101916639101073191
-    second: uiElementFrame_0
+      213: -1455740839342090726
+    second: oneUp_0
   - first:
-      213: 6166324115493766232
-    second: uiElementFrame_1
+      213: 8265977481279190014
+    second: oneUp_1
   - first:
-      213: 8130902568377159997
-    second: uiElementFrame_2
+      213: -4486415252823163809
+    second: oneUp_2
   - first:
-      213: -3279231947333479019
-    second: uiElementFrame_3
+      213: 318713714763731045
+    second: oneUp_3
   - first:
-      213: 8612387982213699785
-    second: uiElementFrame_4
-  - first:
-      213: 1026557086067335267
-    second: uiElementFrame_5
-  - first:
-      213: -319330527206498804
-    second: uiElementFrame_6
+      213: -2415877343781877565
+    second: oneUp_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -86,7 +80,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 512
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -98,19 +92,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 512
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 512
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -122,7 +104,31 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 512
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -136,13 +142,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: uiElementFrame_0
+      name: oneUp_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 54
-        height: 77
+        width: 98
+        height: 95
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +156,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d8c5e204fd74d2e0800000000000000
-      internalID: -2101916639101073191
+      spriteID: a165cf16b6b2ccbe0800000000000000
+      internalID: -1455740839342090726
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: uiElementFrame_1
+      name: oneUp_1
       rect:
         serializedVersion: 2
-        x: 54
+        x: 98
         y: 0
-        width: 54
-        height: 77
+        width: 98
+        height: 95
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +177,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8544ee9cc1f239550800000000000000
-      internalID: 6166324115493766232
+      spriteID: ef3360569b6a6b270800000000000000
+      internalID: 8265977481279190014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: uiElementFrame_2
+      name: oneUp_2
       rect:
         serializedVersion: 2
-        x: 108
+        x: 196
         y: 0
-        width: 54
-        height: 77
+        width: 98
+        height: 95
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +198,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d319e6b7ec4c6d070800000000000000
-      internalID: 8130902568377159997
+      spriteID: f5cb49cf81d0db1c0800000000000000
+      internalID: -4486415252823163809
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: uiElementFrame_3
+      name: oneUp_3
       rect:
         serializedVersion: 2
-        x: 162
+        x: 294
         y: 0
-        width: 54
-        height: 77
+        width: 98
+        height: 95
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,20 +219,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59553130be3dd72d0800000000000000
-      internalID: -3279231947333479019
+      spriteID: 56099895f6c4c6400800000000000000
+      internalID: 318713714763731045
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: uiElementFrame_4
+      name: oneUp_4
       rect:
         serializedVersion: 2
-        x: 216
+        x: 392
         y: 0
-        width: 54
-        height: 77
+        width: 98
+        height: 95
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,50 +240,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c8d0bb4d39558770800000000000000
-      internalID: 8612387982213699785
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: uiElementFrame_5
-      rect:
-        serializedVersion: 2
-        x: 270
-        y: 0
-        width: 54
-        height: 77
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 36024b81b301f3e00800000000000000
-      internalID: 1026557086067335267
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: uiElementFrame_6
-      rect:
-        serializedVersion: 2
-        x: 324
-        y: 0
-        width: 54
-        height: 77
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c0e1befc392819bf0800000000000000
-      internalID: -319330527206498804
+      spriteID: 3c887fe0b54197ed0800000000000000
+      internalID: -2415877343781877565
       vertices: []
       indices: 
       edges: []
