@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <DefaultHealth>k__BackingField: 3
   <DefaultTries>k__BackingField: 3
-  <DefaultLevelProgressTarget>k__BackingField: 50
-  <AdditionalPercentPerLevel>k__BackingField: 5
+  <DefaultLevelProgressTarget>k__BackingField: 100
+  <AdditionalPercentPerLevel>k__BackingField: 10
   <DefaultMovementSpeed>k__BackingField: 8
   <DefaultPlayerPosition>k__BackingField: {x: 0, y: -17, z: 0}

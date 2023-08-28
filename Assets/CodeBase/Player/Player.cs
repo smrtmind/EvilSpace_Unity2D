@@ -39,6 +39,10 @@ namespace CodeBase.Player
         [field: SerializeField] public int DefaultTries { get; private set; }
         [field: SerializeField] public float DefaultMovementSpeed { get; private set; }
 
+        private const int MAX_LEVEL = 99;
+        private const int LEVEL_TO_EVOLVE = 5;
+        private const float MAX_HEALTH = 10f;
+
         public void SetPlayerData(float health, int tries, float defaultLevelProgressTarget, float additionalPercentPerLevel, float movementSpeed, Vector3 defaultPlayerPosition)
         {
             Health = health;
@@ -105,9 +109,9 @@ namespace CodeBase.Player
 
         private void IncreaseLevel()
         {
-            if (Lvl < 99) Lvl++;
+            if (Lvl < MAX_LEVEL) Lvl++;
 
-            if (Lvl % 3 == 0) Health++;
+            if (Lvl % LEVEL_TO_EVOLVE == 0 && Health < MAX_HEALTH) Health++;
             CurrentHealth = Health;
 
             EventObserver.OnHealthChanged?.Invoke();
