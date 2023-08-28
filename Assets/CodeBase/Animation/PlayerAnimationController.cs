@@ -1,3 +1,4 @@
+using CodeBase.Utils;
 using DG.Tweening;
 using System;
 using System.Collections.Generic;
@@ -35,10 +36,22 @@ namespace CodeBase.Animation
         private Sequence criticalBehaviour;
         private Tween criticalDamageFlameTween;
 
+        private void OnEnable()
+        {
+            EventObserver.OnLevelChanged += DisableCriticalDamage;
+        }
+
+        private void OnDisable()
+        {
+            EventObserver.OnLevelChanged -= DisableCriticalDamage;
+        }
+
         private void Start()
         {
             defaultColor = skinRenderer.color;
         }
+
+        private void DisableCriticalDamage() => EnableCriticalDamageVisual(false);
 
         public void UpdateAnimation(float directionX)
         {

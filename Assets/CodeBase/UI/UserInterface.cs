@@ -21,6 +21,7 @@ namespace CodeBase.UI
         [SerializeField] private TextMeshProUGUI lvlValue;
         [SerializeField] private TextMeshProUGUI scoreValue;
         [SerializeField] private Vector3 scoreValueScaleOnChange;
+        [SerializeField] private Slider levelProgressSlider;
 
         [Header("Buttons")]
         [SerializeField] private Button bombBttn;
@@ -81,6 +82,8 @@ namespace CodeBase.UI
             EventObserver.OnHealthChanged += RefreshHealthInfo;
             EventObserver.OnTriesChanged += RefreshTriesInfo;
             EventObserver.OnScoreChanged += RefreshScoreInfo;
+            EventObserver.OnLevelChanged += RefreshLevelInfo;
+            EventObserver.OnLevelProgressChanged += RefreshLevelProgressSlider;
             EventObserver.OnGameOver += ShowGameOverScreen;
             EventObserver.OnPlayerDied += DisableBombButton;
 
@@ -101,6 +104,8 @@ namespace CodeBase.UI
             EventObserver.OnHealthChanged -= RefreshHealthInfo;
             EventObserver.OnTriesChanged -= RefreshTriesInfo;
             EventObserver.OnScoreChanged -= RefreshScoreInfo;
+            EventObserver.OnLevelChanged -= RefreshLevelInfo;
+            EventObserver.OnLevelProgressChanged -= RefreshLevelProgressSlider;
             EventObserver.OnGameOver -= ShowGameOverScreen;
             EventObserver.OnPlayerDied -= DisableBombButton;
 
@@ -209,6 +214,8 @@ namespace CodeBase.UI
                 RefreshHealthInfo();
                 RefreshTriesInfo();
                 RefreshScoreInfo();
+                RefreshLevelInfo();
+                RefreshLevelProgressSlider();
                 RefreshOptionsPanel();
 
                 loadingScreen.SetActive(false);
@@ -301,9 +308,18 @@ namespace CodeBase.UI
 
         private void RefreshTriesInfo() => triesValue.text = $"{playerStorage.PlayerData.CurrentTries}";
 
+        private void RefreshLevelInfo() => lvlValue.text = $"lvl {playerStorage.PlayerData.Lvl}";
+
+        private void RefreshLevelProgressSlider()
+        {
+            levelProgressSlider.minValue = 0f;
+            levelProgressSlider.maxValue = playerStorage.PlayerData.TargetLvlProgress;
+            levelProgressSlider.value = playerStorage.PlayerData.CurrentLevelProgress;
+        }
+
         private void RefreshScoreInfo()
         {
-            scoreValue.text = $"score: {Mathf.Round(playerStorage.PlayerData.Score)}";
+            scoreValue.text = $"score {Mathf.Round(playerStorage.PlayerData.Score)}";
 
             if (!scoreIsScaling)
             {

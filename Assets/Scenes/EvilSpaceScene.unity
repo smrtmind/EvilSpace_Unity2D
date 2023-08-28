@@ -387,19 +387,19 @@ MonoBehaviour:
     <EnemiesPool>k__BackingField: []
   - <Type>k__BackingField: 1
     <SpawnUnitsOnStart>k__BackingField: 4
-    <SpawnCooldown>k__BackingField: 5
+    <SpawnCooldown>k__BackingField: 3
     <EnemiesPool>k__BackingField: []
   - <Type>k__BackingField: 2
-    <SpawnUnitsOnStart>k__BackingField: 3
-    <SpawnCooldown>k__BackingField: 10
+    <SpawnUnitsOnStart>k__BackingField: 0
+    <SpawnCooldown>k__BackingField: 100
     <EnemiesPool>k__BackingField: []
   - <Type>k__BackingField: 3
-    <SpawnUnitsOnStart>k__BackingField: 2
-    <SpawnCooldown>k__BackingField: 15
+    <SpawnUnitsOnStart>k__BackingField: 0
+    <SpawnCooldown>k__BackingField: 100
     <EnemiesPool>k__BackingField: []
   - <Type>k__BackingField: 4
-    <SpawnUnitsOnStart>k__BackingField: 1
-    <SpawnCooldown>k__BackingField: 20
+    <SpawnUnitsOnStart>k__BackingField: 0
+    <SpawnCooldown>k__BackingField: 100
     <EnemiesPool>k__BackingField: []
 --- !u!114 &1018386067 stripped
 MonoBehaviour:
@@ -1178,10 +1178,65 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4072417594630696234, guid: 945ac4254c71b36438e44005c6ac2842,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4072417594630696234, guid: 945ac4254c71b36438e44005c6ac2842,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4072417594630696234, guid: 945ac4254c71b36438e44005c6ac2842,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4072417594630696234, guid: 945ac4254c71b36438e44005c6ac2842,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6594833753627057168, guid: 945ac4254c71b36438e44005c6ac2842,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6594833753627057168, guid: 945ac4254c71b36438e44005c6ac2842,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6594833753627057168, guid: 945ac4254c71b36438e44005c6ac2842,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6594833753627057168, guid: 945ac4254c71b36438e44005c6ac2842,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605593988735199297, guid: 945ac4254c71b36438e44005c6ac2842,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605593988735199297, guid: 945ac4254c71b36438e44005c6ac2842,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605593988735199297, guid: 945ac4254c71b36438e44005c6ac2842,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7575195153270108212, guid: 945ac4254c71b36438e44005c6ac2842,
         type: 3}
       propertyPath: m_Name
-      value: UserInterface
+      value: UI
       objectReference: {fileID: 0}
     - target: {fileID: 7575195153270108213, guid: 945ac4254c71b36438e44005c6ac2842,
         type: 3}

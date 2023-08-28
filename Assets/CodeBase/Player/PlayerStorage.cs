@@ -39,8 +39,8 @@ namespace CodeBase.Player
         {
             playerData.SetPlayerData(playerDataStorage.DefaultHealth,
                                      playerDataStorage.DefaultTries,
-                                     playerDataStorage.DefaultLvl,
-                                     playerDataStorage.DefaultScore,
+                                     playerDataStorage.DefaultLevelProgressTarget,
+                                     playerDataStorage.AdditionalPercentPerLevel,
                                      playerDataStorage.DefaultMovementSpeed,
                                      playerDataStorage.DefaultPlayerPosition);
         }

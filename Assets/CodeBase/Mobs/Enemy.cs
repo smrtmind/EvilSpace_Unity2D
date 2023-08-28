@@ -99,6 +99,7 @@ namespace CodeBase.Mobs
             popUp.SpawnPopUp();
 
             playerStorage.PlayerData.ModifyScore(Score);
+            playerStorage.PlayerData.ModifyLevelProgress(Score / 10f);
         }
     }
 }

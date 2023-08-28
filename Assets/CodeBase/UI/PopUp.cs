@@ -60,8 +60,7 @@ namespace CodeBase.UI
 
         private void FadePopUp()
         {
-            transform.DOMoveY(transform.position.y + 2f, 0.5f).SetEase(Ease.Linear).SetAutoKill();
-            ValueInfo.DOColor(new Color(ValueInfo.color.r, ValueInfo.color.g, ValueInfo.color.b, 0f), 0.5f)
+            ValueInfo.DOColor(new Color(ValueInfo.color.r, ValueInfo.color.g, ValueInfo.color.b, 0f), 0.25f)
                      .OnComplete(() => RefreshPopUp()).SetAutoKill();
         }
 

@@ -68,6 +68,7 @@ namespace CodeBase.Player
             EventObserver.OnLevelLoaded += EnableTouchControls;
             EventObserver.OnGameRestarted += StartNewGame;
             EventObserver.OnPlayerCollision += ForceBackPlayer;
+            EventObserver.OnLevelChanged += SpawnLvlPopup;
         }
 
         private void OnDisable()
@@ -75,9 +76,8 @@ namespace CodeBase.Player
             EventObserver.OnLevelLoaded -= EnableTouchControls;
             EventObserver.OnGameRestarted -= StartNewGame;
             EventObserver.OnPlayerCollision -= ForceBackPlayer;
+            EventObserver.OnLevelChanged -= SpawnLvlPopup;
         }
-
-        private void EnableTouchControls() => touchController.enabled = true;
 
         private void Start()
         {
@@ -95,6 +95,14 @@ namespace CodeBase.Player
                 SpawnSpark(collision.gameObject.transform.position);
                 CheckBehaviourDueToDamageTaken();
             }
+        }
+
+        private void EnableTouchControls() => touchController.enabled = true;
+
+        private void SpawnLvlPopup()
+        {
+            popUp.SetCurrentData(transform, $"lvl up", "yellow");
+            popUp.SpawnPopUp();
         }
 
         private void CheckBehaviourDueToDamageTaken()

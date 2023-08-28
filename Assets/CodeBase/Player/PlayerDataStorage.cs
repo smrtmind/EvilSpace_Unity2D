@@ -8,8 +8,12 @@ namespace CodeBase.Player
         [field: Header("Player Settings")]
         [field: SerializeField] public float DefaultHealth { get; private set; }
         [field: SerializeField] public int DefaultTries { get; private set; }
-        [field: SerializeField] public int DefaultLvl { get; private set; }
-        [field: SerializeField] public float DefaultScore { get; private set; }
+
+        [field: Space]
+        [field: SerializeField] public float DefaultLevelProgressTarget { get; private set; }
+        [field: SerializeField] public float AdditionalPercentPerLevel { get; private set; }
+
+        [field: Space]
         [field: SerializeField] public float DefaultMovementSpeed { get; private set; }
         [field: SerializeField] public Vector3 DefaultPlayerPosition { get; private set; }
     }

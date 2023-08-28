@@ -19,6 +19,7 @@ namespace CodeBase.Utils
         public static Action OnLevelChanged;
         public static Action OnScoreChanged;
         public static Action OnLevelLoaded;
+        public static Action OnLevelProgressChanged;
         public static Action OnGameRestarted;
         public static Action OnGameOver;
         public static Action OnBombButtonPressed;

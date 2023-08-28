@@ -12,7 +12,7 @@ namespace CodeBase.Player
         [field: SerializeField] public bool VibrationsOn { get; private set; } = true;
 
         [field: Header("Player Settings")]
-        [field: SerializeField] public bool IsDead { get; private set; }
+        [field: SerializeField] public bool IsDead { get; private set; } = false;
 
         [field: Space]
         [field: SerializeField] public float Health { get; private set; }
@@ -23,8 +23,14 @@ namespace CodeBase.Player
         [field: SerializeField] public int CurrentTries { get; private set; }
 
         [field: Space]
-        [field: SerializeField] public int Lvl { get; private set; }
-        [field: SerializeField] public float Score { get; private set; }
+        [field: SerializeField] public int Lvl { get; private set; } = 1;
+        [field: SerializeField] public float CurrentLevelProgress { get; private set; } = 0f;
+        [field: SerializeField] public float TargetLvlProgress { get; private set; }
+        [field: SerializeField] public float DefaultTargetLvlProgress { get; private set; }
+        [field: SerializeField] public float AdditionalPercentPerLevel { get; private set; }
+
+        [field: Space]
+        [field: SerializeField] public float Score { get; private set; } = 0f;
         [field: SerializeField] public float MovementSpeed { get; private set; }
         [field: SerializeField] public Vector3 DefaultPlayerPosition { get; private set; }
 
@@ -33,13 +39,13 @@ namespace CodeBase.Player
         [field: SerializeField] public int DefaultTries { get; private set; }
         [field: SerializeField] public float DefaultMovementSpeed { get; private set; }
 
-        public void SetPlayerData(float health, int tries, int lvl, float score, float movementSpeed, Vector3 defaultPlayerPosition)
+        public void SetPlayerData(float health, int tries, float defaultLevelProgressTarget, float additionalPercentPerLevel, float movementSpeed, Vector3 defaultPlayerPosition)
         {
-            IsDead = false;
             Health = health;
             Tries = tries;
-            Lvl = lvl;
-            Score = score;
+            TargetLvlProgress = defaultLevelProgressTarget;
+            DefaultTargetLvlProgress = defaultLevelProgressTarget;
+            AdditionalPercentPerLevel = additionalPercentPerLevel;
             MovementSpeed = movementSpeed;
             DefaultPlayerPosition = defaultPlayerPosition;
 
@@ -73,16 +79,39 @@ namespace CodeBase.Player
             EventObserver.OnTriesChanged?.Invoke();
         }
 
-        private void SetPlayerLvl(int lvl)
-        {
-            Lvl = lvl;
-            EventObserver.OnLevelChanged?.Invoke();
-        }
-
         public void ModifyScore(float score)
         {
             Score += score;
             EventObserver.OnScoreChanged?.Invoke();
+        }
+
+        public void ModifyLevelProgress(float exp)
+        {
+            CurrentLevelProgress += exp;
+
+            if (CurrentLevelProgress >= TargetLvlProgress)
+            {
+                var result = CurrentLevelProgress - TargetLvlProgress;
+                CurrentLevelProgress = result;
+
+                var percent = (TargetLvlProgress / 100f) * AdditionalPercentPerLevel;
+                TargetLvlProgress += percent;
+
+                IncreaseLevel();
+            }
+
+            EventObserver.OnLevelProgressChanged?.Invoke();
+        }
+
+        private void IncreaseLevel()
+        {
+            if (Lvl < 99) Lvl++;
+
+            if (Lvl % 3 == 0) Health++;
+            CurrentHealth = Health;
+
+            EventObserver.OnHealthChanged?.Invoke();
+            EventObserver.OnLevelChanged?.Invoke();
         }
 
         public void RevivePlayer()
@@ -97,9 +126,11 @@ namespace CodeBase.Player
             IsDead = false;
             ModifyHealth(DefaultHealth);
             ModifyTries(DefaultTries);
-            SetPlayerLvl(1);
             ModifyScore(-Score);
             MovementSpeed = DefaultMovementSpeed;
+            CurrentLevelProgress = 0f;
+            TargetLvlProgress = DefaultTargetLvlProgress;
+            Lvl = 1;
         }
 
         public void EnableSound(bool enable) => SoundOn = enable;
