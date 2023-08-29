@@ -115,7 +115,11 @@ namespace CodeBase.Utils
             Planet8,
             Planet9,
             Planet10,
-            Planet11
+            Planet11,
+            Star1,
+            Star2, 
+            Star3, 
+            Star4
         }
 
         public enum CollectableType

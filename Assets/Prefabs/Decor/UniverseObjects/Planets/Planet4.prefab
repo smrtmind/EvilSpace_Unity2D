@@ -63,10 +63,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7a614fffbf02141946a8622e3c1bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <ParticleType>k__BackingField: 0
+  loop: 1
   spriteRenderer: {fileID: 7412391004971584290}
   frameRate: 5
-  loop: 1
-  <Sprites>k__BackingField:
+  sprites:
   - {fileID: -6215730420229240775, guid: 5361590bb1fd47c4e8874e303d9e831c, type: 3}
   - {fileID: 1181105631229938715, guid: 5361590bb1fd47c4e8874e303d9e831c, type: 3}
   - {fileID: -2509875187809482710, guid: 5361590bb1fd47c4e8874e303d9e831c, type: 3}

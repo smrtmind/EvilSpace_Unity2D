@@ -153,7 +153,7 @@ TextureImporter:
       213: 5047211991057404314
     second: black hole_49
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -174,7 +174,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -213,11 +212,10 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -229,7 +227,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -253,7 +251,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -265,7 +263,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: iPhone
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -1338,57 +1336,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      black hole_23: 616234672843445020
-      black hole_22: 5785450748766545074
-      black hole_3: 440848430582060744
-      black hole_7: -3587427676589710588
-      black hole_28: -2265137766846650137
-      black hole_37: 1213316730126664424
-      black hole_15: -933696829863685728
-      black hole_45: 6820218377678642900
-      black hole_13: 3700481836527391631
-      black hole_8: -5657585737923775321
-      black hole_41: -4820744652165423253
-      black hole_21: -6807409607051855532
-      black hole_27: -5661645980246606428
-      black hole_16: -8769348147353054173
-      black hole_10: -8456654353103690687
-      black hole_29: 1293799976263373494
-      black hole_14: -5461398144404330504
-      black hole_48: -8295067301154778711
-      black hole_38: -3463143137052300536
-      black hole_5: -494174997830045633
-      black hole_39: 5693204848106092468
-      black hole_0: 5309788771701705700
-      black hole_6: 5528038086244593129
-      black hole_43: -7233175842154882376
-      black hole_42: 3363277685286713146
-      black hole_31: 8555950513188773531
-      black hole_2: -2073027374262704469
-      black hole_20: 5220798107312214807
-      black hole_12: 1950290267154316219
-      black hole_25: 3421838798959952035
-      black hole_26: 228669190619242352
-      black hole_11: -5112749164242766932
-      black hole_18: -4198232042519650724
-      black hole_24: -7142893582310442972
-      black hole_9: -8583858017571683610
-      black hole_1: -6676889857868802381
-      black hole_36: -5137406141011657196
-      black hole_32: 7751891378801451708
-      black hole_49: 5047211991057404314
-      black hole_35: 4035608199552580135
-      black hole_17: 4328898087406659910
-      black hole_44: -5324207786336935588
-      black hole_19: -6885239855787429655
-      black hole_40: -581080529843602050
-      black hole_33: 9024470588871374992
-      black hole_30: 8703843340857225333
-      black hole_47: -5373100602415440663
-      black hole_4: 3680796499947032844
-      black hole_34: -9045962740930317148
-      black hole_46: 5999671330671865601
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

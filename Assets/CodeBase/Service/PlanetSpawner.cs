@@ -18,6 +18,8 @@ namespace CodeBase.Service
         [SerializeField] private float spawnCooldown;
         [SerializeField] private float indentY = 15f;
         [SerializeField] private float indentX = 5f;
+        [SerializeField] private float minRotationZ = 0f;
+        [SerializeField] private float maxRotationZ = -75f;
         [SerializeField, Min(1f)] private float minSpeed;
         [SerializeField, Min(1f)] private float maxSpeed;
 
@@ -70,7 +72,7 @@ namespace CodeBase.Service
             var newPlanet = GetFreePlanet();
             newPlanet.Take();
             newPlanet.transform.position = randomPosition;
-            newPlanet.transform.rotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
+            newPlanet.transform.rotation = Quaternion.Euler(0f, 0f, Random.Range(minRotationZ, maxRotationZ));
             newPlanet.SetSpeed(Random.Range(minSpeed, maxSpeed));
         }
 

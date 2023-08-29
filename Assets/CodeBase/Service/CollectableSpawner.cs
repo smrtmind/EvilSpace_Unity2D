@@ -12,7 +12,7 @@ namespace CodeBase.Service
     public class CollectableSpawner : MonoBehaviour
     {
         [SerializeField] private Collectable[] collectables;
-        [SerializeField] private int spawnOnstart;
+        [SerializeField] private int spawnOnStart;
         [SerializeField] private float spawnCooldown;
 
         private ScreenBounds screenBounds;
@@ -49,9 +49,9 @@ namespace CodeBase.Service
 
         private void BurstSpawnCollectables()
         {
-            if (spawnOnstart > 0)
+            if (spawnOnStart > 0)
             {
-                for (int i = 0; i < spawnOnstart; i++)
+                for (int i = 0; i < spawnOnStart; i++)
                     SpawnNewCollectable();
             }
         }

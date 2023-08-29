@@ -10,6 +10,7 @@ namespace CodeBase.ObjectBased
     {
         [field: SerializeField] public PlanetType Type { get; private set; }
         [SerializeField] private SpriteRenderer spriteRenderer;
+        [SerializeField] private float maxIndentY = 15f;
         [SerializeField, Range(0f, 255f)] private float minShadeValue;
         [SerializeField, Range(0f, 255f)] private float maxShadeValue;
         [SerializeField, Range(1f, 10f)] private float minScale;
@@ -64,7 +65,7 @@ namespace CodeBase.ObjectBased
         {
             screenBoundaries = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, mainCameraPosition.z));
 
-            if (transform.position.y < -screenBoundaries.y - 15f)
+            if (transform.position.y < -screenBoundaries.y - maxIndentY)
             {
                 Release();
                 return false;

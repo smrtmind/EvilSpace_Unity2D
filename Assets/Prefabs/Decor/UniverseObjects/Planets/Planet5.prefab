@@ -63,10 +63,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7a614fffbf02141946a8622e3c1bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <ParticleType>k__BackingField: 0
+  loop: 1
   spriteRenderer: {fileID: 7412391004971584290}
   frameRate: 5
-  loop: 1
-  <Sprites>k__BackingField:
+  sprites:
+  - {fileID: 430214764648562501, guid: 98d3872f4f1731248b175e4015469d28, type: 3}
   - {fileID: 3730538644060928797, guid: 98d3872f4f1731248b175e4015469d28, type: 3}
   - {fileID: -1851171699599140789, guid: 98d3872f4f1731248b175e4015469d28, type: 3}
   - {fileID: 918296501476594467, guid: 98d3872f4f1731248b175e4015469d28, type: 3}
@@ -116,7 +118,6 @@ MonoBehaviour:
   - {fileID: -1736466199243969393, guid: 98d3872f4f1731248b175e4015469d28, type: 3}
   - {fileID: -7464200426475030029, guid: 98d3872f4f1731248b175e4015469d28, type: 3}
   - {fileID: 4789128534760214280, guid: 98d3872f4f1731248b175e4015469d28, type: 3}
-  - {fileID: 430214764648562501, guid: 98d3872f4f1731248b175e4015469d28, type: 3}
 --- !u!1 &7412391004971584288
 GameObject:
   m_ObjectHideFlags: 0

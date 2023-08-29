@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b4cc2f6f5ad21c4ead35dc07fc0d5d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Type>k__BackingField: 0
   spriteRenderer: {fileID: 7412391004971584290}
   minShadeValue: 50
   maxShadeValue: 150
@@ -62,10 +63,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7a614fffbf02141946a8622e3c1bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <ParticleType>k__BackingField: 0
+  loop: 1
   spriteRenderer: {fileID: 7412391004971584290}
   frameRate: 5
-  loop: 1
-  <Sprites>k__BackingField:
+  sprites:
   - {fileID: 5309788771701705700, guid: 54d2b472b1c2e584dace4fd0c870fda9, type: 3}
   - {fileID: -6676889857868802381, guid: 54d2b472b1c2e584dace4fd0c870fda9, type: 3}
   - {fileID: -2073027374262704469, guid: 54d2b472b1c2e584dace4fd0c870fda9, type: 3}

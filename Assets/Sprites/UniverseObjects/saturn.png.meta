@@ -153,7 +153,7 @@ TextureImporter:
       213: 2427527335018480602
     second: saturn_49
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -174,7 +174,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -213,11 +212,10 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -229,7 +227,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -253,7 +251,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -265,7 +263,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: iPhone
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -1338,57 +1336,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      saturn_13: -3875694539800719020
-      saturn_41: 6515940101394049990
-      saturn_20: 6049191511117802152
-      saturn_44: -2075100329885576958
-      saturn_4: 7385182741466442332
-      saturn_43: 6797497547936138879
-      saturn_37: -2246250663930143170
-      saturn_2: -8904381451083345020
-      saturn_35: -3601258608174527795
-      saturn_8: 956876902267618145
-      saturn_27: -450953385351113415
-      saturn_45: 7568830009514970633
-      saturn_49: 2427527335018480602
-      saturn_23: 8830793018999278267
-      saturn_36: -4660967194060560846
-      saturn_47: 4956239311330835103
-      saturn_3: 5903083243635287101
-      saturn_18: -827914918768893185
-      saturn_22: 2337029820726427575
-      saturn_32: 2441885390762843259
-      saturn_30: 7653854185354730742
-      saturn_5: 5603625589692882677
-      saturn_6: -7045222404890937055
-      saturn_15: 7616631005858828099
-      saturn_48: 8242063939525461262
-      saturn_29: 434968912735729623
-      saturn_42: -4201596946469954258
-      saturn_25: -1947894504565260083
-      saturn_38: 4727885458421582037
-      saturn_46: -8359731571327820151
-      saturn_34: -6191039229104106727
-      saturn_40: -9187258594411053182
-      saturn_10: -9043355544831144751
-      saturn_7: 2526726731581731746
-      saturn_0: 8894465885016300276
-      saturn_31: -2925021436566896721
-      saturn_17: 1480327463890096386
-      saturn_24: -1742210353563704724
-      saturn_12: 3290389767364784635
-      saturn_1: -7718114321199847488
-      saturn_28: -285460078613970038
-      saturn_19: -2522218548991954093
-      saturn_14: 9124357989348921582
-      saturn_33: 1426015609719796203
-      saturn_39: 2814812853551125090
-      saturn_21: -3775582796008805055
-      saturn_11: -3906758764397777167
-      saturn_26: -5398444111735236660
-      saturn_16: 6837143441079806417
-      saturn_9: -6708317424897176453
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
