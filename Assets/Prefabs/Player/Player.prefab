@@ -362,6 +362,7 @@ MonoBehaviour:
   playerStorage: {fileID: 11400000, guid: 0e2cce6871d5eb547801ec25880e2198, type: 2}
   rb: {fileID: 6447220743359504510}
   playerAnimationController: {fileID: 1086577806725384660}
+  interpolateIndent: 3.5
 --- !u!1 &3789471796559236244
 GameObject:
   m_ObjectHideFlags: 0

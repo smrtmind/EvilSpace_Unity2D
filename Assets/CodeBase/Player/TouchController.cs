@@ -14,6 +14,7 @@ namespace CodeBase.Player
         [Header("Player Settings")]
         [SerializeField] private Rigidbody2D rb;
         [SerializeField] private PlayerAnimationController playerAnimationController;
+        [SerializeField] private float interpolateIndent = 3.5f;
 
         private Vector3 mousePosition;
         private Vector3 direction;
@@ -47,7 +48,9 @@ namespace CodeBase.Player
 
                 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
                 mousePosition.z = 0;
-                direction = (mousePosition - transform.position);
+
+                Vector3 targetPosition = mousePosition + Vector3.up * interpolateIndent;
+                direction = (targetPosition - transform.position);
 
                 Vector3 constrainedPosition = transform.position + direction * playerStorage.PlayerData.MovementSpeed * Time.deltaTime;
                 constrainedPosition.x = Mathf.Clamp(constrainedPosition.x, minX, maxX);
