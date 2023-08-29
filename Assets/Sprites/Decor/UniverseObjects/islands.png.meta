@@ -1,159 +1,159 @@
 fileFormatVersion: 2
-guid: f5a6daf71da35ec4dac1a3dd830f19aa
+guid: 906dfa73aa11835458b6622116ebcc4c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8754573770440005219
-    second: terrain dry_0
+      213: 897089110629237537
+    second: islands_0
   - first:
-      213: 1622545029242349824
-    second: terrain dry_1
+      213: 1371074782014302068
+    second: islands_1
   - first:
-      213: 1387305529116251414
-    second: terrain dry_2
+      213: -2593166970290744829
+    second: islands_2
   - first:
-      213: -366544553809059735
-    second: terrain dry_3
+      213: -3923815537569020999
+    second: islands_3
   - first:
-      213: 9016865263039609546
-    second: terrain dry_4
+      213: -2493926215916491905
+    second: islands_4
   - first:
-      213: -7508400818004373616
-    second: terrain dry_5
+      213: -1336909959096483705
+    second: islands_5
   - first:
-      213: -6792351015459064753
-    second: terrain dry_6
+      213: -2376567235193688938
+    second: islands_6
   - first:
-      213: 3334034192583800976
-    second: terrain dry_7
+      213: -5370502727439212540
+    second: islands_7
   - first:
-      213: 7045407867479825980
-    second: terrain dry_8
+      213: 2002091917349491277
+    second: islands_8
   - first:
-      213: 2901169984636493024
-    second: terrain dry_9
+      213: -5353653800228387646
+    second: islands_9
   - first:
-      213: -8135073551390379048
-    second: terrain dry_10
+      213: 1008794738392715034
+    second: islands_10
   - first:
-      213: -7194858620780175884
-    second: terrain dry_11
+      213: -8726851894567451790
+    second: islands_11
   - first:
-      213: 822690598297065595
-    second: terrain dry_12
+      213: 4918972064934771484
+    second: islands_12
   - first:
-      213: 7885801826845908172
-    second: terrain dry_13
+      213: 7525461147519654719
+    second: islands_13
   - first:
-      213: 2037754138153247789
-    second: terrain dry_14
+      213: -6078069415020584769
+    second: islands_14
   - first:
-      213: 6126686668726556504
-    second: terrain dry_15
+      213: 7972921935651053883
+    second: islands_15
   - first:
-      213: 2201756067370128895
-    second: terrain dry_16
+      213: 2230685325738334197
+    second: islands_16
   - first:
-      213: 6085862291667213161
-    second: terrain dry_17
+      213: 8298864618057582263
+    second: islands_17
   - first:
-      213: 9086995809540386717
-    second: terrain dry_18
+      213: 4382148507567644241
+    second: islands_18
   - first:
-      213: -7501056190182628207
-    second: terrain dry_19
+      213: 8877986025266023867
+    second: islands_19
   - first:
-      213: 6046413039688724334
-    second: terrain dry_20
+      213: 853660737337189998
+    second: islands_20
   - first:
-      213: 2411316405603333899
-    second: terrain dry_21
+      213: 526822617724738189
+    second: islands_21
   - first:
-      213: 6100117659005609139
-    second: terrain dry_22
+      213: 7304552283129694631
+    second: islands_22
   - first:
-      213: -7856803380058133238
-    second: terrain dry_23
+      213: -3695104606681519679
+    second: islands_23
   - first:
-      213: -6908484441984201875
-    second: terrain dry_24
+      213: -7349412356930994971
+    second: islands_24
   - first:
-      213: -4947266522905153215
-    second: terrain dry_25
+      213: 848398970503691522
+    second: islands_25
   - first:
-      213: -6784108988353933118
-    second: terrain dry_26
+      213: 6096636596596728850
+    second: islands_26
   - first:
-      213: -5491187872448678047
-    second: terrain dry_27
+      213: -7870709659777036814
+    second: islands_27
   - first:
-      213: -6713188923892013462
-    second: terrain dry_28
+      213: -8732557056799639081
+    second: islands_28
   - first:
-      213: 8221323676869383054
-    second: terrain dry_29
+      213: -1678721704344199166
+    second: islands_29
   - first:
-      213: -8129426469352365077
-    second: terrain dry_30
+      213: -8399892664393289826
+    second: islands_30
   - first:
-      213: 4840293674966347936
-    second: terrain dry_31
+      213: 7318466013628100740
+    second: islands_31
   - first:
-      213: 1903743739544863896
-    second: terrain dry_32
+      213: -2879652696259987216
+    second: islands_32
   - first:
-      213: -5684167702365918438
-    second: terrain dry_33
+      213: 7050562644734313947
+    second: islands_33
   - first:
-      213: 2431113213015465070
-    second: terrain dry_34
+      213: -5364671627728506603
+    second: islands_34
   - first:
-      213: 7619351302184429509
-    second: terrain dry_35
+      213: 4844952945947888925
+    second: islands_35
   - first:
-      213: 4328493788419632920
-    second: terrain dry_36
+      213: -2543927357756595356
+    second: islands_36
   - first:
-      213: -3116850582071983365
-    second: terrain dry_37
+      213: -3751947617518824559
+    second: islands_37
   - first:
-      213: 7863197458688525888
-    second: terrain dry_38
+      213: 3244382349785356447
+    second: islands_38
   - first:
-      213: 6866000029086344449
-    second: terrain dry_39
+      213: 8627912685851935592
+    second: islands_39
   - first:
-      213: -3562704222469777353
-    second: terrain dry_40
+      213: -1054414360653865971
+    second: islands_40
   - first:
-      213: 2747881558314006755
-    second: terrain dry_41
+      213: 6389578951042747835
+    second: islands_41
   - first:
-      213: 7717174530364849489
-    second: terrain dry_42
+      213: -1555170064871438722
+    second: islands_42
   - first:
-      213: 1128888761133315928
-    second: terrain dry_43
+      213: 6285783190015895989
+    second: islands_43
   - first:
-      213: 4410318520986076054
-    second: terrain dry_44
+      213: 7225917772997389041
+    second: islands_44
   - first:
-      213: 7957135326656007710
-    second: terrain dry_45
+      213: -6428140823186642149
+    second: islands_45
   - first:
-      213: 4465013293772618166
-    second: terrain dry_46
+      213: 4554108475867151884
+    second: islands_46
   - first:
-      213: 9093113707609216406
-    second: terrain dry_47
+      213: -3893465051917215809
+    second: islands_47
   - first:
-      213: -3991964250591652236
-    second: terrain dry_48
+      213: 6294081994199660378
+    second: islands_48
   - first:
-      213: 857414824646615324
-    second: terrain dry_49
+      213: 764503246145835941
+    second: islands_49
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -174,7 +174,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -213,7 +212,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -279,7 +277,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: terrain dry_0
+      name: islands_0
       rect:
         serializedVersion: 2
         x: 0
@@ -293,14 +291,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3665703e57e7e7970800000000000000
-      internalID: 8754573770440005219
+      spriteID: 1234dea0bc9137c00800000000000000
+      internalID: 897089110629237537
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_1
+      name: islands_1
       rect:
         serializedVersion: 2
         x: 150
@@ -314,14 +312,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 009e0148b10748610800000000000000
-      internalID: 1622545029242349824
+      spriteID: 477657eff39070310800000000000000
+      internalID: 1371074782014302068
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_2
+      name: islands_2
       rect:
         serializedVersion: 2
         x: 300
@@ -335,14 +333,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 615d8e94703b04310800000000000000
-      internalID: 1387305529116251414
+      spriteID: 3025b843168330cd0800000000000000
+      internalID: -2593166970290744829
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_3
+      name: islands_3
       rect:
         serializedVersion: 2
         x: 450
@@ -356,14 +354,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9606bdb9ba5c9eaf0800000000000000
-      internalID: -366544553809059735
+      spriteID: 9b34a0fce8ecb89c0800000000000000
+      internalID: -3923815537569020999
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_4
+      name: islands_4
       rect:
         serializedVersion: 2
         x: 600
@@ -377,14 +375,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acaf80fee27522d70800000000000000
-      internalID: 9016865263039609546
+      spriteID: f7b634ce15bc36dd0800000000000000
+      internalID: -2493926215916491905
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_5
+      name: islands_5
       rect:
         serializedVersion: 2
         x: 750
@@ -398,14 +396,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09fc89bbc3dccc790800000000000000
-      internalID: -7508400818004373616
+      spriteID: 7804f57b977527de0800000000000000
+      internalID: -1336909959096483705
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_6
+      name: islands_6
       rect:
         serializedVersion: 2
         x: 900
@@ -419,14 +417,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f447cc52db8bcb1a0800000000000000
-      internalID: -6792351015459064753
+      spriteID: 69ca271f0bcb40fd0800000000000000
+      internalID: -2376567235193688938
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_7
+      name: islands_7
       rect:
         serializedVersion: 2
         x: 1050
@@ -440,14 +438,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 098b6f50f6ed44e20800000000000000
-      internalID: 3334034192583800976
+      spriteID: 40028b939342875b0800000000000000
+      internalID: -5370502727439212540
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_8
+      name: islands_8
       rect:
         serializedVersion: 2
         x: 1200
@@ -461,14 +459,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3e90e6902156c160800000000000000
-      internalID: 7045407867479825980
+      spriteID: d421c45cdfbd8cb10800000000000000
+      internalID: 2002091917349491277
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_9
+      name: islands_9
       rect:
         serializedVersion: 2
         x: 1350
@@ -482,14 +480,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ec984fdab6034820800000000000000
-      internalID: 2901169984636493024
+      spriteID: 2c487facb3004b5b0800000000000000
+      internalID: -5353653800228387646
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_10
+      name: islands_10
       rect:
         serializedVersion: 2
         x: 0
@@ -503,14 +501,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d373bbd4b96a1f80800000000000000
-      internalID: -8135073551390379048
+      spriteID: a1f4e214875fffd00800000000000000
+      internalID: 1008794738392715034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_11
+      name: islands_11
       rect:
         serializedVersion: 2
         x: 150
@@ -524,14 +522,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4fd9d33543ab62c90800000000000000
-      internalID: -7194858620780175884
+      spriteID: 273ccd0507ef3e680800000000000000
+      internalID: -8726851894567451790
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_12
+      name: islands_12
       rect:
         serializedVersion: 2
         x: 300
@@ -545,14 +543,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b78dc878db8ca6b00800000000000000
-      internalID: 822690598297065595
+      spriteID: c1bb18ef703b34440800000000000000
+      internalID: 4918972064934771484
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_13
+      name: islands_13
       rect:
         serializedVersion: 2
         x: 450
@@ -566,14 +564,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cccd6421bfeff6d60800000000000000
-      internalID: 7885801826845908172
+      spriteID: f3b99e4ca0fcf6860800000000000000
+      internalID: 7525461147519654719
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_14
+      name: islands_14
       rect:
         serializedVersion: 2
         x: 600
@@ -587,14 +585,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d24e438979e874c10800000000000000
-      internalID: 2037754138153247789
+      spriteID: fb0288de11c56aba0800000000000000
+      internalID: -6078069415020584769
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_15
+      name: islands_15
       rect:
         serializedVersion: 2
         x: 750
@@ -608,14 +606,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 857519b801d560550800000000000000
-      internalID: 6126686668726556504
+      spriteID: b31a664124285ae60800000000000000
+      internalID: 7972921935651053883
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_16
+      name: islands_16
       rect:
         serializedVersion: 2
         x: 900
@@ -629,14 +627,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff558a55a753e8e10800000000000000
-      internalID: 2201756067370128895
+      spriteID: 5f75f4e2c7cf4fe10800000000000000
+      internalID: 2230685325738334197
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_17
+      name: islands_17
       rect:
         serializedVersion: 2
         x: 1050
@@ -650,14 +648,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96bd4ce8283557450800000000000000
-      internalID: 6085862291667213161
+      spriteID: 7b6416e966d7b2370800000000000000
+      internalID: 8298864618057582263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_18
+      name: islands_18
       rect:
         serializedVersion: 2
         x: 1200
@@ -671,14 +669,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9f2e173b8e7b1e70800000000000000
-      internalID: 9086995809540386717
+      spriteID: 15ed39a99d480dc30800000000000000
+      internalID: 4382148507567644241
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_19
+      name: islands_19
       rect:
         serializedVersion: 2
         x: 1350
@@ -692,14 +690,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1946be72325e6e790800000000000000
-      internalID: -7501056190182628207
+      spriteID: bbd0ddc9041f43b70800000000000000
+      internalID: 8877986025266023867
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_20
+      name: islands_20
       rect:
         serializedVersion: 2
         x: 0
@@ -713,14 +711,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6fafe3df9c29e350800000000000000
-      internalID: 6046413039688724334
+      spriteID: e666eafeaefc8db00800000000000000
+      internalID: 853660737337189998
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_21
+      name: islands_21
       rect:
         serializedVersion: 2
         x: 150
@@ -734,14 +732,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b07fe05ce77b67120800000000000000
-      internalID: 2411316405603333899
+      spriteID: d8adf1d2166af4700800000000000000
+      internalID: 526822617724738189
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_22
+      name: islands_22
       rect:
         serializedVersion: 2
         x: 300
@@ -755,14 +753,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b4ed19e0b8f7a450800000000000000
-      internalID: 6100117659005609139
+      spriteID: 7a9c63fa99bfe5560800000000000000
+      internalID: 7304552283129694631
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_23
+      name: islands_23
       rect:
         serializedVersion: 2
         x: 450
@@ -776,14 +774,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0deb85f3f607f290800000000000000
-      internalID: -7856803380058133238
+      spriteID: 1c9a6de00f958bcc0800000000000000
+      internalID: -3695104606681519679
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_24
+      name: islands_24
       rect:
         serializedVersion: 2
         x: 600
@@ -797,14 +795,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6b0833b0022020a0800000000000000
-      internalID: -6908484441984201875
+      spriteID: 5ecf2457664a10a90800000000000000
+      internalID: -7349412356930994971
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_25
+      name: islands_25
       rect:
         serializedVersion: 2
         x: 750
@@ -818,14 +816,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1417e052f47c75bb0800000000000000
-      internalID: -4947266522905153215
+      spriteID: 20dfda06e5e16cb00800000000000000
+      internalID: 848398970503691522
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_26
+      name: islands_26
       rect:
         serializedVersion: 2
         x: 900
@@ -839,14 +837,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c011af91d00ad1a0800000000000000
-      internalID: -6784108988353933118
+      spriteID: 2146bc8eeaa9b9450800000000000000
+      internalID: 6096636596596728850
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_27
+      name: islands_27
       rect:
         serializedVersion: 2
         x: 1050
@@ -860,14 +858,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16773cb39b16bc3b0800000000000000
-      internalID: -5491187872448678047
+      spriteID: 2fd01c6e34f95c290800000000000000
+      internalID: -7870709659777036814
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_28
+      name: islands_28
       rect:
         serializedVersion: 2
         x: 1200
@@ -881,14 +879,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a666451ed36f5d2a0800000000000000
-      internalID: -6713188923892013462
+      spriteID: 7d970a8bf99bfc680800000000000000
+      internalID: -8732557056799639081
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_29
+      name: islands_29
       rect:
         serializedVersion: 2
         x: 1350
@@ -902,14 +900,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e83de4f5352081270800000000000000
-      internalID: 8221323676869383054
+      spriteID: 20063df018bf3b8e0800000000000000
+      internalID: -1678721704344199166
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_30
+      name: islands_30
       rect:
         serializedVersion: 2
         x: 0
@@ -923,14 +921,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be3289a92b97e2f80800000000000000
-      internalID: -8129426469352365077
+      spriteID: e9fad6350269d6b80800000000000000
+      internalID: -8399892664393289826
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_31
+      name: islands_31
       rect:
         serializedVersion: 2
         x: 150
@@ -944,14 +942,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a070f0d37d2c2340800000000000000
-      internalID: 4840293674966347936
+      spriteID: 4807213801a609560800000000000000
+      internalID: 7318466013628100740
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_32
+      name: islands_32
       rect:
         serializedVersion: 2
         x: 300
@@ -965,14 +963,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89402fa38d47b6a10800000000000000
-      internalID: 1903743739544863896
+      spriteID: 0f87dea312b6908d0800000000000000
+      internalID: -2879652696259987216
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_33
+      name: islands_33
       rect:
         serializedVersion: 2
         x: 450
@@ -986,14 +984,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1b2bb83797cd11b0800000000000000
-      internalID: -5684167702365918438
+      spriteID: bd50702be51a8d160800000000000000
+      internalID: 7050562644734313947
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_34
+      name: islands_34
       rect:
         serializedVersion: 2
         x: 600
@@ -1007,14 +1005,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6c9b8e269c0db120800000000000000
-      internalID: 2431113213015465070
+      spriteID: 51130ace39bdc85b0800000000000000
+      internalID: -5364671627728506603
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_35
+      name: islands_35
       rect:
         serializedVersion: 2
         x: 750
@@ -1028,14 +1026,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c7ec99e3af5db960800000000000000
-      internalID: 7619351302184429509
+      spriteID: d1dc4b0e80bbc3340800000000000000
+      internalID: 4844952945947888925
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_36
+      name: islands_36
       rect:
         serializedVersion: 2
         x: 900
@@ -1049,14 +1047,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81fac3fca26e11c30800000000000000
-      internalID: 4328493788419632920
+      spriteID: 4632582eb8722bcd0800000000000000
+      internalID: -2543927357756595356
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_37
+      name: islands_37
       rect:
         serializedVersion: 2
         x: 1050
@@ -1070,14 +1068,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf241adc8e8beb4d0800000000000000
-      internalID: -3116850582071983365
+      spriteID: 193dae145876eebc0800000000000000
+      internalID: -3751947617518824559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_38
+      name: islands_38
       rect:
         serializedVersion: 2
         x: 1200
@@ -1091,14 +1089,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04642eb7d60bf1d60800000000000000
-      internalID: 7863197458688525888
+      spriteID: f98d082ce8c560d20800000000000000
+      internalID: 3244382349785356447
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_39
+      name: islands_39
       rect:
         serializedVersion: 2
         x: 1350
@@ -1112,14 +1110,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 105638916aee84f50800000000000000
-      internalID: 6866000029086344449
+      spriteID: 8638a4900e08cb770800000000000000
+      internalID: 8627912685851935592
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_40
+      name: islands_40
       rect:
         serializedVersion: 2
         x: 0
@@ -1133,14 +1131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73897ebb26bbe8ec0800000000000000
-      internalID: -3562704222469777353
+      spriteID: d0cd72bb9b7fd51f0800000000000000
+      internalID: -1054414360653865971
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_41
+      name: islands_41
       rect:
         serializedVersion: 2
         x: 150
@@ -1154,14 +1152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e83728e7bf622620800000000000000
-      internalID: 2747881558314006755
+      spriteID: bbd4739d3385ca850800000000000000
+      internalID: 6389578951042747835
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_42
+      name: islands_42
       rect:
         serializedVersion: 2
         x: 300
@@ -1175,14 +1173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15db6181959e81b60800000000000000
-      internalID: 7717174530364849489
+      spriteID: e76440ec01dea6ae0800000000000000
+      internalID: -1555170064871438722
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_43
+      name: islands_43
       rect:
         serializedVersion: 2
         x: 450
@@ -1196,14 +1194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 857384ed85e9aaf00800000000000000
-      internalID: 1128888761133315928
+      spriteID: 5b9e40002869b3750800000000000000
+      internalID: 6285783190015895989
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_44
+      name: islands_44
       rect:
         serializedVersion: 2
         x: 600
@@ -1217,14 +1215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69383b5f359943d30800000000000000
-      internalID: 4410318520986076054
+      spriteID: 1fae0b31eed974460800000000000000
+      internalID: 7225917772997389041
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_45
+      name: islands_45
       rect:
         serializedVersion: 2
         x: 750
@@ -1238,14 +1236,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1e0b0fbb6c6d6e60800000000000000
-      internalID: 7957135326656007710
+      spriteID: b1be5c3aaf7aac6a0800000000000000
+      internalID: -6428140823186642149
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_46
+      name: islands_46
       rect:
         serializedVersion: 2
         x: 900
@@ -1259,14 +1257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b9b6bc1fe9e6fd30800000000000000
-      internalID: 4465013293772618166
+      spriteID: c0e38a4b781733f30800000000000000
+      internalID: 4554108475867151884
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_47
+      name: islands_47
       rect:
         serializedVersion: 2
         x: 1050
@@ -1280,14 +1278,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 695584c5dba313e70800000000000000
-      internalID: 9093113707609216406
+      spriteID: fb7931be922a7f9c0800000000000000
+      internalID: -3893465051917215809
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_48
+      name: islands_48
       rect:
         serializedVersion: 2
         x: 1200
@@ -1301,14 +1299,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4761d671aa1b998c0800000000000000
-      internalID: -3991964250591652236
+      spriteID: a57f37be932195750800000000000000
+      internalID: 6294081994199660378
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain dry_49
+      name: islands_49
       rect:
         serializedVersion: 2
         x: 1350
@@ -1322,8 +1320,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1127308d3626eb00800000000000000
-      internalID: 857414824646615324
+      spriteID: 5a3d720e6af0c9a00800000000000000
+      internalID: 764503246145835941
       vertices: []
       indices: 
       edges: []
@@ -1338,57 +1336,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      terrain dry_18: 9086995809540386717
-      terrain dry_9: 2901169984636493024
-      terrain dry_29: 8221323676869383054
-      terrain dry_21: 2411316405603333899
-      terrain dry_24: -6908484441984201875
-      terrain dry_40: -3562704222469777353
-      terrain dry_37: -3116850582071983365
-      terrain dry_43: 1128888761133315928
-      terrain dry_49: 857414824646615324
-      terrain dry_12: 822690598297065595
-      terrain dry_47: 9093113707609216406
-      terrain dry_32: 1903743739544863896
-      terrain dry_38: 7863197458688525888
-      terrain dry_8: 7045407867479825980
-      terrain dry_34: 2431113213015465070
-      terrain dry_11: -7194858620780175884
-      terrain dry_19: -7501056190182628207
-      terrain dry_1: 1622545029242349824
-      terrain dry_33: -5684167702365918438
-      terrain dry_15: 6126686668726556504
-      terrain dry_36: 4328493788419632920
-      terrain dry_5: -7508400818004373616
-      terrain dry_25: -4947266522905153215
-      terrain dry_28: -6713188923892013462
-      terrain dry_3: -366544553809059735
-      terrain dry_22: 6100117659005609139
-      terrain dry_16: 2201756067370128895
-      terrain dry_14: 2037754138153247789
-      terrain dry_31: 4840293674966347936
-      terrain dry_26: -6784108988353933118
-      terrain dry_44: 4410318520986076054
-      terrain dry_13: 7885801826845908172
-      terrain dry_48: -3991964250591652236
-      terrain dry_30: -8129426469352365077
-      terrain dry_2: 1387305529116251414
-      terrain dry_10: -8135073551390379048
-      terrain dry_27: -5491187872448678047
-      terrain dry_45: 7957135326656007710
-      terrain dry_6: -6792351015459064753
-      terrain dry_17: 6085862291667213161
-      terrain dry_35: 7619351302184429509
-      terrain dry_46: 4465013293772618166
-      terrain dry_4: 9016865263039609546
-      terrain dry_41: 2747881558314006755
-      terrain dry_23: -7856803380058133238
-      terrain dry_7: 3334034192583800976
-      terrain dry_42: 7717174530364849489
-      terrain dry_20: 6046413039688724334
-      terrain dry_0: 8754573770440005219
-      terrain dry_39: 6866000029086344449
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

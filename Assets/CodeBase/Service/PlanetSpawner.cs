@@ -15,6 +15,7 @@ namespace CodeBase.Service
         [SerializeField] private PlanetStorage planetStorage;
 
         [Space]
+        [SerializeField] private bool startSpawnBeforeLoad;
         [SerializeField] private float spawnCooldown;
         [SerializeField] private float indentY = 15f;
         [SerializeField] private float indentX = 5f;
@@ -39,6 +40,9 @@ namespace CodeBase.Service
 
         private void OnEnable()
         {
+            if (startSpawnBeforeLoad)
+                InitSpawner();
+
             EventObserver.OnLevelLoaded += InitSpawner;
         }
 

@@ -153,7 +153,7 @@ TextureImporter:
       213: -3139694988686388838
     second: Earth_49
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -174,7 +174,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -213,7 +212,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -1338,57 +1336,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Earth_40: -6879691812619920712
-      Earth_34: 1192844576016094557
-      Earth_12: -5289550111512436940
-      Earth_3: 8294369937034324297
-      Earth_18: 9056076809899198952
-      Earth_41: -4185284398289417087
-      Earth_38: 9175095644114033106
-      Earth_8: -1479756206100183629
-      Earth_11: 7902158703860476486
-      Earth_20: -6451319951707577422
-      Earth_25: -387120296438937512
-      Earth_37: -8100296154135606261
-      Earth_10: 1892821218243490644
-      Earth_17: 1228465305477970562
-      Earth_16: 5361631257420472715
-      Earth_43: -4771805855972453191
-      Earth_22: 5050210848853395841
-      Earth_26: -4131956043310619117
-      Earth_36: 5117889508594249501
-      Earth_31: -65715871781885684
-      Earth_15: -5332350200267198914
-      Earth_5: 7385045655152147662
-      Earth_4: 5955687731921373103
-      Earth_7: 3775956329943443878
-      Earth_28: -2995070078877894131
-      Earth_39: -3845980586290801778
-      Earth_24: -5046839083263976945
-      Earth_29: 4090802850771672748
-      Earth_13: 8917927153200763621
-      Earth_35: 9178570626457300377
-      Earth_45: -5558251259107726959
-      Earth_32: 3053304957686523090
-      Earth_0: 6423806749927177598
-      Earth_23: 7979187214594251000
-      Earth_19: 1568976944791875497
-      Earth_42: 7767473661887639448
-      Earth_6: -7412046891123592334
-      Earth_46: -5393079636168667110
-      Earth_1: -3086602609980112195
-      Earth_49: -3139694988686388838
-      Earth_14: -2524328396890630821
-      Earth_48: -1403075918087427084
-      Earth_9: -6314728025926759367
-      Earth_2: 6924314980402435031
-      Earth_21: 5845033532405958961
-      Earth_27: 3654806145904711751
-      Earth_30: 2243237344338328031
-      Earth_47: 3383049437380755243
-      Earth_33: 5404703936751759412
-      Earth_44: -7725531992882583122
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -1,159 +1,159 @@
 fileFormatVersion: 2
-guid: f7f612e0ebac31746a940d2d0caa5c3e
+guid: 54827b76d7eeba64aae1d243c06a9787
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6539930214998820438
-    second: lava world_0
+      213: 4815476061570213978
+    second: star_0
   - first:
-      213: 98892660358640292
-    second: lava world_1
+      213: 3999761062471549324
+    second: star_1
   - first:
-      213: 1857937114168502692
-    second: lava world_2
+      213: -3497892727927865473
+    second: star_2
   - first:
-      213: -1081275010881817894
-    second: lava world_3
+      213: 6504763747683324272
+    second: star_3
   - first:
-      213: -7230106606477543892
-    second: lava world_4
+      213: -4570688628630608616
+    second: star_4
   - first:
-      213: 8714683518243346025
-    second: lava world_5
+      213: -2421095534358572595
+    second: star_5
   - first:
-      213: -2287151475211638730
-    second: lava world_6
+      213: 7502820030017634684
+    second: star_6
   - first:
-      213: -9023381764184804773
-    second: lava world_7
+      213: -7635506848463661964
+    second: star_7
   - first:
-      213: -7926721170354103839
-    second: lava world_8
+      213: 2727262029204247388
+    second: star_8
   - first:
-      213: 7628856827280240548
-    second: lava world_9
+      213: 833913586904043743
+    second: star_9
   - first:
-      213: -3063308449004966728
-    second: lava world_10
+      213: 6061701880611319068
+    second: star_10
   - first:
-      213: 6861857280420010305
-    second: lava world_11
+      213: -2853548015814847213
+    second: star_11
   - first:
-      213: 1683803418902017333
-    second: lava world_12
+      213: 6148300447891027083
+    second: star_12
   - first:
-      213: -6943324435874211606
-    second: lava world_13
+      213: -3221424289153692423
+    second: star_13
   - first:
-      213: 4768113150235645119
-    second: lava world_14
+      213: -2951765207825061589
+    second: star_14
   - first:
-      213: 5773407664898772991
-    second: lava world_15
+      213: -7581519450832361279
+    second: star_15
   - first:
-      213: 3431428951971891034
-    second: lava world_16
+      213: -4328488141546138488
+    second: star_16
   - first:
-      213: -3252600859741637497
-    second: lava world_17
+      213: 9053422819891689083
+    second: star_17
   - first:
-      213: 3909045052967169551
-    second: lava world_18
+      213: 4444531326882616941
+    second: star_18
   - first:
-      213: -1157907151618853462
-    second: lava world_19
+      213: -8335555716954547294
+    second: star_19
   - first:
-      213: 4858155114720648628
-    second: lava world_20
+      213: 4056338156000880278
+    second: star_20
   - first:
-      213: 7413785454829421144
-    second: lava world_21
+      213: 7098989594414221102
+    second: star_21
   - first:
-      213: 6248135063151208800
-    second: lava world_22
+      213: -5417750542613855481
+    second: star_22
   - first:
-      213: -2217920191997865765
-    second: lava world_23
+      213: 8772976812304712416
+    second: star_23
   - first:
-      213: 1375889050753262524
-    second: lava world_24
+      213: 5812487685679027941
+    second: star_24
   - first:
-      213: -9173827107072608373
-    second: lava world_25
+      213: -6429923049584193523
+    second: star_25
   - first:
-      213: 3723622197941831657
-    second: lava world_26
+      213: -6241988142447370248
+    second: star_26
   - first:
-      213: 3599008747776573838
-    second: lava world_27
+      213: 7383961253054767135
+    second: star_27
   - first:
-      213: -3083896076531288630
-    second: lava world_28
+      213: -4053497518139661860
+    second: star_28
   - first:
-      213: 7753502113083964963
-    second: lava world_29
+      213: -6340084468885445553
+    second: star_29
   - first:
-      213: -8490302883967591151
-    second: lava world_30
+      213: 8320983749784711038
+    second: star_30
   - first:
-      213: -8084280291677208014
-    second: lava world_31
+      213: -1662791489673114682
+    second: star_31
   - first:
-      213: -5872780108097917661
-    second: lava world_32
+      213: -7999034164208062237
+    second: star_32
   - first:
-      213: 4511740252098674701
-    second: lava world_33
+      213: -3037518942320684817
+    second: star_33
   - first:
-      213: 6401276076655152153
-    second: lava world_34
+      213: 8312637379210688672
+    second: star_34
   - first:
-      213: 8539220483882098127
-    second: lava world_35
+      213: -5754982586073145128
+    second: star_35
   - first:
-      213: 282636258293024908
-    second: lava world_36
+      213: 4897638475105512675
+    second: star_36
   - first:
-      213: 667963069799312171
-    second: lava world_37
+      213: 3425392401768197610
+    second: star_37
   - first:
-      213: -8833998478063509433
-    second: lava world_38
+      213: -8091628172968584474
+    second: star_38
   - first:
-      213: -370984213183713754
-    second: lava world_39
+      213: 514142266060016890
+    second: star_39
   - first:
-      213: 8444428998346023867
-    second: lava world_40
+      213: -3800899898764898089
+    second: star_40
   - first:
-      213: 1236962059785352942
-    second: lava world_41
+      213: -9187486668847930598
+    second: star_41
   - first:
-      213: 5589979233008891703
-    second: lava world_42
+      213: 3999120113789466881
+    second: star_42
   - first:
-      213: -52116964316343105
-    second: lava world_43
+      213: 6830417190230091690
+    second: star_43
   - first:
-      213: 1565451655354426702
-    second: lava world_44
+      213: -9216295544181862878
+    second: star_44
   - first:
-      213: 5704242133701649128
-    second: lava world_45
+      213: 504541743203173991
+    second: star_45
   - first:
-      213: 3268888050726164027
-    second: lava world_46
+      213: 5659126568546266017
+    second: star_46
   - first:
-      213: -1348625667013973538
-    second: lava world_47
+      213: 6289040943444827787
+    second: star_47
   - first:
-      213: -4244020958013750867
-    second: lava world_48
+      213: 2849915826180211612
+    second: star_48
   - first:
-      213: 8080141258437906843
-    second: lava world_49
+      213: 4233497512673030601
+    second: star_49
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -174,7 +174,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -213,7 +212,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -279,13 +277,433 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lava world_0
+      name: star_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1200
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a582a4ae6f104d240800000000000000
+      internalID: 4815476061570213978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: star_1
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1200
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c814e03ae71028730800000000000000
+      internalID: 3999761062471549324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: star_2
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1200
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7fff69b81df47fc0800000000000000
+      internalID: -3497892727927865473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: star_3
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1200
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 071d0803a20954a50800000000000000
+      internalID: 6504763747683324272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: star_4
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1200
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8152e87a8e6a190c0800000000000000
+      internalID: -4570688628630608616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: star_5
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1200
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc1d543607a866ed0800000000000000
+      internalID: -2421095534358572595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: star_6
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1200
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7103eec01f5f1860800000000000000
+      internalID: 7502820030017634684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: star_7
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1200
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 474d249d9fa390690800000000000000
+      internalID: -7635506848463661964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: star_8
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1200
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c53512cad5e29d520800000000000000
+      internalID: 2727262029204247388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: star_9
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 1200
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd099c03df7a29b00800000000000000
+      internalID: 833913586904043743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: star_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 900
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1da7208ebd7f1450800000000000000
+      internalID: 6061701880611319068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: star_11
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 900
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 315d5d7c2392668d0800000000000000
+      internalID: -2853548015814847213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: star_12
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 900
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b847be8aea6235550800000000000000
+      internalID: 6148300447891027083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: star_13
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 900
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fccd264da33b43d0800000000000000
+      internalID: -3221424289153692423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: star_14
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 900
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b29ea3fbe293907d0800000000000000
+      internalID: -2951765207825061589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: star_15
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 900
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c82c636a3809c690800000000000000
+      internalID: -7581519450832361279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: star_16
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 900
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 884d6a4f7fe1ee3c0800000000000000
+      internalID: -4328488141546138488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: star_17
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 900
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b763f0d661834ad70800000000000000
+      internalID: 9053422819891689083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: star_18
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 900
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d661fe391b52ead30800000000000000
+      internalID: 4444531326882616941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: star_19
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 900
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ab92753d38225c80800000000000000
+      internalID: -8335555716954547294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: star_20
       rect:
         serializedVersion: 2
         x: 0
         y: 600
-        width: 150
-        height: 150
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -293,41 +711,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65649d861ef72ca50800000000000000
-      internalID: 6539930214998820438
+      spriteID: 696ab4dbf020b4830800000000000000
+      internalID: 4056338156000880278
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lava world_1
-      rect:
-        serializedVersion: 2
-        x: 150
-        y: 600
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a2f193c9565f5100800000000000000
-      internalID: 98892660358640292
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lava world_2
+      name: star_21
       rect:
         serializedVersion: 2
         x: 300
         y: 600
-        width: 150
-        height: 150
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -335,41 +732,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a9270926f7b8c910800000000000000
-      internalID: 1857937114168502692
+      spriteID: e27014f8c6da48260800000000000000
+      internalID: 7098989594414221102
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lava world_3
-      rect:
-        serializedVersion: 2
-        x: 450
-        y: 600
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ad2f1ef3b1a8ef0f0800000000000000
-      internalID: -1081275010881817894
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lava world_4
+      name: star_22
       rect:
         serializedVersion: 2
         x: 600
         y: 600
-        width: 150
-        height: 150
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -377,41 +753,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2673b0295089ab90800000000000000
-      internalID: -7230106606477543892
+      spriteID: 70342d1069840d4b0800000000000000
+      internalID: -5417750542613855481
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lava world_5
-      rect:
-        serializedVersion: 2
-        x: 750
-        y: 600
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 96698dacc76c0f870800000000000000
-      internalID: 8714683518243346025
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lava world_6
+      name: star_23
       rect:
         serializedVersion: 2
         x: 900
         y: 600
-        width: 150
-        height: 150
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -419,41 +774,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 638ef74e9d76240e0800000000000000
-      internalID: -2287151475211638730
+      spriteID: 0e24928fdefdfb970800000000000000
+      internalID: 8772976812304712416
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lava world_7
-      rect:
-        serializedVersion: 2
-        x: 1050
-        y: 600
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b52f609e71286c280800000000000000
-      internalID: -9023381764184804773
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lava world_8
+      name: star_24
       rect:
         serializedVersion: 2
         x: 1200
         y: 600
-        width: 150
-        height: 150
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -461,20 +795,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e99977d711aef190800000000000000
-      internalID: -7926721170354103839
+      spriteID: 5e61b3611ca1aa050800000000000000
+      internalID: 5812487685679027941
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lava world_9
+      name: star_25
       rect:
         serializedVersion: 2
-        x: 1350
+        x: 1500
         y: 600
-        width: 150
-        height: 150
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -482,20 +816,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4af2a507dd42fd960800000000000000
-      internalID: 7628856827280240548
+      spriteID: d001078bd0354c6a0800000000000000
+      internalID: -6429923049584193523
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lava world_10
+      name: star_26
       rect:
         serializedVersion: 2
-        x: 0
-        y: 450
-        width: 150
-        height: 150
+        x: 1800
+        y: 600
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -503,20 +837,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bc2b9b1231fc75d0800000000000000
-      internalID: -3063308449004966728
+      spriteID: 8ff593d1bd00069a0800000000000000
+      internalID: -6241988142447370248
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lava world_11
+      name: star_27
       rect:
         serializedVersion: 2
-        x: 150
-        y: 450
-        width: 150
-        height: 150
+        x: 2100
+        y: 600
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -524,20 +858,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 149dcd247d63a3f50800000000000000
-      internalID: 6861857280420010305
+      spriteID: f10e39343a9197660800000000000000
+      internalID: 7383961253054767135
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lava world_12
+      name: star_28
       rect:
         serializedVersion: 2
-        x: 300
-        y: 450
-        width: 150
-        height: 150
+        x: 2400
+        y: 600
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -545,20 +879,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5353e3fc9421e5710800000000000000
-      internalID: 1683803418902017333
+      spriteID: cd1ab5dcb751fb7c0800000000000000
+      internalID: -4053497518139661860
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lava world_13
+      name: star_29
       rect:
         serializedVersion: 2
-        x: 450
-        y: 450
-        width: 150
-        height: 150
+        x: 2700
+        y: 600
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -566,146 +900,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae89d6f763b54af90800000000000000
-      internalID: -6943324435874211606
+      spriteID: f44ac1a44ce7308a0800000000000000
+      internalID: -6340084468885445553
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lava world_14
-      rect:
-        serializedVersion: 2
-        x: 600
-        y: 450
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fb41aa8c5adbb2240800000000000000
-      internalID: 4768113150235645119
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lava world_15
-      rect:
-        serializedVersion: 2
-        x: 750
-        y: 450
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fff0fc1bea34f1050800000000000000
-      internalID: 5773407664898772991
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lava world_16
-      rect:
-        serializedVersion: 2
-        x: 900
-        y: 450
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a57864a8372ee9f20800000000000000
-      internalID: 3431428951971891034
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lava world_17
-      rect:
-        serializedVersion: 2
-        x: 1050
-        y: 450
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 78438f640c07cd2d0800000000000000
-      internalID: -3252600859741637497
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lava world_18
-      rect:
-        serializedVersion: 2
-        x: 1200
-        y: 450
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0e2b11c3c7bf3630800000000000000
-      internalID: 3909045052967169551
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lava world_19
-      rect:
-        serializedVersion: 2
-        x: 1350
-        y: 450
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aa5bfd894994eefe0800000000000000
-      internalID: -1157907151618853462
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lava world_20
+      name: star_30
       rect:
         serializedVersion: 2
         x: 0
         y: 300
-        width: 150
-        height: 150
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -713,41 +921,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4bddba45652ab6340800000000000000
-      internalID: 4858155114720648628
+      spriteID: e7f27bb42a21a7370800000000000000
+      internalID: 8320983749784711038
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lava world_21
-      rect:
-        serializedVersion: 2
-        x: 150
-        y: 300
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 852c01c579e03e660800000000000000
-      internalID: 7413785454829421144
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lava world_22
+      name: star_31
       rect:
         serializedVersion: 2
         x: 300
         y: 300
-        width: 150
-        height: 150
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -755,41 +942,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0696ac36cb5d5b650800000000000000
-      internalID: 6248135063151208800
+      spriteID: 6cbcd7233f39ce8e0800000000000000
+      internalID: -1662791489673114682
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lava world_23
-      rect:
-        serializedVersion: 2
-        x: 450
-        y: 300
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd01dcf165d5831e0800000000000000
-      internalID: -2217920191997865765
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lava world_24
+      name: star_32
       rect:
         serializedVersion: 2
         x: 600
         y: 300
-        width: 150
-        height: 150
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -797,41 +963,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb36f784dc3281310800000000000000
-      internalID: 1375889050753262524
+      spriteID: 3e03a20fec8bdf090800000000000000
+      internalID: -7999034164208062237
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lava world_25
-      rect:
-        serializedVersion: 2
-        x: 750
-        y: 300
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b877614e9d400b080800000000000000
-      internalID: -9173827107072608373
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lava world_26
+      name: star_33
       rect:
         serializedVersion: 2
         x: 900
         y: 300
-        width: 150
-        height: 150
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -839,41 +984,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e7051219a6fca330800000000000000
-      internalID: 3723622197941831657
+      spriteID: fe0947c8d9098d5d0800000000000000
+      internalID: -3037518942320684817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lava world_27
-      rect:
-        serializedVersion: 2
-        x: 1050
-        y: 300
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e810fb2436f32f130800000000000000
-      internalID: 3599008747776573838
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lava world_28
+      name: star_34
       rect:
         serializedVersion: 2
         x: 1200
         y: 300
-        width: 150
-        height: 150
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -881,20 +1005,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac5b12a8bdcc335d0800000000000000
-      internalID: -3083896076531288630
+      spriteID: 0a8bc7677ab6c5370800000000000000
+      internalID: 8312637379210688672
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lava world_29
+      name: star_35
       rect:
         serializedVersion: 2
-        x: 1350
+        x: 1500
         y: 300
-        width: 150
-        height: 150
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -902,20 +1026,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32e3c9f8719f99b60800000000000000
-      internalID: 7753502113083964963
+      spriteID: 8d02d8444d13220b0800000000000000
+      internalID: -5754982586073145128
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lava world_30
+      name: star_36
       rect:
         serializedVersion: 2
-        x: 0
-        y: 150
-        width: 150
-        height: 150
+        x: 1800
+        y: 300
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -923,20 +1047,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11d13a5b2826c2a80800000000000000
-      internalID: -8490302883967591151
+      spriteID: 3ec23fa8e38e7f340800000000000000
+      internalID: 4897638475105512675
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lava world_31
+      name: star_37
       rect:
         serializedVersion: 2
-        x: 150
-        y: 150
-        width: 150
-        height: 150
+        x: 2100
+        y: 300
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -944,20 +1068,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23283e538eddecf80800000000000000
-      internalID: -8084280291677208014
+      spriteID: aed27bbad30798f20800000000000000
+      internalID: 3425392401768197610
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lava world_32
+      name: star_38
       rect:
         serializedVersion: 2
-        x: 300
-        y: 150
-        width: 150
-        height: 150
+        x: 2400
+        y: 300
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -965,20 +1089,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32de7d46b91bf7ea0800000000000000
-      internalID: -5872780108097917661
+      spriteID: 6ea1aa74c03c4bf80800000000000000
+      internalID: -8091628172968584474
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lava world_33
+      name: star_39
       rect:
         serializedVersion: 2
-        x: 450
-        y: 150
-        width: 150
-        height: 150
+        x: 2700
+        y: 300
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -986,146 +1110,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d004c25eadbec9e30800000000000000
-      internalID: 4511740252098674701
+      spriteID: afc858cbaa9922700800000000000000
+      internalID: 514142266060016890
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lava world_34
-      rect:
-        serializedVersion: 2
-        x: 600
-        y: 150
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 91c8c322da6e5d850800000000000000
-      internalID: 6401276076655152153
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lava world_35
-      rect:
-        serializedVersion: 2
-        x: 750
-        y: 150
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fcd188099c7618670800000000000000
-      internalID: 8539220483882098127
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lava world_36
-      rect:
-        serializedVersion: 2
-        x: 900
-        y: 150
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c888330fd202ce300800000000000000
-      internalID: 282636258293024908
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lava world_37
-      rect:
-        serializedVersion: 2
-        x: 1050
-        y: 150
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b2ba77a7fd4154900800000000000000
-      internalID: 667963069799312171
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lava world_38
-      rect:
-        serializedVersion: 2
-        x: 1200
-        y: 150
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 740eea05035576580800000000000000
-      internalID: -8833998478063509433
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lava world_39
-      rect:
-        serializedVersion: 2
-        x: 1350
-        y: 150
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 62e28ebd2dff9daf0800000000000000
-      internalID: -370984213183713754
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lava world_40
+      name: star_40
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 150
-        height: 150
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1133,41 +1131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb32c69fe63a03570800000000000000
-      internalID: 8444428998346023867
+      spriteID: 7d0dc4b1ead704bc0800000000000000
+      internalID: -3800899898764898089
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lava world_41
-      rect:
-        serializedVersion: 2
-        x: 150
-        y: 0
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ee6342e80729a2110800000000000000
-      internalID: 1236962059785352942
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lava world_42
+      name: star_41
       rect:
         serializedVersion: 2
         x: 300
         y: 0
-        width: 150
-        height: 150
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1175,41 +1152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7373e45de78939d40800000000000000
-      internalID: 5589979233008891703
+      spriteID: a13aea45d8d7f7080800000000000000
+      internalID: -9187486668847930598
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lava world_43
-      rect:
-        serializedVersion: 2
-        x: 450
-        y: 0
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fb41727a5e7d64ff0800000000000000
-      internalID: -52116964316343105
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lava world_44
+      name: star_42
       rect:
         serializedVersion: 2
         x: 600
         y: 0
-        width: 150
-        height: 150
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1217,41 +1173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e45a2768cf999b510800000000000000
-      internalID: 1565451655354426702
+      spriteID: 1097a842e8abf7730800000000000000
+      internalID: 3999120113789466881
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lava world_45
-      rect:
-        serializedVersion: 2
-        x: 750
-        y: 0
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8e26a1c8ff9892f40800000000000000
-      internalID: 5704242133701649128
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lava world_46
+      name: star_43
       rect:
         serializedVersion: 2
         x: 900
         y: 0
-        width: 150
-        height: 150
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1259,41 +1194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b365d02ec5c6d5d20800000000000000
-      internalID: 3268888050726164027
+      spriteID: aa7e263de348ace50800000000000000
+      internalID: 6830417190230091690
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lava world_47
-      rect:
-        serializedVersion: 2
-        x: 1050
-        y: 0
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ed968a6e918b84de0800000000000000
-      internalID: -1348625667013973538
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lava world_48
+      name: star_44
       rect:
         serializedVersion: 2
         x: 1200
         y: 0
-        width: 150
-        height: 150
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1301,20 +1215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da1074aac653a15c0800000000000000
-      internalID: -4244020958013750867
+      spriteID: 22e46085804291080800000000000000
+      internalID: -9216295544181862878
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lava world_49
+      name: star_45
       rect:
         serializedVersion: 2
-        x: 1350
+        x: 1500
         y: 0
-        width: 150
-        height: 150
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1322,8 +1236,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b915b240aad622070800000000000000
-      internalID: 8080141258437906843
+      spriteID: 7664bf1da0e700700800000000000000
+      internalID: 504541743203173991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: star_46
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1abec2971a1498e40800000000000000
+      internalID: 5659126568546266017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: star_47
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 0
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8e9ae3da69274750800000000000000
+      internalID: 6289040943444827787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: star_48
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c934c3b285fec8720800000000000000
+      internalID: 2849915826180211612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: star_49
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 0
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c13068ce8760ca30800000000000000
+      internalID: 4233497512673030601
       vertices: []
       indices: 
       edges: []
@@ -1338,57 +1336,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      lava world_34: 6401276076655152153
-      lava world_1: 98892660358640292
-      lava world_19: -1157907151618853462
-      lava world_2: 1857937114168502692
-      lava world_46: 3268888050726164027
-      lava world_13: -6943324435874211606
-      lava world_42: 5589979233008891703
-      lava world_20: 4858155114720648628
-      lava world_26: 3723622197941831657
-      lava world_48: -4244020958013750867
-      lava world_21: 7413785454829421144
-      lava world_14: 4768113150235645119
-      lava world_41: 1236962059785352942
-      lava world_38: -8833998478063509433
-      lava world_18: 3909045052967169551
-      lava world_31: -8084280291677208014
-      lava world_43: -52116964316343105
-      lava world_15: 5773407664898772991
-      lava world_44: 1565451655354426702
-      lava world_8: -7926721170354103839
-      lava world_49: 8080141258437906843
-      lava world_7: -9023381764184804773
-      lava world_0: 6539930214998820438
-      lava world_5: 8714683518243346025
-      lava world_11: 6861857280420010305
-      lava world_36: 282636258293024908
-      lava world_27: 3599008747776573838
-      lava world_25: -9173827107072608373
-      lava world_32: -5872780108097917661
-      lava world_40: 8444428998346023867
-      lava world_10: -3063308449004966728
-      lava world_16: 3431428951971891034
-      lava world_33: 4511740252098674701
-      lava world_28: -3083896076531288630
-      lava world_45: 5704242133701649128
-      lava world_29: 7753502113083964963
-      lava world_22: 6248135063151208800
-      lava world_24: 1375889050753262524
-      lava world_23: -2217920191997865765
-      lava world_17: -3252600859741637497
-      lava world_35: 8539220483882098127
-      lava world_12: 1683803418902017333
-      lava world_37: 667963069799312171
-      lava world_47: -1348625667013973538
-      lava world_4: -7230106606477543892
-      lava world_9: 7628856827280240548
-      lava world_39: -370984213183713754
-      lava world_30: -8490302883967591151
-      lava world_6: -2287151475211638730
-      lava world_3: -1081275010881817894
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

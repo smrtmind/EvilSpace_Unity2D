@@ -1,159 +1,159 @@
 fileFormatVersion: 2
-guid: 2e952b3f9c9ca9f41959d18ec1ef5a50
+guid: f5a6daf71da35ec4dac1a3dd830f19aa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9083969447635318612
-    second: moon_0
+      213: 8754573770440005219
+    second: terrain dry_0
   - first:
-      213: -5679657590885005731
-    second: moon_1
+      213: 1622545029242349824
+    second: terrain dry_1
   - first:
-      213: -1825352000054201894
-    second: moon_2
+      213: 1387305529116251414
+    second: terrain dry_2
   - first:
-      213: -6130851942531297651
-    second: moon_3
+      213: -366544553809059735
+    second: terrain dry_3
   - first:
-      213: -4894877219555033837
-    second: moon_4
+      213: 9016865263039609546
+    second: terrain dry_4
   - first:
-      213: -7591269622283923513
-    second: moon_5
+      213: -7508400818004373616
+    second: terrain dry_5
   - first:
-      213: 6901942967387306250
-    second: moon_6
+      213: -6792351015459064753
+    second: terrain dry_6
   - first:
-      213: -7857193861968469892
-    second: moon_7
+      213: 3334034192583800976
+    second: terrain dry_7
   - first:
-      213: 8598691610351655480
-    second: moon_8
+      213: 7045407867479825980
+    second: terrain dry_8
   - first:
-      213: -7479219666984558549
-    second: moon_9
+      213: 2901169984636493024
+    second: terrain dry_9
   - first:
-      213: 6701494610166044060
-    second: moon_10
+      213: -8135073551390379048
+    second: terrain dry_10
   - first:
-      213: -8513730273280913422
-    second: moon_11
+      213: -7194858620780175884
+    second: terrain dry_11
   - first:
-      213: 4866200794757218116
-    second: moon_12
+      213: 822690598297065595
+    second: terrain dry_12
   - first:
-      213: -3448617533897018304
-    second: moon_13
+      213: 7885801826845908172
+    second: terrain dry_13
   - first:
-      213: 3265104997304781126
-    second: moon_14
+      213: 2037754138153247789
+    second: terrain dry_14
   - first:
-      213: 1479202402247836509
-    second: moon_15
+      213: 6126686668726556504
+    second: terrain dry_15
   - first:
-      213: -5586192455156009045
-    second: moon_16
+      213: 2201756067370128895
+    second: terrain dry_16
   - first:
-      213: -2115715057330891185
-    second: moon_17
+      213: 6085862291667213161
+    second: terrain dry_17
   - first:
-      213: -3031713021584256797
-    second: moon_18
+      213: 9086995809540386717
+    second: terrain dry_18
   - first:
-      213: 6941118120725496146
-    second: moon_19
+      213: -7501056190182628207
+    second: terrain dry_19
   - first:
-      213: -5070518830753595589
-    second: moon_20
+      213: 6046413039688724334
+    second: terrain dry_20
   - first:
-      213: -1368849271864694501
-    second: moon_21
+      213: 2411316405603333899
+    second: terrain dry_21
   - first:
-      213: 8999585625311851296
-    second: moon_22
+      213: 6100117659005609139
+    second: terrain dry_22
   - first:
-      213: 152341125571461098
-    second: moon_23
+      213: -7856803380058133238
+    second: terrain dry_23
   - first:
-      213: -2844274786670252689
-    second: moon_24
+      213: -6908484441984201875
+    second: terrain dry_24
   - first:
-      213: -4196785868417390050
-    second: moon_25
+      213: -4947266522905153215
+    second: terrain dry_25
   - first:
-      213: -5714107859521966818
-    second: moon_26
+      213: -6784108988353933118
+    second: terrain dry_26
   - first:
-      213: -2446425368989202441
-    second: moon_27
+      213: -5491187872448678047
+    second: terrain dry_27
   - first:
-      213: 3606764086726671060
-    second: moon_28
+      213: -6713188923892013462
+    second: terrain dry_28
   - first:
-      213: -2658450367855205920
-    second: moon_29
+      213: 8221323676869383054
+    second: terrain dry_29
   - first:
-      213: -2462301532047447380
-    second: moon_30
+      213: -8129426469352365077
+    second: terrain dry_30
   - first:
-      213: 1788770953727312188
-    second: moon_31
+      213: 4840293674966347936
+    second: terrain dry_31
   - first:
-      213: -5925520770014825664
-    second: moon_32
+      213: 1903743739544863896
+    second: terrain dry_32
   - first:
-      213: -6611214141503864795
-    second: moon_33
+      213: -5684167702365918438
+    second: terrain dry_33
   - first:
-      213: -4862833597359887020
-    second: moon_34
+      213: 2431113213015465070
+    second: terrain dry_34
   - first:
-      213: 7138835694218532896
-    second: moon_35
+      213: 7619351302184429509
+    second: terrain dry_35
   - first:
-      213: -953717398554737322
-    second: moon_36
+      213: 4328493788419632920
+    second: terrain dry_36
   - first:
-      213: 7001207597000110229
-    second: moon_37
+      213: -3116850582071983365
+    second: terrain dry_37
   - first:
-      213: -7561771566025793075
-    second: moon_38
+      213: 7863197458688525888
+    second: terrain dry_38
   - first:
-      213: -4733931316812468166
-    second: moon_39
+      213: 6866000029086344449
+    second: terrain dry_39
   - first:
-      213: 8405430957116665683
-    second: moon_40
+      213: -3562704222469777353
+    second: terrain dry_40
   - first:
-      213: -7710776228795369327
-    second: moon_41
+      213: 2747881558314006755
+    second: terrain dry_41
   - first:
-      213: 5316124888616036736
-    second: moon_42
+      213: 7717174530364849489
+    second: terrain dry_42
   - first:
-      213: 4213702775356209292
-    second: moon_43
+      213: 1128888761133315928
+    second: terrain dry_43
   - first:
-      213: -498806233473959318
-    second: moon_44
+      213: 4410318520986076054
+    second: terrain dry_44
   - first:
-      213: 7397784903030694644
-    second: moon_45
+      213: 7957135326656007710
+    second: terrain dry_45
   - first:
-      213: 3692061370262270271
-    second: moon_46
+      213: 4465013293772618166
+    second: terrain dry_46
   - first:
-      213: -2006524956829266801
-    second: moon_47
+      213: 9093113707609216406
+    second: terrain dry_47
   - first:
-      213: 167721120831052218
-    second: moon_48
+      213: -3991964250591652236
+    second: terrain dry_48
   - first:
-      213: 7416183482199591865
-    second: moon_49
+      213: 857414824646615324
+    second: terrain dry_49
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -174,7 +174,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -213,7 +212,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -279,7 +277,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: moon_0
+      name: terrain dry_0
       rect:
         serializedVersion: 2
         x: 0
@@ -293,14 +291,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 457fdcc651eb01e70800000000000000
-      internalID: 9083969447635318612
+      spriteID: 3665703e57e7e7970800000000000000
+      internalID: 8754573770440005219
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_1
+      name: terrain dry_1
       rect:
         serializedVersion: 2
         x: 150
@@ -314,14 +312,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d56c271638dcd21b0800000000000000
-      internalID: -5679657590885005731
+      spriteID: 009e0148b10748610800000000000000
+      internalID: 1622545029242349824
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_2
+      name: terrain dry_2
       rect:
         serializedVersion: 2
         x: 300
@@ -335,14 +333,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad178bee60c0ba6e0800000000000000
-      internalID: -1825352000054201894
+      spriteID: 615d8e94703b04310800000000000000
+      internalID: 1387305529116251414
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_3
+      name: terrain dry_3
       rect:
         serializedVersion: 2
         x: 450
@@ -356,14 +354,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8e88e214a6daeaa0800000000000000
-      internalID: -6130851942531297651
+      spriteID: 9606bdb9ba5c9eaf0800000000000000
+      internalID: -366544553809059735
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_4
+      name: terrain dry_4
       rect:
         serializedVersion: 2
         x: 600
@@ -377,14 +375,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31d354d5a17e11cb0800000000000000
-      internalID: -4894877219555033837
+      spriteID: acaf80fee27522d70800000000000000
+      internalID: 9016865263039609546
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_5
+      name: terrain dry_5
       rect:
         serializedVersion: 2
         x: 750
@@ -398,14 +396,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7cf8d81bf7466a690800000000000000
-      internalID: -7591269622283923513
+      spriteID: 09fc89bbc3dccc790800000000000000
+      internalID: -7508400818004373616
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_6
+      name: terrain dry_6
       rect:
         serializedVersion: 2
         x: 900
@@ -419,14 +417,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a09302f8f80a8cf50800000000000000
-      internalID: 6901942967387306250
+      spriteID: f447cc52db8bcb1a0800000000000000
+      internalID: -6792351015459064753
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_7
+      name: terrain dry_7
       rect:
         serializedVersion: 2
         x: 1050
@@ -440,14 +438,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c706dfdcfc3a5f290800000000000000
-      internalID: -7857193861968469892
+      spriteID: 098b6f50f6ed44e20800000000000000
+      internalID: 3334034192583800976
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_8
+      name: terrain dry_8
       rect:
         serializedVersion: 2
         x: 1200
@@ -461,14 +459,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83a54283670b45770800000000000000
-      internalID: 8598691610351655480
+      spriteID: c3e90e6902156c160800000000000000
+      internalID: 7045407867479825980
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_9
+      name: terrain dry_9
       rect:
         serializedVersion: 2
         x: 1350
@@ -482,14 +480,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b202548e659743890800000000000000
-      internalID: -7479219666984558549
+      spriteID: 0ec984fdab6034820800000000000000
+      internalID: 2901169984636493024
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_10
+      name: terrain dry_10
       rect:
         serializedVersion: 2
         x: 0
@@ -503,14 +501,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c95542787dd700d50800000000000000
-      internalID: 6701494610166044060
+      spriteID: 8d373bbd4b96a1f80800000000000000
+      internalID: -8135073551390379048
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_11
+      name: terrain dry_11
       rect:
         serializedVersion: 2
         x: 150
@@ -524,14 +522,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ff0a939c6729d980800000000000000
-      internalID: -8513730273280913422
+      spriteID: 4fd9d33543ab62c90800000000000000
+      internalID: -7194858620780175884
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_12
+      name: terrain dry_12
       rect:
         serializedVersion: 2
         x: 300
@@ -545,14 +543,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44f3a3137d7388340800000000000000
-      internalID: 4866200794757218116
+      spriteID: b78dc878db8ca6b00800000000000000
+      internalID: 822690598297065595
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_13
+      name: terrain dry_13
       rect:
         serializedVersion: 2
         x: 450
@@ -566,14 +564,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04472eddf9c0420d0800000000000000
-      internalID: -3448617533897018304
+      spriteID: cccd6421bfeff6d60800000000000000
+      internalID: 7885801826845908172
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_14
+      name: terrain dry_14
       rect:
         serializedVersion: 2
         x: 600
@@ -587,14 +585,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64944be12bbff4d20800000000000000
-      internalID: 3265104997304781126
+      spriteID: d24e438979e874c10800000000000000
+      internalID: 2037754138153247789
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_15
+      name: terrain dry_15
       rect:
         serializedVersion: 2
         x: 750
@@ -608,14 +606,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5303e86fbe278410800000000000000
-      internalID: 1479202402247836509
+      spriteID: 857519b801d560550800000000000000
+      internalID: 6126686668726556504
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_16
+      name: terrain dry_16
       rect:
         serializedVersion: 2
         x: 900
@@ -629,14 +627,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba775771f8bd972b0800000000000000
-      internalID: -5586192455156009045
+      spriteID: ff558a55a753e8e10800000000000000
+      internalID: 2201756067370128895
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_17
+      name: terrain dry_17
       rect:
         serializedVersion: 2
         x: 1050
@@ -650,14 +648,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f46d8d96d5873a2e0800000000000000
-      internalID: -2115715057330891185
+      spriteID: 96bd4ce8283557450800000000000000
+      internalID: 6085862291667213161
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_18
+      name: terrain dry_18
       rect:
         serializedVersion: 2
         x: 1200
@@ -671,14 +669,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e05b8fc1113de5d0800000000000000
-      internalID: -3031713021584256797
+      spriteID: d9f2e173b8e7b1e70800000000000000
+      internalID: 9086995809540386717
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_19
+      name: terrain dry_19
       rect:
         serializedVersion: 2
         x: 1350
@@ -692,14 +690,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 251ced9b72ec35060800000000000000
-      internalID: 6941118120725496146
+      spriteID: 1946be72325e6e790800000000000000
+      internalID: -7501056190182628207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_20
+      name: terrain dry_20
       rect:
         serializedVersion: 2
         x: 0
@@ -713,14 +711,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3fb00afcf5e1a9b0800000000000000
-      internalID: -5070518830753595589
+      spriteID: e6fafe3df9c29e350800000000000000
+      internalID: 6046413039688724334
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_21
+      name: terrain dry_21
       rect:
         serializedVersion: 2
         x: 150
@@ -734,14 +732,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b19e377f6ded00de0800000000000000
-      internalID: -1368849271864694501
+      spriteID: b07fe05ce77b67120800000000000000
+      internalID: 2411316405603333899
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_22
+      name: terrain dry_22
       rect:
         serializedVersion: 2
         x: 300
@@ -755,14 +753,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 023bc62c173f4ec70800000000000000
-      internalID: 8999585625311851296
+      spriteID: 3b4ed19e0b8f7a450800000000000000
+      internalID: 6100117659005609139
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_23
+      name: terrain dry_23
       rect:
         serializedVersion: 2
         x: 450
@@ -776,14 +774,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aefbe5252793d1200800000000000000
-      internalID: 152341125571461098
+      spriteID: a0deb85f3f607f290800000000000000
+      internalID: -7856803380058133238
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_24
+      name: terrain dry_24
       rect:
         serializedVersion: 2
         x: 600
@@ -797,14 +795,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6d6be0b62b1788d0800000000000000
-      internalID: -2844274786670252689
+      spriteID: d6b0833b0022020a0800000000000000
+      internalID: -6908484441984201875
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_25
+      name: terrain dry_25
       rect:
         serializedVersion: 2
         x: 750
@@ -818,14 +816,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1a2a9afc7502c5c0800000000000000
-      internalID: -4196785868417390050
+      spriteID: 1417e052f47c75bb0800000000000000
+      internalID: -4947266522905153215
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_26
+      name: terrain dry_26
       rect:
         serializedVersion: 2
         x: 900
@@ -839,14 +837,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1dece82d2963b0b0800000000000000
-      internalID: -5714107859521966818
+      spriteID: 2c011af91d00ad1a0800000000000000
+      internalID: -6784108988353933118
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_27
+      name: terrain dry_27
       rect:
         serializedVersion: 2
         x: 1050
@@ -860,14 +858,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f705efa61d8c0ed0800000000000000
-      internalID: -2446425368989202441
+      spriteID: 16773cb39b16bc3b0800000000000000
+      internalID: -5491187872448678047
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_28
+      name: terrain dry_28
       rect:
         serializedVersion: 2
         x: 1200
@@ -881,14 +879,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4dabaf1d3dccd0230800000000000000
-      internalID: 3606764086726671060
+      spriteID: a666451ed36f5d2a0800000000000000
+      internalID: -6713188923892013462
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_29
+      name: terrain dry_29
       rect:
         serializedVersion: 2
         x: 1350
@@ -902,14 +900,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e1ebfab9794b1bd0800000000000000
-      internalID: -2658450367855205920
+      spriteID: e83de4f5352081270800000000000000
+      internalID: 8221323676869383054
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_30
+      name: terrain dry_30
       rect:
         serializedVersion: 2
         x: 0
@@ -923,14 +921,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: caa696c6dc524ddd0800000000000000
-      internalID: -2462301532047447380
+      spriteID: be3289a92b97e2f80800000000000000
+      internalID: -8129426469352365077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_31
+      name: terrain dry_31
       rect:
         serializedVersion: 2
         x: 150
@@ -944,14 +942,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c31047184bdf2d810800000000000000
-      internalID: 1788770953727312188
+      spriteID: 0a070f0d37d2c2340800000000000000
+      internalID: 4840293674966347936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_32
+      name: terrain dry_32
       rect:
         serializedVersion: 2
         x: 300
@@ -965,14 +963,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0433112214254cda0800000000000000
-      internalID: -5925520770014825664
+      spriteID: 89402fa38d47b6a10800000000000000
+      internalID: 1903743739544863896
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_33
+      name: terrain dry_33
       rect:
         serializedVersion: 2
         x: 450
@@ -986,14 +984,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5208f9914cf3044a0800000000000000
-      internalID: -6611214141503864795
+      spriteID: a1b2bb83797cd11b0800000000000000
+      internalID: -5684167702365918438
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_34
+      name: terrain dry_34
       rect:
         serializedVersion: 2
         x: 600
@@ -1007,14 +1005,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45d678b8b9eb38cb0800000000000000
-      internalID: -4862833597359887020
+      spriteID: e6c9b8e269c0db120800000000000000
+      internalID: 2431113213015465070
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_35
+      name: terrain dry_35
       rect:
         serializedVersion: 2
         x: 750
@@ -1028,14 +1026,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02856cf9d3d321360800000000000000
-      internalID: 7138835694218532896
+      spriteID: 5c7ec99e3af5db960800000000000000
+      internalID: 7619351302184429509
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_36
+      name: terrain dry_36
       rect:
         serializedVersion: 2
         x: 900
@@ -1049,14 +1047,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 655090b3417b3c2f0800000000000000
-      internalID: -953717398554737322
+      spriteID: 81fac3fca26e11c30800000000000000
+      internalID: 4328493788419632920
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_37
+      name: terrain dry_37
       rect:
         serializedVersion: 2
         x: 1050
@@ -1070,14 +1068,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59035f92739492160800000000000000
-      internalID: 7001207597000110229
+      spriteID: bf241adc8e8beb4d0800000000000000
+      internalID: -3116850582071983365
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_38
+      name: terrain dry_38
       rect:
         serializedVersion: 2
         x: 1200
@@ -1091,14 +1089,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc1226e13d03f0790800000000000000
-      internalID: -7561771566025793075
+      spriteID: 04642eb7d60bf1d60800000000000000
+      internalID: 7863197458688525888
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_39
+      name: terrain dry_39
       rect:
         serializedVersion: 2
         x: 1350
@@ -1112,14 +1110,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a30bb4e7c82bd4eb0800000000000000
-      internalID: -4733931316812468166
+      spriteID: 105638916aee84f50800000000000000
+      internalID: 6866000029086344449
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_40
+      name: terrain dry_40
       rect:
         serializedVersion: 2
         x: 0
@@ -1133,14 +1131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35fa20febe616a470800000000000000
-      internalID: 8405430957116665683
+      spriteID: 73897ebb26bbe8ec0800000000000000
+      internalID: -3562704222469777353
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_41
+      name: terrain dry_41
       rect:
         serializedVersion: 2
         x: 150
@@ -1154,14 +1152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19830249fd1ddf490800000000000000
-      internalID: -7710776228795369327
+      spriteID: 3e83728e7bf622620800000000000000
+      internalID: 2747881558314006755
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_42
+      name: terrain dry_42
       rect:
         serializedVersion: 2
         x: 300
@@ -1175,14 +1173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 089629f8b6ba6c940800000000000000
-      internalID: 5316124888616036736
+      spriteID: 15db6181959e81b60800000000000000
+      internalID: 7717174530364849489
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_43
+      name: terrain dry_43
       rect:
         serializedVersion: 2
         x: 450
@@ -1196,14 +1194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c883f2a59541a7a30800000000000000
-      internalID: 4213702775356209292
+      spriteID: 857384ed85e9aaf00800000000000000
+      internalID: 1128888761133315928
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_44
+      name: terrain dry_44
       rect:
         serializedVersion: 2
         x: 600
@@ -1217,14 +1215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6ab80a9f52e319f0800000000000000
-      internalID: -498806233473959318
+      spriteID: 69383b5f359943d30800000000000000
+      internalID: 4410318520986076054
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_45
+      name: terrain dry_45
       rect:
         serializedVersion: 2
         x: 750
@@ -1238,14 +1236,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f264e59c263aa660800000000000000
-      internalID: 7397784903030694644
+      spriteID: e1e0b0fbb6c6d6e60800000000000000
+      internalID: 7957135326656007710
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_46
+      name: terrain dry_46
       rect:
         serializedVersion: 2
         x: 900
@@ -1259,14 +1257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f31bc6f3146dc3330800000000000000
-      internalID: 3692061370262270271
+      spriteID: 6b9b6bc1fe9e6fd30800000000000000
+      internalID: 4465013293772618166
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_47
+      name: terrain dry_47
       rect:
         serializedVersion: 2
         x: 1050
@@ -1280,14 +1278,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8c4c3bce246724e0800000000000000
-      internalID: -2006524956829266801
+      spriteID: 695584c5dba313e70800000000000000
+      internalID: 9093113707609216406
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_48
+      name: terrain dry_48
       rect:
         serializedVersion: 2
         x: 1200
@@ -1301,14 +1299,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab91774887dd35200800000000000000
-      internalID: 167721120831052218
+      spriteID: 4761d671aa1b998c0800000000000000
+      internalID: -3991964250591652236
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_49
+      name: terrain dry_49
       rect:
         serializedVersion: 2
         x: 1350
@@ -1322,8 +1320,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bb40ad95939be660800000000000000
-      internalID: 7416183482199591865
+      spriteID: c1127308d3626eb00800000000000000
+      internalID: 857414824646615324
       vertices: []
       indices: 
       edges: []
@@ -1338,57 +1336,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      moon_0: 9083969447635318612
-      moon_14: 3265104997304781126
-      moon_27: -2446425368989202441
-      moon_41: -7710776228795369327
-      moon_47: -2006524956829266801
-      moon_24: -2844274786670252689
-      moon_28: 3606764086726671060
-      moon_42: 5316124888616036736
-      moon_1: -5679657590885005731
-      moon_37: 7001207597000110229
-      moon_23: 152341125571461098
-      moon_39: -4733931316812468166
-      moon_6: 6901942967387306250
-      moon_21: -1368849271864694501
-      moon_19: 6941118120725496146
-      moon_18: -3031713021584256797
-      moon_43: 4213702775356209292
-      moon_29: -2658450367855205920
-      moon_17: -2115715057330891185
-      moon_26: -5714107859521966818
-      moon_45: 7397784903030694644
-      moon_11: -8513730273280913422
-      moon_12: 4866200794757218116
-      moon_7: -7857193861968469892
-      moon_2: -1825352000054201894
-      moon_35: 7138835694218532896
-      moon_8: 8598691610351655480
-      moon_22: 8999585625311851296
-      moon_16: -5586192455156009045
-      moon_25: -4196785868417390050
-      moon_49: 7416183482199591865
-      moon_46: 3692061370262270271
-      moon_31: 1788770953727312188
-      moon_5: -7591269622283923513
-      moon_38: -7561771566025793075
-      moon_3: -6130851942531297651
-      moon_48: 167721120831052218
-      moon_30: -2462301532047447380
-      moon_40: 8405430957116665683
-      moon_13: -3448617533897018304
-      moon_33: -6611214141503864795
-      moon_20: -5070518830753595589
-      moon_15: 1479202402247836509
-      moon_4: -4894877219555033837
-      moon_32: -5925520770014825664
-      moon_10: 6701494610166044060
-      moon_44: -498806233473959318
-      moon_36: -953717398554737322
-      moon_9: -7479219666984558549
-      moon_34: -4862833597359887020
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -49,7 +49,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 7412391004971584290}
   maxIndentY: 1.5
   minShadeValue: 75
-  maxShadeValue: 150
+  maxShadeValue: 200
   minScale: 1
   maxScale: 8
 --- !u!114 &3474502701504536344
