@@ -31,6 +31,7 @@ namespace CodeBase.Player
 
         [Space]
         [SerializeField] private PopUp popUp;
+        [SerializeField] private Effect levelUpEffect;
         [SerializeField] private GameObject body;
         [SerializeField] private Collider2D playerCollider;
         [SerializeField] private ParticleType explosionEffect;
@@ -101,6 +102,8 @@ namespace CodeBase.Player
 
         private void SpawnLvlPopup()
         {
+            levelUpEffect.gameObject.SetActive(true);
+
             popUp.SetCurrentData(transform, $"lvl up", "yellow");
             popUp.SpawnPopUp();
         }
