@@ -2,6 +2,7 @@
 using CodeBase.Effects;
 using CodeBase.Mobs;
 using CodeBase.ObjectBased;
+using CodeBase.Service;
 using CodeBase.UI;
 using CodeBase.Utils;
 using DG.Tweening;
@@ -31,7 +32,7 @@ namespace CodeBase.Player
 
         [Space]
         [SerializeField] private PopUp popUp;
-        [SerializeField] private Effect levelUpEffect;
+        [SerializeField] private SpriteAnimator levelUpEffect;
         [SerializeField] private GameObject body;
         [SerializeField] private Collider2D playerCollider;
         [SerializeField] private ParticleType explosionEffect;
@@ -180,7 +181,7 @@ namespace CodeBase.Player
 
         private void SpawnSpark(Vector3 projectilePosition)
         {
-            var newEffect = particlePool.GetFreeObject(ParticleType.SparksHit);
+            var newEffect = particlePool.GetFreeObject(ParticleType.SparkHit);
             newEffect.gameObject.SetActive(false);
             newEffect.transform.position = new Vector3(projectilePosition.x, projectilePosition.y - 1f, projectilePosition.z);
             newEffect.transform.localScale = new Vector3(0.75f, 0.75f, 1f);

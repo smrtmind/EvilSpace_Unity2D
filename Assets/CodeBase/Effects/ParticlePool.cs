@@ -22,7 +22,7 @@ namespace CodeBase.Effects
 
         public ParticleObject GetFreeObject(ParticleType type)
         {
-            ParticleObject freeObject = objects.Find(obj => obj.Type == type && !obj.IsBusy);
+            ParticleObject freeObject = objects.Find(obj => obj.ParticleType == type && !obj.IsBusy);
             if (freeObject == null)
                 freeObject = CreateNewObject(type);
 
@@ -31,7 +31,7 @@ namespace CodeBase.Effects
 
         private ParticleObject CreateNewObject(ParticleType type)
         {
-            ParticleObject newObject = Instantiate(objects.Find(obj => obj.Type == type), ParticleContainer);
+            ParticleObject newObject = Instantiate(objects.Find(obj => obj.ParticleType == type), ParticleContainer);
             objects.Add(newObject);
 
             return newObject;

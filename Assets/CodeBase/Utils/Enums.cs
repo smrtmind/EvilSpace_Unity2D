@@ -82,13 +82,13 @@ namespace CodeBase.Utils
 
         public enum ParticleType
         {
-            Endless,
+            NotPoolable,
             AsteroidExplosion,
             SmallShipExplosion,
             MediumShipExplosion,
             LargeShipExplosion,
             BossExplosion,
-            SparksHit,
+            SparkHit,
             PlayerExplosion,
             RocketExplosion,
             MegaBombExplosionInternal,

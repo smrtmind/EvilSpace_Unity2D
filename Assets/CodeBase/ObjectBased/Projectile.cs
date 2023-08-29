@@ -8,7 +8,7 @@ using static CodeBase.Utils.Enums;
 
 namespace CodeBase.ObjectBased
 {
-    public class Projectile : MonoBehaviour, IAmAnimated
+    public class Projectile : MonoBehaviour
     {
         [field: SerializeField] public WeaponType WeaponType { get; private set; }
         [SerializeField] private Rigidbody2D rb;

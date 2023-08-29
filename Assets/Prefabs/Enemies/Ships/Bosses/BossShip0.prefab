@@ -160,8 +160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8540c2b4270bb47a822b40f56d2e4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dependencyContainer: {fileID: 11400000, guid: 0971863339e52fc46bfc0f1a78196b51,
-    type: 2}
   playerStorage: {fileID: 11400000, guid: 0e2cce6871d5eb547801ec25880e2198, type: 2}
   enemyStorage: {fileID: 11400000, guid: 0af4be7ae2373814d9ecf424aadbf7bb, type: 2}
   explosionEffect: 5
@@ -178,7 +176,7 @@ MonoBehaviour:
   stopDistance: 35
   shipBody: {fileID: 7183672100055990538}
   shootingPoint: {fileID: 7209977439784247874}
-  delayBetweenShoots: 3
+  delayBetweenShoots: 15
 --- !u!70 &4672651440076525283
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

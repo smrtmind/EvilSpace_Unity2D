@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 331547846b394654f9864dfe937f8d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
   <Renderer>k__BackingField: {fileID: 6126567255107945223}
   <DelayBetweenFrames>k__BackingField: 0.05
   <Frames>k__BackingField:

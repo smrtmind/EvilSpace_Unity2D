@@ -1392,9 +1392,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61c9cdc92a8daf04eaa3d334655f232c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageRenderer: {fileID: 5341752680422536132}
   frameRate: 10
   loop: 1
-  <Sprites>k__BackingField:
+  sprites:
   - {fileID: 2096451316906450572, guid: d2379b0dc4159c942a7a8aa2f003f357, type: 3}
   - {fileID: -6426247594125263407, guid: d2379b0dc4159c942a7a8aa2f003f357, type: 3}
   - {fileID: -1864850864797526305, guid: d2379b0dc4159c942a7a8aa2f003f357, type: 3}
@@ -1407,7 +1408,6 @@ MonoBehaviour:
   - {fileID: -5945557658426159019, guid: d2379b0dc4159c942a7a8aa2f003f357, type: 3}
   - {fileID: -1864850864797526305, guid: d2379b0dc4159c942a7a8aa2f003f357, type: 3}
   - {fileID: -6426247594125263407, guid: d2379b0dc4159c942a7a8aa2f003f357, type: 3}
-  imageRenderer: {fileID: 5341752680422536132}
 --- !u!1 &4770493664107135115
 GameObject:
   m_ObjectHideFlags: 0
@@ -2575,14 +2575,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61c9cdc92a8daf04eaa3d334655f232c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageRenderer: {fileID: 4812364064135300850}
   frameRate: 3
   loop: 1
-  <Sprites>k__BackingField:
-  - {fileID: 3329228997942438077, guid: 9588ad9d63fada9479ec3bcb89ff38a1, type: 3}
-  - {fileID: 9200663780140972471, guid: 9588ad9d63fada9479ec3bcb89ff38a1, type: 3}
-  - {fileID: -9151920427395133787, guid: 9588ad9d63fada9479ec3bcb89ff38a1, type: 3}
-  - {fileID: 9200663780140972471, guid: 9588ad9d63fada9479ec3bcb89ff38a1, type: 3}
-  imageRenderer: {fileID: 4812364064135300850}
+  sprites: []
 --- !u!1001 &8129461222784853579
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2899,12 +2895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61c9cdc92a8daf04eaa3d334655f232c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageRenderer: {fileID: 2434582613266200520}
   frameRate: 5
   loop: 1
-  <Sprites>k__BackingField:
-  - {fileID: 7737388791731907001, guid: e831ac8984d9c524dbf404ac4bb3e215, type: 3}
-  - {fileID: -3688111661609072520, guid: e831ac8984d9c524dbf404ac4bb3e215, type: 3}
-  - {fileID: -8887868587064690702, guid: e831ac8984d9c524dbf404ac4bb3e215, type: 3}
-  - {fileID: 4634807435272405524, guid: e831ac8984d9c524dbf404ac4bb3e215, type: 3}
-  - {fileID: -4709253058797733800, guid: e831ac8984d9c524dbf404ac4bb3e215, type: 3}
-  imageRenderer: {fileID: 2434582613266200520}
+  sprites: []

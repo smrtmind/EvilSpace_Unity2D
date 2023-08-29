@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6455734647039026735}
-  - component: {fileID: 7528417782353253075}
+  - component: {fileID: 8020322792067022415}
   m_Layer: 0
   m_Name: DamageFlame
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7528417782353253075
+--- !u!114 &8020322792067022415
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,14 +41,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6737185576912962476}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d78b6195c235954a95dd821bb944b22, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c7a614fffbf02141946a8622e3c1bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Type>k__BackingField: 0
-  <IsBusy>k__BackingField: 0
-  <Renderer>k__BackingField: {fileID: 1217279883118744746}
-  <DelayBetweenFrames>k__BackingField: 0.015
-  <Frames>k__BackingField:
+  <ParticleType>k__BackingField: 0
+  loop: 1
+  spriteRenderer: {fileID: 1217279883118744746}
+  frameRate: 60
+  sprites:
   - {fileID: 21300000, guid: b4e05b8f86246f847b48a2da4ee4e310, type: 3}
   - {fileID: 21300000, guid: e7ed7eedded899946bc873044f4a3e80, type: 3}
   - {fileID: 21300000, guid: 0ec2bee4d1a54094fb57fa1b5774ceb8, type: 3}

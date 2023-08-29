@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1698069568133286118}
-  - component: {fileID: 209072384757896353}
+  - component: {fileID: 4726729198420493320}
   m_Layer: 0
-  m_Name: ExplosionShipBoss
+  m_Name: ExplosionShipLarge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,14 +25,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 190716498238451836}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.1591531, y: 15.426287, z: 0}
+  m_LocalScale: {x: 5.25, y: 5.25, z: 1}
   m_Children:
   - {fileID: 2451537365449165914}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &209072384757896353
+--- !u!114 &4726729198420493320
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,26 +41,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 190716498238451836}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d78b6195c235954a95dd821bb944b22, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c7a614fffbf02141946a8622e3c1bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Type>k__BackingField: 5
-  <IsBusy>k__BackingField: 1
-  <Renderer>k__BackingField: {fileID: 6984075108583789657}
-  <DelayBetweenFrames>k__BackingField: 0.05
-  <Frames>k__BackingField:
-  - {fileID: -8722101727480266923, guid: f0f342fe5b4a7a445a1ffd419938fd73, type: 3}
-  - {fileID: -4082105214739883450, guid: f0f342fe5b4a7a445a1ffd419938fd73, type: 3}
-  - {fileID: 229091865498009487, guid: f0f342fe5b4a7a445a1ffd419938fd73, type: 3}
-  - {fileID: -6032970166402849691, guid: f0f342fe5b4a7a445a1ffd419938fd73, type: 3}
-  - {fileID: 6262517308564783471, guid: f0f342fe5b4a7a445a1ffd419938fd73, type: 3}
-  - {fileID: -8712044810263763283, guid: f0f342fe5b4a7a445a1ffd419938fd73, type: 3}
-  - {fileID: 8589957798171608842, guid: f0f342fe5b4a7a445a1ffd419938fd73, type: 3}
-  - {fileID: -843527656375160020, guid: f0f342fe5b4a7a445a1ffd419938fd73, type: 3}
-  - {fileID: 227021982475067752, guid: f0f342fe5b4a7a445a1ffd419938fd73, type: 3}
-  - {fileID: 7021253103370894853, guid: f0f342fe5b4a7a445a1ffd419938fd73, type: 3}
-  - {fileID: 5027681301686525887, guid: f0f342fe5b4a7a445a1ffd419938fd73, type: 3}
-  - {fileID: -8402181747247913011, guid: f0f342fe5b4a7a445a1ffd419938fd73, type: 3}
+  <ParticleType>k__BackingField: 4
+  loop: 0
+  spriteRenderer: {fileID: 6984075108583789657}
+  frameRate: 20
+  sprites:
+  - {fileID: 8022677196380673442, guid: c69ba42f3f276fc44b2b9a38260231ea, type: 3}
+  - {fileID: -7571945073080368898, guid: c69ba42f3f276fc44b2b9a38260231ea, type: 3}
+  - {fileID: -2807287351334682650, guid: c69ba42f3f276fc44b2b9a38260231ea, type: 3}
+  - {fileID: 2377710367820163053, guid: c69ba42f3f276fc44b2b9a38260231ea, type: 3}
+  - {fileID: 5782038188240036561, guid: c69ba42f3f276fc44b2b9a38260231ea, type: 3}
+  - {fileID: -8390090999433812261, guid: c69ba42f3f276fc44b2b9a38260231ea, type: 3}
+  - {fileID: 5910869397153989150, guid: c69ba42f3f276fc44b2b9a38260231ea, type: 3}
+  - {fileID: 6531677963109135071, guid: c69ba42f3f276fc44b2b9a38260231ea, type: 3}
+  - {fileID: 5158363165531010237, guid: c69ba42f3f276fc44b2b9a38260231ea, type: 3}
+  - {fileID: 7621438737288509756, guid: c69ba42f3f276fc44b2b9a38260231ea, type: 3}
+  - {fileID: -2169124595864839078, guid: c69ba42f3f276fc44b2b9a38260231ea, type: 3}
+  - {fileID: 7538364470389281633, guid: c69ba42f3f276fc44b2b9a38260231ea, type: 3}
+  - {fileID: -4891421328888187548, guid: c69ba42f3f276fc44b2b9a38260231ea, type: 3}
+  - {fileID: -6855165592414099409, guid: c69ba42f3f276fc44b2b9a38260231ea, type: 3}
+  - {fileID: -1152428485113132583, guid: c69ba42f3f276fc44b2b9a38260231ea, type: 3}
+  - {fileID: -2291076144602297558, guid: c69ba42f3f276fc44b2b9a38260231ea, type: 3}
 --- !u!1 &4075066592963060629
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,7 +136,7 @@ SpriteRenderer:
   m_SortingLayerID: -2059966085
   m_SortingLayer: 4
   m_SortingOrder: 4
-  m_Sprite: {fileID: -8722101727480266923, guid: f0f342fe5b4a7a445a1ffd419938fd73,
+  m_Sprite: {fileID: 8022677196380673442, guid: c69ba42f3f276fc44b2b9a38260231ea,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

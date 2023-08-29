@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1698069568133286118}
-  - component: {fileID: 4635960088073104582}
+  - component: {fileID: 3556521423958550367}
   m_Layer: 0
-  m_Name: ExplosionAsteroid
+  m_Name: MegaBombExplosionInternal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,14 +25,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 190716498238451836}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.608839, y: 5.855798, z: 0}
-  m_LocalScale: {x: 9.041499, y: 9.041499, z: 1}
+  m_LocalPosition: {x: -0.29568475, y: -6.261556, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5297223064550089836}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4635960088073104582
+--- !u!114 &3556521423958550367
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,21 +41,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 190716498238451836}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d78b6195c235954a95dd821bb944b22, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c7a614fffbf02141946a8622e3c1bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Type>k__BackingField: 1
-  <IsBusy>k__BackingField: 1
-  <Renderer>k__BackingField: {fileID: 153468222957032547}
-  <DelayBetweenFrames>k__BackingField: 0.1
-  <Frames>k__BackingField:
-  - {fileID: 4585791342908316790, guid: 980e4ac7170546a4c81fa324db7577b6, type: 3}
-  - {fileID: 8907844407333882810, guid: 980e4ac7170546a4c81fa324db7577b6, type: 3}
-  - {fileID: 670553273723837361, guid: 980e4ac7170546a4c81fa324db7577b6, type: 3}
-  - {fileID: -8181786317925028736, guid: 980e4ac7170546a4c81fa324db7577b6, type: 3}
-  - {fileID: -533388249586206465, guid: 980e4ac7170546a4c81fa324db7577b6, type: 3}
-  - {fileID: -2739606032777228863, guid: 980e4ac7170546a4c81fa324db7577b6, type: 3}
-  - {fileID: 4999594965777884229, guid: 980e4ac7170546a4c81fa324db7577b6, type: 3}
+  <ParticleType>k__BackingField: 9
+  loop: 0
+  spriteRenderer: {fileID: 153468222957032547}
+  frameRate: 20
+  sprites:
+  - {fileID: -8592839770501632309, guid: 2412242e5d8c83f42a42fef154a8409a, type: 3}
+  - {fileID: 1975622163582171532, guid: 2412242e5d8c83f42a42fef154a8409a, type: 3}
+  - {fileID: 1138500570277433089, guid: 2412242e5d8c83f42a42fef154a8409a, type: 3}
+  - {fileID: -6126581823449176681, guid: 2412242e5d8c83f42a42fef154a8409a, type: 3}
+  - {fileID: 6978403530753984111, guid: 2412242e5d8c83f42a42fef154a8409a, type: 3}
+  - {fileID: -9151148928627538259, guid: 2412242e5d8c83f42a42fef154a8409a, type: 3}
+  - {fileID: -4662137995498519272, guid: 2412242e5d8c83f42a42fef154a8409a, type: 3}
+  - {fileID: -3986557196779755735, guid: 2412242e5d8c83f42a42fef154a8409a, type: 3}
 --- !u!1 &602372550709823964
 GameObject:
   m_ObjectHideFlags: 0
@@ -81,8 +82,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602372550709823964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.5, y: 0, z: 0}
+  m_LocalScale: {x: 25, y: 25, z: 1}
   m_Children: []
   m_Father: {fileID: 1698069568133286118}
   m_RootOrder: 0
@@ -127,9 +128,9 @@ SpriteRenderer:
   m_SortingLayerID: -2059966085
   m_SortingLayer: 4
   m_SortingOrder: 4
-  m_Sprite: {fileID: 4585791342908316790, guid: 980e4ac7170546a4c81fa324db7577b6,
+  m_Sprite: {fileID: -8592839770501632309, guid: 2412242e5d8c83f42a42fef154a8409a,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9245283, g: 0.13431823, b: 0.13431823, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

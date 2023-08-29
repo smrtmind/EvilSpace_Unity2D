@@ -9,7 +9,7 @@ using Zenject;
 
 namespace CodeBase.ObjectBased
 {
-    public class Shield : MonoBehaviour, IAmAnimated
+    public class Shield : MonoBehaviour
     {
         [field: SerializeField] public SpriteRenderer Renderer { get; private set; }
         [field: SerializeField] public float DelayBetweenFrames { get; private set; }

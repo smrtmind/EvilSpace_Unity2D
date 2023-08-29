@@ -86,7 +86,7 @@ namespace CodeBase.Mobs
 
         private void SpawnSpark(Vector3 projectilePosition)
         {
-            var newEffect = particlePool.GetFreeObject(ParticleType.SparksHit);
+            var newEffect = particlePool.GetFreeObject(ParticleType.SparkHit);
             newEffect.gameObject.SetActive(false);
             newEffect.transform.position = new Vector3(projectilePosition.x, projectilePosition.y + 1f, projectilePosition.z);
             newEffect.transform.localScale = new Vector3(0.75f, 0.75f, 1f);

@@ -277,16 +277,16 @@ MonoBehaviour:
   <PopUpContainer>k__BackingField: {fileID: 2028567440}
   <PlanetContainer>k__BackingField: {fileID: 1085088692}
   objects:
-  - {fileID: 4635960088073104582, guid: d9c8fc230b67a55428ff96633328b389, type: 3}
-  - {fileID: 209072384757896353, guid: 3510db499d52a4e468a211bc82e63ce5, type: 3}
-  - {fileID: 209072384757896353, guid: d7e69e3d2b368e44685ecf70bfb83afb, type: 3}
-  - {fileID: 209072384757896353, guid: 9ab3cf7541472114bbcb35cd86b29751, type: 3}
-  - {fileID: 209072384757896353, guid: c9c21cee5a0b0ee44ba82158dfe3a459, type: 3}
-  - {fileID: 209072384757896353, guid: bcadee85563408d448cf02efe03d130c, type: 3}
-  - {fileID: 1244527151261255997, guid: ca40d4481d7d3d24faa05128eb83ada5, type: 3}
-  - {fileID: 209072384757896353, guid: 74451b66e982e014295c86e9cf14a0df, type: 3}
-  - {fileID: 7155248238359574121, guid: 4a004faf1491c8a499043de200501726, type: 3}
-  - {fileID: 7155248238359574121, guid: 8ad4bc5e06c489f42b78c323e3c03c69, type: 3}
+  - {fileID: 7192353515709683187, guid: d9c8fc230b67a55428ff96633328b389, type: 3}
+  - {fileID: 7113708728655463013, guid: 74451b66e982e014295c86e9cf14a0df, type: 3}
+  - {fileID: 496623460316856778, guid: c9c21cee5a0b0ee44ba82158dfe3a459, type: 3}
+  - {fileID: 4726729198420493320, guid: 9ab3cf7541472114bbcb35cd86b29751, type: 3}
+  - {fileID: 3046711585881168103, guid: d7e69e3d2b368e44685ecf70bfb83afb, type: 3}
+  - {fileID: 7701175014548994885, guid: bcadee85563408d448cf02efe03d130c, type: 3}
+  - {fileID: 7748022324924689175, guid: 3510db499d52a4e468a211bc82e63ce5, type: 3}
+  - {fileID: 4694257607456927990, guid: 4a004faf1491c8a499043de200501726, type: 3}
+  - {fileID: 3556521423958550367, guid: 8ad4bc5e06c489f42b78c323e3c03c69, type: 3}
+  - {fileID: 136943442524981507, guid: ca40d4481d7d3d24faa05128eb83ada5, type: 3}
 --- !u!4 &583665570
 Transform:
   m_ObjectHideFlags: 0
@@ -387,19 +387,19 @@ MonoBehaviour:
     <EnemiesPool>k__BackingField: []
   - <Type>k__BackingField: 1
     <SpawnUnitsOnStart>k__BackingField: 4
-    <SpawnCooldown>k__BackingField: 3
+    <SpawnCooldown>k__BackingField: 5
     <EnemiesPool>k__BackingField: []
   - <Type>k__BackingField: 2
-    <SpawnUnitsOnStart>k__BackingField: 0
-    <SpawnCooldown>k__BackingField: 100
+    <SpawnUnitsOnStart>k__BackingField: 3
+    <SpawnCooldown>k__BackingField: 10
     <EnemiesPool>k__BackingField: []
   - <Type>k__BackingField: 3
-    <SpawnUnitsOnStart>k__BackingField: 0
-    <SpawnCooldown>k__BackingField: 100
+    <SpawnUnitsOnStart>k__BackingField: 2
+    <SpawnCooldown>k__BackingField: 15
     <EnemiesPool>k__BackingField: []
   - <Type>k__BackingField: 4
-    <SpawnUnitsOnStart>k__BackingField: 0
-    <SpawnCooldown>k__BackingField: 100
+    <SpawnUnitsOnStart>k__BackingField: 1
+    <SpawnCooldown>k__BackingField: 20
     <EnemiesPool>k__BackingField: []
 --- !u!114 &1018386067 stripped
 MonoBehaviour:

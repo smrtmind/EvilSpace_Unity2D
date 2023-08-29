@@ -89,9 +89,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61c9cdc92a8daf04eaa3d334655f232c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frameRate: 5
+  imageRenderer: {fileID: 3714106728545594396}
+  frameRate: 8
   loop: 1
-  <Sprites>k__BackingField:
+  sprites:
   - {fileID: -2101916639101073191, guid: e29ff4ac55c2bce4e87d20de28810c53, type: 3}
   - {fileID: 6166324115493766232, guid: e29ff4ac55c2bce4e87d20de28810c53, type: 3}
   - {fileID: 8130902568377159997, guid: e29ff4ac55c2bce4e87d20de28810c53, type: 3}
@@ -99,7 +100,6 @@ MonoBehaviour:
   - {fileID: 8612387982213699785, guid: e29ff4ac55c2bce4e87d20de28810c53, type: 3}
   - {fileID: 1026557086067335267, guid: e29ff4ac55c2bce4e87d20de28810c53, type: 3}
   - {fileID: -319330527206498804, guid: e29ff4ac55c2bce4e87d20de28810c53, type: 3}
-  imageRenderer: {fileID: 3714106728545594396}
 --- !u!1 &2782154330571494190
 GameObject:
   m_ObjectHideFlags: 0
