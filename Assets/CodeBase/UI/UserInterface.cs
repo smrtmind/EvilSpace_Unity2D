@@ -1,11 +1,14 @@
 ﻿using CodeBase.Player;
 using CodeBase.Utils;
 using DG.Tweening;
+using System;
 using System.Collections;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
+using static CodeBase.Utils.Enums;
 
 namespace CodeBase.UI
 {
@@ -22,6 +25,7 @@ namespace CodeBase.UI
         [SerializeField] private TextMeshProUGUI scoreValue;
         [SerializeField] private Vector3 scoreValueScaleOnChange;
         [SerializeField] private Slider levelProgressSlider;
+        [SerializeField] private WeaponSpotData[] weaponSpotDatas;
 
         [Header("Buttons")]
         [SerializeField] private Button bombBttn;
@@ -86,6 +90,7 @@ namespace CodeBase.UI
             EventObserver.OnLevelProgressChanged += RefreshLevelProgressSlider;
             EventObserver.OnGameOver += ShowGameOverScreen;
             EventObserver.OnPlayerDied += DisableBombButton;
+            EventObserver.OnCollectableGot += RefreshWeaponSpotInfo;
 
             startBttn.onClick.AddListener(StartButtonPressed);
             exitBttn.onClick.AddListener(ExitButtonPressed);
@@ -108,6 +113,7 @@ namespace CodeBase.UI
             EventObserver.OnLevelProgressChanged -= RefreshLevelProgressSlider;
             EventObserver.OnGameOver -= ShowGameOverScreen;
             EventObserver.OnPlayerDied -= DisableBombButton;
+            EventObserver.OnCollectableGot -= RefreshWeaponSpotInfo;
 
             startBttn.onClick.RemoveListener(StartButtonPressed);
             exitBttn.onClick.RemoveListener(ExitButtonPressed);
@@ -328,5 +334,21 @@ namespace CodeBase.UI
                                     .OnComplete(() => scoreIsScaling = false);
             }
         }
+
+        private void RefreshWeaponSpotInfo(CollectableType type, Color color)
+        {
+            foreach (var spotData in weaponSpotDatas)
+                spotData.SpotObject.SetActive(false);
+
+            var newSpotData = weaponSpotDatas.FirstOrDefault(spot => spot.Type == type);
+            newSpotData.SpotObject.SetActive(true);
+        }
+    }
+
+    [Serializable]
+    public class WeaponSpotData
+    {
+        [field: SerializeField] public CollectableType Type { get; private set; }
+        [field: SerializeField] public GameObject SpotObject { get; private set; }
     }
 }

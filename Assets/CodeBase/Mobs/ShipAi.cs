@@ -10,7 +10,7 @@ namespace CodeBase.Mobs
     public class ShipAi : Enemy
     {
         [Header("Ship Settings")]
-        [SerializeField] private Projectile weapon;
+        [SerializeField] private EnemyProjectile weapon;
         [SerializeField] private float shipDamage;
         [SerializeField] private float rotationSpeed = 100f;
         [SerializeField] private float movementSpeed = 5f;
@@ -108,20 +108,20 @@ namespace CodeBase.Mobs
             }
         }
 
-        private Projectile GetFreeProjectile()
+        private EnemyProjectile GetFreeProjectile()
         {
-            Projectile freeProjectile = particlePool.ProjectilesPool.Find(projectile => !projectile.IsBusy && projectile.WeaponType == weapon.WeaponType);
+            EnemyProjectile freeProjectile = particlePool.EnemyProjectilesPool.Find(projectile => !projectile.IsBusy && projectile.WeaponType == weapon.WeaponType);
             if (freeProjectile == null)
                 freeProjectile = CreateNewProjectile();
 
             return freeProjectile;
         }
 
-        private Projectile CreateNewProjectile()
+        private EnemyProjectile CreateNewProjectile()
         {
-            Projectile newProjectile = diContainer.InstantiatePrefabForComponent<Projectile>(weapon, particlePool.ProjectileContainer);
-            particlePool.ProjectilesPool.Add(newProjectile);
-            Dictionaries.Projectiles.Add(newProjectile.transform, newProjectile);
+            EnemyProjectile newProjectile = diContainer.InstantiatePrefabForComponent<EnemyProjectile>(weapon, particlePool.EnemyProjectileContainer);
+            particlePool.EnemyProjectilesPool.Add(newProjectile);
+            Dictionaries.EnemyProjectiles.Add(newProjectile.transform, newProjectile);
             newProjectile.SetDamage(shipDamage);
 
             return newProjectile;

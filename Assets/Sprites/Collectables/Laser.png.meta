@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: e831ac8984d9c524dbf404ac4bb3e215
+guid: 0170a4ef21b21b94b984872309c056c5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7737388791731907001
-    second: pwrUp_0
+      213: 9082429109045791810
+    second: Laser_0
   - first:
-      213: -3688111661609072520
-    second: pwrUp_1
+      213: -8599512977041186160
+    second: Laser_1
   - first:
-      213: -8887868587064690702
-    second: pwrUp_2
+      213: -4876627861783150909
+    second: Laser_2
   - first:
-      213: 4634807435272405524
-    second: pwrUp_3
+      213: 7394846351055212603
+    second: Laser_3
   - first:
-      213: -4709253058797733800
-    second: pwrUp_4
+      213: -3134984308293451589
+    second: Laser_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -80,7 +80,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -92,31 +92,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Server
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -128,7 +104,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: iPhone
-    maxTextureSize: 2048
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -142,7 +130,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pwrUp_0
+      name: Laser_0
       rect:
         serializedVersion: 2
         x: 0
@@ -156,14 +144,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b9e4449c1ab06b60800000000000000
-      internalID: 7737388791731907001
+      spriteID: 24c875667254b0e70800000000000000
+      internalID: 9082429109045791810
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pwrUp_1
+      name: Laser_1
       rect:
         serializedVersion: 2
         x: 98
@@ -177,14 +165,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 878c0d5fbf131dcc0800000000000000
-      internalID: -3688111661609072520
+      spriteID: 0922912728468a880800000000000000
+      internalID: -8599512977041186160
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pwrUp_2
+      name: Laser_2
       rect:
         serializedVersion: 2
         x: 196
@@ -198,14 +186,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f7f7a92c92f7a480800000000000000
-      internalID: -8887868587064690702
+      spriteID: 3ce74a41cccb25cb0800000000000000
+      internalID: -4876627861783150909
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pwrUp_3
+      name: Laser_3
       rect:
         serializedVersion: 2
         x: 294
@@ -219,14 +207,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41240cd5ec4225040800000000000000
-      internalID: 4634807435272405524
+      spriteID: b305d33a395cf9660800000000000000
+      internalID: 7394846351055212603
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pwrUp_4
+      name: Laser_4
       rect:
         serializedVersion: 2
         x: 392
@@ -240,8 +228,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85870f03b4f55aeb0800000000000000
-      internalID: -4709253058797733800
+      spriteID: bb0ceb7a16c4e74d0800000000000000
+      internalID: -3134984308293451589
       vertices: []
       indices: 
       edges: []

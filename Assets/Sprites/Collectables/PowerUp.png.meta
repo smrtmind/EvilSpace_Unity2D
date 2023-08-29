@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: 048bce0568b89564faa5c879f2060593
+guid: 770ca48ea9a910d4d8aa77671522b80f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1455740839342090726
-    second: oneUp_0
+      213: 7571401643613406209
+    second: PowerUp_0
   - first:
-      213: 8265977481279190014
-    second: oneUp_1
+      213: 1933725852033448605
+    second: PowerUp_1
   - first:
-      213: -4486415252823163809
-    second: oneUp_2
+      213: -7523910368627721671
+    second: PowerUp_2
   - first:
-      213: 318713714763731045
-    second: oneUp_3
+      213: -2051229442297355825
+    second: PowerUp_3
   - first:
-      213: -2415877343781877565
-    second: oneUp_4
+      213: -3769386729268415729
+    second: PowerUp_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -80,7 +80,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -92,31 +92,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Server
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -128,7 +104,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: iPhone
-    maxTextureSize: 2048
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -142,7 +130,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: oneUp_0
+      name: PowerUp_0
       rect:
         serializedVersion: 2
         x: 0
@@ -156,14 +144,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a165cf16b6b2ccbe0800000000000000
-      internalID: -1455740839342090726
+      spriteID: 104c26b0ea5031960800000000000000
+      internalID: 7571401643613406209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: oneUp_1
+      name: PowerUp_1
       rect:
         serializedVersion: 2
         x: 98
@@ -177,14 +165,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef3360569b6a6b270800000000000000
-      internalID: 8265977481279190014
+      spriteID: d9a7177ca69f5da10800000000000000
+      internalID: 1933725852033448605
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: oneUp_2
+      name: PowerUp_2
       rect:
         serializedVersion: 2
         x: 196
@@ -198,14 +186,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5cb49cf81d0db1c0800000000000000
-      internalID: -4486415252823163809
+      spriteID: 93af0141263b59790800000000000000
+      internalID: -7523910368627721671
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: oneUp_3
+      name: PowerUp_3
       rect:
         serializedVersion: 2
         x: 294
@@ -219,14 +207,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56099895f6c4c6400800000000000000
-      internalID: 318713714763731045
+      spriteID: fc12b0ba0b19883e0800000000000000
+      internalID: -2051229442297355825
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: oneUp_4
+      name: PowerUp_4
       rect:
         serializedVersion: 2
         x: 392
@@ -240,8 +228,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c887fe0b54197ed0800000000000000
-      internalID: -2415877343781877565
+      spriteID: f0372e4adb270bbc0800000000000000
+      internalID: -3769386729268415729
       vertices: []
       indices: 
       edges: []

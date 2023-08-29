@@ -140,7 +140,7 @@ namespace CodeBase.Service
             foreach (Coroutine enemySpawner in spawnCoroutines)
                 StopCoroutine(enemySpawner);
 
-            DestroyEnemyParticles();
+            DestroyEnemyProjectiles();
         }
 
         private void DestroyAllEnemies()
@@ -157,13 +157,13 @@ namespace CodeBase.Service
                 }
             }
 
-            DestroyEnemyParticles();
+            DestroyEnemyProjectiles();
         }
 
-        private void DestroyEnemyParticles()
+        private void DestroyEnemyProjectiles()
         {
-            List<Projectile> projectiles = Dictionaries.Projectiles.Values.ToList();
-            foreach (Projectile projectile in projectiles)
+            List<EnemyProjectile> projectiles = Dictionaries.EnemyProjectiles.Values.ToList();
+            foreach (EnemyProjectile projectile in projectiles)
             {
                 if (projectile.IsBusy)
                     projectile.SetBusyState(false);

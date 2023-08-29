@@ -419,4 +419,10 @@ namespace CodeBase.Player
         public float ShootingDelayOnPowerUp => _shootingDelayOnPowerUp;
         public float ShootingDelayMin => _shootingDelayMin;
     }
+
+    public class WeaponData
+    {
+        [field: SerializeField] public PlayerWeaponType Type { get; private set; }
+        [field: SerializeField] public Projectile Weapon { get; private set; }
+    }
 }

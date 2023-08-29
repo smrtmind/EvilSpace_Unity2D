@@ -11,14 +11,22 @@ namespace CodeBase.Effects
         [field: SerializeField] public Transform ProjectileContainer { get; private set; }
         [field: SerializeField] public List<Projectile> ProjectilesPool { get; private set; }
 
+        [field: Header("Enemy projectiles")]
+        [field: SerializeField] public Transform EnemyProjectileContainer { get; private set; }
+        [field: SerializeField] public List<EnemyProjectile> EnemyProjectilesPool { get; private set; }
+
         [field: Header("Containers")]
         [field: SerializeField] public Transform EnemyContainer { get; private set; }
-        [field: SerializeField] public Transform ParticleContainer { get; private set; }
         [field: SerializeField] public Transform PopUpContainer { get; private set; }
         [field: SerializeField] public Transform PlanetContainer { get; private set; }
 
-        [Space]
+        [field: Header("Collectables")]
+        [field: SerializeField] public List<Collectable> CollectablesPool { get; private set; }
+        [field: SerializeField] public Transform CollectableContainer { get; private set; }
+
+        [Header("Particles")]
         [SerializeField] private List<ParticleObject> objects = new List<ParticleObject>();
+        [field: SerializeField] public Transform ParticleContainer { get; private set; }
 
         public ParticleObject GetFreeObject(ParticleType type)
         {

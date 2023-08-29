@@ -175,7 +175,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 583665570}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &276071395
 GameObject:
@@ -241,6 +241,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &536610478 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6076723763868816718, guid: 945ac4254c71b36438e44005c6ac2842,
+    type: 3}
+  m_PrefabInstance: {fileID: 7575195153920174632}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 789f7f001251f1b47b80df718eead1a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &583665568
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,12 +282,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1578fa20d7b112242abd20511a2807fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ProjectileContainer>k__BackingField: {fileID: 585503006}
+  <ProjectileContainer>k__BackingField: {fileID: 1685108227}
   <ProjectilesPool>k__BackingField: []
+  <EnemyProjectileContainer>k__BackingField: {fileID: 585503006}
+  <EnemyProjectilesPool>k__BackingField: []
   <EnemyContainer>k__BackingField: {fileID: 1022047944}
-  <ParticleContainer>k__BackingField: {fileID: 176942792}
   <PopUpContainer>k__BackingField: {fileID: 2028567440}
   <PlanetContainer>k__BackingField: {fileID: 1085088692}
+  <CollectablesPool>k__BackingField: []
+  <CollectableContainer>k__BackingField: {fileID: 1791642018}
   objects:
   - {fileID: 7192353515709683187, guid: d9c8fc230b67a55428ff96633328b389, type: 3}
   - {fileID: 7113708728655463013, guid: 74451b66e982e014295c86e9cf14a0df, type: 3}
@@ -287,6 +302,7 @@ MonoBehaviour:
   - {fileID: 4694257607456927990, guid: 4a004faf1491c8a499043de200501726, type: 3}
   - {fileID: 3556521423958550367, guid: 8ad4bc5e06c489f42b78c323e3c03c69, type: 3}
   - {fileID: 136943442524981507, guid: ca40d4481d7d3d24faa05128eb83ada5, type: 3}
+  <ParticleContainer>k__BackingField: {fileID: 176942792}
 --- !u!4 &583665570
 Transform:
   m_ObjectHideFlags: 0
@@ -299,10 +315,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 585503006}
+  - {fileID: 1685108227}
   - {fileID: 1022047944}
   - {fileID: 176942792}
   - {fileID: 2028567440}
   - {fileID: 1085088692}
+  - {fileID: 1791642018}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -316,7 +334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 585503006}
   m_Layer: 0
-  m_Name: ProjectileContainer
+  m_Name: EnemyProjectileContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -352,7 +370,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &820566342
 Transform:
   m_ObjectHideFlags: 0
@@ -383,23 +401,23 @@ MonoBehaviour:
   enemies:
   - <Type>k__BackingField: 0
     <SpawnUnitsOnStart>k__BackingField: 5
-    <SpawnCooldown>k__BackingField: 1
+    <SpawnCooldown>k__BackingField: 2
     <EnemiesPool>k__BackingField: []
   - <Type>k__BackingField: 1
-    <SpawnUnitsOnStart>k__BackingField: 4
+    <SpawnUnitsOnStart>k__BackingField: 3
     <SpawnCooldown>k__BackingField: 5
     <EnemiesPool>k__BackingField: []
   - <Type>k__BackingField: 2
-    <SpawnUnitsOnStart>k__BackingField: 3
-    <SpawnCooldown>k__BackingField: 10
-    <EnemiesPool>k__BackingField: []
-  - <Type>k__BackingField: 3
     <SpawnUnitsOnStart>k__BackingField: 2
     <SpawnCooldown>k__BackingField: 15
     <EnemiesPool>k__BackingField: []
-  - <Type>k__BackingField: 4
+  - <Type>k__BackingField: 3
     <SpawnUnitsOnStart>k__BackingField: 1
-    <SpawnCooldown>k__BackingField: 20
+    <SpawnCooldown>k__BackingField: 30
+    <EnemiesPool>k__BackingField: []
+  - <Type>k__BackingField: 4
+    <SpawnUnitsOnStart>k__BackingField: 0
+    <SpawnCooldown>k__BackingField: 60
     <EnemiesPool>k__BackingField: []
 --- !u!114 &1018386067 stripped
 MonoBehaviour:
@@ -441,7 +459,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 583665570}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1085088691
 GameObject:
@@ -471,7 +489,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 583665570}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1240118859
 GameObject:
@@ -670,11 +688,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1311401859}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86fb4228fea93114494c76e2ccefd14a, type: 3}
+  m_Script: {fileID: 11500000, guid: 1dc8a41f71132eb4f9fcfd7edb1d18c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyStorage: {fileID: 11400000, guid: 0af4be7ae2373814d9ecf424aadbf7bb, type: 2}
-  enemies: []
+  collectables:
+  - {fileID: 4822988062533297653, guid: 282ab640341793f418e8970e6615a95c, type: 3}
+  - {fileID: 4822988062533297653, guid: 81aa5a77697aca944a554fa095d5078c, type: 3}
+  - {fileID: 4822988062533297653, guid: da5e7d0bbaae1264aa6f74abe6ea18a7, type: 3}
+  - {fileID: 4822988062533297653, guid: 53ec6e946ac9c344bba01faccb62662f, type: 3}
+  - {fileID: 4822988062533297653, guid: 76d115f48c5a622428f8a4cf497adba9, type: 3}
+  - {fileID: 4822988062533297653, guid: a0394855046ca424590f4f6a16ac12df, type: 3}
+  spawnOnstart: 0
+  spawnCooldown: 5
 --- !u!1 &1478464273
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,6 +798,7 @@ MonoBehaviour:
   cameraController: {fileID: 138735667}
   touchController: {fileID: 1018386067}
   weaponController: {fileID: 3384156269728427729}
+  userInterface: {fileID: 536610478}
 --- !u!850595691 &1487295514
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -834,6 +860,66 @@ LightingSettings:
   m_PVRFilteringAtrousPositionSigmaDirect: 0.5
   m_PVRFilteringAtrousPositionSigmaIndirect: 2
   m_PVRFilteringAtrousPositionSigmaAO: 1
+--- !u!1 &1685108226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1685108227}
+  m_Layer: 0
+  m_Name: ProjectileContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1685108227
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685108226}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 583665570}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1791642017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1791642018}
+  m_Layer: 0
+  m_Name: CollectableContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1791642018
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791642017}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 583665570}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2028567439
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,7 +948,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 583665570}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2061775555
 GameObject:

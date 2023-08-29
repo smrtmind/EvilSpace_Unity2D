@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: -2059966085
   m_SortingLayer: 4
   m_SortingOrder: 5
-  m_Sprite: {fileID: 3306089611212802227, guid: e8cb4fbc631dee145b61878b78ff65df,
+  m_Sprite: {fileID: 9082429109045791810, guid: 0170a4ef21b21b94b984872309c056c5,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 7485517924715460861}
   - component: {fileID: 2811309311589409827}
   m_Layer: 0
-  m_Name: OneUp
+  m_Name: Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,8 +130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8f975c6a2d1154892929f3291a4410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Type>k__BackingField: 1
-  <Color>k__BackingField: {r: 0.38437155, g: 0.8490566, b: 0.33161265, a: 1}
+  <Type>k__BackingField: 3
+  <Color>k__BackingField: {r: 0.19955347, g: 0.7169812, b: 0.056817323, a: 1}
   <Renderer>k__BackingField: {fileID: 0}
   collectableBody: {fileID: 7485517924715460861}
   indentY: 2
@@ -155,11 +155,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 6752901002417376413}
   frameRate: 8
   sprites:
-  - {fileID: 3306089611212802227, guid: e8cb4fbc631dee145b61878b78ff65df, type: 3}
-  - {fileID: 7665845679694811676, guid: e8cb4fbc631dee145b61878b78ff65df, type: 3}
-  - {fileID: 3331183069709284375, guid: e8cb4fbc631dee145b61878b78ff65df, type: 3}
-  - {fileID: 3514830727845571217, guid: e8cb4fbc631dee145b61878b78ff65df, type: 3}
-  - {fileID: -8390453432451520934, guid: e8cb4fbc631dee145b61878b78ff65df, type: 3}
+  - {fileID: 9082429109045791810, guid: 0170a4ef21b21b94b984872309c056c5, type: 3}
+  - {fileID: -8599512977041186160, guid: 0170a4ef21b21b94b984872309c056c5, type: 3}
+  - {fileID: -4876627861783150909, guid: 0170a4ef21b21b94b984872309c056c5, type: 3}
+  - {fileID: 7394846351055212603, guid: 0170a4ef21b21b94b984872309c056c5, type: 3}
+  - {fileID: -3134984308293451589, guid: 0170a4ef21b21b94b984872309c056c5, type: 3}
 --- !u!50 &7485517924715460861
 Rigidbody2D:
   serializedVersion: 4

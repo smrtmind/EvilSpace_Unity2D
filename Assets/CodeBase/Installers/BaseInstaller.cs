@@ -1,6 +1,7 @@
 using CodeBase.Effects;
 using CodeBase.Player;
 using CodeBase.Service;
+using CodeBase.UI;
 using CodeBase.Utils;
 using UnityEngine;
 using Zenject;
@@ -13,6 +14,7 @@ public class BaseInstaller : MonoInstaller
     [SerializeField] private CameraController cameraController;
     [SerializeField] private TouchController touchController;
     [SerializeField] private WeaponController weaponController;
+    [SerializeField] private UserInterface userInterface;
 
     public override void InstallBindings()
     {
@@ -22,6 +24,7 @@ public class BaseInstaller : MonoInstaller
         BindCameraController();
         BindTouchController();
         BindWeaponController();
+        BindUserInterface();
     }
 
     private void BindPlayer()
@@ -58,5 +61,11 @@ public class BaseInstaller : MonoInstaller
     {
         Container.Bind<WeaponController>().FromInstance(weaponController).AsSingle().NonLazy();
         Container.QueueForInject(weaponController);
+    }
+
+    private void BindUserInterface()
+    {
+        Container.Bind<UserInterface>().FromInstance(userInterface).AsSingle().NonLazy();
+        Container.QueueForInject(userInterface);
     }
 }

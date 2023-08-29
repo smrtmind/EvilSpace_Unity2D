@@ -8,7 +8,7 @@ namespace CodeBase.Effects
     {
         [field: SerializeField] public ParticleType ParticleType { get; private set; }
 
-        public bool IsBusy { get; private set; }
+        public bool IsBusy { get; private set; } = true;
 
         public void SetBusyState(bool state)
         {

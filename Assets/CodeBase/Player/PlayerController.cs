@@ -33,6 +33,7 @@ namespace CodeBase.Player
         [Space]
         [SerializeField] private PopUp popUp;
         [SerializeField] private SpriteAnimator levelUpEffect;
+        [SerializeField] private ColouredEffect pickUpEffect;
         [SerializeField] private GameObject body;
         [SerializeField] private Collider2D playerCollider;
         [SerializeField] private ParticleType explosionEffect;
@@ -71,6 +72,7 @@ namespace CodeBase.Player
             EventObserver.OnGameRestarted += StartNewGame;
             EventObserver.OnPlayerCollision += ForceBackPlayer;
             EventObserver.OnLevelChanged += SpawnLvlPopup;
+            EventObserver.OnCollectableGot += ShowPickUpEffect;
         }
 
         private void OnDisable()
@@ -79,6 +81,7 @@ namespace CodeBase.Player
             EventObserver.OnGameRestarted -= StartNewGame;
             EventObserver.OnPlayerCollision -= ForceBackPlayer;
             EventObserver.OnLevelChanged -= SpawnLvlPopup;
+            EventObserver.OnCollectableGot -= ShowPickUpEffect;
         }
 
         private void Start()
@@ -91,7 +94,7 @@ namespace CodeBase.Player
         {
             if (collision.gameObject.tag.Equals(Tags.EnemyProjectile) && !electroShield.IsActive)
             {
-                var projectile = Dictionaries.Projectiles.FirstOrDefault(p => p.Key == collision.gameObject.transform);
+                var projectile = Dictionaries.EnemyProjectiles.FirstOrDefault(p => p.Key == collision.gameObject.transform);
                 playerStorage.PlayerData.ModifyHealth(-projectile.Value.Damage);
 
                 SpawnSpark(collision.gameObject.transform.position);
@@ -107,6 +110,12 @@ namespace CodeBase.Player
 
             popUp.SetCurrentData(transform, $"lvl up", "yellow");
             popUp.SpawnPopUp();
+        }
+
+        private void ShowPickUpEffect(CollectableType type, Color color)
+        {
+            pickUpEffect.SetColor(color);
+            pickUpEffect.gameObject.SetActive(true);
         }
 
         private void CheckBehaviourDueToDamageTaken()

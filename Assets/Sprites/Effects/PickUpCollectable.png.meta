@@ -1,45 +1,54 @@
 fileFormatVersion: 2
-guid: 7419ff720a2b2c64fa2156cefc87ee1e
+guid: 812f3ef8e5a7c74459f1e0e5112202d9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8332703797732912385
-    second: safeZone_0
+      213: 8583300871898576883
+    second: PickUpCollectable_0
   - first:
-      213: -479888115243106851
-    second: safeZone_1
+      213: 3125750404692842034
+    second: PickUpCollectable_1
   - first:
-      213: -8151625067434525049
-    second: safeZone_2
+      213: -4792955700618461653
+    second: PickUpCollectable_2
   - first:
-      213: 4590453467829809114
-    second: safeZone_3
+      213: -2667974680754690498
+    second: PickUpCollectable_3
   - first:
-      213: -8622109895757769051
-    second: safeZone_4
+      213: -8817358866805819808
+    second: PickUpCollectable_4
   - first:
-      213: 8901574693923242992
-    second: safeZone_5
+      213: -5583565884579819400
+    second: PickUpCollectable_5
   - first:
-      213: 388978575901558195
-    second: safeZone_6
+      213: 4133755495798770438
+    second: PickUpCollectable_6
   - first:
-      213: 2147427949522731054
-    second: safeZone_7
+      213: 6384985596389930945
+    second: PickUpCollectable_7
   - first:
-      213: -2203730590054839679
-    second: safeZone_8
+      213: 266005594544166060
+    second: PickUpCollectable_8
   - first:
-      213: 4982316223395226249
-    second: safeZone_9
+      213: 8703977097661195934
+    second: PickUpCollectable_9
   - first:
-      213: -7859892666589619121
-    second: safeZone_10
+      213: -3789689885551861473
+    second: PickUpCollectable_10
   - first:
-      213: -9160333471808362978
-    second: safeZone_11
+      213: -2354715907393956802
+    second: PickUpCollectable_11
+  - first:
+      213: -2373290512500989489
+    second: PickUpCollectable_12
+  - first:
+      213: 1758760447799590980
+    second: PickUpCollectable_13
+  - first:
+      213: -1566622786023718118
+    second: PickUpCollectable_14
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -60,7 +69,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -99,11 +107,10 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -115,31 +122,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Server
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -151,7 +134,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: iPhone
-    maxTextureSize: 2048
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -165,13 +160,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: safeZone_0
+      name: PickUpCollectable_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 160
-        width: 80
-        height: 80
+        y: 498
+        width: 258
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10d2b6a94f5b3a370800000000000000
-      internalID: 8332703797732912385
+      spriteID: 3f7b0ddaaa20e1770800000000000000
+      internalID: 8583300871898576883
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: safeZone_1
+      name: PickUpCollectable_1
       rect:
         serializedVersion: 2
-        x: 80
-        y: 160
-        width: 80
-        height: 80
+        x: 258
+        y: 498
+        width: 258
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dddb00f3d481759f0800000000000000
-      internalID: -479888115243106851
+      spriteID: 2361040ae65e06b20800000000000000
+      internalID: 3125750404692842034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: safeZone_2
+      name: PickUpCollectable_2
       rect:
         serializedVersion: 2
-        x: 160
-        y: 160
-        width: 80
-        height: 80
+        x: 516
+        y: 498
+        width: 258
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +216,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78e3569b03c9fde80800000000000000
-      internalID: -8151625067434525049
+      spriteID: b2ef3783f200c7db0800000000000000
+      internalID: -4792955700618461653
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: safeZone_3
+      name: PickUpCollectable_3
       rect:
         serializedVersion: 2
-        x: 240
-        y: 160
-        width: 80
-        height: 80
+        x: 774
+        y: 498
+        width: 258
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +237,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: adfa4f39b1194bf30800000000000000
-      internalID: 4590453467829809114
+      spriteID: e3661e3d92379fad0800000000000000
+      internalID: -2667974680754690498
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: safeZone_4
+      name: PickUpCollectable_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 80
-        width: 80
-        height: 80
+        x: 1032
+        y: 498
+        width: 258
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,83 +258,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a65af05bbc185880800000000000000
-      internalID: -8622109895757769051
+      spriteID: 066f5e6b3d272a580800000000000000
+      internalID: -8817358866805819808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: safeZone_5
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 80
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f3c6e4850fb88b70800000000000000
-      internalID: 8901574693923242992
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: safeZone_6
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 80
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3b589d134fde56500800000000000000
-      internalID: 388978575901558195
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: safeZone_7
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 80
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e204c00b7523dcd10800000000000000
-      internalID: 2147427949522731054
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: safeZone_8
+      name: PickUpCollectable_5
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 80
-        height: 80
+        y: 249
+        width: 258
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -347,20 +279,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18a8e1744b6ca61e0800000000000000
-      internalID: -2203730590054839679
+      spriteID: 87051a539603382b0800000000000000
+      internalID: -5583565884579819400
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: safeZone_9
+      name: PickUpCollectable_6
       rect:
         serializedVersion: 2
-        x: 80
-        y: 0
-        width: 80
-        height: 80
+        x: 258
+        y: 249
+        width: 258
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -368,20 +300,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 982632e253eb42540800000000000000
-      internalID: 4982316223395226249
+      spriteID: 60b876bc8bc0e5930800000000000000
+      internalID: 4133755495798770438
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: safeZone_10
+      name: PickUpCollectable_7
       rect:
         serializedVersion: 2
-        x: 160
-        y: 0
-        width: 80
-        height: 80
+        x: 516
+        y: 249
+        width: 258
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -389,20 +321,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4c5a33634d0ce290800000000000000
-      internalID: -7859892666589619121
+      spriteID: 1c7bec022960c9850800000000000000
+      internalID: 6384985596389930945
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: safeZone_11
+      name: PickUpCollectable_8
       rect:
         serializedVersion: 2
-        x: 240
-        y: 0
-        width: 80
-        height: 80
+        x: 774
+        y: 249
+        width: 258
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -410,8 +342,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e16edbcad35ffd080800000000000000
-      internalID: -9160333471808362978
+      spriteID: ca4521bcdaa01b300800000000000000
+      internalID: 266005594544166060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PickUpCollectable_9
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 249
+        width: 258
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e962b3ffd0dbac870800000000000000
+      internalID: 8703977097661195934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PickUpCollectable_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 258
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f116ac2b021586bc0800000000000000
+      internalID: -3789689885551861473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PickUpCollectable_11
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 0
+        width: 258
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3452d8ab5e525fd0800000000000000
+      internalID: -2354715907393956802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PickUpCollectable_12
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 0
+        width: 258
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc1e2956ad0601fd0800000000000000
+      internalID: -2373290512500989489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PickUpCollectable_13
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 0
+        width: 258
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4400a181f4f586810800000000000000
+      internalID: 1758760447799590980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PickUpCollectable_14
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 0
+        width: 258
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a13060e50ec324ae0800000000000000
+      internalID: -1566622786023718118
       vertices: []
       indices: 
       edges: []
@@ -426,19 +484,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      safeZone_3: 4590453467829809114
-      safeZone_10: -7859892666589619121
-      safeZone_11: -9160333471808362978
-      safeZone_9: 4982316223395226249
-      safeZone_4: -8622109895757769051
-      safeZone_1: -479888115243106851
-      safeZone_8: -2203730590054839679
-      safeZone_5: 8901574693923242992
-      safeZone_6: 388978575901558195
-      safeZone_2: -8151625067434525049
-      safeZone_0: 8332703797732912385
-      safeZone_7: 2147427949522731054
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

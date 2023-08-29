@@ -129,9 +129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea0181f3a976974e92ebd8634138912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnemyProjectile: 0
-  <WeaponType>k__BackingField: 1
-  <Damage>k__BackingField: 1
   rb: {fileID: 5031865173122266621}
   speed: 60
   <Renderer>k__BackingField: {fileID: 147596783664528376}
@@ -140,6 +137,7 @@ MonoBehaviour:
   - {fileID: 2946690649019813517, guid: 1152698a8145c424d88c3fdc056d4be5, type: 3}
   - {fileID: -6350816287176556446, guid: 1152698a8145c424d88c3fdc056d4be5, type: 3}
   - {fileID: 5874960822596333037, guid: 1152698a8145c424d88c3fdc056d4be5, type: 3}
+  <WeaponType>k__BackingField: 2
 --- !u!70 &2039925710981863102
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

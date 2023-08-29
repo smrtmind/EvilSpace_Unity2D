@@ -61,6 +61,14 @@ namespace CodeBase.Utils
             EnemyZZ
         }
 
+        public enum PlayerWeaponType
+        {
+            MachineGun,
+            Laser,
+            Blaster,
+            Energy
+        }
+
         public enum ObjectType
         {
             Asteroid,
@@ -108,6 +116,16 @@ namespace CodeBase.Utils
             Planet9,
             Planet10,
             Planet11
+        }
+
+        public enum CollectableType
+        {
+            PowerUp,
+            OneUp,
+            MachineGun,
+            Laser,
+            Blaster,
+            Energy
         }
     }
 }
