@@ -104,17 +104,21 @@ namespace CodeBase.ObjectBased
 
         private void CheckScreenBoundaries()
         {
-            if (transform.position.x > screenBounds.max.x + indentX)
-                transform.position = new Vector3(screenBounds.min.x - indentX, transform.position.y);
+            Vector3 newPosition = transform.position;
 
-            if (transform.position.x < screenBounds.min.x - indentX)
-                transform.position = new Vector3(screenBounds.max.x + indentX, transform.position.y);
+            if (newPosition.x > screenBounds.max.x - indentX || newPosition.x < screenBounds.min.x + indentX)
+            {
+                collectableBody.velocity = new Vector2(-collectableBody.velocity.x, collectableBody.velocity.y);
+                newPosition.x = Mathf.Clamp(newPosition.x, screenBounds.min.x + indentX, screenBounds.max.x - indentX);
+            }
 
-            if (transform.position.y > screenBounds.max.y + indentY)
-                transform.position = new Vector3(transform.position.x, screenBounds.min.y - indentY);
+            if (newPosition.y > screenBounds.max.y - indentY || newPosition.y < screenBounds.min.y + indentY)
+            {
+                collectableBody.velocity = new Vector2(collectableBody.velocity.x, -collectableBody.velocity.y);
+                newPosition.y = Mathf.Clamp(newPosition.y, screenBounds.min.y + indentY, screenBounds.max.y - indentY);
+            }
 
-            if (transform.position.y < screenBounds.min.y - indentY)
-                transform.position = new Vector3(transform.position.x, screenBounds.max.y + indentY);
+            transform.position = newPosition;
         }
     }
 }

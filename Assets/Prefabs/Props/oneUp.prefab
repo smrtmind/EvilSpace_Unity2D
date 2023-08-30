@@ -134,7 +134,7 @@ MonoBehaviour:
   <Type>k__BackingField: 1
   <Color>k__BackingField: {r: 0.38437155, g: 0.8490566, b: 0.33161265, a: 1}
   collectableBody: {fileID: 7485517924715460861}
-  lifeSpan: 10
+  lifeSpan: 15
   indentY: 1
   indentX: 1
   minSpeed: 1
