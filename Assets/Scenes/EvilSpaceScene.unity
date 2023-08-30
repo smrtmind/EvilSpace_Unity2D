@@ -403,7 +403,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &820566342
 Transform:
   m_ObjectHideFlags: 0
@@ -784,7 +784,7 @@ MonoBehaviour:
   - {fileID: 4822988062533297653, guid: 76d115f48c5a622428f8a4cf497adba9, type: 3}
   - {fileID: 4822988062533297653, guid: a0394855046ca424590f4f6a16ac12df, type: 3}
   spawnOnStart: 0
-  spawnCooldown: 15
+  spawnCooldown: 2
 --- !u!1 &1478464273
 GameObject:
   m_ObjectHideFlags: 0

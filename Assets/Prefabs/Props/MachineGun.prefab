@@ -130,12 +130,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8f975c6a2d1154892929f3291a4410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Name>k__BackingField: Machine gun
   <Type>k__BackingField: 2
   <Color>k__BackingField: {r: 0.23018867, g: 0.32965782, b: 1, a: 1}
-  <Renderer>k__BackingField: {fileID: 0}
   collectableBody: {fileID: 7485517924715460861}
-  indentY: 2
-  indentX: 2
+  lifeSpan: 10
+  indentY: 1
+  indentX: 1
   minSpeed: 1
   maxSpeed: 5
 --- !u!114 &5151267230898865728

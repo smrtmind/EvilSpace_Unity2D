@@ -95,8 +95,7 @@ namespace CodeBase.Mobs
 
         public void TakeScore()
         {
-            popUp.SetCurrentData(transform, $"{Score}", "yellow");
-            popUp.SpawnPopUp();
+            popUp.Spawn(transform, $"{Score}", Color.yellow);
 
             playerStorage.PlayerData.ModifyScore(Score);
             playerStorage.PlayerData.ModifyLevelProgress(Score / 10f);

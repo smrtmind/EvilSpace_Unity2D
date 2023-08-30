@@ -21,6 +21,7 @@ namespace CodeBase.Player
         [Header("Storages")]
         [SerializeField] private PlayerStorage playerStorage;
         [SerializeField] private EnemyStorage enemyStorage;
+        [SerializeField] private CollectableStorage collectableStorage;
 
         [Header("Shields")]
         [SerializeField] private Shield electroShield;
@@ -52,13 +53,15 @@ namespace CodeBase.Player
         private bool isChangedColor;
         private ParticlePool particlePool;
         private TouchController touchController;
+        private UserInterface userInterface;
         #endregion
 
         [Inject]
-        private void Construct(ParticlePool pool, TouchController touch)
+        private void Construct(ParticlePool pool, TouchController touch, UserInterface ui)
         {
             particlePool = pool;
             touchController = touch;
+            userInterface = ui;
         }
 
         private void Awake()
@@ -72,7 +75,7 @@ namespace CodeBase.Player
             EventObserver.OnGameRestarted += StartNewGame;
             EventObserver.OnPlayerCollision += ForceBackPlayer;
             EventObserver.OnLevelChanged += SpawnLvlPopup;
-            EventObserver.OnCollectableGot += ShowPickUpEffect;
+            EventObserver.OnCollectableGot += PerformPickUpEffect;
         }
 
         private void OnDisable()
@@ -81,7 +84,7 @@ namespace CodeBase.Player
             EventObserver.OnGameRestarted -= StartNewGame;
             EventObserver.OnPlayerCollision -= ForceBackPlayer;
             EventObserver.OnLevelChanged -= SpawnLvlPopup;
-            EventObserver.OnCollectableGot -= ShowPickUpEffect;
+            EventObserver.OnCollectableGot -= PerformPickUpEffect;
         }
 
         private void Start()
@@ -107,15 +110,35 @@ namespace CodeBase.Player
         private void SpawnLvlPopup()
         {
             levelUpEffect.gameObject.SetActive(true);
-
-            popUp.SetCurrentData(transform, $"lvl up", "yellow");
-            popUp.SpawnPopUp();
+            popUp.Spawn(transform, $"lvl up", Color.yellow);
         }
 
-        private void ShowPickUpEffect(CollectableType type, Color color)
+        private void PerformPickUpEffect(CollectableType type)
         {
-            pickUpEffect.SetColor(color);
+            var collectableData = collectableStorage.GetCollectableInfo(type);
+
+            pickUpEffect.SetColor(collectableData.Color);
             pickUpEffect.gameObject.SetActive(true);
+
+            popUp.Spawn(transform, $"{collectableData.Name}", collectableData.Color);
+
+            switch (type)
+            {
+                case CollectableType.PowerUp:
+                    userInterface.RefreshPowerSpotInfo(3);//TODO
+                    break;
+
+                case CollectableType.OneUp:
+                    playerStorage.PlayerData.ModifyTries(1);
+                    break;
+
+                case CollectableType.MachineGun:
+                case CollectableType.Laser:
+                case CollectableType.Blaster:
+                case CollectableType.Energy:
+                    userInterface.RefreshWeaponSpotInfo(type);
+                    break;
+            }
         }
 
         private void CheckBehaviourDueToDamageTaken()
@@ -124,9 +147,7 @@ namespace CodeBase.Player
             if (playerStorage.PlayerData.CurrentHealth <= minHealthEdge && playerStorage.PlayerData.CurrentHealth > 0f)
             {
                 playerAnimationController.EnableCriticalDamageVisual(true);
-
-                popUp.SetCurrentData(transform, "danger", "red");
-                popUp.SpawnPopUp();
+                popUp.Spawn(transform, "danger", Color.red);
             }
 
             if (playerStorage.PlayerData.IsDead)

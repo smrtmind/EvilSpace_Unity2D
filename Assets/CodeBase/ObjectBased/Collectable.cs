@@ -9,6 +9,7 @@ namespace CodeBase.ObjectBased
 {
     public class Collectable : MonoBehaviour
     {
+        [field: SerializeField] public string Name { get; private set; }
         [field: SerializeField] public CollectableType Type { get; private set; }
         [field: SerializeField] public Color Color { get; private set; }
         [SerializeField] private Rigidbody2D collectableBody;
@@ -97,7 +98,7 @@ namespace CodeBase.ObjectBased
             if (collision.gameObject.tag.Equals(Tags.Player))
             {
                 Release();
-                EventObserver.OnCollectableGot?.Invoke(Type, Color);
+                EventObserver.OnCollectableGot?.Invoke(Type);
             }
         }
 

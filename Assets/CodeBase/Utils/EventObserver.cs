@@ -24,7 +24,7 @@ namespace CodeBase.Utils
         public static Action OnGameRestarted;
         public static Action OnGameOver;
         public static Action OnBombButtonPressed;
-        public static Action<CollectableType, Color> OnCollectableGot;
+        public static Action<CollectableType> OnCollectableGot;
 
         [Header("Touch events")]
         public static Action<bool> OnStartMoving;

@@ -39,6 +39,7 @@ namespace CodeBase.Player
         [field: SerializeField] public int DefaultTries { get; private set; }
         [field: SerializeField] public float DefaultMovementSpeed { get; private set; }
 
+        private const int MAX_TRIES = 99;
         private const int MAX_LEVEL = 99;
         private const int LEVEL_TO_EVOLVE = 5;
         private const float MAX_HEALTH = 10f;
@@ -79,6 +80,9 @@ namespace CodeBase.Player
             CurrentTries += tries;
             if (CurrentTries <= 0)
                 CurrentTries = 0;
+
+            if (CurrentTries > MAX_TRIES)
+                CurrentTries = MAX_TRIES;
 
             EventObserver.OnTriesChanged?.Invoke();
         }

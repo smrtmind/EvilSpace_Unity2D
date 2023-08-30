@@ -31,16 +31,19 @@ namespace CodeBase.UI
             defaultPopUpColor = ValueInfo.color;
         }
 
-        public void SetCurrentData(Transform point, string value, string color)
+        public void Spawn(Transform point, string text, Color color)
         {
             if (!popUpIsActive)
             {
                 targetPoint = point;
-                ValueInfo.text = $"<color={color}>{value}</color>";
+                ValueInfo.text = text;
+                ValueInfo.color = color;
+
+                SpawnPopUp();
             }
         }
 
-        public void SpawnPopUp()
+        private void SpawnPopUp()
         {
             if (!popUpIsActive)
             {

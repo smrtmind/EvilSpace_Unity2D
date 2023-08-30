@@ -44,8 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab7babefdcb0d142ad3d6b930ab7053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dependencyContainer: {fileID: 11400000, guid: 0971863339e52fc46bfc0f1a78196b51,
-    type: 2}
   <ValueInfo>k__BackingField: {fileID: 4676746849041338364}
   startingScale: {x: 2, y: 2, z: 1}
 --- !u!1 &5204220398473637691
@@ -220,7 +218,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 5, y: 1}
+  m_SizeDelta: {x: 7.5, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1718276688336865467
 Canvas:

@@ -26,6 +26,7 @@ namespace CodeBase.UI
         [SerializeField] private Vector3 scoreValueScaleOnChange;
         [SerializeField] private Slider levelProgressSlider;
         [SerializeField] private WeaponSpotData[] weaponSpotDatas;
+        [SerializeField] private GameObject[] powerSpotCells;
 
         [Header("Buttons")]
         [SerializeField] private Button bombBttn;
@@ -90,7 +91,6 @@ namespace CodeBase.UI
             EventObserver.OnLevelProgressChanged += RefreshLevelProgressSlider;
             EventObserver.OnGameOver += ShowGameOverScreen;
             EventObserver.OnPlayerDied += DisableBombButton;
-            EventObserver.OnCollectableGot += RefreshWeaponSpotInfo;
 
             startBttn.onClick.AddListener(StartButtonPressed);
             exitBttn.onClick.AddListener(ExitButtonPressed);
@@ -113,7 +113,6 @@ namespace CodeBase.UI
             EventObserver.OnLevelProgressChanged -= RefreshLevelProgressSlider;
             EventObserver.OnGameOver -= ShowGameOverScreen;
             EventObserver.OnPlayerDied -= DisableBombButton;
-            EventObserver.OnCollectableGot -= RefreshWeaponSpotInfo;
 
             startBttn.onClick.RemoveListener(StartButtonPressed);
             exitBttn.onClick.RemoveListener(ExitButtonPressed);
@@ -335,13 +334,22 @@ namespace CodeBase.UI
             }
         }
 
-        private void RefreshWeaponSpotInfo(CollectableType type, Color color)
+        public void RefreshWeaponSpotInfo(CollectableType type)
         {
             foreach (var spotData in weaponSpotDatas)
                 spotData.SpotObject.SetActive(false);
 
             var newSpotData = weaponSpotDatas.FirstOrDefault(spot => spot.Type == type);
             newSpotData.SpotObject.SetActive(true);
+        }
+
+        public void RefreshPowerSpotInfo(int powerLevel)
+        {
+            foreach (var cell in powerSpotCells)
+                cell.SetActive(false);
+
+            for (int i = 0; i < powerLevel; i++)
+                powerSpotCells[i].SetActive(true);
         }
     }
 

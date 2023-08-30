@@ -245,6 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStorage: {fileID: 11400000, guid: 0e2cce6871d5eb547801ec25880e2198, type: 2}
   enemyStorage: {fileID: 11400000, guid: 0af4be7ae2373814d9ecf424aadbf7bb, type: 2}
+  collectableStorage: {fileID: 11400000, guid: 39eac01cfd481d44a890fc76813451fb, type: 2}
   electroShield: {fileID: 6661544957918333283}
   <ElectroShieldActiveDuration>k__BackingField: 5
   playerAnimationController: {fileID: 1086577806725384660}
