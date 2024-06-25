@@ -9,6 +9,8 @@ namespace CodeBase.Animation
 {
     public class PlayerAnimationController : MonoBehaviour
     {
+        //test commit no light
+
         [SerializeField] private Animator animator;
         [SerializeField] private SpriteRenderer skinRenderer;
 
